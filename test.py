@@ -18,4 +18,5 @@ with open("arlington_over.geojson", "r", encoding="utf-8") as f:
         except KeyError:
             pass
 
+    print(len(count), len(contents["features"]))
     print(Counter(count))
