@@ -51,7 +51,7 @@ class PlaceProps(pydantic.BaseModel):
     addresses: list[Addresses]
 
 
-def process_geojson_props(
+def process_place_props(
     props: dict,
     region_tag: str = "addr:state",
     confidence: float = 0.0,

@@ -1,10 +1,10 @@
 import pytest
 import pydantic
-from overture_to_osm.process import process_geojson_props, PlaceProps
+from overture_to_osm.process import process_place_props, PlaceProps
 
 
 @pytest.fixture
-def props_dict():
+def props_dict_fix():
     return {
         "id": "123",
         "version": 1,
@@ -50,9 +50,10 @@ def props_dict():
     }
 
 
-def test_process_geojson_props(props_dict):
+@pytest.mark.parametrize("props_dict", props_dict_fix())
+def test_process_place_props(props_dict: dict):
     """Test that all properties are processed correctly"""
-    new_props = process_geojson_props(props_dict)
+    new_props = process_place_props(props_dict)
     assert new_props == {
         "name": "Primary Name",
         "brand": "Brand Name",
@@ -67,48 +68,48 @@ def test_process_geojson_props(props_dict):
     }
 
 
-def test_process_geojson_props_low_confidence(props_dict):
+def test_process_place_props_low_confidence(props_dict):
     """Test that properties with low confidence are not processed"""
     props_dict["confidence"] = 0.5
-    new_props = process_geojson_props(props_dict)
+    new_props = process_place_props(props_dict)
     assert new_props == {}
 
 
-def test_process_geojson_props_invalid_id(props_dict):
+def test_process_place_props_invalid_id(props_dict):
     """Test that invalid properties are not processed"""
     del props_dict["id"]
     with pytest.raises(pydantic.ValidationError):
-        process_geojson_props(props_dict)
+        process_place_props(props_dict)
 
 
-def test_process_geojson_props_invalid_confidence(props_dict):
+def test_process_place_props_invalid_confidence(props_dict):
     props_dict["confidence"] = -0.1
     with pytest.raises(pydantic.ValidationError):
-        process_geojson_props(props_dict)
+        process_place_props(props_dict)
 
 
-def test_process_geojson_props_invalid_address(props_dict):
+def test_process_place_props_invalid_address(props_dict):
     del props_dict["addresses"][0]["freeform"]
-    new_props = process_geojson_props(props_dict)
+    new_props = process_place_props(props_dict)
     assert "addr:street_address" not in new_props
 
 
-def test_process_geojson_props_invalid_phones(props_dict):
+def test_process_place_props_invalid_phones(props_dict):
     """Test that phones are not added if not present in props"""
     del props_dict["phones"]
-    new_props = process_geojson_props(props_dict)
+    new_props = process_place_props(props_dict)
     assert "phone" not in new_props
 
 
-def test_process_geojson_props_invalid_websites(props_dict):
+def test_process_place_props_invalid_websites(props_dict):
     """Test that websites are not added if not present in props"""
     del props_dict["websites"]
-    new_props = process_geojson_props(props_dict)
+    new_props = process_place_props(props_dict)
     assert "website" not in new_props
 
 
-def test_process_geojson_props_invalid_socials(props_dict):
+def test_process_place_props_invalid_socials(props_dict):
     """Test that socials are not added if not present in props"""
     del props_dict["socials"]
-    new_props = process_geojson_props(props_dict)
+    new_props = process_place_props(props_dict)
     assert "socials" not in new_props
