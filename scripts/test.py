@@ -1,9 +1,9 @@
 from collections import Counter
 import json
-from process import process_geojson_props
-from resources import tags
+from overture_to_osm.process import process_geojson_props
+from overture_to_osm.resources import tags
 
-with open("arlington_over1.geojson", "r", encoding="utf-8") as f:
+with open("test_in.geojson", "r", encoding="utf-8") as f:
     contents: dict = json.load(f)
     count = []
 
@@ -20,7 +20,7 @@ with open("arlington_over1.geojson", "r", encoding="utf-8") as f:
 
     contents["features"] = [each for each in contents["features"] if each["properties"]]
 
-    with open("arlington_over2.geojson", "w+", encoding="utf-8") as f:
+    with open("test_out.geojson", "w+", encoding="utf-8") as f:
         json.dump(contents, f, indent=4)
 
     # print(len(count), len(contents["features"]))

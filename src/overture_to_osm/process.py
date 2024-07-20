@@ -1,6 +1,6 @@
-from typing import Any, Optional
-from resources import tags
 import pydantic
+
+from overture_to_osm.resources import tags
 
 bad_tags = ["id", "version", "update_time", "sources", "user", "uid"]
 

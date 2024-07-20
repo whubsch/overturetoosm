@@ -1,4 +1,4 @@
-from resources import tags
+from overture_to_osm.resources import tags
 
 text = []
 for k, v in tags.items():
