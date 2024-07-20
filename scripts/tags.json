@@ -948,10 +948,10 @@
   },
   "country_club": {},
   "country_dance_hall": {},
-  "dance_club": {},
+  "dance_club": { "amenity": "nightclub" },
   "dinner_theatre": {},
   "eatertainment": {},
-  "escape_rooms": {},
+  "escape_rooms": { "leisure": "escape_game" },
   "exhibition_and_trade_center": {},
   "glass_blowing": {},
   "indoor_playcenter": {},
@@ -1731,9 +1731,9 @@
   "banks": {
     "amenity": "bank"
   },
-  "credit_union": {},
+  "credit_union": { "amenity": "bank" },
   "brokers": {},
-  "business_brokers": {},
+  "business_brokers": { "office": "financial_advisor" },
   "stock_and_bond_brokers": {},
   "business_banking_service": {},
   "business_financing": {},
@@ -1752,12 +1752,12 @@
   "insurance_agency": {
     "office": "insurance"
   },
-  "auto_insurance": {},
-  "farm_insurance": {},
+  "auto_insurance": { "office": "insurance", "insurance": "car" },
+  "farm_insurance": { "office": "insurance", "insurance": "farm" },
   "fidelity_and_surety_bonds": {},
-  "home_and_rental_insurance": {},
-  "life_insurance": {},
-  "investing": {},
+  "home_and_rental_insurance": { "office": "insurance", "insurance": "home" },
+  "life_insurance": { "office": "insurance", "insurance": "life" },
+  "investing": { "office": "financial_advisor" },
   "money_transfer_services": {},
   "tax_services": {
     "office": "tax_advisor"
@@ -1812,7 +1812,7 @@
   "food_stand": {},
   "food_truck": {},
   "friterie": {},
-  "health_food_store": {},
+  "health_food_store": { "shop": "herbalist" },
   "ice_cream_and_frozen_yoghurt": {
     "amenity": "ice_cream"
   },
@@ -1858,8 +1858,8 @@
   "wine_tasting_room": {
     "craft": "winery"
   },
-  "auto_parts_and_supply_store": {},
-  "beverage_store": {},
+  "auto_parts_and_supply_store": { "shop": "car_parts" },
+  "beverage_store": { "shop": "alcohol" },
   "boat_parts_and_supply_store": {},
   "butcher_shop": {
     "shop": "butcher"
@@ -1883,7 +1883,7 @@
     "craft": "distillery"
   },
   "drugstore": {},
-  "flooring_store": {},
+  "flooring_store": { "shop": "flooring" },
   "fruits_and_vegetables": {},
   "health_market": {},
   "hearing_aid_provider": {},
@@ -1899,17 +1899,17 @@
   },
   "popcorn_shop": {},
   "seafood_market": {},
-  "water_store": {},
-  "shopping": {},
-  "arts_and_crafts": {},
-  "art_supply_store": {},
+  "water_store": { "shop": "water" },
+  "shopping": { "shop": "yes" },
+  "arts_and_crafts": { "shop": "craft" },
+  "art_supply_store": { "shop": "craft" },
   "atelier": {},
   "cooking_classes": {},
-  "costume_store": {},
-  "craft_shop": {},
-  "embroidery_and_crochet": {},
-  "fabric_store": {},
-  "framing_store": {},
+  "costume_store": { "shop": "costume" },
+  "craft_shop": { "shop": "craft" },
+  "embroidery_and_crochet": { "shop": "sewing" },
+  "fabric_store": { "shop": "fabric" },
+  "framing_store": { "shop": "frame" },
   "handicraft_shop": {
     "shop": "craft"
   },
@@ -2001,7 +2001,7 @@
   "grocery_store": {
     "shop": "convenience"
   },
-  "specialty_grocery_store": {},
+  "specialty_grocery_store": { "shop": "supermarket" },
   "asian_grocery_store": {
     "shop": "supermarket",
     "cuisine": "asian"
@@ -2202,15 +2202,15 @@
   },
   "tabletop_games": {},
   "thrift_store": {},
-  "tobacco_shop": {},
-  "toy_store": {},
+  "tobacco_shop": { "shop": "tobacco" },
+  "toy_store": { "shop": "toys" },
   "trophy_shop": {},
   "uniform_store": {},
-  "used_bookstore": {},
-  "e_cigarette_store": {},
+  "used_bookstore": { "shop": "books", "second_hand": "only" },
+  "e_cigarette_store": { "shop": "tobacco" },
   "vitamins_and_supplements": {},
-  "watch_store": {},
-  "wholesale_store": {},
+  "watch_store": { "shop": "watches" },
+  "wholesale_store": { "shop": "wholesale" },
   "wig_store": {},
   "sporting_goods": {},
   "archery_shop": {},
@@ -2227,7 +2227,7 @@
   "sports_wear": {},
   "dance_wear": {},
   "surf_shop": {},
-  "swimwear_store": {},
+  "swimwear_store": { "shop": "clothes", "clothes": "swimwear" },
   "tire_shop": {},
   "tire_repair_shop": {},
   "health_and_medical": {
@@ -2237,8 +2237,11 @@
   "alcohol_and_drug_treatment_centers": {},
   "crisis_intervention_services": {},
   "eating_disorder_treatment_centers": {},
-  "counseling_and_mental_health": {},
-  "family_counselor": {},
+  "counseling_and_mental_health": { "healthcare": "psychotherapist" },
+  "family_counselor": {
+    "healthcare": "counselling",
+    "healthcare:counselling": "family"
+  },
   "marriage_or_relationship_counselor": {},
   "psychoanalyst": {},
   "psychologist": {},
@@ -2366,7 +2369,10 @@
   "cannabis_clinic": {},
   "cannabis_collective": {},
   "childrens_hospital": {},
-  "chiropractor": {},
+  "chiropractor": {
+    "healthcare": "alternative",
+    "healthcare:specialty": "chiropractic"
+  },
   "colonics": {},
   "community_health_center": {},
   "concierge_medicine": {},
@@ -2731,9 +2737,9 @@
   },
   "domestic_business_and_trade_organizations": {},
   "human_resource_services": {},
-  "information_technology_company": {},
+  "information_technology_company": { "office": "it" },
   "laser_cutting_service_provider": {},
-  "telecommunications_company": {},
+  "telecommunications_company": { "office": "telecommunication" },
   "tower_communication_service": {},
   "transcription_services": {},
   "translating_and_interpreting_services": {},
@@ -2760,14 +2766,14 @@
   "importers": {},
   "restaurant_management": {},
   "b2b_energy_mining": {},
-  "mining": {},
-  "coal_and_coke": {},
+  "mining": { "industrial": "mine" },
+  "coal_and_coke": { "industrial": "mine" },
   "quarries": {},
   "oil_and_gas": {},
   "b2b_oil_and_gas_extraction_and_services": {},
   "oil_and_gas_exploration_and_development": {},
   "oil_and_gas_field_equipment_and_services": {},
-  "oil_refiners": {},
+  "oil_refiners": { "industrial": "refinery" },
   "power_plants_and_power_plant_service": {},
   "public_service_and_government": {
     "office": "yes"
@@ -2793,7 +2799,10 @@
   "charity_organization": {
     "office": "charity"
   },
-  "food_banks": {},
+  "food_banks": {
+    "amenity": "social_facility",
+    "social_facility": "food_bank"
+  },
   "foster_care_services": {},
   "gay_and_lesbian_services_organization": {},
   "homeless_shelter": {
@@ -2986,7 +2995,7 @@
   "escrow_services": {},
   "land_surveying": {},
   "real_estate_photography": {},
-  "rental_services": {},
+  "rental_services": { "shop": "rental" },
   "travel": {},
   "airport": {
     "aeroway": "aerodrome"
@@ -3144,7 +3153,7 @@
   "weather_forecast_services": {},
   "animation_studio": {},
   "book_magazine_distribution": {},
-  "broadcasting_media_production": {},
+  "broadcasting_media_production": { "office": "media" },
   "game_publisher": {},
   "movie_television_studio": {},
   "music_production": {},
@@ -3629,7 +3638,7 @@
   "sign_making": {},
   "snow_removal_service": {},
   "snuggle_service": {},
-  "software_development": {},
+  "software_development": { "office": "software" },
   "talent_agency": {},
   "taxidermist": {},
   "telephone_services": {},

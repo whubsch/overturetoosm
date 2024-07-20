@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "overture-to-osm"
 dynamic = ["version"]
-description = 'Translate the Overture maps schema to OpenStreetMap.'
+description = 'Translate the Overture maps schema to OpenStreetMap tags.'
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"

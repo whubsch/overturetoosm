@@ -1,11 +1,48 @@
+from typing import Literal
 import pydantic
 
-from overture_to_osm.resources import tags
+from .resources import tags
 
 bad_tags = ["id", "version", "update_time", "sources", "user", "uid"]
 
 
+class ConfidenceError(Exception):
+    """Confidence error."""
+
+    def __init__(
+        self,
+        confidence_level: float,
+        confidence_item: float,
+        message: str = "Confidence for this item is too low.",
+    ):
+        self.confidence_level = confidence_level
+        self.confidence_item = confidence_item
+        self.message = message
+        super().__init__(message)
+
+    def __str__(self):
+        return f"{self.message} {{confidence_level={self.confidence_level}, item={self.confidence_item}}}"
+
+
+class UnmatchedError(Exception):
+    """Unmatched category error."""
+
+    def __init__(
+        self,
+        category: str,
+        message: str = "Overture category is unmatched.",
+    ):
+        self.category = category
+        self.message = message
+        super().__init__(message)
+
+    def __str__(self):
+        return f"{self.message} {{category={self.category}}}"
+
+
 class Sources(pydantic.BaseModel):
+    """Overture sources model."""
+
     property: str
     dataset: str
     record_id: str
@@ -13,12 +50,16 @@ class Sources(pydantic.BaseModel):
 
 
 class Names(pydantic.BaseModel):
+    """Overture names model."""
+
     primary: str
     common: str | None
     rules: str | None
 
 
 class Addresses(pydantic.BaseModel):
+    """Overture addresses model."""
+
     freeform: str | None
     locality: str | None
     postcode: str | None
@@ -27,16 +68,22 @@ class Addresses(pydantic.BaseModel):
 
 
 class Categories(pydantic.BaseModel):
+    """Overture categories model."""
+
     main: str
     alternate: list[str] | None
 
 
 class Brand(pydantic.BaseModel):
+    """Overture brand model."""
+
     wikidata: str | None
     names: Names
 
 
 class PlaceProps(pydantic.BaseModel):
+    """Overture properties model."""
+
     id: str
     version: int
     update_time: str
@@ -55,57 +102,60 @@ def process_place_props(
     props: dict,
     region_tag: str = "addr:state",
     confidence: float = 0.0,
+    unmatched: Literal["error", "force", "ignore"] = "ignore",
 ) -> dict[str, str]:
-    """Process GeoJSON properties from Overture."""
+    """
+    Convert Overture's properties to OSM tags.
+
+    Args:
+        props (dict): The feature properties from the Overture GeoJSON.
+        region_tag (str, optional): What tag to convert Overture's `region` tag to. Defaults to "addr:state".
+        confidence (float, optional): The minimum confidence level. Defaults to 0.0.
+        unmatched (Literal['error', 'force', 'ignore'], optional): How to handle unmatched Overture categories. The "error" option raises an UnmatchedError exception, "force" puts the category into the `type` key, and "ignore" only returns other properties. Defaults to "ignore".
+
+    Returns:
+        dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.
+    """
     new_props = {}
     prop_obj = PlaceProps(**props)
     if prop_obj.confidence < confidence:
-        return {}
+        raise ConfidenceError(confidence, prop_obj.confidence)
 
-    try:
-        if prop_obj.categories:
-            prim = tags.get(prop_obj.categories.main)
-            if prim:
-                new_props |= prim
-            else:
-                print(prop_obj.categories.main)
-    except KeyError:
-        pass
+    if prop_obj.categories:
+        prim = tags.get(prop_obj.categories.main)
+        if prim:
+            new_props |= prim
+        elif unmatched == "force":
+            new_props |= {"type": prop_obj.categories.main}
+        elif unmatched == "error":
+            raise UnmatchedError(prop_obj.categories.main)
 
-    try:
-        name = prop_obj.names.primary
-        if name:
-            new_props |= {"name": name}
-    except KeyError:
-        pass
+    if prop_obj.names.primary:
+        new_props |= {"name": prop_obj.names.primary}
 
-    if "phones" in props:
+    if prop_obj.phones is not None:
         new_props["phone"] = prop_obj.phones[0]
 
-    if "websites" in props:
-        if prop_obj.websites:
-            new_props["website"] = prop_obj.websites[0]
+    if prop_obj.websites is not None:
+        new_props["website"] = prop_obj.websites[0]
 
-    if "addresses" in props:
-        add = props["addresses"][0]
-        if "freeform" in add:
-            new_props["addr:street_address"] = prop_obj.addresses[0].freeform
-        if "country" in add:
-            new_props["addr:country"] = prop_obj.addresses[0].country
-        if "postcode" in add:
-            new_props["addr:postcode"] = prop_obj.addresses[0].postcode
-        if "region" in add:
-            new_props[region_tag] = prop_obj.addresses[0].region
+    if add := prop_obj.addresses[0]:
+        if add.freeform:
+            new_props["addr:street_address"] = add.freeform
+        if add.country:
+            new_props["addr:country"] = add.country
+        if add.postcode:
+            new_props["addr:postcode"] = add.postcode
+        if add.region:
+            new_props[region_tag] = add.region
 
-    if "sources" in props:
+    if prop_obj.sources:
         new_props["source"] = (
-            ", ".join({i["dataset"] for i in props["sources"]}) + " via overture_to_osm"
+            ", ".join({i["dataset"] for i in prop_obj.sources}) + " via overture_to_osm"
         )
 
-    if "brand" in props:
-        if prop_obj.brand:
-            new_props["brand"] = prop_obj.brand.names.primary
-            new_props["brand:wikidata"] = prop_obj.brand.wikidata
+    if prop_obj.brand:
+        new_props["brand"] = prop_obj.brand.names.primary
+        new_props["brand:wikidata"] = prop_obj.brand.wikidata
 
-    print(new_props)
     return new_props

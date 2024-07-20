@@ -1,3 +1,31 @@
+[[Overture Maps|Overture]] categories are described [https://github.com/OvertureMaps/schema/blob/main/task-force-docs/places/overture_categories.csv here], unfortunately there are no descriptions. We can however infer some details from the hierarchy. The following are "root"/"top level tags" in Overture.
+* eat_and_drink
+* accommodation
+* automotive
+* arts_and_entertainment
+* attractions_and_activities
+* active_life
+* beauty_and_spa
+* education
+* financial_service
+* private_establishments_and_corporates
+* retail
+* health_and_medical
+* pets
+* business_to_business
+* public_service_and_government
+* religious_organization
+* real_estate
+* travel
+* mass_media
+* home_service
+* professional_services
+* structure_and_geography
+
+== Mapping ==
+
+{| class="wikitable" id="mapping_table"
+!Overture!!OSM
 |-
 |eat_and_drink||{{tag|amenity|restaurant}}
 |-
@@ -681,13 +709,13 @@
 |-
 |country_dance_hall||
 |-
-|dance_club||
+|dance_club||{{tag|amenity|nightclub}}
 |-
 |dinner_theatre||
 |-
 |eatertainment||
 |-
-|escape_rooms||
+|escape_rooms||{{tag|leisure|escape_game}}
 |-
 |exhibition_and_trade_center||
 |-
@@ -1483,11 +1511,11 @@
 |-
 |banks||{{tag|amenity|bank}}
 |-
-|credit_union||
+|credit_union||{{tag|amenity|bank}}
 |-
 |brokers||
 |-
-|business_brokers||
+|business_brokers||{{tag|office|financial_advisor}}
 |-
 |stock_and_bond_brokers||
 |-
@@ -1521,17 +1549,17 @@
 |-
 |insurance_agency||{{tag|office|insurance}}
 |-
-|auto_insurance||
+|auto_insurance||{{tag|office|insurance}} {{tag|insurance|car}}
 |-
-|farm_insurance||
+|farm_insurance||{{tag|office|insurance}} {{tag|insurance|farm}}
 |-
 |fidelity_and_surety_bonds||
 |-
-|home_and_rental_insurance||
+|home_and_rental_insurance||{{tag|office|insurance}} {{tag|insurance|home}}
 |-
-|life_insurance||
+|life_insurance||{{tag|office|insurance}} {{tag|insurance|life}}
 |-
-|investing||
+|investing||{{tag|office|financial_advisor}}
 |-
 |money_transfer_services||
 |-
@@ -1591,7 +1619,7 @@
 |-
 |friterie||
 |-
-|health_food_store||
+|health_food_store||{{tag|shop|herbalist}}
 |-
 |ice_cream_and_frozen_yoghurt||{{tag|amenity|ice_cream}}
 |-
@@ -1641,9 +1669,9 @@
 |-
 |wine_tasting_room||{{tag|craft|winery}}
 |-
-|auto_parts_and_supply_store||
+|auto_parts_and_supply_store||{{tag|shop|car_parts}}
 |-
-|beverage_store||
+|beverage_store||{{tag|shop|alcohol}}
 |-
 |boat_parts_and_supply_store||
 |-
@@ -1663,7 +1691,7 @@
 |-
 |drugstore||
 |-
-|flooring_store||
+|flooring_store||{{tag|shop|flooring}}
 |-
 |fruits_and_vegetables||
 |-
@@ -1687,27 +1715,27 @@
 |-
 |seafood_market||
 |-
-|water_store||
+|water_store||{{tag|shop|water}}
 |-
-|shopping||
+|shopping||{{tag|shop|yes}}
 |-
-|arts_and_crafts||
+|arts_and_crafts||{{tag|shop|craft}}
 |-
-|art_supply_store||
+|art_supply_store||{{tag|shop|craft}}
 |-
 |atelier||
 |-
 |cooking_classes||
 |-
-|costume_store||
+|costume_store||{{tag|shop|costume}}
 |-
-|craft_shop||
+|craft_shop||{{tag|shop|craft}}
 |-
-|embroidery_and_crochet||
+|embroidery_and_crochet||{{tag|shop|sewing}}
 |-
-|fabric_store||
+|fabric_store||{{tag|shop|fabric}}
 |-
-|framing_store||
+|framing_store||{{tag|shop|frame}}
 |-
 |handicraft_shop||{{tag|shop|craft}}
 |-
@@ -1809,7 +1837,7 @@
 |-
 |grocery_store||{{tag|shop|convenience}}
 |-
-|specialty_grocery_store||
+|specialty_grocery_store||{{tag|shop|supermarket}}
 |-
 |asian_grocery_store||{{tag|shop|supermarket}} {{tag|cuisine|asian}}
 |-
@@ -2071,23 +2099,23 @@
 |-
 |thrift_store||
 |-
-|tobacco_shop||
+|tobacco_shop||{{tag|shop|tobacco}}
 |-
-|toy_store||
+|toy_store||{{tag|shop|toys}}
 |-
 |trophy_shop||
 |-
 |uniform_store||
 |-
-|used_bookstore||
+|used_bookstore||{{tag|shop|books}} {{tag|second_hand|only}}
 |-
-|e_cigarette_store||
+|e_cigarette_store||{{tag|shop|tobacco}}
 |-
 |vitamins_and_supplements||
 |-
-|watch_store||
+|watch_store||{{tag|shop|watches}}
 |-
-|wholesale_store||
+|wholesale_store||{{tag|shop|wholesale}}
 |-
 |wig_store||
 |-
@@ -2117,7 +2145,7 @@
 |-
 |surf_shop||
 |-
-|swimwear_store||
+|swimwear_store||{{tag|shop|clothes}} {{tag|clothes|swimwear}}
 |-
 |tire_shop||
 |-
@@ -2133,9 +2161,9 @@
 |-
 |eating_disorder_treatment_centers||
 |-
-|counseling_and_mental_health||
+|counseling_and_mental_health||{{tag|healthcare|psychotherapist}}
 |-
-|family_counselor||
+|family_counselor||{{tag|healthcare|counselling}} {{tag|healthcare:counselling|family}}
 |-
 |marriage_or_relationship_counselor||
 |-
@@ -2319,7 +2347,7 @@
 |-
 |childrens_hospital||
 |-
-|chiropractor||
+|chiropractor||{{tag|healthcare|alternative}} {{tag|healthcare:specialty|chiropractic}}
 |-
 |colonics||
 |-
@@ -2961,11 +2989,11 @@
 |-
 |human_resource_services||
 |-
-|information_technology_company||
+|information_technology_company||{{tag|office|it}}
 |-
 |laser_cutting_service_provider||
 |-
-|telecommunications_company||
+|telecommunications_company||{{tag|office|telecommunication}}
 |-
 |tower_communication_service||
 |-
@@ -3019,9 +3047,9 @@
 |-
 |b2b_energy_mining||
 |-
-|mining||
+|mining||{{tag|industrial|mine}}
 |-
-|coal_and_coke||
+|coal_and_coke||{{tag|industrial|mine}}
 |-
 |quarries||
 |-
@@ -3033,7 +3061,7 @@
 |-
 |oil_and_gas_field_equipment_and_services||
 |-
-|oil_refiners||
+|oil_refiners||{{tag|industrial|refinery}}
 |-
 |power_plants_and_power_plant_service||
 |-
@@ -3069,7 +3097,7 @@
 |-
 |charity_organization||{{tag|office|charity}}
 |-
-|food_banks||
+|food_banks||{{tag|amenity|social_facility}} {{tag|social_facility|food_bank}}
 |-
 |foster_care_services||
 |-
@@ -3261,7 +3289,7 @@
 |-
 |real_estate_photography||
 |-
-|rental_services||
+|rental_services||{{tag|shop|rental}}
 |-
 |travel||
 |-
@@ -3451,7 +3479,7 @@
 |-
 |book_magazine_distribution||
 |-
-|broadcasting_media_production||
+|broadcasting_media_production||{{tag|office|media}}
 |-
 |game_publisher||
 |-
@@ -4137,7 +4165,7 @@
 |-
 |snuggle_service||
 |-
-|software_development||
+|software_development||{{tag|office|software}}
 |-
 |talent_agency||
 |-
@@ -4232,3 +4260,7 @@
 |tower||{{tag|man_made|tower}}
 |-
 |weir||{{tag|waterway|weir}}
+|}
+
+[[Category:Overture Maps]]
+    

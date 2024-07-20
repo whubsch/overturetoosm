@@ -1,6 +1,4 @@
 import json
-import os
-
 
 with open("scripts/tags.json", "r+", encoding="utf-8") as f:
     tags = json.load(f)
