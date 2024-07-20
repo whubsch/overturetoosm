@@ -1,6 +1,6 @@
 from collections import Counter
 import json
-from src.overture_to_osm.process import process_place_props
+from src.overture_to_osm.process import place_props
 from src.overture_to_osm.resources import tags
 
 # from ..src.overture_to_osm.process import process_place_props
