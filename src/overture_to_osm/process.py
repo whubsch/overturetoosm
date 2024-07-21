@@ -60,6 +60,8 @@ def place_props(
             new_props["addr:country"] = add.country
         if add.postcode:
             new_props["addr:postcode"] = add.postcode
+        if add.locality:
+            new_props["addr:city"] = add.locality
         if add.region:
             new_props[region_tag] = add.region
 
@@ -67,6 +69,13 @@ def place_props(
         new_props["source"] = (
             ", ".join({i.dataset for i in prop_obj.sources}) + " via overture_to_osm"
         )
+
+    if prop_obj.socials is not None:
+        for social in prop_obj.socials:
+            if "facebook" in social:
+                new_props["contact:facebook"] = social
+            elif "twitter" in social:
+                new_props["contact:twitter"] = social
 
     if prop_obj.brand:
         new_props["brand"] = prop_obj.brand.names.primary
@@ -108,6 +117,64 @@ def place_geojson(
 
     geojson["features"] = new_features
     return geojson
+
+
+class Sources(pydantic.BaseModel):
+    """Overture sources model."""
+
+    property: str
+    dataset: str
+    record_id: str
+    confidence: float | None
+
+
+class Names(pydantic.BaseModel):
+    """Overture names model."""
+
+    primary: str
+    common: str | None
+    rules: str | None
+
+
+class Addresses(pydantic.BaseModel):
+    """Overture addresses model."""
+
+    freeform: str | None
+    locality: str | None
+    postcode: str | None
+    region: str | None
+    country: str | None
+
+
+class Categories(pydantic.BaseModel):
+    """Overture categories model."""
+
+    main: str
+    alternate: list[str] | None
+
+
+class Brand(pydantic.BaseModel):
+    """Overture brand model."""
+
+    wikidata: str | None
+    names: Names
+
+
+class PlaceProps(pydantic.BaseModel):
+    """Overture properties model."""
+
+    id: str
+    version: int
+    update_time: str
+    sources: list[Sources]
+    names: Names
+    brand: Brand | None = None
+    categories: Categories | None = None
+    confidence: float = pydantic.Field(ge=0.0, le=1.0)
+    websites: list[str] | None = None
+    socials: list[str] | None = None
+    phones: list[str] | None = None
+    addresses: list[Addresses]
 
 
 class ConfidenceError(Exception):
@@ -165,61 +232,3 @@ class UnmatchedError(Exception):
 
     def __str__(self):
         return f"{self.message} {{category={self.category}}}"
-
-
-class Sources(pydantic.BaseModel):
-    """Overture sources model."""
-
-    property: str
-    dataset: str
-    record_id: str
-    confidence: float | None
-
-
-class Names(pydantic.BaseModel):
-    """Overture names model."""
-
-    primary: str
-    common: str | None
-    rules: str | None
-
-
-class Addresses(pydantic.BaseModel):
-    """Overture addresses model."""
-
-    freeform: str | None
-    locality: str | None
-    postcode: str | None
-    region: str | None
-    country: str | None
-
-
-class Categories(pydantic.BaseModel):
-    """Overture categories model."""
-
-    main: str
-    alternate: list[str] | None
-
-
-class Brand(pydantic.BaseModel):
-    """Overture brand model."""
-
-    wikidata: str | None
-    names: Names
-
-
-class PlaceProps(pydantic.BaseModel):
-    """Overture properties model."""
-
-    id: str
-    version: int
-    update_time: str
-    sources: list[Sources]
-    names: Names
-    brand: Brand | None = None
-    categories: Categories | None = None
-    confidence: float
-    websites: list[str] | None = None
-    socials: list[str] | None = None
-    phones: list[str] | None = None
-    addresses: list[Addresses]
