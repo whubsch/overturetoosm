@@ -11,4 +11,4 @@ pdoc.render.configure(
     docformat="google",
     footer_text="overturetoosm",
 )
-pdoc.pdoc("src/overturetoosm/process", output_directory=here.parent / "html")
+pdoc.pdoc("src/overturetoosm/process", output_directory=here.parent / "docs")
