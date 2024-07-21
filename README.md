@@ -27,7 +27,7 @@ pip install overturetoosm
 
 ## Docs
 
-The documentation for our package is available online at our [pdoc page](https://whubsch.github.io/overturetoosm/html/overturetoosm/process.html). We would greatly appreciate your contributions to help improve the auto-generated docs; please submit any updates or corrections via pull requests.
+The documentation for our package is available online at our [pdoc page](https://whubsch.github.io/overturetoosm/docs/overturetoosm/process.html). We would greatly appreciate your contributions to help improve the auto-generated docs; please submit any updates or corrections via pull requests.
 
 ## License
 
