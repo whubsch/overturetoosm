@@ -1,7 +1,7 @@
 from copy import deepcopy
 import pytest
 import pydantic
-from overturetoosm.places import (
+from src.overturetoosm.places import (
     ConfidenceError,
     UnmatchedError,
     process_geojson,
