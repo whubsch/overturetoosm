@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "overture-to-osm"
+name = "overturetoosm"
 dynamic = ["version"]
 description = 'Translate the Overture maps schema to OpenStreetMap tags.'
 readme = "README.md"
@@ -25,30 +25,27 @@ classifiers = [
 dependencies = ["pydantic"]
 
 [project.urls]
-Documentation = "https://github.com/whubsch/overture-to-osm#readme"
-Issues = "https://github.com/whubsch/overture-to-osm/issues"
-Source = "https://github.com/whubsch/overture-to-osm"
+Documentation = "https://github.com/whubsch/overturetoosm#readme"
+Issues = "https://github.com/whubsch/overturetoosm/issues"
+Source = "https://github.com/whubsch/overturetoosm"
 
 [tool.hatch.version]
-path = "src/overture_to_osm/__about__.py"
+path = "src/overturetoosm/__about__.py"
 
 [tool.hatch.envs.types]
 extra-dependencies = ["mypy>=1.0.0"]
 [tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/overture_to_osm tests}"
+check = "mypy --install-types --non-interactive {args:src/overturetoosm tests}"
 
 [tool.coverage.run]
-source_pkgs = ["overture_to_osm", "tests"]
+source_pkgs = ["overturetoosm", "tests"]
 branch = true
 parallel = true
-omit = ["src/overture_to_osm/__about__.py"]
+omit = ["src/overturetoosm/__about__.py"]
 
 [tool.coverage.paths]
-overture_to_osm = [
-  "src/overture_to_osm",
-  "*/overture-to-osm/src/overture_to_osm",
-]
-tests = ["tests", "*/overture-to-osm/tests"]
+overturetoosm = ["src/overturetoosm", "*/overturetoosm/src/overturetoosm"]
+tests = ["tests", "*/overturetoosm/tests"]
 
 [tool.coverage.report]
 exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]

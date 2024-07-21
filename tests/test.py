@@ -1,7 +1,7 @@
 from copy import deepcopy
 import pytest
 import pydantic
-from src.overture_to_osm.process import (
+from src.overturetoosm.process import (
     ConfidenceError,
     UnmatchedError,
     place_geojson,
@@ -19,7 +19,7 @@ clean = {
     "addr:country": "Country",
     "phone": "+1234567890",
     "website": "https://example.com",
-    "source": "dataset1 via overture_to_osm",
+    "source": "dataset1 via overturetoosm",
     "office": "lawyer",
     "lawyer": "notary",
     "contact:facebook": "www.facebook.com/example",
@@ -178,6 +178,23 @@ def test_unmatched_force(props_dict):
 def test_place_geojson(geojson_dict):
     """Test that all properties are processed correctly"""
     assert place_geojson(geojson_dict) == {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {"type": "Point", "coordinates": [-1, 1]},
+                "properties": clean,
+            }
+        ],
+    }
+
+
+def test_place_geojson_error(geojson_dict):
+    """Test that all properties are processed correctly when error flag is set"""
+    copy = deepcopy(geojson_dict)
+    copy["features"][0]["properties"]["categories"]["main"] = "invalid_category"
+    print(copy)
+    assert place_geojson(geojson_dict, unmatched="error") == {
         "type": "FeatureCollection",
         "features": [
             {

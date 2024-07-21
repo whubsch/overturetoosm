@@ -67,7 +67,7 @@ def place_props(
 
     if prop_obj.sources:
         new_props["source"] = (
-            ", ".join({i.dataset for i in prop_obj.sources}) + " via overture_to_osm"
+            ", ".join({i.dataset for i in prop_obj.sources}) + " via overturetoosm"
         )
 
     if prop_obj.socials is not None:
@@ -97,8 +97,8 @@ def place_geojson(
         region_tag (str, optional): What tag to convert Overture's `region` tag to.
             Defaults to `addr:state`.
         confidence (float, optional): The minimum confidence level. Defaults to 0.0.
-        unmatched (Literal["error", "force", "ignore"], optional): How to handle unmatched Overture categories.
-            The "error" option raises an UnmatchedError exception, "force" puts the
+        unmatched (Literal["error", "force", "ignore"], optional): How to handle unmatched Overture
+            categories. The "error" option skips unmatched places, "force" puts the
             category into the `type` key, and "ignore" only returns other properties.
             Defaults to "ignore".
 
@@ -112,7 +112,7 @@ def place_geojson(
                 feature["properties"], region_tag, confidence, unmatched
             )
             new_features.append(feature)
-        except ConfidenceError:
+        except (ConfidenceError, UnmatchedError):
             pass
 
     geojson["features"] = new_features
