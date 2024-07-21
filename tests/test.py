@@ -1,11 +1,11 @@
 from copy import deepcopy
 import pytest
 import pydantic
-from src.overturetoosm.process import (
+from overturetoosm.places import (
     ConfidenceError,
     UnmatchedError,
-    place_geojson,
-    place_props,
+    process_geojson,
+    process_props,
 )
 
 clean = {
@@ -131,28 +131,28 @@ def props_dict():
 
 def test_place_props(props_dict: dict):
     """Test that all properties are processed correctly"""
-    new_props = place_props(props_dict)
+    new_props = process_props(props_dict)
     assert new_props == clean
 
 
 def test_low_confidence(props_dict):
     """Test that properties with low confidence are not processed"""
     with pytest.raises(ConfidenceError):
-        place_props(props_dict, confidence=0.9)
+        process_props(props_dict, confidence=0.9)
 
 
 def test_confidence(props_dict):
     """Test that invalid properties are not processed"""
     props_dict["confidence"] = -0.1
     with pytest.raises(pydantic.ValidationError):
-        place_props(props_dict)
+        process_props(props_dict)
 
 
 def test_unmatched_error(props_dict):
     """Test that invalid properties are not processed"""
     props_dict["categories"]["main"] = "invalid_category"
     with pytest.raises(UnmatchedError):
-        place_props(props_dict, unmatched="error")
+        process_props(props_dict, unmatched="error")
 
 
 def test_unmatched_ignore(props_dict):
@@ -161,7 +161,7 @@ def test_unmatched_ignore(props_dict):
     cl = deepcopy(clean)
     del cl["office"]
     del cl["lawyer"]
-    assert place_props(props_dict, unmatched="ignore") == cl
+    assert process_props(props_dict, unmatched="ignore") == cl
 
 
 def test_unmatched_force(props_dict):
@@ -172,12 +172,12 @@ def test_unmatched_force(props_dict):
     del cl["office"]
     del cl["lawyer"]
     cl["type"] = cat
-    assert place_props(props_dict, unmatched="force") == cl
+    assert process_props(props_dict, unmatched="force") == cl
 
 
 def test_place_geojson(geojson_dict):
     """Test that all properties are processed correctly"""
-    assert place_geojson(geojson_dict) == {
+    assert process_geojson(geojson_dict) == {
         "type": "FeatureCollection",
         "features": [
             {
@@ -194,7 +194,7 @@ def test_place_geojson_error(geojson_dict):
     copy = deepcopy(geojson_dict)
     copy["features"][0]["properties"]["categories"]["main"] = "invalid_category"
     print(copy)
-    assert place_geojson(geojson_dict, unmatched="error") == {
+    assert process_geojson(geojson_dict, unmatched="error") == {
         "type": "FeatureCollection",
         "features": [
             {

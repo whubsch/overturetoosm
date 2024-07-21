@@ -1,4 +1,6 @@
-tags = {
+"""A mapping of Overture tags to OSM tags."""
+
+tags: dict[str, dict[str, str]] = {
     "eat_and_drink": {"amenity": "restaurant"},
     "restaurant": {"amenity": "restaurant"},
     "afghan_restaurant": {"amenity": "restaurant", "cuisine": "afghan"},
@@ -775,3 +777,6 @@ tags = {
     "tower": {"man_made": "tower"},
     "weir": {"waterway": "weir"},
 }
+"""dict[str, dict[str, str]]: A mapping of Overture to OSM tags,
+excluding blank values. This is downstream from the `scripts/tag.json`
+file."""

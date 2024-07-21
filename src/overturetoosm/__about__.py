@@ -1,4 +1,3 @@
-# SPDX-FileCopyrightText: 2024-present Will <wahubsch@gmail.com>
-#
-# SPDX-License-Identifier: MIT
+"""Top-level package for overturetoosm."""
+
 __version__ = "0.1.0"
