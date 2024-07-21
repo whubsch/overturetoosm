@@ -43,3 +43,5 @@ venv.bak/
 pip-log.txt
 pip-delete-this-directory.txt
 
+# Temporary files
+*scratch*.py

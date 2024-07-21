@@ -25,7 +25,7 @@ classifiers = [
 dependencies = ["pydantic"]
 
 [project.urls]
-Documentation = "https://github.com/whubsch/overturetoosm#readme"
+Documentation = "https://whubsch.github.io/overturetoosm/index.html"
 Issues = "https://github.com/whubsch/overturetoosm/issues"
 Source = "https://github.com/whubsch/overturetoosm"
 
