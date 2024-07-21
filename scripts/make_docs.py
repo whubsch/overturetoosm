@@ -10,7 +10,7 @@ here = Path(__file__).parent
 pdoc.render.configure(
     docformat="google",
     footer_text="overturetoosm",
-    favicon=str(here.parent) + "/public/favicon.ico",
-    logo=str(here.parent) + "/public/logo.svg",
+    favicon="../favicon.ico",
+    logo="../logo.svg",
 )
 pdoc.pdoc("src/overturetoosm", output_directory=here.parent / "docs")
