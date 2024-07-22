@@ -3,7 +3,7 @@
 from typing import Literal
 
 from .objects import PlaceProps, UnmatchedError, ConfidenceError
-from .resources import tags
+from .resources import places_tags
 
 
 def process_props(
@@ -52,7 +52,7 @@ def process_props(
         raise ConfidenceError(confidence, prop_obj.confidence)
 
     if prop_obj.categories:
-        prim = tags.get(prop_obj.categories.main)
+        prim = places_tags.get(prop_obj.categories.main)
         if prim:
             new_props |= prim
         elif unmatched == "force":
