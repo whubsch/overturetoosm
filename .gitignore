@@ -44,3 +44,4 @@ pip-delete-this-directory.txt
 # Temporary files
 *scratch*.py
 scripts/test*.py
+.pypirc
