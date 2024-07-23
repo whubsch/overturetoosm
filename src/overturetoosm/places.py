@@ -12,7 +12,7 @@ def process_props(
     confidence: float = 0.0,
     unmatched: Literal["error", "force", "ignore"] = "ignore",
 ) -> dict[str, str]:
-    """Convert Overture's properties to OSM tags.
+    """Convert Overture's places properties to OSM tags.
 
     Example usage:
     ```python

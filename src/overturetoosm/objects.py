@@ -8,8 +8,8 @@ class Sources(pydantic.BaseModel):
 
     property: str
     dataset: str
-    record_id: str
-    confidence: float | None
+    record_id: str | None = None
+    confidence: float = pydantic.Field(default=0.0)
 
 
 class Names(pydantic.BaseModel):
@@ -117,3 +117,26 @@ class UnmatchedError(Exception):
 
     def __str__(self):
         return f"{self.message} {{category={self.category}}}"
+
+
+class BuildingProps(pydantic.BaseModel):
+    """Overture building properties."""
+
+    version: int
+    class_: str = pydantic.Field(alias="class")
+    subtype: str
+    sources: list[Sources]
+    height: float | None = None
+    is_underground: bool | None = None
+    num_floors: int | None = None
+    num_floors_underground: int | None = None
+    min_height: float | None = None
+    min_floor: int | None = None
+    facade_color: str | None = None
+    facade_material: str | None = None
+    roof_material: str | None = None
+    roof_shape: str | None = None
+    roof_direction: str | None = None
+    roof_orientation: str | None = None
+    roof_color: str | None = None
+    roof_height: float | None = None
