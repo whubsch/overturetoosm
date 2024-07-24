@@ -3,6 +3,8 @@ name: documentation
 # build the documentation whenever there are new commits on main
 on:
   push:
+    tags:
+      - "*"
     branches:
       - main
 

@@ -1,5 +1,6 @@
 """Convert Overture's `buildings` features to OSM tags."""
 
+from .utils import source_statement
 from .objects import BuildingProps, ConfidenceError
 
 
@@ -7,7 +8,18 @@ def process_props(
     props: dict,
     confidence: float = 0.0,
 ) -> dict[str, str]:
-    """Convert Overture's properties properties to OSM tags."""
+    """Convert Overture's building properties to OSM tags.
+
+    Args:
+        props (dict): The feature properties from the Overture GeoJSON.
+        confidence (float, optional): The minimum confidence level. Defaults to 0.0.
+
+    Returns:
+        dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.
+
+    Raises:
+        `ConfidenceError`: Raised if the confidence level is set above a feature's confidence.
+    """
     new_props = {}
     prop_obj = BuildingProps(**props)
     confidences = [source.confidence for source in prop_obj.sources]
@@ -18,10 +30,7 @@ def process_props(
         new_props["building"] = prop_obj.class_
 
     if prop_obj.sources:
-        new_props["source"] = (
-            ", ".join(i.dataset.strip(", ") for i in prop_obj.sources)
-            + " via overturetoosm"
-        )
+        new_props["source"] = source_statement(prop_obj.sources)
 
     obj_dict = prop_obj.model_dump(exclude_none=True).items()
     new_props.update(
