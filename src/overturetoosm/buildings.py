@@ -1,5 +1,6 @@
 """Convert Overture's `buildings` features to OSM tags."""
 
+from typing import Dict
 from .utils import source_statement
 from .objects import BuildingProps, ConfidenceError
 
@@ -7,7 +8,7 @@ from .objects import BuildingProps, ConfidenceError
 def process_props(
     props: dict,
     confidence: float = 0.0,
-) -> dict[str, str]:
+) -> Dict[str, str]:
     """Convert Overture's building properties to OSM tags.
 
     Args:
@@ -15,7 +16,7 @@ def process_props(
         confidence (float, optional): The minimum confidence level. Defaults to 0.0.
 
     Returns:
-        dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.
+        Dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.
 
     Raises:
         `ConfidenceError`: Raised if the confidence level is set above a feature's confidence.

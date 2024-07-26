@@ -1,5 +1,6 @@
 """Pydantic models needed throughout the project."""
 
+from typing import List, Optional
 import pydantic
 
 
@@ -8,7 +9,7 @@ class Sources(pydantic.BaseModel):
 
     property: str
     dataset: str
-    record_id: str | None = None
+    record_id: Optional[str] = None
     confidence: float = pydantic.Field(default=0.0)
 
 
@@ -16,31 +17,31 @@ class Names(pydantic.BaseModel):
     """Overture names model."""
 
     primary: str
-    common: str | None
-    rules: str | None
+    common: Optional[str]
+    rules: Optional[str]
 
 
 class Addresses(pydantic.BaseModel):
     """Overture addresses model."""
 
-    freeform: str | None
-    locality: str | None
-    postcode: str | None
-    region: str | None
-    country: str | None
+    freeform: Optional[str]
+    locality: Optional[str]
+    postcode: Optional[str]
+    region: Optional[str]
+    country: Optional[str]
 
 
 class Categories(pydantic.BaseModel):
     """Overture categories model."""
 
     main: str
-    alternate: list[str] | None
+    alternate: Optional[List[str]]
 
 
 class Brand(pydantic.BaseModel):
     """Overture brand model."""
 
-    wikidata: str | None
+    wikidata: Optional[str]
     names: Names
 
 
@@ -50,15 +51,15 @@ class PlaceProps(pydantic.BaseModel):
     id: str
     version: int
     update_time: str
-    sources: list[Sources]
+    sources: List[Sources]
     names: Names
-    brand: Brand | None = None
-    categories: Categories | None = None
+    brand: Optional[Brand] = None
+    categories: Optional[Categories] = None
     confidence: float = pydantic.Field(ge=0.0, le=1.0)
-    websites: list[str] | None = None
-    socials: list[str] | None = None
-    phones: list[str] | None = None
-    addresses: list[Addresses]
+    websites: Optional[List[str]] = None
+    socials: Optional[List[str]] = None
+    phones: Optional[List[str]] = None
+    addresses: List[Addresses]
 
 
 class ConfidenceError(Exception):
@@ -125,18 +126,18 @@ class BuildingProps(pydantic.BaseModel):
     version: int
     class_: str = pydantic.Field(alias="class")
     subtype: str
-    sources: list[Sources]
-    height: float | None = None
-    is_underground: bool | None = None
-    num_floors: int | None = None
-    num_floors_underground: int | None = None
-    min_height: float | None = None
-    min_floor: int | None = None
-    facade_color: str | None = None
-    facade_material: str | None = None
-    roof_material: str | None = None
-    roof_shape: str | None = None
-    roof_direction: str | None = None
-    roof_orientation: str | None = None
-    roof_color: str | None = None
-    roof_height: float | None = None
+    sources: List[Sources]
+    height: Optional[float] = None
+    is_underground: Optional[bool] = None
+    num_floors: Optional[int] = None
+    num_floors_underground: Optional[int] = None
+    min_height: Optional[float] = None
+    min_floor: Optional[int] = None
+    facade_color: Optional[str] = None
+    facade_material: Optional[str] = None
+    roof_material: Optional[str] = None
+    roof_shape: Optional[str] = None
+    roof_direction: Optional[str] = None
+    roof_orientation: Optional[str] = None
+    roof_color: Optional[str] = None
+    roof_height: Optional[float] = None

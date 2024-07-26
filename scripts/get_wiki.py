@@ -1,12 +1,13 @@
 import json
 import logging
 import re
+from typing import List, Dict
 
 import requests
 from bs4 import BeautifulSoup
 
 
-def equals_to_dict(pairs: list[str]) -> dict[str, str]:
+def equals_to_dict(pairs: List[str]) -> Dict[str, str]:
     """Convert a string in the format "key=value" into a dictionary."""
     return {
         key.strip(): value.strip() for key, value in (pair.split("=") for pair in pairs)

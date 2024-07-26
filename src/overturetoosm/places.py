@@ -1,6 +1,6 @@
 """Convert Overture's `places` features to OSM tags."""
 
-from typing import Literal
+from typing import Literal, List, Dict
 
 from .objects import PlaceProps, UnmatchedError, ConfidenceError
 from .resources import places_tags
@@ -11,7 +11,7 @@ def process_props(
     region_tag: str = "addr:state",
     confidence: float = 0.0,
     unmatched: Literal["error", "force", "ignore"] = "ignore",
-) -> dict[str, str]:
+) -> Dict[str, str]:
     """Convert Overture's places properties to OSM tags.
 
     Example usage:
@@ -54,14 +54,14 @@ def process_props(
     if prop_obj.categories:
         prim = places_tags.get(prop_obj.categories.main)
         if prim:
-            new_props |= prim
+            new_props = {**new_props, **prim}
         elif unmatched == "force":
-            new_props |= {"type": prop_obj.categories.main}
+            new_props["type"] = prop_obj.categories.main
         elif unmatched == "error":
             raise UnmatchedError(prop_obj.categories.main)
 
     if prop_obj.names.primary:
-        new_props |= {"name": prop_obj.names.primary}
+        new_props["name"] = prop_obj.names.primary
 
     if prop_obj.phones is not None:
         new_props["phone"] = prop_obj.phones[0]

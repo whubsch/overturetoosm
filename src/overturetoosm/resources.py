@@ -1,6 +1,9 @@
 """A mapping of Overture tags to OSM tags."""
 
-places_tags: dict[str, dict[str, str]] = {
+from typing import Dict
+
+
+places_tags: Dict[str, Dict[str, str]] = {
     "eat_and_drink": {"amenity": "restaurant"},
     "restaurant": {"amenity": "restaurant"},
     "afghan_restaurant": {"amenity": "restaurant", "cuisine": "afghan"},
@@ -777,6 +780,6 @@ places_tags: dict[str, dict[str, str]] = {
     "tower": {"man_made": "tower"},
     "weir": {"waterway": "weir"},
 }
-"""dict[str, dict[str, str]]: A mapping of Overture to OSM place tags,
+"""Dict[str, Dict[str, str]]: A mapping of Overture to OSM place tags,
 excluding blank values. This is downstream from the `scripts/tag.json`
 file."""
