@@ -5,7 +5,7 @@ from .utils import source_statement
 from .objects import BuildingProps, ConfidenceError
 
 
-def process_props(
+def process_building(
     props: dict,
     confidence: float = 0.0,
 ) -> Dict[str, str]:
@@ -19,7 +19,8 @@ def process_props(
         Dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.
 
     Raises:
-        `ConfidenceError`: Raised if the confidence level is set above a feature's confidence.
+        `overturetoosm.objects.ConfidenceError`: Raised if the confidence level is set
+            above a feature's confidence.
     """
     new_props = {}
     prop_obj = BuildingProps(**props)
@@ -27,11 +28,9 @@ def process_props(
     if any(conf < confidence for conf in confidences):
         raise ConfidenceError(confidence, max(confidences))
 
-    if prop_obj.class_:
-        new_props["building"] = prop_obj.class_
+    new_props["building"] = prop_obj.class_
 
-    if prop_obj.sources:
-        new_props["source"] = source_statement(prop_obj.sources)
+    new_props["source"] = source_statement(prop_obj.sources)
 
     obj_dict = prop_obj.model_dump(exclude_none=True).items()
     new_props.update(

@@ -1,15 +1,15 @@
 """Convert Overture's `places` features to OSM tags."""
 
-from typing import Literal, List, Dict
+from typing import Literal, Dict
 
 from .objects import PlaceProps, UnmatchedError, ConfidenceError
 from .resources import places_tags
 
 
-def process_props(
+def process_place(
     props: dict,
-    region_tag: str = "addr:state",
     confidence: float = 0.0,
+    region_tag: str = "addr:state",
     unmatched: Literal["error", "force", "ignore"] = "ignore",
 ) -> Dict[str, str]:
     """Convert Overture's places properties to OSM tags.
@@ -17,13 +17,13 @@ def process_props(
     Example usage:
     ```python
     import json
-    from overturetoosm.places import process_props
+    from overturetoosm import process_place
 
     with open("overture.geojson", "r", encoding="utf-8") as f:
         contents: dict = json.load(f)
 
         for feature in contents["features"]:
-            feature["properties"] = process_props(feature["properties"])
+            feature["properties"] = process_place(feature["properties"], confidence=0.5)
 
     with open("overture_out.geojson", "w+", encoding="utf-8") as x:
         json.dump(contents, x, indent=4)
@@ -42,9 +42,10 @@ def process_props(
         dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.
 
     Raises:
-        `UnmatchedError`: Raised if `unmatched` is set to `error` and the Overture category
-            has no OSM definition.
-        `ConfidenceError`: Raised if the confidence level is set above a feature's confidence.
+        `overturetoosm.objects.UnmatchedError`: Raised if `unmatched` is set to `error` and
+            the Overture category has no OSM definition.
+        `overturetoosm.objects.ConfidenceError`: Raised if the confidence level is set
+            above a feature's confidence.
     """
     new_props = {}
     prop_obj = PlaceProps(**props)
@@ -98,50 +99,3 @@ def process_props(
         new_props["brand:wikidata"] = prop_obj.brand.wikidata
 
     return new_props
-
-
-def process_geojson(
-    geojson: dict,
-    region_tag: str = "addr:state",
-    confidence: float = 0.0,
-    unmatched: Literal["error", "force", "ignore"] = "ignore",
-) -> dict:
-    """Convert an Overture `place` GeoJSON to one that follows OSM's schema.
-
-    Example usage:
-    ```python
-    import json
-    from overturetoosm.places import process_geojson
-
-    with open("overture.geojson", "r", encoding="utf-8") as f:
-        contents: dict = json.load(f)
-        geojson = process_geojson(contents)
-
-    with open("overture_out.geojson", "w+", encoding="utf-8") as x:
-        json.dump(geojson, x, indent=4)
-    ```
-    Args:
-        geojson (dict): The dictionary representation of the Overture GeoJSON.
-        region_tag (str, optional): What tag to convert Overture's `region` tag to.
-            Defaults to `addr:state`.
-        confidence (float, optional): The minimum confidence level. Defaults to 0.0.
-        unmatched (Literal["error", "force", "ignore"], optional): How to handle unmatched Overture
-            categories. The "error" option skips unmatched places, "force" puts the
-            category into the `type` key, and "ignore" only returns other properties.
-            Defaults to "ignore".
-
-    Returns:
-        dict: The dictionary representation of the GeoJSON that follows OSM's schema.
-    """
-    new_features = []
-    for feature in geojson["features"]:
-        try:
-            feature["properties"] = process_props(
-                feature["properties"], region_tag, confidence, unmatched
-            )
-            new_features.append(feature)
-        except (ConfidenceError, UnmatchedError):
-            pass
-
-    geojson["features"] = new_features
-    return geojson

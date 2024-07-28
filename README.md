@@ -5,7 +5,7 @@
 ![PyPI - Version](https://img.shields.io/pypi/v/overturetoosm)
 ![Pepy Total Downlods](https://img.shields.io/pepy/dt/overturetoosm)
 
-This Python project translates objects from the Overture maps schema to the OpenStreetMap (OSM) tagging scheme. The goal is to provide a seamless way to convert map data from Overture's format to a format that can be utilized within the OSM ecosystem. The package currently only supports Overture's `places` layer. You can improve the Overture categorization that this package uses by editing [the Overture categories page](https://wiki.openstreetmap.org/wiki/Overture_categories) on the OSM Wiki or submitting a pull request to the [tags.json](scripts/tags.json) file.
+This Python project translates objects from the Overture maps schema to the OpenStreetMap (OSM) tagging scheme. The goal is to provide a seamless way to convert map data from Overture's format to a format that can be utilized within the OSM ecosystem. The package currently only supports Overture's `places` and `buildings` layers. You can improve the Overture categorization that this package uses by editing [the Overture categories page](https://wiki.openstreetmap.org/wiki/Overture_categories) on the OSM Wiki or submitting a pull request to the [tags.json](scripts/tags.json) file.
 
 > [!NOTE]
 > Use of this package does not absolve you from following OSM's [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines).
@@ -33,7 +33,7 @@ pip install overturetoosm
 
 ## Docs
 
-The documentation for our package is available online at our [pdoc page](https://whubsch.github.io/overturetoosm/index.html). We would greatly appreciate your contributions to help improve the auto-generated docs; please submit any updates or corrections via pull requests.
+The documentation for our package is available online at our [documentation page](https://whubsch.github.io/overturetoosm/index.html). We would greatly appreciate your contributions to help improve the auto-generated docs; please submit any updates or corrections via pull requests.
 
 ## License
 

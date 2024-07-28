@@ -46,3 +46,4 @@ pip-delete-this-directory.txt
 *scratch*.py
 scripts/test*.py
 .pypirc
+.coverage

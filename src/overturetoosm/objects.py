@@ -1,6 +1,6 @@
 """Pydantic models needed throughout the project."""
 
-from typing import List, Optional
+from typing import Dict, List, Optional
 import pydantic
 
 
@@ -17,8 +17,8 @@ class Names(pydantic.BaseModel):
     """Overture names model."""
 
     primary: str
-    common: Optional[str]
-    rules: Optional[str]
+    common: Optional[Dict[str, str]]
+    rules: Optional[List[Dict[str, str]]]
 
 
 class Addresses(pydantic.BaseModel):
@@ -46,7 +46,10 @@ class Brand(pydantic.BaseModel):
 
 
 class PlaceProps(pydantic.BaseModel):
-    """Overture properties model."""
+    """Overture properties model.
+
+    Use this model directly if you want to manipulate the `place` properties yourself.
+    """
 
     id: str
     version: int
@@ -66,8 +69,9 @@ class ConfidenceError(Exception):
     """
     Confidence error exception.
 
-    This exception is raised when the confidence level of an item is too low.
-    It contains the original confidence level and the confidence level of the item.
+    This exception is raised when the confidence level of an item is below the
+    user-defined level. It contains the original confidence level and the confidence
+    level of the item.
 
     Attributes:
         confidence_level (float): The set confidence level.
@@ -80,14 +84,15 @@ class ConfidenceError(Exception):
         confidence_level: float,
         confidence_item: float,
         message: str = "Confidence in this item is too low.",
-    ):
+    ) -> None:
         """@private"""
         self.confidence_level = confidence_level
         self.confidence_item = confidence_item
         self.message = message
         super().__init__(message)
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """@private"""
         conf = f"confidence_level={self.confidence_level}, confidence_item={self.confidence_item}"
         return f"""{self.message} {conf}"""
 
@@ -110,18 +115,22 @@ class UnmatchedError(Exception):
         self,
         category: str,
         message: str = "Overture category is unmatched.",
-    ):
+    ) -> None:
         """@private"""
         self.category = category
         self.message = message
         super().__init__(message)
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """@private"""
         return f"{self.message} {{category={self.category}}}"
 
 
 class BuildingProps(pydantic.BaseModel):
-    """Overture building properties."""
+    """Overture building properties.
+
+    Use this model directly if you want to manipulate the `building` properties yourself.
+    """
 
     version: int
     class_: str = pydantic.Field(alias="class")
