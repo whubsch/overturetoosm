@@ -1,4 +1,4 @@
-name: Run Black formatter
+name: formatter
 
 on: [push, pull_request]
 
