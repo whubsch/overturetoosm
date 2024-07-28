@@ -1,11 +1,12 @@
 """`overturetoosm` is a Python package to convert objects tagged in the 
 Overture schema for use in OSM. Only Overture's `places` and `buildings` 
 layers are currently supported.
-"""
 
-# SPDX-FileCopyrightText: 2024-present Will <wahubsch@gmail.com>
-#
-# SPDX-License-Identifier: MIT
+Links:
+* [Project GitHub](https://github.com/whubsch/overturetoosm)
+* [Documentation](https://whubsch.github.io/overturetoosm/)
+* [PyPI](https://pypi.org/project/overturetoosm/)
+"""
 
 from .places import process_place
 from .buildings import process_building

@@ -5,7 +5,7 @@
 ![PyPI - Version](https://img.shields.io/pypi/v/overturetoosm)
 ![Pepy Total Downlods](https://img.shields.io/pepy/dt/overturetoosm)
 
-This Python project translates objects from the Overture maps schema to the OpenStreetMap (OSM) tagging scheme. The goal is to provide a seamless way to convert map data from Overture's format to a format that can be utilized within the OSM ecosystem. The package currently only supports Overture's `places` and `buildings` layers. You can improve the Overture categorization that this package uses by editing [the Overture categories page](https://wiki.openstreetmap.org/wiki/Overture_categories) on the OSM Wiki or submitting a pull request to the [tags.json](scripts/tags.json) file.
+This Python project translates objects from the Overture maps schema to the OpenStreetMap (OSM) tagging scheme. The goal is to provide a seamless way to convert map data from Overture's format to a format that can be utilized within the OSM ecosystem. The package currently only supports Overture's `places` and `buildings` layers. You can improve the Overture categorization that this package uses by editing [the Overture categories page](https://wiki.openstreetmap.org/wiki/Overture_categories) on the OSM Wiki or submitting a pull request to the [tags.json](https://github.com/whubsch/overturetoosm/blob/main/scripts/tags.json) file.
 
 > [!NOTE]
 > Use of this package does not absolve you from following OSM's [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines).
@@ -20,7 +20,7 @@ This Python project translates objects from the Overture maps schema to the Open
 ## Features
 
 - Translate Overture map places to OSM tags.
-- Handle various map object types, including roads, buildings, and points of interest.
+- Handle various map object types, including buildings and points of interest.
 - Ensure compatibility with OSM data structures and conventions.
 
 ## Usage
@@ -37,7 +37,7 @@ The documentation for our package is available online at our [documentation page
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/whubsch/overturetoosm/blob/main/LICENSE.txt) file for details.
 
 ## See also
 

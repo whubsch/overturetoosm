@@ -14,6 +14,7 @@ authors = [{ name = "Will", email = "wahubsch@gmail.com" }]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
@@ -21,6 +22,9 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
+  "Framework :: Hatch",
+  "License :: OSI Approved :: MIT License",
+  "Typing :: Typed",
 ]
 dependencies = ["pydantic"]
 

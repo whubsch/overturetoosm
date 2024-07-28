@@ -20,7 +20,7 @@ def process_geojson(
     Example usage:
     ```python
     import json
-    from overturetoosm.places import process_geojson
+    from overturetoosm import process_geojson
 
     with open("overture.geojson", "r", encoding="utf-8") as f:
         contents: dict = json.load(f)
