@@ -68,7 +68,7 @@ def process_place(
         new_props["phone"] = prop_obj.phones[0]
 
     if prop_obj.websites is not None:
-        new_props["website"] = prop_obj.websites[0]
+        new_props["website"] = str(prop_obj.websites[0])
 
     if add := prop_obj.addresses[0]:
         if add.freeform:
@@ -89,10 +89,11 @@ def process_place(
 
     if prop_obj.socials is not None:
         for social in prop_obj.socials:
-            if "facebook" in str(social):
-                new_props["contact:facebook"] = social
+            social_str = str(social)
+            if "facebook" in social_str:
+                new_props["contact:facebook"] = social_str
             elif "twitter" in str(social):
-                new_props["contact:twitter"] = social
+                new_props["contact:twitter"] = social_str
 
     if prop_obj.brand:
         new_props["brand"] = prop_obj.brand.names.primary

@@ -24,11 +24,11 @@ def clean_fix() -> Dict[str, Any]:
         "addr:state": "CA",
         "addr:country": "US",
         "phone": "+1234567890",
-        "website": "https://example.com",
+        "website": "https://example.com/",
         "source": "dataset1 via overturetoosm",
         "office": "lawyer",
         "lawyer": "notary",
-        "contact:facebook": "https://www.facebook.com/example",
+        "contact:facebook": "https://www.facebook.com/example/",
     }
 
 
@@ -71,8 +71,8 @@ def geojson_fix() -> Dict[str, Any]:
                         "alternate": ["alternate_category1", "alternate_category2"],
                     },
                     "confidence": 0.8,
-                    "websites": ["https://example.com"],
-                    "socials": ["https://www.facebook.com/example"],
+                    "websites": ["https://example.com/"],
+                    "socials": ["https://www.facebook.com/example/"],
                     "phones": ["+1234567890"],
                     "addresses": [
                         {
@@ -122,8 +122,8 @@ def props_fix() -> Dict[str, Any]:
             "alternate": ["alternate_category1", "alternate_category2"],
         },
         "confidence": 0.8,
-        "websites": ["https://example.com"],
-        "socials": ["https://www.facebook.com/example"],
+        "websites": ["https://example.com/"],
+        "socials": ["https://www.facebook.com/example/"],
         "phones": ["+1234567890"],
         "addresses": [
             {
@@ -163,9 +163,9 @@ def test_place_props_no_category(props_dict: dict, clean_dict: dict) -> None:
 
 def test_place_props_twitter(props_dict: dict, clean_dict: dict) -> None:
     """Test that all properties are processed correctly"""
-    props_dict["socials"].append("https://twitter.com/example")
+    props_dict["socials"].append("https://twitter.com/example/")
     new_props = process_place(props_dict)
-    clean_dict["contact:twitter"] = "https://twitter.com/example"
+    clean_dict["contact:twitter"] = "https://twitter.com/example/"
     assert new_props == clean_dict
 
 
