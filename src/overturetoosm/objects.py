@@ -178,4 +178,4 @@ class AddressProps(OvertureBase):
     street: Optional[str] = Field(serialization_alias="addr:street")
     postcode: Optional[str] = Field(serialization_alias="addr:postcode")
     country: Optional[str] = Field(serialization_alias="addr:country")
-    address_levels: Optional[List[AddressLevel]] = None
+    address_levels: Optional[List[AddressLevel]] = Field(default_factory=list)
