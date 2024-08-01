@@ -22,13 +22,13 @@ def clean_fix() -> Dict[str, Any]:
         "addr:city": "City",
         "addr:postcode": "12345",
         "addr:state": "CA",
-        "addr:country": "Country",
+        "addr:country": "US",
         "phone": "+1234567890",
         "website": "https://example.com",
         "source": "dataset1 via overturetoosm",
         "office": "lawyer",
         "lawyer": "notary",
-        "contact:facebook": "www.facebook.com/example",
+        "contact:facebook": "https://www.facebook.com/example",
     }
 
 
@@ -72,7 +72,7 @@ def geojson_fix() -> Dict[str, Any]:
                     },
                     "confidence": 0.8,
                     "websites": ["https://example.com"],
-                    "socials": ["www.facebook.com/example"],
+                    "socials": ["https://www.facebook.com/example"],
                     "phones": ["+1234567890"],
                     "addresses": [
                         {
@@ -80,7 +80,7 @@ def geojson_fix() -> Dict[str, Any]:
                             "locality": "City",
                             "postcode": "12345",
                             "region": "CA",
-                            "country": "Country",
+                            "country": "US",
                         }
                     ],
                 },
@@ -123,7 +123,7 @@ def props_fix() -> Dict[str, Any]:
         },
         "confidence": 0.8,
         "websites": ["https://example.com"],
-        "socials": ["www.facebook.com/example"],
+        "socials": ["https://www.facebook.com/example"],
         "phones": ["+1234567890"],
         "addresses": [
             {
@@ -131,7 +131,7 @@ def props_fix() -> Dict[str, Any]:
                 "locality": "City",
                 "postcode": "12345",
                 "region": "CA",
-                "country": "Country",
+                "country": "US",
             }
         ],
     }

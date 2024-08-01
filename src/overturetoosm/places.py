@@ -89,9 +89,9 @@ def process_place(
 
     if prop_obj.socials is not None:
         for social in prop_obj.socials:
-            if "facebook" in social:
+            if "facebook" in str(social):
                 new_props["contact:facebook"] = social
-            elif "twitter" in social:
+            elif "twitter" in str(social):
                 new_props["contact:twitter"] = social
 
     if prop_obj.brand:

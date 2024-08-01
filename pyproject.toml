@@ -22,7 +22,6 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
-  "Framework :: Hatch",
   "License :: OSI Approved :: MIT License",
   "Typing :: Typed",
 ]

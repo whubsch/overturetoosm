@@ -1,19 +1,20 @@
 """Pydantic models needed throughout the project."""
 
 from typing import Dict, List, Optional
-import pydantic
+from pydantic import AnyUrl, BaseModel, Field
 
 
-class Sources(pydantic.BaseModel):
+class Sources(BaseModel):
     """Overture sources model."""
 
     property: str
     dataset: str
     record_id: Optional[str] = None
-    confidence: float = pydantic.Field(default=0.0)
+    confidence: float = Field(default=0.0)
+    update_time: Optional[str] = None
 
 
-class Names(pydantic.BaseModel):
+class Names(BaseModel):
     """Overture names model."""
 
     primary: str
@@ -21,48 +22,57 @@ class Names(pydantic.BaseModel):
     rules: Optional[List[Dict[str, str]]]
 
 
-class Addresses(pydantic.BaseModel):
+class Address(BaseModel):
     """Overture addresses model."""
 
     freeform: Optional[str]
     locality: Optional[str]
     postcode: Optional[str]
     region: Optional[str]
-    country: Optional[str]
+    country: Optional[str] = Field(pattern=r"^[A-Z]{2}$")
 
 
-class Categories(pydantic.BaseModel):
+class Categories(BaseModel):
     """Overture categories model."""
 
     main: str
     alternate: Optional[List[str]]
 
 
-class Brand(pydantic.BaseModel):
+class Brand(BaseModel):
     """Overture brand model."""
 
-    wikidata: Optional[str]
+    wikidata: Optional[str] = Field(pattern=r"Q[0-9]+")
     names: Names
 
 
-class PlaceProps(pydantic.BaseModel):
+class OvertureBase(BaseModel):
+    """Overture base model."""
+
+    theme: str
+    type: str
+    version: int
+
+
+class PlaceProps(BaseModel):
     """Overture properties model.
 
     Use this model directly if you want to manipulate the `place` properties yourself.
     """
 
-    id: str
+    id: Optional[str] = None
     version: int
     update_time: str
     sources: List[Sources]
     names: Names
     brand: Optional[Brand] = None
     categories: Optional[Categories] = None
-    confidence: float = pydantic.Field(ge=0.0, le=1.0)
-    websites: Optional[List[str]] = None
-    socials: Optional[List[str]] = None
+    confidence: float = Field(ge=0.0, le=1.0)
+    websites: Optional[List[AnyUrl]] = None
+    socials: Optional[List[AnyUrl]] = None
+    emails: Optional[List[str]] = None
     phones: Optional[List[str]] = None
-    addresses: List[Addresses]
+    addresses: List[Address]
 
 
 class ConfidenceError(Exception):
@@ -126,14 +136,14 @@ class UnmatchedError(Exception):
         return f"{self.message} {{category={self.category}}}"
 
 
-class BuildingProps(pydantic.BaseModel):
+class BuildingProps(BaseModel):
     """Overture building properties.
 
     Use this model directly if you want to manipulate the `building` properties yourself.
     """
 
     version: int
-    class_: str = pydantic.Field(alias="class")
+    class_: str = Field(alias="class")
     subtype: str
     sources: List[Sources]
     height: Optional[float] = None
@@ -150,3 +160,22 @@ class BuildingProps(pydantic.BaseModel):
     roof_orientation: Optional[str] = None
     roof_color: Optional[str] = None
     roof_height: Optional[float] = None
+
+
+class AddressLevel(BaseModel):
+    """Overture address level model."""
+
+    value: str
+
+
+class AddressProps(OvertureBase):
+    """Overture address properties.
+
+    Use this model directly if you want to manipulate the `address` properties yourself.
+    """
+
+    number: Optional[str] = Field(serialization_alias="addr:housenumber")
+    street: Optional[str] = Field(serialization_alias="addr:street")
+    postcode: Optional[str] = Field(serialization_alias="addr:postcode")
+    country: Optional[str] = Field(serialization_alias="addr:country")
+    address_levels: Optional[List[AddressLevel]] = None
