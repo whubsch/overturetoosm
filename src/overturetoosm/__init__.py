@@ -14,6 +14,7 @@ from .addresses import process_address
 from .utils import process_geojson
 from . import places
 from . import buildings
+from . import addresses
 from . import objects
 from . import utils
 from . import resources
@@ -25,6 +26,7 @@ __all__ = [
     "process_geojson",
     "places",
     "buildings",
+    "addresses",
     "objects",
     "utils",
     "resources",
