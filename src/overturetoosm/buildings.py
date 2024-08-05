@@ -24,11 +24,11 @@ def process_building(
     """
     new_props = {}
     prop_obj = BuildingProps(**props)
-    confidences = [source.confidence for source in prop_obj.sources]
-    if any(conf < confidence for conf in confidences):
-        raise ConfidenceError(confidence, max(confidences))
+    confidences = {source.confidence for source in prop_obj.sources}
+    if any(conf and conf < confidence for conf in confidences):
+        raise ConfidenceError(confidence, max({i for i in confidences if i}))
 
-    new_props["building"] = prop_obj.class_
+    new_props["building"] = prop_obj.class_ if prop_obj.class_ else "yes"
 
     new_props["source"] = source_statement(prop_obj.sources)
 
@@ -42,7 +42,7 @@ def process_building(
             if k.startswith(("roof", "facade"))
         }
     )
-    new_props.update({k: v for k, v in obj_dict if k.endswith("height")})
+    new_props.update({k: round(v, 2) for k, v in obj_dict if k.endswith("height")})
 
     if prop_obj.is_underground:
         new_props["location"] = "underground"

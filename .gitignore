@@ -48,3 +48,4 @@ pip-delete-this-directory.txt
 scripts/test*.py
 .pypirc
 .coverage
+.vscode

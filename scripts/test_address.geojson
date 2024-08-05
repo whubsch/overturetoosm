@@ -1,0 +1,1030 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0952843418735, 38.8884095725465]
+      },
+      "properties": {
+        "id": "08b2aa84eb773fff053efcfdcf595f6e",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Price Street",
+        "number": "1210",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0946524094105, 38.8880333552528]
+      },
+      "properties": {
+        "id": "08b2aa84eb744fff057c2aa90b511b0a",
+        "country": "US",
+        "postcode": "22301",
+        "street": "Luray Boulevard",
+        "number": "3033",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0938505821711, 38.8880329035531]
+      },
+      "properties": {
+        "id": "08b2aa84eb76efff059929eef2cb201f",
+        "country": "US",
+        "postcode": "22301",
+        "street": "Luray Boulevard",
+        "number": "2930",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0948453783133, 38.8884673715967]
+      },
+      "properties": {
+        "id": "08b2aa84eb771fff05db5a9905fbcfdb",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Price Street",
+        "number": "1209",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0949344956811, 38.8887842607555]
+      },
+      "properties": {
+        "id": "08b2aa84eb775fff05a83a75368a604f",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Russell Street",
+        "number": "1301",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0940155658578, 38.8884621099566]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff0537f0d9cd9fb7c6",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1407",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0940254563091, 38.8885042967619]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff05f09b4ddb6d7e06",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1411",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.093967212241, 38.8883943889432]
+      },
+      "properties": {
+        "id": "08b2aa84eb763fff055a0cdb2b72ea20",
+        "country": "US",
+        "postcode": "22301",
+        "street": "Luray Boulevard",
+        "number": "2933",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0938248418449, 38.8884875343377]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff055b4b23b3d3a81e",
+        "country": "US",
+        "postcode": "22301",
+        "street": "Luray Boulevard",
+        "number": "2925",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0944643920215, 38.8886344684967]
+      },
+      "properties": {
+        "id": "08b2aa84eb762fff05ceb4caa451be55",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1418",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0939281058818, 38.888747502849]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff05563aa7bfb7f8bd",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1423",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.093494445975, 38.8881636348318]
+      },
+      "properties": {
+        "id": "08b2aa84eb761fff0560ab7b871767b0",
+        "country": "US",
+        "postcode": "22301",
+        "street": "Luray Boulevard",
+        "number": "2900",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0937344434796, 38.8885819752649]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff05105f06316e8eb6",
+        "country": "US",
+        "postcode": "22301",
+        "street": "Luray Boulevard",
+        "number": "2915",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0935965727447, 38.888650086264]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff055027e9d9073166",
+        "country": "US",
+        "postcode": "22301",
+        "street": "Luray Boulevard",
+        "number": "2909",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0935112822, 38.8886992903194]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff0556740b87d4b1ed",
+        "country": "US",
+        "postcode": "22301",
+        "street": "Luray Boulevard",
+        "number": "2907",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0934463124454, 38.888740635824]
+      },
+      "properties": {
+        "id": "08b2aa84eb765fff05a47be3d2cf3f77",
+        "country": "US",
+        "postcode": "22301",
+        "street": "Luray Boulevard",
+        "number": "2901",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.095381139837, 38.8889351238984]
+      },
+      "properties": {
+        "id": "08b2aa84eb770fff054529268b956f88",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Bellefonte Street",
+        "number": "1306",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0949598155957, 38.8890163861108]
+      },
+      "properties": {
+        "id": "08b2aa84eb775fff05f41b41689425fc",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Russell Street",
+        "number": "1307",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0949615107166, 38.8891864694615]
+      },
+      "properties": {
+        "id": "08b2aa84eb774fff0523f93e22978b6c",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Russell Street",
+        "number": "1311",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0949799531294, 38.8893212463606]
+      },
+      "properties": {
+        "id": "08b2aa84eb774fff05c0c0771bfb0a10",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1403",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0949948283322, 38.889458727554]
+      },
+      "properties": {
+        "id": "08b2aa84eb774fff0536938c7bde4ab0",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1407",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0945380035692, 38.8892710603412]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dbfff054661ef988a4e4b",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Commonwealth Street",
+        "number": "1512",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0945153354813, 38.8894704547281]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dbfff05d703623b7c61a1",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Cliff Street",
+        "number": "1518",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0944203422333, 38.8888616445819]
+      },
+      "properties": {
+        "id": "08b2aa84eb775fff05724363b987aca1",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1422",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0944414095233, 38.889041763446]
+      },
+      "properties": {
+        "id": "08b2aa84eb775fff05e7ff386da3d2ec",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1506",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0940359773777, 38.8890163427594]
+      },
+      "properties": {
+        "id": "08b2aa84eb766fff05fcb2a666e91241",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1505",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.093944683392, 38.8888877505566]
+      },
+      "properties": {
+        "id": "08b2aa84eb766fff05ba383f3d69ffec",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1501",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0940485322321, 38.8891036258194]
+      },
+      "properties": {
+        "id": "08b2aa84eb766fff05bb9c6e561a1bc1",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1509",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0944172125028, 38.8893649653292]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dbfff05ca18d9b532cecc",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Bellefonte Street",
+        "number": "1514",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.094032413761, 38.8892249996478]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d9fff0513da27893469bb",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1511",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0940508543772, 38.889359777173]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d9fff05359b73029fa504",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Cliff Street",
+        "number": "1515",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0940691341949, 38.8895027911491]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d8fff057cd30b134ef840",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Cliff Street",
+        "number": "1519",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0949710589098, 38.8895851728469]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dafff058627e6caaa1db8",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1411",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0945336970457, 38.8896093501346]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dafff05fb68266fdacab7",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Clyde Street",
+        "number": "1600",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.094085765604, 38.8896402929675]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d8fff054c8c25d78bb1b8",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Commonwealth Street",
+        "number": "1601",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0935664513349, 38.8890932949172]
+      },
+      "properties": {
+        "id": "08b2aa84eb764fff0578e4e4be63d540",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1414",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0934595922403, 38.8889163785969]
+      },
+      "properties": {
+        "id": "08b2aa84eb764fff05ba864888314c2f",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1408",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0935081138421, 38.8893089304246]
+      },
+      "properties": {
+        "id": "08b2aa84eb0cafff054fad164dde06f6",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1422",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0935307729468, 38.8894973065374]
+      },
+      "properties": {
+        "id": "08b2aa84eb0ddfff051fa583dbc10a7d",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1428",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.093547267812, 38.8896416725082]
+      },
+      "properties": {
+        "id": "08b2aa84eb0ddfff05433d181621c051",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1430",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0931278830334, 38.8896180315255]
+      },
+      "properties": {
+        "id": "08b2aa84eb0cefff05a28e79389b9abc",
+        "country": "US",
+        "postcode": "22301",
+        "street": "North Windsor Street",
+        "number": "1431",
+        "address_levels": [{ "value": "VA" }, { "value": "Alexandria City" }],
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "NAD",
+            "record_id": null,
+            "update_time": null,
+            "confidence": null
+          }
+        ]
+      }
+    }
+  ]
+}

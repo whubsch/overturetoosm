@@ -4,6 +4,7 @@ from typing import Literal, Dict
 
 from .objects import PlaceProps, UnmatchedError, ConfidenceError
 from .resources import places_tags
+from .utils import source_statement
 
 
 def process_place(
@@ -83,9 +84,7 @@ def process_place(
             new_props[region_tag] = add.region
 
     if prop_obj.sources:
-        new_props["source"] = (
-            ", ".join({i.dataset for i in prop_obj.sources}) + " via overturetoosm"
-        )
+        new_props["source"] = source_statement(prop_obj.sources)
 
     if prop_obj.socials is not None:
         for social in prop_obj.socials:

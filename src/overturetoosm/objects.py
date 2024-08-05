@@ -1,7 +1,7 @@
 """Pydantic models needed throughout the project."""
 
 from typing import Dict, List, Optional
-from pydantic import AnyUrl, BaseModel, Field
+from pydantic import AnyUrl, BaseModel, Field, field_validator
 
 
 class Sources(BaseModel):
@@ -10,8 +10,14 @@ class Sources(BaseModel):
     property: str
     dataset: str
     record_id: Optional[str] = None
-    confidence: float = Field(default=0.0)
+    confidence: Optional[float] = Field(ge=0.0, le=1.0)
     update_time: Optional[str] = None
+
+    @field_validator("confidence")
+    @classmethod
+    def set_default_if_none(cls, v: float) -> float:
+        """@private"""
+        return v if v is not None else 0.0
 
 
 class Names(BaseModel):
@@ -44,14 +50,6 @@ class Brand(BaseModel):
 
     wikidata: Optional[str] = Field(pattern=r"Q[0-9]+")
     names: Names
-
-
-class OvertureBase(BaseModel):
-    """Overture base model."""
-
-    theme: str
-    type: str
-    version: int
 
 
 class PlaceProps(BaseModel):
@@ -143,8 +141,8 @@ class BuildingProps(BaseModel):
     """
 
     version: int
-    class_: str = Field(alias="class")
-    subtype: str
+    class_: Optional[str] = Field(alias="class", default=None)
+    subtype: Optional[str] = None
     sources: List[Sources]
     height: Optional[float] = None
     is_underground: Optional[bool] = None
@@ -168,7 +166,7 @@ class AddressLevel(BaseModel):
     value: str
 
 
-class AddressProps(OvertureBase):
+class AddressProps(BaseModel):
     """Overture address properties.
 
     Use this model directly if you want to manipulate the `address` properties yourself.
@@ -179,3 +177,4 @@ class AddressProps(OvertureBase):
     postcode: Optional[str] = Field(serialization_alias="addr:postcode")
     country: Optional[str] = Field(serialization_alias="addr:country")
     address_levels: Optional[List[AddressLevel]] = Field(default_factory=list)
+    sources: List[Sources]

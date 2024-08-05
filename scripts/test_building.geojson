@@ -1,0 +1,1945 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0954231, 38.8873115],
+            [-77.0951796, 38.8874929],
+            [-77.0952268, 38.8878961],
+            [-77.0952837, 38.8878931],
+            [-77.0953772, 38.8879761],
+            [-77.0958273, 38.887639],
+            [-77.0954231, 38.8873115]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb742fff02009dd55274ec45",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w39118709@8",
+            "update_time": "2023-03-27T22:32:54.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "commercial",
+        "class": "office",
+        "names": {
+          "primary": "The Hartford Building",
+          "common": null,
+          "rules": null
+        },
+        "has_parts": false,
+        "is_underground": false,
+        "num_floors": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.095208, 38.8882649],
+            [-77.0952393, 38.8883157],
+            [-77.0952165, 38.8883261],
+            [-77.0952222, 38.8883881],
+            [-77.0952642, 38.8887208],
+            [-77.0952801, 38.8887196],
+            [-77.0953714, 38.8887078],
+            [-77.0953877, 38.8887325],
+            [-77.0954386, 38.888724],
+            [-77.0956575, 38.8886434],
+            [-77.0956869, 38.888631],
+            [-77.0956715, 38.8886051],
+            [-77.0957274, 38.8885745],
+            [-77.0953711, 38.8882835],
+            [-77.0953563, 38.8882893],
+            [-77.0953153, 38.8882253],
+            [-77.095208, 38.8882649]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb773fff0200a7ae07c8db33",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w194417071@8",
+            "update_time": "2024-05-15T16:01:00.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "religious",
+        "names": {
+          "primary": "The Church at Clarendon",
+          "common": null,
+          "rules": [
+            {
+              "variant": "alternate",
+              "language": null,
+              "value": "Vietnamese Baptist Church",
+              "between": null,
+              "side": null
+            },
+            {
+              "variant": "alternate",
+              "language": null,
+              "value": "First Baptist of Clarendon Church",
+              "between": null,
+              "side": null
+            }
+          ]
+        },
+        "has_parts": false,
+        "height": 21.1,
+        "is_underground": false,
+        "num_floors": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0938871, 38.8880756],
+            [-77.0938866, 38.8880711],
+            [-77.0939646, 38.8880651],
+            [-77.0939477, 38.8879322],
+            [-77.093902, 38.8879357],
+            [-77.0939043, 38.8879543],
+            [-77.0938708, 38.8879569],
+            [-77.09387, 38.8879508],
+            [-77.0937994, 38.8879563],
+            [-77.0938002, 38.8879623],
+            [-77.0937219, 38.8879684],
+            [-77.0937303, 38.888034],
+            [-77.0937103, 38.8880355],
+            [-77.0937165, 38.8880842],
+            [-77.0938148, 38.8880766],
+            [-77.0938154, 38.8880811],
+            [-77.0938871, 38.8880756]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb76efff02004d2049ecaf3b",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w182873520@8",
+            "update_time": "2023-09-29T02:16:04.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "commercial",
+        "class": "commercial",
+        "names": { "primary": "United Bank", "common": null, "rules": null },
+        "has_parts": false,
+        "height": 4.1,
+        "is_underground": false,
+        "num_floors": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0943167, 38.8885327],
+            [-77.0946799, 38.888506],
+            [-77.0946595, 38.8883372],
+            [-77.0947197, 38.8882771],
+            [-77.0949379, 38.8882612],
+            [-77.0948995, 38.8879829],
+            [-77.0944708, 38.8880151],
+            [-77.0944771, 38.8880679],
+            [-77.0943984, 38.8880744],
+            [-77.0944075, 38.8881339],
+            [-77.0943386, 38.8881351],
+            [-77.0943469, 38.8881887],
+            [-77.0942724, 38.8881926],
+            [-77.0943167, 38.8885327]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb744fff0200c635e3dc94c8",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w39185834@5",
+            "update_time": "2022-08-27T21:49:16.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "commercial",
+        "class": "commercial",
+        "has_parts": false,
+        "height": 22.7,
+        "is_underground": false,
+        "num_floors": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.09496632100122, 38.88861898626221],
+            [-77.0949638293639, 38.88853552146523],
+            [-77.09475623049579, 38.88853927618061],
+            [-77.09475872963398, 38.88862274083753],
+            [-77.09496632100122, 38.88861898626221]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb771fff0200dc1c7e29ed23",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "Microsoft ML Buildings",
+            "record_id": "dc1c7e29ed23",
+            "update_time": "2023-09-01T00:00:00.000Z",
+            "confidence": 0.98
+          }
+        ],
+        "has_parts": false,
+        "height": 3.0038786
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0950271, 38.8888387],
+            [-77.0950196, 38.8887627],
+            [-77.0950123, 38.8887632],
+            [-77.0950087, 38.8887269],
+            [-77.0949242, 38.8887319],
+            [-77.0949251, 38.888741],
+            [-77.0948759, 38.8887439],
+            [-77.0948856, 38.8888422],
+            [-77.0949264, 38.8888397],
+            [-77.0949269, 38.8888447],
+            [-77.0950271, 38.8888387]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb775fff020011b495629fcc",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120111@6",
+            "update_time": "2023-09-29T02:16:04.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "medical",
+        "names": {
+          "primary": "Clarendon Family Dentistry",
+          "common": null,
+          "rules": null
+        },
+        "has_parts": false,
+        "height": 6.3,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0946731, 38.8888412],
+            [-77.0946645, 38.8887737],
+            [-77.0945771, 38.8887805],
+            [-77.0945857, 38.888848],
+            [-77.0946731, 38.8888412]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb775fff0200639c9d32539a",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572872@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0940338, 38.8883432],
+            [-77.0940097, 38.8883445],
+            [-77.0937753, 38.8885078],
+            [-77.0937828, 38.8885636],
+            [-77.0938863, 38.8885559],
+            [-77.0940568, 38.8885415],
+            [-77.0940493, 38.8884669],
+            [-77.0940317, 38.8884561],
+            [-77.0940301, 38.8884419],
+            [-77.0940419, 38.8884349],
+            [-77.0940338, 38.8883432]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff020020ce9676b3bb",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w212011544@1",
+            "update_time": "2013-03-24T19:02:05.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0936957, 38.88857],
+            [-77.0937125, 38.888707],
+            [-77.0938898, 38.8886939],
+            [-77.0938861, 38.8886637],
+            [-77.0939812, 38.8886567],
+            [-77.0939714, 38.8885764],
+            [-77.0938895, 38.8885824],
+            [-77.0938863, 38.8885559],
+            [-77.0937828, 38.8885636],
+            [-77.0936957, 38.88857]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff0200255887cb2c02",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w212011548@2",
+            "update_time": "2022-09-03T20:36:29.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0940491, 38.888693],
+            [-77.0939024, 38.8887006],
+            [-77.0939071, 38.8887553],
+            [-77.0939442, 38.8887534],
+            [-77.0939468, 38.8887839],
+            [-77.0940563, 38.8887783],
+            [-77.0940491, 38.888693]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff020034788563987a",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w224180764@3",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 9.5,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.093344, 38.888445],
+            [-77.0933877, 38.8884656],
+            [-77.0936939, 38.8882787],
+            [-77.0936188, 38.8877538],
+            [-77.093303, 38.8879108],
+            [-77.0932785, 38.8879507],
+            [-77.093344, 38.888445]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb761fff0200ea08dde191f7",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w39185788@4",
+            "update_time": "2020-02-07T15:55:21.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "commercial",
+        "class": "retail",
+        "has_parts": false,
+        "height": 12.1,
+        "is_underground": false,
+        "num_floors": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0937753, 38.8885078],
+            [-77.093763, 38.8884948],
+            [-77.0937175, 38.8885227],
+            [-77.0936924, 38.8885557],
+            [-77.0936957, 38.88857],
+            [-77.0937828, 38.8885636],
+            [-77.0937753, 38.8885078]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff0200d769920af1be",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w212011545@5",
+            "update_time": "2023-03-19T18:13:39.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "commercial",
+        "names": {
+          "primary": "Wilson Hardware",
+          "common": null,
+          "rules": null
+        },
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0937386, 38.8888327],
+            [-77.0938047, 38.8888275],
+            [-77.0937998, 38.8887918],
+            [-77.0937342, 38.8887969],
+            [-77.0937386, 38.8888327]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb760fff0200c14ebfc8805d",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572891@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0936924, 38.8885557],
+            [-77.0933814, 38.8887369],
+            [-77.0934114, 38.8889747],
+            [-77.093512, 38.8889664],
+            [-77.0935013, 38.8888735],
+            [-77.0937352, 38.8888585],
+            [-77.0937125, 38.888707],
+            [-77.0936957, 38.88857],
+            [-77.0936924, 38.8885557]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb764fff02001b91c245ff3b",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w212011547@1",
+            "update_time": "2013-03-24T19:02:05.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "height": 11.3,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0959474, 38.8888261],
+            [-77.0958834, 38.888743],
+            [-77.0958536, 38.8887624],
+            [-77.0957614, 38.888647],
+            [-77.095407, 38.8888292],
+            [-77.0953877, 38.8887325],
+            [-77.0953714, 38.8887078],
+            [-77.0952801, 38.8887196],
+            [-77.0953024, 38.8889242],
+            [-77.0953305, 38.8889159],
+            [-77.0953372, 38.8890234],
+            [-77.0953185, 38.8890338],
+            [-77.0953909, 38.8891121],
+            [-77.0959474, 38.8888261]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb772fff0200e6f48addd289",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w194417069@5",
+            "update_time": "2022-08-27T21:49:16.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "height": 7.9,
+        "is_underground": false,
+        "num_floors": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0956107, 38.8892125],
+            [-77.0955244, 38.8892796],
+            [-77.0955584, 38.8893061],
+            [-77.0955419, 38.889319],
+            [-77.095596, 38.8893612],
+            [-77.0957293, 38.8892576],
+            [-77.0956692, 38.8892108],
+            [-77.0956388, 38.8892344],
+            [-77.0956107, 38.8892125]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb776fff0200317df9198fa7",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389066212@3",
+            "update_time": "2023-11-18T13:21:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.3,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0955755, 38.8896401],
+            [-77.0955316, 38.8896527],
+            [-77.0955149, 38.8896172],
+            [-77.0954067, 38.8896481],
+            [-77.0954247, 38.8896864],
+            [-77.0953959, 38.8896946],
+            [-77.0954307, 38.8897683],
+            [-77.0954604, 38.8897598],
+            [-77.0954648, 38.8897692],
+            [-77.0954857, 38.8897632],
+            [-77.0955049, 38.8898039],
+            [-77.095598, 38.8897772],
+            [-77.0955942, 38.889769],
+            [-77.0956312, 38.8897585],
+            [-77.0955755, 38.8896401]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb729fff02009a048603312d",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389113659@5",
+            "update_time": "2022-08-27T13:42:39.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 6.6,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0948925, 38.8889998],
+            [-77.0949007, 38.8890673],
+            [-77.0950553, 38.8890559],
+            [-77.0950471, 38.8889884],
+            [-77.0948925, 38.8889998]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb774fff0200635b60eee0c8",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120112@3",
+            "update_time": "2023-11-18T13:21:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.7,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0948456, 38.889162],
+            [-77.0948515, 38.8892123],
+            [-77.0949208, 38.8892074],
+            [-77.0949239, 38.8892335],
+            [-77.0950267, 38.8892261],
+            [-77.0950237, 38.8892007],
+            [-77.0950513, 38.8891988],
+            [-77.095045, 38.8891455],
+            [-77.0950199, 38.8891473],
+            [-77.0950175, 38.8891269],
+            [-77.0949446, 38.8891321],
+            [-77.0949472, 38.8891548],
+            [-77.0948456, 38.889162]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb774fff0200bd45ea78458f",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120114@4",
+            "update_time": "2023-11-18T13:21:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 6.2,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.09471513099999, 38.88907555800006],
+            [-77.09463094099993, 38.88907930100004],
+            [-77.09463465199997, 38.88913020200005],
+            [-77.09471884199996, 38.88912645900007],
+            [-77.09471513099999, 38.88907555800006]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb775fff02002a26241ee925",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "Esri Community Maps",
+            "record_id": "esri_ArlingtonCountyVA28760",
+            "update_time": "2024-05-23T00:00:00.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0947356, 38.8891226],
+            [-77.0947412, 38.8891656],
+            [-77.0947977, 38.8891612],
+            [-77.0947921, 38.8891182],
+            [-77.0947356, 38.8891226]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb774fff02002a50d17c9bb5",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572876@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0950378, 38.8892879],
+            [-77.0948921, 38.8892985],
+            [-77.0948982, 38.8893489],
+            [-77.0949287, 38.8893467],
+            [-77.0949309, 38.8893645],
+            [-77.0950461, 38.8893561],
+            [-77.0950378, 38.8892879]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb774fff0200551a3b038f2c",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120115@4",
+            "update_time": "2023-11-18T13:21:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.6,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0948898, 38.8894141],
+            [-77.0948853, 38.8893815],
+            [-77.0948409, 38.8893852],
+            [-77.0948453, 38.8894178],
+            [-77.0948898, 38.8894141]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb774fff0200e2048d86e71b",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572877@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0950621, 38.8894172],
+            [-77.0949605, 38.8894252],
+            [-77.0949652, 38.8894621],
+            [-77.0949427, 38.8894638],
+            [-77.094949, 38.8895124],
+            [-77.0950731, 38.8895026],
+            [-77.0950621, 38.8894172]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb774fff0200bc330d14426b",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120117@4",
+            "update_time": "2023-11-18T13:21:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.5,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.09473787699994, 38.88926472900005],
+            [-77.09474269299994, 38.88930004600007],
+            [-77.09482320299998, 38.88929333900006],
+            [-77.09481838799996, 38.889258022000035],
+            [-77.09473787699994, 38.88926472900005]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb774fff02008663c615b7b7",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "Esri Community Maps",
+            "record_id": "esri_ArlingtonCountyVA43533",
+            "update_time": "2024-05-23T00:00:00.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.09468200599997, 38.889158559000066],
+            [-77.09469215499996, 38.88924249200005],
+            [-77.09472460599994, 38.88924009600004],
+            [-77.09471445399998, 38.88915616300005],
+            [-77.09468200599997, 38.889158559000066]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dbfff0200e14f33c65744",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "Esri Community Maps",
+            "record_id": "esri_ArlingtonCountyVA43531",
+            "update_time": "2024-05-23T00:00:00.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0946015, 38.8891594],
+            [-77.0944166, 38.889174],
+            [-77.094427, 38.889254],
+            [-77.094658, 38.8892358],
+            [-77.0946519, 38.8891885],
+            [-77.0946057, 38.8891921],
+            [-77.0946015, 38.8891594]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dbfff020002de12777e13",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120116@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 7.1,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0944435, 38.8894279],
+            [-77.0944541, 38.8895199],
+            [-77.0946411, 38.8895069],
+            [-77.0946357, 38.8894605],
+            [-77.094654, 38.8894592],
+            [-77.0946487, 38.8894136],
+            [-77.0944435, 38.8894279]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dbfff02000693c576842f",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120118@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 4.7,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0943708, 38.8888269],
+            [-77.0943816, 38.8889125],
+            [-77.0945291, 38.8889021],
+            [-77.0945157, 38.8888144],
+            [-77.0943708, 38.8888269]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb775fff0200df935fde0dcb",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389118367@3",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.2,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0943711, 38.8890059],
+            [-77.0943806, 38.8890981],
+            [-77.0944635, 38.8890929],
+            [-77.0944657, 38.8891151],
+            [-77.0945636, 38.889109],
+            [-77.0945518, 38.8889947],
+            [-77.0943711, 38.8890059]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb775fff02000331290d0cbc",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120113@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.4,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0941018, 38.8889195],
+            [-77.0940946, 38.8888609],
+            [-77.0940681, 38.8888629],
+            [-77.0940652, 38.8888393],
+            [-77.0938961, 38.8888519],
+            [-77.0939001, 38.8888838],
+            [-77.0938572, 38.888887],
+            [-77.0938634, 38.8889374],
+            [-77.0941018, 38.8889195]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb766fff0200514334c7c16c",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572890@2",
+            "update_time": "2021-05-15T14:49:45.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "house",
+        "has_parts": false,
+        "height": 4.9,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0940834, 38.8889752],
+            [-77.093975, 38.8889843],
+            [-77.0939812, 38.8890294],
+            [-77.0939423, 38.8890327],
+            [-77.0939524, 38.8891055],
+            [-77.0939824, 38.8891029],
+            [-77.0939893, 38.889152],
+            [-77.0941067, 38.8891421],
+            [-77.0940834, 38.8889752]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb766fff020000592a3aa863",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120134@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.3,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0938614, 38.8891748],
+            [-77.0938537, 38.8891141],
+            [-77.0937795, 38.8891199],
+            [-77.0937872, 38.8891805],
+            [-77.0938614, 38.8891748]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d9fff02006f9bc1d41424",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572893@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0944269, 38.8893199],
+            [-77.0944355, 38.8893899],
+            [-77.0945259, 38.8893832],
+            [-77.0945172, 38.8893131],
+            [-77.0944269, 38.8893199]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dbfff0200d48817a32258",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572873@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "height": 3.6,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0941299, 38.889179],
+            [-77.0939424, 38.8891926],
+            [-77.0939528, 38.8892799],
+            [-77.0941168, 38.8892681],
+            [-77.0941135, 38.889241],
+            [-77.094137, 38.8892393],
+            [-77.0941299, 38.889179]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d9fff02000160233336a1",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120135@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.9,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0941267, 38.8893168],
+            [-77.0939211, 38.8893324],
+            [-77.0939328, 38.8894262],
+            [-77.0941384, 38.8894105],
+            [-77.0941267, 38.8893168]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d9fff0200f6e084f5ed73",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120136@3",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.2,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0941724, 38.8894577],
+            [-77.0939983, 38.8894734],
+            [-77.0940112, 38.8895592],
+            [-77.0941662, 38.8895452],
+            [-77.0941604, 38.8895069],
+            [-77.0941795, 38.8895051],
+            [-77.0941724, 38.8894577]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d8fff0200c5941a9d6fa6",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120137@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 4.4,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.09380370799994, 38.889437317000045],
+            [-77.09380682899996, 38.889462336000065],
+            [-77.09384807399994, 38.88945919500003],
+            [-77.09384495199998, 38.88943417300004],
+            [-77.09380370799994, 38.889437317000045]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d9fff0200354127bbc991",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "Esri Community Maps",
+            "record_id": "esri_ArlingtonCountyVA43537",
+            "update_time": "2024-05-23T00:00:00.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0950797, 38.8895495],
+            [-77.0949123, 38.8895634],
+            [-77.0949197, 38.8896174],
+            [-77.0949479, 38.8896151],
+            [-77.0949506, 38.8896344],
+            [-77.0950897, 38.8896228],
+            [-77.0950797, 38.8895495]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dafff020002db04b1c755",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120119@4",
+            "update_time": "2023-11-18T13:21:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 6.3,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.09487401299998, 38.88956916700005],
+            [-77.09487103099997, 38.88954021500007],
+            [-77.09487070499995, 38.88953713600006],
+            [-77.09480956199997, 38.88954099000006],
+            [-77.09481339799999, 38.88957830000004],
+            [-77.09487450599994, 38.88957444500005],
+            [-77.09487401299998, 38.88956916700005]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dafff0200514d5cbd950a",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "Esri Community Maps",
+            "record_id": "esri_ArlingtonCountyVA9569",
+            "update_time": "2024-05-23T00:00:00.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0949413, 38.8896803],
+            [-77.0949377, 38.8896514],
+            [-77.0948726, 38.8896563],
+            [-77.0948762, 38.8896852],
+            [-77.0949413, 38.8896803]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dafff0200dd85cb312c19",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572878@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0946963, 38.8896117],
+            [-77.094702, 38.8896683],
+            [-77.0947844, 38.8896632],
+            [-77.0947786, 38.8896066],
+            [-77.0946963, 38.8896117]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dafff0200d1ff83ff7f0a",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572874@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0944544, 38.8895977],
+            [-77.0944627, 38.8896724],
+            [-77.0946751, 38.889658],
+            [-77.0946668, 38.8895834],
+            [-77.0944544, 38.8895977]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0dafff02002089effd1827",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120122@3",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.6,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.094194, 38.8896],
+            [-77.0940097, 38.889613],
+            [-77.0940128, 38.8896394],
+            [-77.0939693, 38.8896425],
+            [-77.0939767, 38.8897058],
+            [-77.0942044, 38.8896897],
+            [-77.094194, 38.8896]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d8fff0200b1c268ef6f39",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120138@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.6,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0938937, 38.8895847],
+            [-77.0938877, 38.8895428],
+            [-77.0938223, 38.8895484],
+            [-77.0938283, 38.8895903],
+            [-77.0938937, 38.8895847]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0ddfff0200725ac1e58b25",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572894@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0938278, 38.8895945],
+            [-77.0938372, 38.8896646],
+            [-77.0939105, 38.8896587],
+            [-77.0939011, 38.8895886],
+            [-77.0938278, 38.8895945]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0ddfff0200274c648306c2",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572895@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "height": 4.5,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0938047, 38.8888275],
+            [-77.0937386, 38.8888327],
+            [-77.0937459, 38.8888892],
+            [-77.0938121, 38.888884],
+            [-77.0938047, 38.8888275]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb764fff0200fa748ac40a9b",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572892@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.09336155599993, 38.889027774000056],
+            [-77.09337616099998, 38.889137394000045],
+            [-77.09361332199995, 38.88911809500007],
+            [-77.09359871799995, 38.88900847200006],
+            [-77.09336155599993, 38.889027774000056]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb764fff02008a9e720dd9f0",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "Esri Community Maps",
+            "record_id": "esri_ArlingtonCountyVA46905",
+            "update_time": "2024-05-23T00:00:00.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0937232, 38.8893882],
+            [-77.0937965, 38.8893842],
+            [-77.0937929, 38.8893457],
+            [-77.0937197, 38.8893497],
+            [-77.0937232, 38.8893882]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d9fff020092276594d930",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572905@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0936196, 38.889367],
+            [-77.0936156, 38.8893386],
+            [-77.0936379, 38.8893367],
+            [-77.0936312, 38.8892894],
+            [-77.09359, 38.8892929],
+            [-77.0935856, 38.8892617],
+            [-77.0934201, 38.8892758],
+            [-77.0934352, 38.8893828],
+            [-77.0936196, 38.889367]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0cafff02003f8427738658",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w224180765@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 7.0,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.09374325399995, 38.88942147200004],
+            [-77.09374426699998, 38.88943629100004],
+            [-77.09374527799997, 38.88945111100003],
+            [-77.09378097499996, 38.88944962200003],
+            [-77.09377895099993, 38.88941998300004],
+            [-77.09374325399995, 38.88942147200004]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0d9fff02006d4d2ee9a088",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "Esri Community Maps",
+            "record_id": "esri_ArlingtonCountyVA43536",
+            "update_time": "2024-05-23T00:00:00.000Z",
+            "confidence": null
+          }
+        ],
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0937447, 38.889561],
+            [-77.0938143, 38.8895554],
+            [-77.0938093, 38.8895169],
+            [-77.0937396, 38.8895225],
+            [-77.0937447, 38.889561]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0ddfff02000d2f0953ab3c",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w761572904@1",
+            "update_time": "2020-01-07T21:50:59.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "garage",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0936024, 38.8895496],
+            [-77.0935924, 38.889461],
+            [-77.093571, 38.8894625],
+            [-77.0935686, 38.8894417],
+            [-77.0934827, 38.8894476],
+            [-77.093495, 38.8895569],
+            [-77.0936024, 38.8895496]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0ddfff0200dfcea2d214a0",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120139@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0934711, 38.8895909],
+            [-77.093482, 38.889689],
+            [-77.0936004, 38.889681],
+            [-77.0936019, 38.889694],
+            [-77.093699, 38.8896874],
+            [-77.0936904, 38.8896104],
+            [-77.0936664, 38.889612],
+            [-77.0936626, 38.889578],
+            [-77.0934711, 38.8895909]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0ddfff02005bb0159e5a4c",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389120140@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.7,
+        "is_underground": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.0930631, 38.8896777],
+            [-77.093231, 38.889666],
+            [-77.0932243, 38.8896072],
+            [-77.0931968, 38.8896091],
+            [-77.0931929, 38.8895751],
+            [-77.0930524, 38.889585],
+            [-77.0930631, 38.8896777]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "08b2aa84eb0cefff020033084be55096",
+        "version": 0,
+        "sources": [
+          {
+            "property": "",
+            "dataset": "OpenStreetMap",
+            "record_id": "w389121565@4",
+            "update_time": "2022-08-27T20:24:34.000Z",
+            "confidence": null
+          }
+        ],
+        "subtype": "residential",
+        "class": "detached",
+        "has_parts": false,
+        "height": 5.3,
+        "is_underground": false
+      }
+    }
+  ]
+}

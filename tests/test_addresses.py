@@ -12,6 +12,7 @@ def clean_fix() -> Dict[str, Any]:
         "addr:street": "COMMONWEALTH AVE",
         "addr:housenumber": "1000",
         "addr:state": "MA",
+        "source": "NAD via overturetoosm",
     }
 
 
@@ -27,6 +28,15 @@ def props_fix() -> Dict[str, Any]:
         "postcode": "02459",
         "street": "COMMONWEALTH AVE",
         "number": "1000",
+        "sources": [
+            {
+                "property": "",
+                "dataset": "NAD",
+                "record_id": None,
+                "update_time": None,
+                "confidence": None,
+            }
+        ],
     }
 
 

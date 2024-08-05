@@ -31,6 +31,52 @@ This package is meant to work with GeoJSON files containing Overture maps data, 
 pip install overturetoosm
 ```
 
+If you are working on `places` in the US, you can further parse the `addr:street_address` tag using the [atlus](https://pypi.org/project/atlus/) package, a seperate project I've worked on.
+
+```python
+>>> import atlus
+>>> import overturetoosm
+>>> overture = {
+        "id": "123",
+        "version": 1,
+        "update_time": "2022-01-01T00:00:00Z",
+        "sources": [
+            {
+                "property": "property1",
+                "dataset": "dataset1",
+                "confidence": 0.8,
+            }
+        ],
+        "names": {
+            "primary": "Primary Name",
+        },
+        "categories": {"main": "restaurant"},
+        "confidence": 0.8,
+        "addresses": [
+            {
+                "freeform": "123 Main St",
+                "locality": "City",
+                "postcode": "12345",
+                "region": "CA",
+                "country": "US",
+            }
+        ],
+    }
+>>> output = overturetoosm.process_place(overture)
+{
+        "name": "Primary Name",
+        "addr:street_address": "123 Main St",
+        "addr:city": "City",
+        "addr:postcode": "12345",
+        "addr:state": "CA",
+        "addr:country": "US",
+        "source": "dataset1 via overturetoosm",
+        "amenity": "restaurant",
+}
+>>> atlus.get_address(output["addr:street_address"])[0]
+{"addr:housenumber": "123", "addr:street": "Main Street"}
+```
+
 ## Docs
 
 The documentation for our package is available online at our [documentation page](https://whubsch.github.io/overturetoosm/index.html). We would greatly appreciate your contributions to help improve the auto-generated docs; please submit any updates or corrections via pull requests.

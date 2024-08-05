@@ -2,6 +2,7 @@
 
 from typing import Dict
 from .objects import AddressProps
+from .utils import source_statement
 
 
 def process_address(
@@ -18,10 +19,13 @@ def process_address(
     Returns:
         Dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.
     """
-    bad_tags = ["version", "theme", "type", "address_levels"]
-    prop = AddressProps(**props)
+    bad_tags = ["version", "theme", "type", "address_levels", "sources"]
+    prop_obj = AddressProps(**props)
 
-    obj_dict = prop.model_dump(exclude_none=True, by_alias=True)
+    obj_dict = prop_obj.model_dump(exclude_none=True, by_alias=True)
+
+    if prop_obj.sources:
+        obj_dict["source"] = source_statement(prop_obj.sources)
 
     if obj_dict["address_levels"] and len(obj_dict["address_levels"]) > 0:
         if style == "US":
