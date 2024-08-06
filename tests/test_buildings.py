@@ -17,6 +17,7 @@ def clean_fix() -> Dict[str, Any]:
         "building:levels:underground": 1,
         "height": 21.34,
         "source": "microsoftMLBuildings, metaLidarExtractions via overturetoosm",
+        "name": "Clarendon Family Dentistry",
     }
 
 
@@ -29,7 +30,13 @@ def props_fix() -> Dict[str, Any]:
         "version": 1,
         "level": 1,
         "height": 21.34,
+        "has_parts": False,
         "num_floors": 4,
+        "names": {
+            "primary": "Clarendon Family Dentistry",
+            "common": None,
+            "rules": None,
+        },
         "num_floors_underground": 1,
         "subtype": "transportation",
         "class": "parking",

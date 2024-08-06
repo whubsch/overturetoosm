@@ -1,12 +1,7 @@
 """Useful functions for the project."""
 
-from typing import Callable, List, Optional
-from .objects import ConfidenceError, Sources, UnmatchedError
-
-
-def source_statement(source: List[Sources]) -> str:
-    """Return a source statement from a list of sources."""
-    return ", ".join(i.dataset.strip(", ") for i in source) + " via overturetoosm"
+from typing import Callable, Optional
+from .objects import ConfidenceError, UnmatchedError
 
 
 def process_geojson(

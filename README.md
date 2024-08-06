@@ -31,10 +31,9 @@ This package is meant to work with GeoJSON files containing Overture maps data, 
 pip install overturetoosm
 ```
 
-If you are working on `places` in the US, you can further parse the `addr:street_address` tag using the [atlus](https://pypi.org/project/atlus/) package, a seperate project I've worked on.
+You will probably for the most part be handling features from a GeoJSON or other file, but for demonstration purposes I'll define it inline:
 
 ```python
->>> import atlus
 >>> import overturetoosm
 >>> overture = {
         "id": "123",
@@ -54,7 +53,7 @@ If you are working on `places` in the US, you can further parse the `addr:street
         "confidence": 0.8,
         "addresses": [
             {
-                "freeform": "123 Main St",
+                "freeform": "123 E Main Blvd",
                 "locality": "City",
                 "postcode": "12345",
                 "region": "CA",
@@ -65,7 +64,7 @@ If you are working on `places` in the US, you can further parse the `addr:street
 >>> output = overturetoosm.process_place(overture)
 {
         "name": "Primary Name",
-        "addr:street_address": "123 Main St",
+        "addr:street_address": "123 E Main Blvd",
         "addr:city": "City",
         "addr:postcode": "12345",
         "addr:state": "CA",
@@ -73,8 +72,14 @@ If you are working on `places` in the US, you can further parse the `addr:street
         "source": "dataset1 via overturetoosm",
         "amenity": "restaurant",
 }
+```
+
+Note that the `addr:street_address` tag is not suitable for import into OSM, and thus will have to be parsed further. If you are working on `places` in the US, you can automatically parse the `addr:street_address` tag using the [atlus](https://pypi.org/project/atlus/) package, a separate project I've worked on.
+
+```python
+>>> import atlus
 >>> atlus.get_address(output["addr:street_address"])[0]
-{"addr:housenumber": "123", "addr:street": "Main Street"}
+{"addr:housenumber": "123", "addr:street": "East Main Boulevard"}
 ```
 
 ## Docs

@@ -1,7 +1,27 @@
 """Pydantic models needed throughout the project."""
 
+# pylint: disable=E1136, C0103
+
+from enum import Enum
 from typing import Dict, List, Optional
-from pydantic import AnyUrl, BaseModel, Field, field_validator
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    field_validator,
+)
+from .resources import places_tags
+
+
+class OvertureBaseModel(BaseModel):
+    """Base model for Overture features."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    theme: Optional[str] = None
+    type: Optional[str] = None
+    version: int = Field(ge=0)
+    id: Optional[str] = None
 
 
 class Sources(BaseModel):
@@ -20,15 +40,39 @@ class Sources(BaseModel):
         return v if v is not None else 0.0
 
 
+class RulesVariant(str, Enum):
+    """Overture name rules variant model."""
+
+    alternate = "alternate"
+    common = "common"
+    official = "official"
+    short = "short"
+
+
+class Rules(BaseModel):
+    """Overture name rules model."""
+
+    variant: RulesVariant
+    language: Optional[str] = None
+    value: str
+    between: Optional[str] = None
+    side: Optional[str] = None
+
+
 class Names(BaseModel):
     """Overture names model."""
 
     primary: str
-    common: Optional[Dict[str, str]]
-    rules: Optional[List[Dict[str, str]]]
+    common: Optional[
+        Dict[
+            str,
+            str,
+        ]
+    ]
+    rules: Optional[List[Rules]]
 
 
-class Address(BaseModel):
+class PlaceAddress(BaseModel):
     """Overture addresses model."""
 
     freeform: Optional[str]
@@ -52,25 +96,82 @@ class Brand(BaseModel):
     names: Names
 
 
-class PlaceProps(BaseModel):
+class PlaceProps(OvertureBaseModel):
     """Overture properties model.
 
     Use this model directly if you want to manipulate the `place` properties yourself.
     """
 
-    id: Optional[str] = None
-    version: int
     update_time: str
     sources: List[Sources]
     names: Names
     brand: Optional[Brand] = None
     categories: Optional[Categories] = None
     confidence: float = Field(ge=0.0, le=1.0)
-    websites: Optional[List[AnyUrl]] = None
-    socials: Optional[List[AnyUrl]] = None
+    websites: Optional[List[str]] = None
+    socials: Optional[List[str]] = None
     emails: Optional[List[str]] = None
     phones: Optional[List[str]] = None
-    addresses: List[Address]
+    addresses: List[PlaceAddress]
+
+    def to_osm(
+        self,
+        confidence: float,
+        region_tag: str,
+        unmatched: str,
+    ) -> Dict[str, str]:
+        """Convert Overture's place properties to OSM tags. Used internally
+        by the `overturetoosm.process_place` function."""
+        new_props = {}
+        if self.confidence < confidence:
+            raise ConfidenceError(confidence, self.confidence)
+
+        if self.categories:
+            prim = places_tags.get(self.categories.main)
+            if prim:
+                new_props = {**new_props, **prim}
+            elif unmatched == "force":
+                new_props["type"] = self.categories.main
+            elif unmatched == "error":
+                raise UnmatchedError(self.categories.main)
+
+        if self.names.primary:
+            new_props["name"] = self.names.primary
+
+        if self.phones is not None:
+            new_props["phone"] = self.phones[0]
+
+        if self.websites is not None and self.websites[0]:
+            new_props["website"] = str(self.websites[0])
+
+        if add := self.addresses[0]:
+            if add.freeform:
+                new_props["addr:street_address"] = add.freeform
+            if add.country:
+                new_props["addr:country"] = add.country
+            if add.postcode:
+                new_props["addr:postcode"] = add.postcode
+            if add.locality:
+                new_props["addr:city"] = add.locality
+            if add.region:
+                new_props[region_tag] = add.region
+
+        if self.sources:
+            new_props["source"] = source_statement(self.sources)
+
+        if self.socials is not None:
+            for social in self.socials:
+                social_str = str(social)
+                if "facebook" in social_str:
+                    new_props["contact:facebook"] = social_str
+                elif "twitter" in str(social):
+                    new_props["contact:twitter"] = social_str
+
+        if self.brand:
+            new_props["brand"] = self.brand.names.primary
+            new_props["brand:wikidata"] = self.brand.wikidata
+
+        return new_props
 
 
 class ConfidenceError(Exception):
@@ -134,30 +235,77 @@ class UnmatchedError(Exception):
         return f"{self.message} {{category={self.category}}}"
 
 
-class BuildingProps(BaseModel):
+class BuildingProps(OvertureBaseModel):
     """Overture building properties.
 
     Use this model directly if you want to manipulate the `building` properties yourself.
     """
 
-    version: int
     class_: Optional[str] = Field(alias="class", default=None)
     subtype: Optional[str] = None
+    names: Optional[Names] = None
+    has_parts: bool
+    level: Optional[int] = None
     sources: List[Sources]
     height: Optional[float] = None
     is_underground: Optional[bool] = None
-    num_floors: Optional[int] = None
-    num_floors_underground: Optional[int] = None
+    num_floors: Optional[int] = Field(
+        serialization_alias="building:levels", default=None
+    )
+    num_floors_underground: Optional[int] = Field(
+        serialization_alias="building:levels:underground", default=None
+    )
     min_height: Optional[float] = None
-    min_floor: Optional[int] = None
-    facade_color: Optional[str] = None
-    facade_material: Optional[str] = None
-    roof_material: Optional[str] = None
-    roof_shape: Optional[str] = None
-    roof_direction: Optional[str] = None
-    roof_orientation: Optional[str] = None
-    roof_color: Optional[str] = None
-    roof_height: Optional[float] = None
+    min_floor: Optional[int] = Field(
+        serialization_alias="building:min_level", default=None
+    )
+    facade_color: Optional[str] = Field(
+        serialization_alias="building:colour", default=None
+    )
+    facade_material: Optional[str] = Field(
+        serialization_alias="building:material", default=None
+    )
+    roof_material: Optional[str] = Field(
+        serialization_alias="roof:material", default=None
+    )
+    roof_shape: Optional[str] = Field(serialization_alias="roof:shape", default=None)
+    roof_direction: Optional[str] = Field(
+        serialization_alias="roof:direction", default=None
+    )
+    roof_orientation: Optional[str] = Field(
+        serialization_alias="roof:orientation", default=None
+    )
+    roof_color: Optional[str] = Field(serialization_alias="roof:colour", default=None)
+    roof_height: Optional[float] = Field(
+        serialization_alias="roof:height", default=None
+    )
+
+    def to_osm(
+        self,
+        confidence: float,
+    ) -> Dict[str, str]:
+        """Convert properties to OSM tags. Used internally by
+        `overturetoosm.process_building` function."""
+        new_props = {}
+        confidences = {source.confidence for source in self.sources}
+        if any(conf and conf < confidence for conf in confidences):
+            raise ConfidenceError(confidence, max({i for i in confidences if i}))
+
+        new_props["building"] = self.class_ if self.class_ else "yes"
+
+        new_props["source"] = source_statement(self.sources)
+
+        prop_obj = self.model_dump(exclude_none=True, by_alias=True).items()
+        new_props.update(
+            {k: v for k, v in prop_obj if k.startswith(("roof", "building"))}
+        )
+        new_props.update({k: round(v, 2) for k, v in prop_obj if k.endswith("height")})
+
+        if self.is_underground:
+            new_props["location"] = "underground"
+        if self.names:
+            new_props["name"] = self.names.primary
+        return new_props
 
 
 class AddressLevel(BaseModel):
@@ -166,7 +314,7 @@ class AddressLevel(BaseModel):
     value: str
 
 
-class AddressProps(BaseModel):
+class AddressProps(OvertureBaseModel):
     """Overture address properties.
 
     Use this model directly if you want to manipulate the `address` properties yourself.
@@ -178,3 +326,26 @@ class AddressProps(BaseModel):
     country: Optional[str] = Field(serialization_alias="addr:country")
     address_levels: Optional[List[AddressLevel]] = Field(default_factory=list)
     sources: List[Sources]
+
+    def to_osm(
+        self,
+        style: str,
+    ) -> Dict[str, str]:
+        """Convert properties to OSM tags. Used internally by `overturetoosm.process_address`."""
+        obj_dict = {
+            k: v
+            for k, v in self.model_dump(exclude_none=True, by_alias=True).items()
+            if k.startswith("addr:")
+        }
+        obj_dict["source"] = source_statement(self.sources)
+
+        if self.address_levels and len(self.address_levels) > 0:
+            if style == "US":
+                obj_dict["addr:state"] = str(self.address_levels[0].value)
+
+        return obj_dict
+
+
+def source_statement(source: List[Sources]) -> str:
+    """Return a source statement from a list of sources."""
+    return ", ".join(i.dataset.strip(", ") for i in source) + " via overturetoosm"

@@ -1,7 +1,6 @@
 """Test miscelaneous functions in the project."""
 
 from src.overturetoosm import objects
-from src.overturetoosm import utils
 
 
 def test_util_source() -> None:
@@ -14,6 +13,6 @@ def test_util_source() -> None:
     )
 
     assert (
-        utils.source_statement([source_1, source_2])
+        objects.source_statement([source_1, source_2])
         == "dataset1, dataset2 via overturetoosm"
     )

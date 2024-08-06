@@ -2,9 +2,7 @@
 
 from typing import Literal, Dict
 
-from .objects import PlaceProps, UnmatchedError, ConfidenceError
-from .resources import places_tags
-from .utils import source_statement
+from .objects import PlaceProps
 
 
 def process_place(
@@ -48,54 +46,4 @@ def process_place(
         `overturetoosm.objects.ConfidenceError`: Raised if the confidence level is set
             above a feature's confidence.
     """
-    new_props = {}
-    prop_obj = PlaceProps(**props)
-    if prop_obj.confidence < confidence:
-        raise ConfidenceError(confidence, prop_obj.confidence)
-
-    if prop_obj.categories:
-        prim = places_tags.get(prop_obj.categories.main)
-        if prim:
-            new_props = {**new_props, **prim}
-        elif unmatched == "force":
-            new_props["type"] = prop_obj.categories.main
-        elif unmatched == "error":
-            raise UnmatchedError(prop_obj.categories.main)
-
-    if prop_obj.names.primary:
-        new_props["name"] = prop_obj.names.primary
-
-    if prop_obj.phones is not None:
-        new_props["phone"] = prop_obj.phones[0]
-
-    if prop_obj.websites is not None:
-        new_props["website"] = str(prop_obj.websites[0])
-
-    if add := prop_obj.addresses[0]:
-        if add.freeform:
-            new_props["addr:street_address"] = add.freeform
-        if add.country:
-            new_props["addr:country"] = add.country
-        if add.postcode:
-            new_props["addr:postcode"] = add.postcode
-        if add.locality:
-            new_props["addr:city"] = add.locality
-        if add.region:
-            new_props[region_tag] = add.region
-
-    if prop_obj.sources:
-        new_props["source"] = source_statement(prop_obj.sources)
-
-    if prop_obj.socials is not None:
-        for social in prop_obj.socials:
-            social_str = str(social)
-            if "facebook" in social_str:
-                new_props["contact:facebook"] = social_str
-            elif "twitter" in str(social):
-                new_props["contact:twitter"] = social_str
-
-    if prop_obj.brand:
-        new_props["brand"] = prop_obj.brand.names.primary
-        new_props["brand:wikidata"] = prop_obj.brand.wikidata
-
-    return new_props
+    return PlaceProps(**props).to_osm(confidence, region_tag, unmatched)
