@@ -25,7 +25,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Typing :: Typed",
 ]
-dependencies = ["pydantic"]
+dependencies = ["pydantic>=2.8.0", "pytest>=8.3.2"]
 
 [project.urls]
 Documentation = "https://whubsch.github.io/overturetoosm/index.html"
@@ -52,6 +52,9 @@ tests = ["tests", "*/overturetoosm/tests"]
 
 [tool.coverage.report]
 exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
+
+[tool.ruff]
+fix = true
 
 [tool.ruff.lint]
 select = ["D", "E", "F", "I"]

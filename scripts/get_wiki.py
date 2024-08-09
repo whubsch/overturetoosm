@@ -20,12 +20,7 @@ def main() -> None:
 
     print("Writing tags to scripts/tags.json...")
     with open("scripts/tags.json", mode="w", encoding="utf-8") as f:
-        f.write(
-            json.dumps(
-                tag_mapping,
-                indent=4,
-            )
-        )
+        f.write(json.dumps(tag_mapping, indent=4))
 
 
 def parse_wiki() -> dict:
