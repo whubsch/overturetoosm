@@ -1,5 +1,7 @@
-"""`overturetoosm` is a Python package to convert objects tagged in the 
-Overture schema for use in OSM. Only Overture's `places`, `buildings`, 
+"""Convert Overture's `places`, `buildings`, and `addresses` features to OSM tags.
+
+`overturetoosm` is a Python package to convert objects tagged in the
+Overture schema for use in OSM. Only Overture's `places`, `buildings`,
 and `addresses` layers are currently supported.
 
 Links:
@@ -8,16 +10,11 @@ Links:
 * [PyPI](https://pypi.org/project/overturetoosm/)
 """
 
-from .places import process_place
-from .buildings import process_building
+from . import addresses, buildings, objects, places, resources, utils
 from .addresses import process_address
+from .buildings import process_building
+from .places import process_place
 from .utils import process_geojson
-from . import places
-from . import buildings
-from . import addresses
-from . import objects
-from . import utils
-from . import resources
 
 __all__ = [
     "process_place",

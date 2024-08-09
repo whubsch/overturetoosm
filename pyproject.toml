@@ -12,18 +12,18 @@ license = "MIT"
 keywords = ["overture", "osm", "openstreetmap", "mapping", "overture maps"]
 authors = [{ name = "Will", email = "wahubsch@gmail.com" }]
 classifiers = [
-  "Development Status :: 4 - Beta",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: Implementation :: CPython",
-  "Programming Language :: Python :: Implementation :: PyPy",
-  "License :: OSI Approved :: MIT License",
-  "Typing :: Typed",
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "License :: OSI Approved :: MIT License",
+    "Typing :: Typed",
 ]
 dependencies = ["pydantic"]
 
@@ -52,3 +52,13 @@ tests = ["tests", "*/overturetoosm/tests"]
 
 [tool.coverage.report]
 exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
+
+[tool.ruff.lint]
+select = ["D", "E", "F", "I"]
+pydocstyle.convention = "google"
+exclude = ["tests/*", "scripts/*"]
+isort.split-on-trailing-comma = false
+
+[tool.ruff.format]
+docstring-code-format = true
+skip-magic-trailing-comma = true

@@ -1,15 +1,12 @@
 """Pydantic models needed throughout the project."""
 
-# pylint: disable=E1136, C0103
+# ruff: noqa: D415
 
 from enum import Enum
 from typing import Dict, List, Optional
-from pydantic import (
-    BaseModel,
-    ConfigDict,
-    Field,
-    field_validator,
-)
+
+from pydantic import BaseModel, ConfigDict, Field, field_validator
+
 from .resources import places_tags
 
 
@@ -63,12 +60,7 @@ class Names(BaseModel):
     """Overture names model."""
 
     primary: str
-    common: Optional[
-        Dict[
-            str,
-            str,
-        ]
-    ]
+    common: Optional[Dict[str, str]]
     rules: Optional[List[Rules]]
 
 
@@ -115,13 +107,12 @@ class PlaceProps(OvertureBaseModel):
     addresses: List[PlaceAddress]
 
     def to_osm(
-        self,
-        confidence: float,
-        region_tag: str,
-        unmatched: str,
+        self, confidence: float, region_tag: str, unmatched: str
     ) -> Dict[str, str]:
-        """Convert Overture's place properties to OSM tags. Used internally
-        by the `overturetoosm.process_place` function."""
+        """Convert Overture's place properties to OSM tags.
+
+        Used internallyby the `overturetoosm.process_place` function.
+        """
         new_props = {}
         if self.confidence < confidence:
             raise ConfidenceError(confidence, self.confidence)
@@ -175,8 +166,7 @@ class PlaceProps(OvertureBaseModel):
 
 
 class ConfidenceError(Exception):
-    """
-    Confidence error exception.
+    """Confidence error exception.
 
     This exception is raised when the confidence level of an item is below the
     user-defined level. It contains the original confidence level and the confidence
@@ -202,13 +192,13 @@ class ConfidenceError(Exception):
 
     def __str__(self) -> str:
         """@private"""
-        conf = f"confidence_level={self.confidence_level}, confidence_item={self.confidence_item}"
-        return f"""{self.message} {conf}"""
+        lev = f"confidence_level={self.confidence_level}"
+        item = f"confidence_item={self.confidence_item}"
+        return f"""{self.message} {lev}, {item}"""
 
 
 class UnmatchedError(Exception):
-    """
-    Unmatched category error.
+    """Unmatched category error.
 
     This exception is raised when an item's Overture category does not have a
     corresponding OSM definition. Edit
@@ -221,9 +211,7 @@ class UnmatchedError(Exception):
     """
 
     def __init__(
-        self,
-        category: str,
-        message: str = "Overture category is unmatched.",
+        self, category: str, message: str = "Overture category is unmatched."
     ) -> None:
         """@private"""
         self.category = category
@@ -238,7 +226,7 @@ class UnmatchedError(Exception):
 class BuildingProps(OvertureBaseModel):
     """Overture building properties.
 
-    Use this model directly if you want to manipulate the `building` properties yourself.
+    Use this model if you want to manipulate the `building` properties yourself.
     """
 
     class_: Optional[str] = Field(alias="class", default=None)
@@ -280,12 +268,11 @@ class BuildingProps(OvertureBaseModel):
         serialization_alias="roof:height", default=None
     )
 
-    def to_osm(
-        self,
-        confidence: float,
-    ) -> Dict[str, str]:
-        """Convert properties to OSM tags. Used internally by
-        `overturetoosm.process_building` function."""
+    def to_osm(self, confidence: float) -> Dict[str, str]:
+        """Convert properties to OSM tags.
+
+        Used internally by`overturetoosm.process_building` function.
+        """
         new_props = {}
         confidences = {source.confidence for source in self.sources}
         if any(conf and conf < confidence for conf in confidences):
@@ -327,11 +314,11 @@ class AddressProps(OvertureBaseModel):
     address_levels: Optional[List[AddressLevel]] = Field(default_factory=list)
     sources: List[Sources]
 
-    def to_osm(
-        self,
-        style: str,
-    ) -> Dict[str, str]:
-        """Convert properties to OSM tags. Used internally by `overturetoosm.process_address`."""
+    def to_osm(self, style: str) -> Dict[str, str]:
+        """Convert properties to OSM tags.
+
+        Used internally by `overturetoosm.process_address`.
+        """
         obj_dict = {
             k: v
             for k, v in self.model_dump(exclude_none=True, by_alias=True).items()

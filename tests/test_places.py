@@ -1,19 +1,19 @@
-"""Test the places.py module"""
+"""Test the places.py module."""
 
 from copy import deepcopy
 from typing import Any, Dict
-import pytest
+
 import pydantic
-from src.overturetoosm.places import (
-    process_place,
-)
-from src.overturetoosm.utils import process_geojson
+import pytest
+
 from src.overturetoosm.objects import ConfidenceError, UnmatchedError
+from src.overturetoosm.places import process_place
+from src.overturetoosm.utils import process_geojson
 
 
 @pytest.fixture(name="clean_dict")
 def clean_fix() -> Dict[str, Any]:
-    """Fixture with the clean place properties"""
+    """Fixture with the clean place properties."""
     return {
         "name": "Primary Name",
         "brand": "Brand Name",
@@ -34,7 +34,7 @@ def clean_fix() -> Dict[str, Any]:
 
 @pytest.fixture(name="geojson_dict")
 def geojson_fix() -> Dict[str, Any]:
-    """Fixture with a mock place geojson"""
+    """Fixture with a mock place geojson."""
     return {
         "type": "FeatureCollection",
         "features": [
@@ -91,7 +91,7 @@ def geojson_fix() -> Dict[str, Any]:
 
 @pytest.fixture(name="props_dict")
 def props_fix() -> Dict[str, Any]:
-    """Fixture with the raw place properties"""
+    """Fixture with the raw place properties."""
     return {
         "id": "123",
         "version": 1,
@@ -138,13 +138,13 @@ def props_fix() -> Dict[str, Any]:
 
 
 def test_place_props(props_dict: dict, clean_dict: dict) -> None:
-    """Test that all properties are processed correctly"""
+    """Test that all properties are processed correctly."""
     new_props = process_place(props_dict)
     assert new_props == clean_dict
 
 
 def test_place_props_no_brand(props_dict: dict, clean_dict: dict) -> None:
-    """Test that all properties are processed correctly"""
+    """Test that all properties are processed correctly."""
     props_dict.pop("brand", None)
     new_props = process_place(props_dict)
     for i in ["brand", "brand:wikidata"]:
@@ -153,7 +153,7 @@ def test_place_props_no_brand(props_dict: dict, clean_dict: dict) -> None:
 
 
 def test_place_props_no_category(props_dict: dict, clean_dict: dict) -> None:
-    """Test that all properties are processed correctly"""
+    """Test that all properties are processed correctly."""
     props_dict.pop("categories", None)
     new_props = process_place(props_dict)
     for i in ["office", "lawyer"]:
@@ -162,7 +162,7 @@ def test_place_props_no_category(props_dict: dict, clean_dict: dict) -> None:
 
 
 def test_place_props_twitter(props_dict: dict, clean_dict: dict) -> None:
-    """Test that all properties are processed correctly"""
+    """Test that all properties are processed correctly."""
     props_dict["socials"].append("https://twitter.com/example/")
     new_props = process_place(props_dict)
     clean_dict["contact:twitter"] = "https://twitter.com/example/"
@@ -170,27 +170,27 @@ def test_place_props_twitter(props_dict: dict, clean_dict: dict) -> None:
 
 
 def test_low_confidence(props_dict) -> None:
-    """Test that properties with low confidence are not processed"""
+    """Test that properties with low confidence are not processed."""
     with pytest.raises(ConfidenceError):
         process_place(props_dict, confidence=0.9)
 
 
 def test_confidence(props_dict) -> None:
-    """Test that invalid properties are not processed"""
+    """Test that invalid properties are not processed."""
     props_dict["confidence"] = -0.1
     with pytest.raises(pydantic.ValidationError):
         process_place(props_dict)
 
 
 def test_unmatched_error(props_dict) -> None:
-    """Test that invalid properties are not processed"""
+    """Test that invalid properties are not processed."""
     props_dict["categories"]["main"] = "invalid_category"
     with pytest.raises(UnmatchedError):
         process_place(props_dict, unmatched="error")
 
 
 def test_unmatched_ignore(props_dict, clean_dict: dict) -> None:
-    """Test that invalid properties are not processed"""
+    """Test that invalid properties are not processed."""
     props_dict["categories"]["main"] = "invalid_category"
     for i in ["office", "lawyer"]:
         clean_dict.pop(i, None)
@@ -198,7 +198,7 @@ def test_unmatched_ignore(props_dict, clean_dict: dict) -> None:
 
 
 def test_unmatched_force(props_dict, clean_dict: dict) -> None:
-    """Test that invalid properties are not processed"""
+    """Test that invalid properties are not processed."""
     cat = "invalid_category"
     props_dict["categories"]["main"] = cat
     for i in ["office", "lawyer"]:
@@ -208,7 +208,7 @@ def test_unmatched_force(props_dict, clean_dict: dict) -> None:
 
 
 def test_place_geojson(geojson_dict, clean_dict: dict) -> None:
-    """Test that all properties are processed correctly"""
+    """Test that all properties are processed correctly."""
     assert process_geojson(geojson=geojson_dict, fx=process_place) == {
         "type": "FeatureCollection",
         "features": [
@@ -222,19 +222,16 @@ def test_place_geojson(geojson_dict, clean_dict: dict) -> None:
 
 
 def test_place_geojson_error(geojson_dict) -> None:
-    """Test that all properties are processed correctly when error flag is set"""
+    """Test that all properties are processed correctly when error flag is set."""
     copy = deepcopy(geojson_dict)
     copy["features"][0]["properties"]["categories"]["main"] = "invalid_category"
     assert process_geojson(
         geojson=copy, fx=process_place, options={"unmatched": "error"}
-    ) == {
-        "type": "FeatureCollection",
-        "features": [],
-    }
+    ) == {"type": "FeatureCollection", "features": []}
 
 
 def test_place_geojson_force(geojson_dict, clean_dict: dict) -> None:
-    """Test that all properties are processed correctly when force flag is set"""
+    """Test that all properties are processed correctly when force flag is set."""
     copy = deepcopy(geojson_dict)
     copy["features"][0]["properties"]["categories"]["main"] = "invalid_category"
     clean_dict["type"] = "invalid_category"
@@ -255,7 +252,7 @@ def test_place_geojson_force(geojson_dict, clean_dict: dict) -> None:
 
 
 def test_place_geojson_ignore(geojson_dict, clean_dict: dict) -> None:
-    """Test that all properties are processed correctly when ignore flag is set"""
+    """Test that all properties are processed correctly when ignore flag is set."""
     copy = deepcopy(geojson_dict)
     copy["features"][0]["properties"]["categories"]["main"] = "invalid_category"
     for i in ["office", "lawyer"]:

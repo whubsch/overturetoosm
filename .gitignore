@@ -49,3 +49,4 @@ scripts/test*.py
 .pypirc
 .coverage
 .vscode
+.DS-Store

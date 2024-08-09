@@ -1,16 +1,16 @@
-"""Test the buildings.py module"""
+"""Test the buildings.py module."""
 
 from typing import Any, Dict
+
 import pytest
-from src.overturetoosm.buildings import (
-    process_building,
-)
+
+from src.overturetoosm.buildings import process_building
 from src.overturetoosm.objects import ConfidenceError
 
 
 @pytest.fixture(name="clean_dict")
 def clean_fix() -> Dict[str, Any]:
-    """Fixture with the clean building properties"""
+    """Fixture with the clean building properties."""
     return {
         "building": "parking",
         "building:levels": 4,
@@ -23,7 +23,7 @@ def clean_fix() -> Dict[str, Any]:
 
 @pytest.fixture(name="props_dict")
 def props_fix() -> Dict[str, Any]:
-    """Fixture with the raw building properties"""
+    """Fixture with the raw building properties."""
     return {
         "theme": "buildings",
         "type": "building",
@@ -53,19 +53,19 @@ def props_fix() -> Dict[str, Any]:
 
 
 def test_process_building(props_dict: dict, clean_dict: dict) -> None:
-    """Test the process_building function"""
+    """Test the process_building function."""
     props = process_building(props_dict)
     assert props == clean_dict
 
 
 def test_process_building_confidence(props_dict: dict) -> None:
-    """Test the process_building function"""
+    """Test the process_building function."""
     with pytest.raises(ConfidenceError):
         process_building(props_dict, confidence=0.9)
 
 
 def test_process_building_underground(props_dict: dict, clean_dict: dict) -> None:
-    """Test the process_building function"""
+    """Test the process_building function."""
     props_dict["is_underground"] = True
     props = process_building(props_dict)
     clean_dict["location"] = "underground"
@@ -73,7 +73,7 @@ def test_process_building_underground(props_dict: dict, clean_dict: dict) -> Non
 
 
 def test_process_building_no_floors(props_dict: dict, clean_dict: dict) -> None:
-    """Test the process_building function"""
+    """Test the process_building function."""
     props_dict.pop("num_floors", None)
     props = process_building(props_dict)
     clean_dict.pop("building:levels", None)
@@ -81,7 +81,7 @@ def test_process_building_no_floors(props_dict: dict, clean_dict: dict) -> None:
 
 
 def test_process_building_underfloors(props_dict: dict, clean_dict: dict) -> None:
-    """Test the process_building function"""
+    """Test the process_building function."""
     props_dict.pop("num_floors_underground", None)
     props = process_building(props_dict)
     clean_dict.pop("building:levels:underground", None)
@@ -89,7 +89,7 @@ def test_process_building_underfloors(props_dict: dict, clean_dict: dict) -> Non
 
 
 def test_process_building_min_level(props_dict: dict, clean_dict: dict) -> None:
-    """Test the process_building function"""
+    """Test the process_building function."""
     props_dict["min_floor"] = 2
     props = process_building(props_dict)
     clean_dict["building:min_level"] = 2

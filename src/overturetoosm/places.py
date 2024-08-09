@@ -1,6 +1,6 @@
 """Convert Overture's `places` features to OSM tags."""
 
-from typing import Literal, Dict
+from typing import Dict, Literal
 
 from .objects import PlaceProps
 
@@ -38,11 +38,12 @@ def process_place(
             only returns other properties. Defaults to "ignore".
 
     Returns:
-        dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.
+        dict[str, str]: The reshaped and converted properties in OSM's flat str:str
+            schema.
 
     Raises:
-        `overturetoosm.objects.UnmatchedError`: Raised if `unmatched` is set to `error` and
-            the Overture category has no OSM definition.
+        `overturetoosm.objects.UnmatchedError`: Raised if `unmatched` is set to `error`
+            and the Overture category has no OSM definition.
         `overturetoosm.objects.ConfidenceError`: Raised if the confidence level is set
             above a feature's confidence.
     """
