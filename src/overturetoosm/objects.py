@@ -3,9 +3,14 @@
 # ruff: noqa: D415
 
 from enum import Enum
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Union
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+try:
+    from typing import Annotated
+except ImportError:
+    from typing_extensions import Annotated
+
+from pydantic import BaseModel, ConfigDict, Field, RootModel, field_validator
 
 from .resources import places_tags
 
@@ -15,10 +20,16 @@ class OvertureBaseModel(BaseModel):
 
     model_config = ConfigDict(extra="forbid")
 
+    version: int = Field(ge=0)
     theme: Optional[str] = None
     type: Optional[str] = None
-    version: int = Field(ge=0)
-    id: Optional[str] = None
+    id: Optional[str] = Field(None, pattern=r"^(\S.*)?\S$")
+
+
+class Wikidata(RootModel):
+    """Model for transportation segment wikidata."""
+
+    root: str = Field(description="Wikidata ID.", pattern=r"^Q\d+")
 
 
 class Sources(BaseModel):
@@ -36,6 +47,16 @@ class Sources(BaseModel):
         """@private"""
         return v if v is not None else 0.0
 
+    def get_osm_link(self) -> Union[str, None]:
+        """Return the OSM link for the source."""
+        if (
+            self.record_id
+            and self.record_id.startswith(("n", "w", "r"))
+            and self.dataset == "OpenStreetMap"
+        ):
+            type_dict = {"n": "node", "w": "way", "r": "relation"}
+            return f"https://www.openstreetmap.org/{type_dict[self.record_id[0]]}/{self.record_id[1:]}"
+
 
 class RulesVariant(str, Enum):
     """Overture name rules variant model."""
@@ -46,13 +67,19 @@ class RulesVariant(str, Enum):
     short = "short"
 
 
+class Between(RootModel):
+    """Model for transportation segment between."""
+
+    root: Annotated[list, Field(float, min_length=2, max_length=2)]
+
+
 class Rules(BaseModel):
     """Overture name rules model."""
 
     variant: RulesVariant
     language: Optional[str] = None
     value: str
-    between: Optional[str] = None
+    between: Optional[Between] = None
     side: Optional[str] = None
 
 
@@ -84,8 +111,31 @@ class Categories(BaseModel):
 class Brand(BaseModel):
     """Overture brand model."""
 
-    wikidata: Optional[str] = Field(pattern=r"Q[0-9]+")
+    wikidata: Optional[Wikidata] = None
     names: Names
+
+    def to_osm(self) -> Dict[str, str]:
+        """Convert brand properties to OSM tags."""
+        osm = {"brand": self.names.primary}
+        if self.wikidata:
+            osm.update({"brand:wikidata": str(self.wikidata.root)})
+        return osm
+
+
+class Socials(RootModel):
+    """Overture socials model."""
+
+    root: List[str]
+
+    def to_osm(self) -> Dict[str, str]:
+        """Convert socials properties to OSM tags."""
+        new_props = {}
+        for social in self.root:
+            if "facebook" in social:
+                new_props["contact:facebook"] = social
+            elif "twitter" in str(social):
+                new_props["contact:twitter"] = social
+        return new_props
 
 
 class PlaceProps(OvertureBaseModel):
@@ -101,7 +151,7 @@ class PlaceProps(OvertureBaseModel):
     categories: Optional[Categories] = None
     confidence: float = Field(ge=0.0, le=1.0)
     websites: Optional[List[str]] = None
-    socials: Optional[List[str]] = None
+    socials: Optional[Socials] = None
     emails: Optional[List[str]] = None
     phones: Optional[List[str]] = None
     addresses: List[PlaceAddress]
@@ -111,7 +161,7 @@ class PlaceProps(OvertureBaseModel):
     ) -> Dict[str, str]:
         """Convert Overture's place properties to OSM tags.
 
-        Used internallyby the `overturetoosm.process_place` function.
+        Used internally by the `overturetoosm.process_place` function.
         """
         new_props = {}
         if self.confidence < confidence:
@@ -150,17 +200,11 @@ class PlaceProps(OvertureBaseModel):
         if self.sources:
             new_props["source"] = source_statement(self.sources)
 
-        if self.socials is not None:
-            for social in self.socials:
-                social_str = str(social)
-                if "facebook" in social_str:
-                    new_props["contact:facebook"] = social_str
-                elif "twitter" in str(social):
-                    new_props["contact:twitter"] = social_str
+        if self.socials:
+            new_props.update(self.socials.to_osm())
 
         if self.brand:
-            new_props["brand"] = self.brand.names.primary
-            new_props["brand:wikidata"] = self.brand.wikidata
+            new_props.update(self.brand.to_osm())
 
         return new_props
 
@@ -229,12 +273,12 @@ class BuildingProps(OvertureBaseModel):
     Use this model if you want to manipulate the `building` properties yourself.
     """
 
+    has_parts: bool
+    sources: List[Sources]
     class_: Optional[str] = Field(alias="class", default=None)
     subtype: Optional[str] = None
     names: Optional[Names] = None
-    has_parts: bool
     level: Optional[int] = None
-    sources: List[Sources]
     height: Optional[float] = None
     is_underground: Optional[bool] = None
     num_floors: Optional[int] = Field(
@@ -311,7 +355,9 @@ class AddressProps(OvertureBaseModel):
     street: Optional[str] = Field(serialization_alias="addr:street")
     postcode: Optional[str] = Field(serialization_alias="addr:postcode")
     country: Optional[str] = Field(serialization_alias="addr:country")
-    address_levels: Optional[List[AddressLevel]] = Field(default_factory=list)
+    address_levels: Optional[
+        Annotated[List[AddressLevel], Field(min_length=1, max_length=5)]
+    ] = Field(default_factory=list)
     sources: List[Sources]
 
     def to_osm(self, style: str) -> Dict[str, str]:
@@ -326,9 +372,8 @@ class AddressProps(OvertureBaseModel):
         }
         obj_dict["source"] = source_statement(self.sources)
 
-        if self.address_levels and len(self.address_levels) > 0:
-            if style == "US":
-                obj_dict["addr:state"] = str(self.address_levels[0].value)
+        if self.address_levels and len(self.address_levels) > 0 and style == "US":
+            obj_dict["addr:state"] = str(self.address_levels[0].value)
 
         return obj_dict
 

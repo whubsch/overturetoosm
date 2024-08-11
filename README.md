@@ -5,7 +5,9 @@
 ![PyPI - Version](https://img.shields.io/pypi/v/overturetoosm)
 ![Pepy Total Downlods](https://img.shields.io/pepy/dt/overturetoosm)
 
-This Python project translates objects from the Overture maps schema to the OpenStreetMap (OSM) tagging scheme. The goal is to provide a seamless way to convert map data from Overture's format to a format that can be utilized within the OSM ecosystem. The package currently only supports Overture's `places`, `buildings`, and `addresses` layers. You can improve the Overture categorization that this package uses by editing [the Overture categories page](https://wiki.openstreetmap.org/wiki/Overture_categories) on the OSM Wiki or submitting a pull request to the [tags.json](https://github.com/whubsch/overturetoosm/blob/main/scripts/tags.json) file.
+This Python project translates objects from the Overture maps schema to the OpenStreetMap (OSM) tagging scheme. The goal is to provide a seamless way to convert map data from Overture's format to a format that can be utilized within the OSM ecosystem. The package currently only supports Overture's `places`, `buildings`, and `addresses` layers. You can improve the Overture categorization that this package uses for the `places` layer by editing [the Overture categories page](https://wiki.openstreetmap.org/wiki/Overture_categories) on the OSM Wiki or submitting a pull request to the [tags.json](https://github.com/whubsch/overturetoosm/blob/main/scripts/tags.json) file.
+
+There is also a Pydantic model for the `transportation` layer's `segment` object via `overturetoosm.segments.SegmentProperties`, but the conversion to OSM tags is not yet supported because of the Overture schema's complexity.
 
 > [!NOTE]
 > Use of this package does not absolve you from following OSM's [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines).

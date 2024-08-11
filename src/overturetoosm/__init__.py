@@ -10,7 +10,7 @@ Links:
 * [PyPI](https://pypi.org/project/overturetoosm/)
 """
 
-from . import addresses, buildings, objects, places, resources, utils
+from . import addresses, buildings, objects, places, resources, segments, utils
 from .addresses import process_address
 from .buildings import process_building
 from .places import process_place
@@ -25,6 +25,7 @@ __all__ = [
     "buildings",
     "addresses",
     "objects",
+    "segments",
     "utils",
     "resources",
 ]

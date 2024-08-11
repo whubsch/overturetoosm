@@ -1,6 +1,20 @@
 """Test miscelaneous functions in the project."""
 
-from src.overturetoosm import objects
+import json
+import pytest
+from src.overturetoosm import objects, segments
+
+
+@pytest.fixture(name="props_dict")
+def props_fix() -> dict:
+    """Fixture with the clean segment properties."""
+    return {
+        "property": "",
+        "dataset": "OpenStreetMap",
+        "record_id": "w590831817",
+        "update_time": None,
+        "confidence": None,
+    }
 
 
 def test_util_source() -> None:
@@ -16,3 +30,34 @@ def test_util_source() -> None:
         objects.source_statement([source_1, source_2])
         == "dataset1, dataset2 via overturetoosm"
     )
+
+
+def test_segment_sources(props_dict: dict) -> None:
+    """Test that source URL is processed correctly."""
+    source = objects.Sources(**props_dict)
+    assert source.get_osm_link() == "https://www.openstreetmap.org/way/590831817"
+
+
+def test_segment_sources_not_osm(props_dict: dict) -> None:
+    """Test that source URL is processed correctly."""
+    props_dict.update({"dataset": "dataset1"})
+    source = objects.Sources(**props_dict)
+    assert source.get_osm_link() == None
+
+
+@pytest.mark.parametrize(
+    "type",
+    [
+        ("place", objects.PlaceProps),
+        ("building", objects.BuildingProps),
+        ("address", objects.AddressProps),
+        ("segment", segments.SegmentProperties),
+    ],
+)
+def test_objects(type) -> None:
+    """Test that all properties are processed correctly."""
+    with open(f"scripts/test_{type[0]}.geojson", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+        for feature in data["features"]:
+            type[1](**feature["properties"])

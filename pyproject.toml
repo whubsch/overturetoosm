@@ -57,7 +57,7 @@ exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
 fix = true
 
 [tool.ruff.lint]
-select = ["D", "E", "F", "I"]
+select = ["D", "E", "F", "I", "N", "SIM", "TCH"]
 pydocstyle.convention = "google"
 exclude = ["tests/*", "scripts/*"]
 isort.split-on-trailing-comma = false
