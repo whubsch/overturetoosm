@@ -380,4 +380,4 @@ class AddressProps(OvertureBaseModel):
 
 def source_statement(source: List[Sources]) -> str:
     """Return a source statement from a list of sources."""
-    return ", ".join(i.dataset.strip(", ") for i in source) + " via overturetoosm"
+    return ", ".join({i.dataset.strip(", ") for i in source}) + " via overturetoosm"
