@@ -34,7 +34,7 @@ jobs:
         run: python scripts/make_docs.py
 
       - name: Upload documentation
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           name: documentation
           path: docs/
