@@ -114,17 +114,20 @@
     "cuisine": "peruvian"
   },
   "puerto_rican_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "puerto_rican"
   },
   "salvadoran_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "el_salvador"
   },
   "texmex_restaurant": {
     "amenity": "restaurant",
-    "cuisine": "tex-mex"
+    "cuisine": "mexican"
   },
   "uruguayan_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "uruguayan"
   },
   "venezuelan_restaurant": {
     "amenity": "restaurant",
@@ -139,7 +142,8 @@
     "cuisine": "armenian"
   },
   "azerbaijani_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "azerbaijani"
   },
   "egyptian_restaurant": {
     "amenity": "restaurant",
@@ -154,10 +158,12 @@
     "cuisine": "israeli"
   },
   "kofta_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "kofta"
   },
   "kurdish_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "kurdish"
   },
   "lebanese_restaurant": {
     "amenity": "restaurant",
@@ -181,13 +187,15 @@
   },
   "asian_fusion_restaurant": {
     "amenity": "restaurant",
-    "cuisine": "fusion"
+    "cuisine": "asian_fusion"
   },
   "pan_asian_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "pan_asian"
   },
   "burmese_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "burmese"
   },
   "cambodian_restaurant": {
     "amenity": "restaurant",
@@ -198,13 +206,15 @@
     "cuisine": "chinese"
   },
   "dim_sum_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "dim_sum"
   },
   "filipino_restaurant": {
     "amenity": "restaurant",
     "cuisine": "filipino"
   },
   "indo_chinese_restaurant": {
+    "cuisine": "indo_chinese",
     "amenity": "restaurant"
   },
   "indonesian_restaurant": {
@@ -224,7 +234,8 @@
     "cuisine": "sushi"
   },
   "laotian_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "laotian"
   },
   "malaysian_restaurant": {
     "amenity": "restaurant",
@@ -254,7 +265,10 @@
     "amenity": "restaurant",
     "cuisine": "vietnamese"
   },
-  "hong_kong_style_cafe": {},
+  "hong_kong_style_cafe": {
+    "amenity": "cafe",
+    "cuisine": "hong_kong_style"
+  },
   "australian_restaurant": {
     "amenity": "restaurant",
     "cuisine": "australian"
@@ -283,7 +297,8 @@
     "amenity": "restaurant"
   },
   "belarusian_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "belarusian"
   },
   "bulgarian_restaurant": {
     "amenity": "restaurant",
@@ -294,7 +309,8 @@
     "cuisine": "romanian"
   },
   "tatar_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "tatar"
   },
   "ukrainian_restaurant": {
     "amenity": "restaurant",
@@ -306,34 +322,39 @@
   },
   "cajun_creole_restaurant": {
     "amenity": "restaurant",
-    "cuisine": "cajun"
+    "cuisine": "cajun_creole"
   },
   "canadian_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "canadian"
   },
   "caribbean_restaurant": {
     "amenity": "restaurant",
     "cuisine": "caribbean"
   },
   "dominican_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "dominican"
   },
   "haitian_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "haitian"
   },
   "jamaican_restaurant": {
     "amenity": "restaurant",
     "cuisine": "jamaican"
   },
   "trinidadian_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "trinidadian"
   },
   "german_restaurant": {
     "amenity": "restaurant",
     "cuisine": "german"
   },
   "catalan_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "catalan"
   },
   "italian_restaurant": {
     "amenity": "restaurant",
@@ -359,6 +380,7 @@
     "cuisine": "hawaiian"
   },
   "himalayan_nepalese_restaurant": {
+    "cuisine": "nepalese",
     "amenity": "restaurant"
   },
   "hungarian_restaurant": {
@@ -366,23 +388,28 @@
     "cuisine": "hungarian"
   },
   "iberian_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "iberian"
   },
   "irish_restaurant": {
     "amenity": "restaurant",
     "cuisine": "irish"
   },
   "jewish_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "jewish"
   },
   "international_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "international"
   },
   "european_restaurant": {
+    "cuisine": "european",
     "amenity": "restaurant"
   },
   "oriental_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "oriental"
   },
   "pakistani_restaurant": {
     "amenity": "restaurant",
@@ -393,7 +420,8 @@
     "cuisine": "polish"
   },
   "polynesian_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "polynesian"
   },
   "portuguese_restaurant": {
     "amenity": "restaurant",
@@ -404,79 +432,101 @@
     "cuisine": "russian"
   },
   "scandinavian_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "scandinavian"
   },
   "danish_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "danish"
   },
   "norwegian_restaurant": {
     "amenity": "restaurant"
   },
   "scottish_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "scottish"
   },
   "seafood_restaurant": {
     "amenity": "restaurant",
     "cuisine": "seafood"
   },
   "serbo_croation_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "serbo_croatian"
   },
   "slovakian_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "slovak"
   },
   "southern_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "southern"
   },
   "spanish_restaurant": {
     "amenity": "restaurant",
     "cuisine": "spanish"
   },
   "sri_lankan_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "sri_lankan"
   },
   "swiss_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "swiss"
   },
   "uzbek_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "uzbek"
   },
   "molecular_gastronomy_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "molecular_gastronomy"
   },
   "haute_cuisine_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "haute_cuisine"
   },
-  "salad_bar": {},
+  "salad_bar": {
+    "amenity": "cafe",
+    "cuisine": "salad"
+  },
   "brasserie": {
     "amenity": "restaurant"
   },
   "buffet_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "buffet"
   },
   "barbecue_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "barbecue"
   },
   "burger_restaurant": {
     "amenity": "restaurant",
     "cuisine": "burger"
   },
-  "canteen": {},
+  "canteen": {
+    "amenity": "food_court"
+  },
   "cafeteria": {},
   "cheesesteak_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "cheesesteak"
   },
   "chicken_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "chicken"
   },
   "chicken_wings_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "chicken"
   },
   "dog_meat_restaurant": {
     "amenity": "restaurant"
   },
   "dumpling_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "dumpling"
   },
   "fast_food_restaurant": {
     "amenity": "fast_food"
@@ -484,60 +534,85 @@
   "fishchbroetchen_restaurant": {
     "amenity": "restaurant"
   },
-  "acai_bowls": {},
+  "acai_bowls": {
+    "amenity": "cafe",
+    "cuisine": "acai_bowls"
+  },
   "fish_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "seafood"
   },
   "fish_and_chips_restaurant": {
+    "cuisine": "fish_and_chips",
     "amenity": "restaurant"
   },
   "fondue_restaurant": {
+    "cuisine": "fondue",
     "amenity": "restaurant"
   },
   "gluten_free_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "diet:gluten_free": "yes"
   },
   "baozi_restaurant": {
     "amenity": "restaurant"
   },
   "halal_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "halal"
   },
   "bistro": {
-    "amenity": "restaurant"
+    "amenity": "cafe"
   },
   "health_food_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "diet:health_food": "yes"
   },
   "kosher_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "kosher"
   },
   "comfort_food_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "comfort_food"
   },
   "meat_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "meat"
   },
   "curry_sausage_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "curry_sausage"
   },
   "diner": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "diner"
   },
-  "diy_foods_restaurant": {},
-  "doner_kebab": {},
-  "empanadas": {},
+  "diy_foods_restaurant": {
+    "amenity": "restaurant",
+    "cuisine": "doityourself"
+  },
+  "doner_kebab": {
+    "amenity": "restaurant",
+    "cuisine": "doner_kebab"
+  },
+  "empanadas": {
+    "amenity": "restaurant",
+    "cuisine": "empanadas"
+  },
   "nasi_restaurant": {
     "amenity": "restaurant"
   },
   "flatbread_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "flatbread"
   },
   "food_court": {
     "amenity": "food_court"
   },
   "gastropub": {
-    "amenity": "restaurant"
+    "amenity": "pub",
+    "cuisine": "gastropub"
   },
   "pizza_restaurant": {
     "amenity": "restaurant",
@@ -547,45 +622,58 @@
     "amenity": "restaurant"
   },
   "poutinerie_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "poutine"
   },
   "vegan_restaurant": {
     "amenity": "restaurant",
-    "diet:vegan": "yes"
+    "diet:vegan": "only",
+    "cuisine": "vegan"
   },
   "vegetarian_restaurant": {
     "amenity": "restaurant",
     "diet:vegetarian": "yes"
   },
   "wok_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "wok"
   },
   "wrap_restaurant": {
     "amenity": "restaurant"
   },
   "piadina_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "piadina"
   },
-  "poke": {},
+  "poke": {
+    "amenity": "restaurant",
+    "cuisine": "poke"
+  },
   "pigs_trotters_restaurant": {
     "amenity": "restaurant"
   },
   "potato_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "potato"
   },
   "rotisserie_chicken_restaurant": {
     "amenity": "restaurant",
-    "cuisine": "chicken"
+    "cuisine": "rotisserie_chicken"
   },
   "schnitzel_restaurant": {
     "amenity": "restaurant"
   },
-  "soul_food": {},
+  "soul_food": {
+    "amenity": "restaurant",
+    "cuisine": "soul_food"
+  },
   "steakhouse": {
     "amenity": "restaurant",
     "cuisine": "steak_house"
   },
-  "supper_club": {},
+  "supper_club": {
+    "amenity": "restaurant"
+  },
   "tapas_bar": {
     "amenity": "restaurant"
   },
@@ -593,10 +681,12 @@
     "amenity": "restaurant"
   },
   "wild_game_meats_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "wild_game"
   },
   "falafel_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "falafel"
   },
   "taco_restaurant": {
     "amenity": "restaurant",
@@ -604,11 +694,15 @@
   },
   "hot_dog_restaurant": {
     "amenity": "restaurant",
-    "cuisine": "american"
+    "cuisine": "hot_dog"
   },
-  "live_and_raw_food_restaurant": {},
+  "live_and_raw_food_restaurant": {
+    "amenity": "restaurant",
+    "cuisine": "raw_food"
+  },
   "soup_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "soup"
   },
   "theme_restaurant": {
     "amenity": "restaurant"
@@ -632,18 +726,23 @@
     "cuisine": "breakfast"
   },
   "bagel_restaurant": {
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "bagel"
   },
   "baguettes": {},
   "bar": {
     "amenity": "bar"
   },
-  "airport_lounge": {},
+  "airport_lounge": {
+    "amenity": "lounge"
+  },
   "beach_bar": {
-    "amenity": "bar"
+    "amenity": "bar",
+    "bar": "beach_bar"
   },
   "beer_bar": {
-    "amenity": "bar"
+    "amenity": "bar",
+    "drink": "beer"
   },
   "beer_garden": {
     "amenity": "biergarten"
@@ -655,11 +754,20 @@
     "amenity": "cafe",
     "cuisine": "bubble_tea"
   },
-  "champagne_bar": {},
-  "cidery": {},
-  "cigar_bar": {},
+  "champagne_bar": {
+    "amenity": "bar",
+    "drink:alcohol": "champagne"
+  },
+  "cidery": {
+    "craft": "cidery"
+  },
+  "cigar_bar": {
+    "amenity": "bar",
+    "smoking": "cigar"
+  },
   "cocktail_bar": {
-    "amenity": "bar"
+    "amenity": "bar",
+    "drink:cocktail": "yes"
   },
   "dive_bar": {
     "amenity": "bar"
@@ -673,17 +781,22 @@
     "lgbtq": "primary"
   },
   "hookah_bar": {
-    "amenity": "bar"
+    "amenity": "hookah_lounge"
   },
   "hotel_bar": {
     "amenity": "bar"
   },
   "irish_pub": {
-    "amenity": "bar",
-    "cuisine": "irish"
+    "amenity": "pub",
+    "theme": "irish"
   },
-  "kombucha": {},
-  "lounge": {},
+  "kombucha": {
+    "shop": "beverages",
+    "produce": "kombucha"
+  },
+  "lounge": {
+    "amenity": "bar"
+  },
   "milk_bar": {
     "amenity": "fast_food"
   },
@@ -948,10 +1061,14 @@
   },
   "country_club": {},
   "country_dance_hall": {},
-  "dance_club": { "amenity": "nightclub" },
+  "dance_club": {
+    "amenity": "nightclub"
+  },
   "dinner_theatre": {},
   "eatertainment": {},
-  "escape_rooms": { "leisure": "escape_game" },
+  "escape_rooms": {
+    "leisure": "escape_game"
+  },
   "exhibition_and_trade_center": {},
   "glass_blowing": {},
   "indoor_playcenter": {},
@@ -1731,9 +1848,13 @@
   "banks": {
     "amenity": "bank"
   },
-  "credit_union": { "amenity": "bank" },
+  "credit_union": {
+    "amenity": "bank"
+  },
   "brokers": {},
-  "business_brokers": { "office": "financial_advisor" },
+  "business_brokers": {
+    "office": "financial_advisor"
+  },
   "stock_and_bond_brokers": {},
   "business_banking_service": {},
   "business_financing": {},
@@ -1752,12 +1873,26 @@
   "insurance_agency": {
     "office": "insurance"
   },
-  "auto_insurance": { "office": "insurance", "insurance": "car" },
-  "farm_insurance": { "office": "insurance", "insurance": "farm" },
+  "auto_insurance": {
+    "office": "insurance",
+    "insurance": "car"
+  },
+  "farm_insurance": {
+    "office": "insurance",
+    "insurance": "farm"
+  },
   "fidelity_and_surety_bonds": {},
-  "home_and_rental_insurance": { "office": "insurance", "insurance": "home" },
-  "life_insurance": { "office": "insurance", "insurance": "life" },
-  "investing": { "office": "financial_advisor" },
+  "home_and_rental_insurance": {
+    "office": "insurance",
+    "insurance": "home"
+  },
+  "life_insurance": {
+    "office": "insurance",
+    "insurance": "life"
+  },
+  "investing": {
+    "office": "financial_advisor"
+  },
   "money_transfer_services": {},
   "tax_services": {
     "office": "tax_advisor"
@@ -1812,7 +1947,9 @@
   "food_stand": {},
   "food_truck": {},
   "friterie": {},
-  "health_food_store": { "shop": "herbalist" },
+  "health_food_store": {
+    "shop": "herbalist"
+  },
   "ice_cream_and_frozen_yoghurt": {
     "amenity": "ice_cream"
   },
@@ -1858,8 +1995,12 @@
   "wine_tasting_room": {
     "craft": "winery"
   },
-  "auto_parts_and_supply_store": { "shop": "car_parts" },
-  "beverage_store": { "shop": "alcohol" },
+  "auto_parts_and_supply_store": {
+    "shop": "car_parts"
+  },
+  "beverage_store": {
+    "shop": "alcohol"
+  },
   "boat_parts_and_supply_store": {},
   "butcher_shop": {
     "shop": "butcher"
@@ -1883,7 +2024,9 @@
     "craft": "distillery"
   },
   "drugstore": {},
-  "flooring_store": { "shop": "flooring" },
+  "flooring_store": {
+    "shop": "flooring"
+  },
   "fruits_and_vegetables": {},
   "health_market": {},
   "hearing_aid_provider": {},
@@ -1899,17 +2042,35 @@
   },
   "popcorn_shop": {},
   "seafood_market": {},
-  "water_store": { "shop": "water" },
-  "shopping": { "shop": "yes" },
-  "arts_and_crafts": { "shop": "craft" },
-  "art_supply_store": { "shop": "craft" },
+  "water_store": {
+    "shop": "water"
+  },
+  "shopping": {
+    "shop": "yes"
+  },
+  "arts_and_crafts": {
+    "shop": "craft"
+  },
+  "art_supply_store": {
+    "shop": "craft"
+  },
   "atelier": {},
   "cooking_classes": {},
-  "costume_store": { "shop": "costume" },
-  "craft_shop": { "shop": "craft" },
-  "embroidery_and_crochet": { "shop": "sewing" },
-  "fabric_store": { "shop": "fabric" },
-  "framing_store": { "shop": "frame" },
+  "costume_store": {
+    "shop": "costume"
+  },
+  "craft_shop": {
+    "shop": "craft"
+  },
+  "embroidery_and_crochet": {
+    "shop": "sewing"
+  },
+  "fabric_store": {
+    "shop": "fabric"
+  },
+  "framing_store": {
+    "shop": "frame"
+  },
   "handicraft_shop": {
     "shop": "craft"
   },
@@ -2001,7 +2162,9 @@
   "grocery_store": {
     "shop": "convenience"
   },
-  "specialty_grocery_store": { "shop": "supermarket" },
+  "specialty_grocery_store": {
+    "shop": "supermarket"
+  },
   "asian_grocery_store": {
     "shop": "supermarket",
     "cuisine": "asian"
@@ -2202,15 +2365,28 @@
   },
   "tabletop_games": {},
   "thrift_store": {},
-  "tobacco_shop": { "shop": "tobacco" },
-  "toy_store": { "shop": "toys" },
+  "tobacco_shop": {
+    "shop": "tobacco"
+  },
+  "toy_store": {
+    "shop": "toys"
+  },
   "trophy_shop": {},
   "uniform_store": {},
-  "used_bookstore": { "shop": "books", "second_hand": "only" },
-  "e_cigarette_store": { "shop": "tobacco" },
+  "used_bookstore": {
+    "shop": "books",
+    "second_hand": "only"
+  },
+  "e_cigarette_store": {
+    "shop": "tobacco"
+  },
   "vitamins_and_supplements": {},
-  "watch_store": { "shop": "watches" },
-  "wholesale_store": { "shop": "wholesale" },
+  "watch_store": {
+    "shop": "watches"
+  },
+  "wholesale_store": {
+    "shop": "wholesale"
+  },
   "wig_store": {},
   "sporting_goods": {},
   "archery_shop": {},
@@ -2227,7 +2403,10 @@
   "sports_wear": {},
   "dance_wear": {},
   "surf_shop": {},
-  "swimwear_store": { "shop": "clothes", "clothes": "swimwear" },
+  "swimwear_store": {
+    "shop": "clothes",
+    "clothes": "swimwear"
+  },
   "tire_shop": {},
   "tire_repair_shop": {},
   "health_and_medical": {
@@ -2237,7 +2416,9 @@
   "alcohol_and_drug_treatment_centers": {},
   "crisis_intervention_services": {},
   "eating_disorder_treatment_centers": {},
-  "counseling_and_mental_health": { "healthcare": "psychotherapist" },
+  "counseling_and_mental_health": {
+    "healthcare": "psychotherapist"
+  },
   "family_counselor": {
     "healthcare": "counselling",
     "healthcare:counselling": "family"
@@ -2737,9 +2918,13 @@
   },
   "domestic_business_and_trade_organizations": {},
   "human_resource_services": {},
-  "information_technology_company": { "office": "it" },
+  "information_technology_company": {
+    "office": "it"
+  },
   "laser_cutting_service_provider": {},
-  "telecommunications_company": { "office": "telecommunication" },
+  "telecommunications_company": {
+    "office": "telecommunication"
+  },
   "tower_communication_service": {},
   "transcription_services": {},
   "translating_and_interpreting_services": {},
@@ -2766,14 +2951,20 @@
   "importers": {},
   "restaurant_management": {},
   "b2b_energy_mining": {},
-  "mining": { "industrial": "mine" },
-  "coal_and_coke": { "industrial": "mine" },
+  "mining": {
+    "industrial": "mine"
+  },
+  "coal_and_coke": {
+    "industrial": "mine"
+  },
   "quarries": {},
   "oil_and_gas": {},
   "b2b_oil_and_gas_extraction_and_services": {},
   "oil_and_gas_exploration_and_development": {},
   "oil_and_gas_field_equipment_and_services": {},
-  "oil_refiners": { "industrial": "refinery" },
+  "oil_refiners": {
+    "industrial": "refinery"
+  },
   "power_plants_and_power_plant_service": {},
   "public_service_and_government": {
     "office": "yes"
@@ -2995,7 +3186,9 @@
   "escrow_services": {},
   "land_surveying": {},
   "real_estate_photography": {},
-  "rental_services": { "shop": "rental" },
+  "rental_services": {
+    "shop": "rental"
+  },
   "travel": {},
   "airport": {
     "aeroway": "aerodrome"
@@ -3153,7 +3346,9 @@
   "weather_forecast_services": {},
   "animation_studio": {},
   "book_magazine_distribution": {},
-  "broadcasting_media_production": { "office": "media" },
+  "broadcasting_media_production": {
+    "office": "media"
+  },
   "game_publisher": {},
   "movie_television_studio": {},
   "music_production": {},
@@ -3638,7 +3833,9 @@
   "sign_making": {},
   "snow_removal_service": {},
   "snuggle_service": {},
-  "software_development": { "office": "software" },
+  "software_development": {
+    "office": "software"
+  },
   "talent_agency": {},
   "taxidermist": {},
   "telephone_services": {},
