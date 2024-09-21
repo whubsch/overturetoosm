@@ -2,65 +2,95 @@
 
 import argparse
 import json
-from typing import Dict
 
 from . import process_address, process_building, process_geojson, process_place
 
 
-def parse_kwargs(pairs) -> Dict[str, str]:
-    """Parse key-value pairs into a dictionary."""
-    kwargs = {}
-    for pair in pairs:
-        key, value = pair.split("=")
-        kwargs[key] = value
-    return kwargs
-
-
 def main():
     """Configure the argument parser for the CLI."""
-    parser = argparse.ArgumentParser(
-        description="Convert Overture data to the OSM schema in the GeoJSON format."
-    )
-
-    parser.add_argument(
+    parent = argparse.ArgumentParser(add_help=False)
+    parent.add_argument(
         "-i", "--input", required=True, help="Path to the input GeoJSON file"
     )
-    out = parser.add_argument_group("Output options")
+    out = parent.add_argument_group("output options")
     output_group = out.add_mutually_exclusive_group(required=True)
     output_group.add_argument("-o", "--output", help="Path to the output GeoJSON file")
     output_group.add_argument(
         "--in-place",
         action="store_true",
-        help="Convert the input file in place (overwrites the original file)",
+        help="Convert the input file in place (overwrites the input file)",
     )
 
-    parser.add_argument(
-        "-t",
-        "--type",
-        choices=["place", "building", "address"],
-        type=str,
-        required=True,
-        help="Type of feature to convert (place, building, or address)",
+    parser = argparse.ArgumentParser(
+        description="Convert Overture data to the OSM schema in the GeoJSON format."
     )
-    parser.add_argument("kwargs", nargs="*", help="Additional arguments")
+    subs = parser.add_subparsers(dest="fx_type", help="types")
+    place_parser = subs.add_parser("place", help="Convert place data", parents=[parent])
+    place_parser.add_argument(
+        "-c",
+        "--confidence",
+        type=float,
+        default=0.0,
+        help="The minimum confidence level. Default: 0.0",
+    )
+    place_parser.add_argument(
+        "-r",
+        "--region-tag",
+        default="addr:state",
+        help="What tag to convert Overture's `region` tag to. Default: `addr:state`",
+    )
+    place_parser.add_argument(
+        "-u",
+        "--unmatched",
+        choices=["force", "ignore"],
+        default="ignore",
+        help="How to handle unmatched Overture categories. Default: ignore",
+    )
+
+    building_parser = subs.add_parser(
+        "building", help="Convert building data", parents=[parent]
+    )
+    building_parser.add_argument(
+        "-c",
+        "--confidence",
+        type=float,
+        default=0.0,
+        help="The minimum confidence level. Default: 0.0",
+    )
+
+    address_parser = subs.add_parser(
+        "address", help="Convert address data", parents=[parent]
+    )
+    address_parser.add_argument(
+        "-s",
+        "--style",
+        default="US",
+        help="How to handle the `address_levels` field. Default: US",
+    )
 
     args = parser.parse_args()
 
-    kwargs = parse_kwargs(args.kwargs)
-
-    fx_dict = {
-        "place": process_place,
-        "building": process_building,
-        "address": process_address,
-    }
-
     with open(args.input, "r", encoding="utf-8") as f:
         contents: dict = json.load(f)
-        conf = float(kwargs.get("confidence", 0))
-        kwargs.pop("confidence", None)
-        geojson = process_geojson(
-            contents, fx=fx_dict.get(args.type, None), confidence=conf, options=kwargs
-        )
+        geojson = {}
+        if args.fx_type == "place":
+            geojson = process_geojson(
+                contents,
+                process_place,
+                confidence=args.confidence,
+                options={"region_tag": args.region_tag, "unmatched": args.unmatched},
+            )
+        elif args.fx_type == "building":
+            geojson = process_geojson(
+                contents, process_building, confidence=args.confidence
+            )
+        elif args.fx_type == "address":
+            geojson = process_geojson(
+                contents, process_address, options={"style": args.style}
+            )
+
+    if not geojson:
+        raise ValueError("No features found in the input file.")
 
     if args.in_place:
         with open(args.input, "w+", encoding="utf-8") as f:

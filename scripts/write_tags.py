@@ -17,3 +17,5 @@ replace = re.sub(pattern, replacement, contents, flags=re.DOTALL)
 
 with open("src/overturetoosm/resources.py", "w+", encoding="utf-8") as f:
     f.write(replace)
+
+print("Done!")

@@ -214,8 +214,8 @@
     "cuisine": "filipino"
   },
   "indo_chinese_restaurant": {
-    "cuisine": "indo_chinese",
-    "amenity": "restaurant"
+    "amenity": "restaurant",
+    "cuisine": "indo_chinese"
   },
   "indonesian_restaurant": {
     "amenity": "restaurant",
@@ -294,6 +294,7 @@
     "cuisine": "british"
   },
   "eastern_european_restaurant": {
+    "cuisine": "eastern_european",
     "amenity": "restaurant"
   },
   "belarusian_restaurant": {
@@ -805,7 +806,8 @@
     "amenity": "pub"
   },
   "sake_bar": {
-    "amenity": "bar"
+    "amenity": "bar",
+    "cuisine": "sake"
   },
   "speakeasy": {
     "amenity": "bar"
@@ -814,23 +816,32 @@
     "amenity": "bar"
   },
   "sugar_shack": {},
-  "tabac": {},
+  "tabac": {
+    "shop": "tobacco"
+  },
   "tiki_bar": {
-    "amenity": "bar"
+    "amenity": "bar",
+    "cuisine": "tiki"
   },
   "vermouth_bar": {
     "amenity": "bar"
   },
   "whiskey_bar": {
-    "amenity": "bar"
+    "amenity": "bar",
+    "bar": "whiskey"
   },
   "wine_bar": {
-    "amenity": "bar"
+    "amenity": "bar",
+    "bar": "wine"
   },
-  "smoothie_juice_bar": {},
+  "smoothie_juice_bar": {
+    "amenity": "cafe",
+    "cuisine": "smoothies"
+  },
   "piano_bar": {
     "amenity": "bar",
-    "live_music": "yes"
+    "live_music": "yes",
+    "music_genre": "piano"
   },
   "cafe": {
     "amenity": "cafe"
@@ -839,14 +850,15 @@
     "shop": "coffee"
   },
   "tea_room": {
-    "amenity": "cafe"
+    "amenity": "cafe",
+    "cuisine": "tea"
   },
   "coffee_shop": {
     "amenity": "cafe",
     "cuisine": "coffee_shop"
   },
   "accommodation": {
-    "tourism": "yes"
+    "amenity": "hotel"
   },
   "bed_and_breakfast": {
     "tourism": "guest_house",
@@ -864,20 +876,30 @@
   "guest_house": {
     "tourism": "guest_house"
   },
-  "health_retreats": {},
-  "holiday_rental_home": {},
+  "health_retreats": {
+    "leisure": "spa"
+  },
+  "holiday_rental_home": {
+    "tourism": "apartment"
+  },
   "hostel": {
     "tourism": "hostel"
   },
   "hotel": {
     "tourism": "hotel"
   },
-  "inn": {},
-  "lodge": {},
+  "inn": {
+    "tourism": "hotel"
+  },
+  "lodge": {
+    "tourism": "lodge"
+  },
   "motel": {
     "tourism": "motel"
   },
-  "mountain_huts": {},
+  "mountain_huts": {
+    "tourism": "alpine_hut"
+  },
   "resort": {
     "leisure": "resort"
   },
@@ -890,30 +912,46 @@
   "service_apartments": {
     "tourism": "apartment"
   },
-  "automotive": {},
+  "automotive": {
+    "shop": "car"
+  },
   "automotive_dealer": {
     "shop": "car"
   },
-  "car_buyer": {},
+  "car_buyer": {
+    "shop": "car"
+  },
   "car_dealer": {
     "shop": "car"
   },
-  "commercial_vehicle_dealer": {},
+  "commercial_vehicle_dealer": {
+    "shop": "car"
+  },
   "golf_cart_dealer": {},
   "motorcycle_dealer": {
     "shop": "motorcycle"
   },
-  "motorsport_vehicle_dealer": {},
-  "recreational_vehicle_dealer": {},
-  "scooter_dealers": {},
-  "trailer_dealer": {},
-  "truck_dealer": {},
-  "used_car_dealer": {
+  "motorsport_vehicle_dealer": {
     "shop": "car",
-    "second_hand": "only"
+    "car": "motorsport"
+  },
+  "recreational_vehicle_dealer": {
+    "shop": "recreational_vehicle"
+  },
+  "scooter_dealers": {
+    "shop": "motorcycle"
+  },
+  "trailer_dealer": {
+    "shop": "trailer"
+  },
+  "truck_dealer": {
+    "shop": "truck"
+  },
+  "used_car_dealer": {
+    "shop": "car"
   },
   "automotive_services_and_repair": {
-    "amenity": "car_repair"
+    "shop": "car_repair"
   },
   "auto_body_shop": {
     "shop": "car_repair",
@@ -947,60 +985,122 @@
     "shop": "car_repair",
     "car_repair": "security"
   },
-  "automobile_registration_service": {},
+  "automobile_registration_service": {
+    "office": "vehicle_registration_service"
+  },
   "automotive_consultant": {
     "office": "consulting",
     "consulting": "automotive"
   },
   "automotive_storage_facility": {
-    "amenity": "parking"
+    "amenity": "parking",
+    "parking": "long_term"
   },
-  "brake_service_and_repair": {},
-  "car_inspector": {},
-  "car_stereo_installation": {},
+  "brake_service_and_repair": {
+    "shop": "car_repair"
+  },
+  "car_inspector": {
+    "shop": "car_repair"
+  },
+  "car_stereo_installation": {
+    "shop": "car_parts"
+  },
   "car_wash": {
     "amenity": "car_wash"
   },
-  "diy_auto_shop": {},
-  "emissions_inspection": {},
-  "engine_repair_service": {},
-  "exhaust_and_muffler_repair": {},
-  "hybrid_car_repair": {},
+  "diy_auto_shop": {
+    "shop": "car_repair"
+  },
+  "emissions_inspection": {
+    "amenity": "vehicle_inspection"
+  },
+  "engine_repair_service": {
+    "shop": "car_repair"
+  },
+  "exhaust_and_muffler_repair": {
+    "shop": "car_repair"
+  },
+  "hybrid_car_repair": {
+    "shop": "car_repair",
+    "car_repair": "hybrid"
+  },
   "motorcycle_repair": {
     "shop": "motorcycle_repair"
   },
-  "motorsport_vehicle_repair": {},
-  "oil_change_station": {},
-  "recreation_vehicle_repair": {},
+  "motorsport_vehicle_repair": {
+    "shop": "car_repair",
+    "repair:vehicle": "motorsport"
+  },
+  "oil_change_station": {
+    "amenity": "fuel",
+    "service": "oil_change"
+  },
+  "recreation_vehicle_repair": {
+    "shop": "repair",
+    "repair": "rv"
+  },
   "roadside_assistance": {},
   "emergency_roadside_service": {},
-  "mobile_dent_repair": {},
+  "mobile_dent_repair": {
+    "shop": "car_repair"
+  },
   "tire_dealer_and_repair": {
     "shop": "tyres"
   },
-  "transmission_repair": {},
-  "towing_service": {},
+  "transmission_repair": {
+    "shop": "car_repair",
+    "car_repair": "transmission"
+  },
+  "towing_service": {
+    "shop": "car_repair",
+    "service": "towing"
+  },
   "trailer_repair": {},
   "truck_repair": {},
   "auto_upholstery": {},
-  "vehicle_wrap": {},
-  "vehicle_shipping": {},
-  "wheel_and_rim_repair": {},
-  "automotive_wheel_polishing_service": {},
-  "windshield_installation_and_repair": {},
+  "vehicle_wrap": {
+    "shop": "car",
+    "service:vehicle:wrapping": "yes"
+  },
+  "vehicle_shipping": {
+    "office": "logistics",
+    "service": "vehicle_shipping"
+  },
+  "wheel_and_rim_repair": {
+    "shop": "car_repair",
+    "service:vehicle:wheels": "yes"
+  },
+  "automotive_wheel_polishing_service": {
+    "shop": "car_wash"
+  },
+  "windshield_installation_and_repair": {
+    "shop": "car_repair"
+  },
   "automotive_parts_and_accessories": {
     "shop": "car_parts"
   },
-  "recreational_vehicle_parts_and_accessories": {},
-  "car_stereo_store": {},
-  "motorcycle_gear": {},
-  "motorsports_store": {},
+  "recreational_vehicle_parts_and_accessories": {
+    "shop": "car_parts",
+    "car_parts": "recreational_vehicle"
+  },
+  "car_stereo_store": {
+    "shop": "car_parts",
+    "car_parts": "stereo"
+  },
+  "motorcycle_gear": {
+    "shop": "motorcycle"
+  },
+  "motorsports_store": {
+    "shop": "motorcycle"
+  },
   "interlock_system": {},
   "aircraft_dealer": {},
   "aircraft_repair": {},
   "aircraft_parts_and_supplies": {},
   "avionics_shop": {},
-  "boat_dealer": {},
+  "boat_dealer": {
+    "shop": "boat"
+  },
   "boat_service_and_repair": {},
   "boat_parts_and_accessories": {},
   "gas_station": {
@@ -1014,31 +1114,61 @@
   "ev_charging_station": {
     "amenity": "charging_station"
   },
-  "truck_stop": {},
-  "automobile_leasing": {},
+  "truck_stop": {
+    "highway": "services"
+  },
+  "automobile_leasing": {
+    "amenity": "car_rental"
+  },
   "automotive_repair": {
     "shop": "car_repair"
   },
   "auto_company": {
     "shop": "car"
   },
-  "motorcycle_manufacturer": {},
-  "arts_and_entertainment": {},
-  "adult_entertainment": {},
-  "erotic_massage": {},
-  "strip_club": {},
-  "striptease_dancer": {},
-  "arcade": {},
-  "auditorium": {},
-  "bar_crawl": {},
+  "motorcycle_manufacturer": {
+    "man_made": "works",
+    "product": "motorcycle"
+  },
+  "arts_and_entertainment": {
+    "amenity": "arts_centre"
+  },
+  "adult_entertainment": {
+    "amenity": "stripclub"
+  },
+  "erotic_massage": {
+    "shop": "massage"
+  },
+  "strip_club": {
+    "amenity": "stripclub"
+  },
+  "striptease_dancer": {
+    "amenity": "stripclub"
+  },
+  "arcade": {
+    "leisure": "amusement_arcade"
+  },
+  "auditorium": {
+    "amenity": "conference_centre",
+    "room": "auditorium"
+  },
+  "bar_crawl": {
+    "office": "guide",
+    "guide": "bar_crawl"
+  },
   "betting_center": {
     "shop": "bookmaker"
   },
-  "bingo_hall": {},
+  "bingo_hall": {
+    "leisure": "bing_hall"
+  },
   "bookmakers": {
     "shop": "bookmaker"
   },
-  "cabaret": {},
+  "cabaret": {
+    "amenity": "theatre",
+    "theatre:genre": "cabaret"
+  },
   "carousel": {
     "attraction": "carousel"
   },
@@ -1053,8 +1183,7 @@
   },
   "club_crawl": {},
   "comedy_club": {
-    "amenity": "theatre",
-    "theatre:genre": "comedy"
+    "amenity": "theatre"
   },
   "topic_concert_venue": {
     "amenity": "music_venue"
@@ -1065,45 +1194,81 @@
     "amenity": "nightclub"
   },
   "dinner_theatre": {},
-  "eatertainment": {},
+  "eatertainment": {
+    "amenity": "restaurant"
+  },
   "escape_rooms": {
     "leisure": "escape_game"
   },
   "exhibition_and_trade_center": {},
-  "glass_blowing": {},
-  "indoor_playcenter": {},
+  "glass_blowing": {
+    "craft": "glass_blowing"
+  },
+  "indoor_playcenter": {
+    "leisure": "playground",
+    "indoor": "yes"
+  },
   "internet_cafe": {
     "amenity": "internet_cafe"
   },
-  "jazz_and_blues": {},
-  "karaoke": {},
-  "laser_tag": {},
-  "makerspace": {},
+  "jazz_and_blues": {
+    "amenity": "nightclub",
+    "live_music": "yes",
+    "music_genre": "jazz_and_blues"
+  },
+  "karaoke": {
+    "amenity": "karaoke_box"
+  },
+  "laser_tag": {
+    "leisure": "sports_centre",
+    "sport": "laser_tag"
+  },
+  "makerspace": {
+    "leisure": "hackerspace"
+  },
   "marching_band": {},
-  "music_venue": {},
-  "musical_band_orchestras_and_symphonies": {},
-  "opera_and_ballet": {},
+  "music_venue": {
+    "amenity": "theatre"
+  },
+  "musical_band_orchestras_and_symphonies": {
+    "amenity": "theatre",
+    "theatre:type": "concert_hall"
+  },
+  "opera_and_ballet": {
+    "amenity": "theatre",
+    "theatre:type": "ballet"
+  },
   "paint_and_sip": {},
   "paintball": {
     "leisure": "pitch",
     "sport": "paintball"
   },
-  "performing_arts": {},
+  "performing_arts": {
+    "amenity": "theatre"
+  },
   "planetarium": {
     "amenity": "planetarium"
   },
-  "rodeo": {},
-  "salsa_club": {},
-  "wildlife_sanctuary": {},
+  "rodeo": {
+    "leisure": "pitch",
+    "sport": "rodeo"
+  },
+  "salsa_club": {
+    "amenity": "nightclub",
+    "music_genre": "salsa"
+  },
+  "wildlife_sanctuary": {
+    "leisure": "nature_reserve"
+  },
   "stadium_arena": {
     "leisure": "stadium"
   },
   "baseball_stadium": {
-    "leisure": "pitch",
+    "leisure": "stadium",
     "sport": "baseball"
   },
   "basketball_stadium": {
-    "leisure": "pitch",
+    "leisure": "stadium",
     "sport": "basketball"
   },
   "cricket_ground": {
@@ -1111,11 +1276,11 @@
     "sport": "cricket"
   },
   "football_stadium": {
-    "leisure": "pitch",
-    "sport": "american_football"
+    "leisure": "stadium",
+    "sport": "soccer"
   },
   "hockey_arena": {
-    "leisure": "stadium",
+    "leisure": "sports_centre",
     "sport": "hockey"
   },
   "rugby_stadium": {
@@ -1123,24 +1288,30 @@
     "sport": "rugby"
   },
   "soccer_stadium": {
-    "leisure": "pitch",
-    "sport": "soccer"
+    "leisure": "stadium",
+    "sport": "football"
   },
   "tennis_stadium": {
-    "leisure": "pitch",
+    "leisure": "stadium",
     "sport": "tennis"
   },
   "track_stadium": {
     "leisure": "stadium",
     "sport": "track"
   },
-  "studio_taping": {},
+  "studio_taping": {
+    "amenity": "studio"
+  },
   "theatres_and_performance_venues": {},
   "theatre": {
     "amenity": "theatre"
   },
-  "ticket_sales": {},
-  "virtual_reality_center": {},
+  "ticket_sales": {
+    "shop": "ticket"
+  },
+  "virtual_reality_center": {
+    "leisure": "amusement_arcade"
+  },
   "water_park": {
     "leisure": "water_park"
   },
@@ -1159,49 +1330,105 @@
     "shop": "farm"
   },
   "attraction_farm": {
-    "shop": "farm"
+    "tourism": "attraction",
+    "attraction": "farm"
   },
-  "orchard": {},
-  "pick_your_own_farm": {},
+  "orchard": {
+    "landuse": "orchard"
+  },
+  "pick_your_own_farm": {
+    "tourism": "attraction",
+    "produce": "pick_your_own"
+  },
   "poultry_farm": {},
-  "ranch": {},
-  "festival": {},
-  "fair": {},
+  "ranch": {
+    "landuse": "farmland"
+  },
+  "festival": {
+    "amenity": "festival_grounds"
+  },
+  "fair": {
+    "leisure": "festival_grounds"
+  },
   "film_festivals_and_organizations": {},
-  "general_festivals": {},
-  "holiday_market": {},
-  "music_festivals_and_organizations": {},
-  "trade_fair": {},
-  "social_club": {},
-  "fraternal_organization": {},
-  "veterans_organization": {},
-  "supernatural_reading": {},
-  "astrologer": {},
-  "mystic": {},
+  "general_festivals": {
+    "amenity": "festival_grounds"
+  },
+  "holiday_market": {
+    "amenity": "marketplace",
+    "seasonal": "christmas"
+  },
+  "music_festivals_and_organizations": {
+    "amenity": "events_venue"
+  },
+  "trade_fair": {
+    "amenity": "events_venue"
+  },
+  "social_club": {
+    "amenity": "social_club"
+  },
+  "fraternal_organization": {
+    "amenity": "social_facility"
+  },
+  "veterans_organization": {
+    "office": "social_facility",
+    "social_facility:for": "veterans"
+  },
+  "supernatural_reading": {
+    "shop": "psychic"
+  },
+  "astrologer": {
+    "shop": "psychic",
+    "psychic": "astrologer"
+  },
+  "mystic": {
+    "shop": "psychic",
+    "psychic": "mystic"
+  },
   "psychic": {
     "shop": "psychic"
   },
-  "psychic_medium": {},
-  "attractions_and_activities": {},
+  "psychic_medium": {
+    "shop": "psychic"
+  },
+  "attractions_and_activities": {
+    "tourism": "attraction"
+  },
   "amusement_park": {
     "tourism": "theme_park"
   },
   "aquarium": {
     "tourism": "aquarium"
   },
-  "architecture": {},
+  "architecture": {
+    "office": "architect"
+  },
   "art_gallery": {
     "tourism": "gallery"
   },
-  "atv_rentals_and_tours": {},
-  "axe_throwing": {},
-  "backpacking_area": {},
+  "atv_rentals_and_tours": {
+    "shop": "rental",
+    "rental": "atvs",
+    "office": "guide",
+    "guide": "atv_tours"
+  },
+  "axe_throwing": {
+    "leisure": "sports_centre",
+    "sport": "axe_throwing"
+  },
+  "backpacking_area": {
+    "highway": "trailhead"
+  },
   "beach": {
     "natural": "beach"
   },
   "beach_combing_area": {},
-  "boat_rental_and_training": {},
-  "boating_places": {},
+  "boat_rental_and_training": {
+    "amenity": "boat_rental"
+  },
+  "boating_places": {
+    "leisure": "marina"
+  },
   "bobsledding_field": {},
   "botanical_garden": {
     "leisure": "garden",
@@ -1217,25 +1444,52 @@
   "cave": {
     "natural": "cave_entrance"
   },
-  "challenge_courses_center": {},
+  "challenge_courses_center": {
+    "leisure": "sports_centre",
+    "sport": "obstacle_course"
+  },
   "cliff_jumping_center": {},
   "climbing_service": {},
   "crater": {},
-  "cultural_center": {},
-  "fishing_charter": {},
-  "flyboarding_rental": {},
+  "cultural_center": {
+    "amenity": "arts_centre"
+  },
+  "fishing_charter": {
+    "office": "guide",
+    "guide": "fishing "
+  },
+  "flyboarding_rental": {
+    "shop": "rental",
+    "rental": "flyboard",
+    "sport": "flyboarding"
+  },
   "fort": {
     "historic": "fort"
   },
   "fountain": {
     "amenity": "fountain"
   },
-  "go_kart_track": {},
-  "haunted_house": {},
-  "high_gliding_center": {},
-  "horseback_riding_service": {},
-  "hot_air_balloons_tour": {},
-  "hot_springs": {},
+  "go_kart_track": {
+    "highway": "raceway",
+    "sport": "karting"
+  },
+  "haunted_house": {
+    "attraction": "haunted_house"
+  },
+  "high_gliding_center": {
+    "leisure": "sports_centre",
+    "sport": "hang_gliding"
+  },
+  "horseback_riding_service": {
+    "leisure": "horse_riding"
+  },
+  "hot_air_balloons_tour": {
+    "office": "guide",
+    "guide": "hot_air_balloon"
+  },
+  "hot_springs": {
+    "natural": "hot_spring"
+  },
   "jet_skis_rental": {},
   "kiteboarding_instruction": {},
   "lake": {
@@ -1257,11 +1511,18 @@
   "monument": {
     "historic": "monument"
   },
-  "mountain_bike_parks": {},
+  "mountain_bike_parks": {
+    "leisure": "track",
+    "sport": "mountain_biking"
+  },
   "observatory": {
     "man_made": "observatory"
   },
-  "paddleboard_rental": {},
+  "paddleboard_rental": {
+    "shop": "rental",
+    "rental": "paddleboard",
+    "sport": "paddleboarding"
+  },
   "palace": {
     "historic": "castle",
     "castle_type": "palace"
@@ -1270,26 +1531,39 @@
   "plaza": {
     "place": "square"
   },
-  "rafting_kayaking_area": {},
+  "rafting_kayaking_area": {
+    "tourism": "attraction",
+    "sport": "kayak"
+  },
   "rock_climbing_spot": {},
   "ruin": {
     "historic": "ruins"
   },
   "sailing_area": {},
-  "sand_dune": {},
+  "sand_dune": {
+    "natural": "sand"
+  },
   "scavenger_hunts_provider": {},
   "sculpture_statue": {
     "historic": "memorial",
     "memorial": "statue"
   },
-  "ski_area": {},
+  "ski_area": {
+    "landuse": "winter_sports"
+  },
   "skyline": {},
-  "sledding_rental": {},
+  "sledding_rental": {
+    "shop": "rental",
+    "rental": "sledding"
+  },
   "snorkeling_equipment_rental": {},
   "snorkeling": {},
   "snowboarding_center": {},
   "stargazing_area": {},
-  "street_art": {},
+  "street_art": {
+    "tourism": "artwork",
+    "artwork_type": "street_art"
+  },
   "trail": {
     "highway": "path"
   },
@@ -1304,7 +1578,10 @@
   "waterfall": {
     "waterway": "waterfall"
   },
-  "surfing": {},
+  "surfing": {
+    "leisure": "sports_centre",
+    "sport": "surfing"
+  },
   "surfboard_rental": {},
   "windsurfing_center": {},
   "ziplining_center": {},
@@ -1324,21 +1601,27 @@
   "asian_art_museum": {
     "tourism": "gallery"
   },
-  "cartooning_museum": {},
+  "cartooning_museum": {
+    "tourism": "museum",
+    "museum": "cartooning"
+  },
   "contemporary_art_museum": {
     "tourism": "gallery"
   },
   "children's_museum": {
-    "tourism": "museum"
+    "tourism": "museum",
+    "museum": "children"
   },
   "costume_museum": {
-    "tourism": "museum"
+    "tourism": "museum",
+    "museum": "costume"
   },
   "decorative_arts_museum": {
     "tourism": "gallery"
   },
   "design_museum": {
-    "tourism": "museum"
+    "tourism": "museum",
+    "museum": "design"
   },
   "modern_art_museum": {
     "tourism": "gallery"
@@ -1346,32 +1629,48 @@
   "photography_museum": {
     "tourism": "gallery"
   },
-  "textile_museum": {},
-  "history_museum": {
-    "tourism": "museum"
+  "textile_museum": {
+    "tourism": "museum",
+    "museum": "textile"
   },
-  "civilization_museum": {},
+  "history_museum": {
+    "tourism": "museum",
+    "museum": "history"
+  },
+  "civilization_museum": {
+    "tourism": "museum",
+    "museum": "history"
+  },
   "community_museum": {
-    "tourism": "museum"
+    "tourism": "museum",
+    "museum": "community"
   },
   "military_museum": {
-    "tourism": "museum"
+    "tourism": "museum",
+    "museum": "military"
   },
   "national_museum": {
-    "tourism": "museum"
+    "tourism": "museum",
+    "museum": "national"
   },
   "science_museum": {
-    "tourism": "museum"
+    "tourism": "museum",
+    "museum": "science"
   },
-  "computer_museum": {},
+  "computer_museum": {
+    "tourism": "museum",
+    "museum": "computer"
+  },
   "state_museum": {
     "tourism": "museum"
   },
   "aviation_museum": {
-    "tourism": "museum"
+    "tourism": "museum",
+    "museum": "aviation"
   },
   "sports_museum": {
-    "tourism": "museum"
+    "tourism": "museum",
+    "museum": "sports"
   },
   "park": {
     "leisure": "park"
@@ -1380,22 +1679,34 @@
     "leisure": "dog_park"
   },
   "memorial_park": {
-    "leisure": "park"
+    "leisure": "park",
+    "historic": "memorial"
   },
   "national_park": {
-    "boundary": "protected_area"
+    "leisure": "nature_reserve"
   },
   "state_park": {
+    "leisure": "park",
     "boundary": "protected_area"
   },
-  "active_life": {},
-  "sports_and_recreation_venue": {},
-  "adventure_sports_center": {},
+  "active_life": {
+    "leisure": "sports_centre"
+  },
+  "sports_and_recreation_venue": {
+    "leisure": "sports_centre"
+  },
+  "adventure_sports_center": {
+    "leisure": "sports_centre",
+    "sport": "adventure"
+  },
   "american_football_field": {
     "leisure": "pitch",
     "sport": "american_football"
   },
-  "airsoft_fields": {},
+  "airsoft_fields": {
+    "leisure": "pitch",
+    "sport": "airsoft"
+  },
   "archery_range": {
     "leisure": "pitch",
     "sport": "archery"
@@ -1413,12 +1724,17 @@
     "leisure": "pitch",
     "sport": "basketball"
   },
-  "batting_cage": {},
+  "batting_cage": {
+    "leisure": "pitch",
+    "sport": "baseball"
+  },
   "beach_volleyball_court": {
     "leisure": "pitch",
     "sport": "beachvolleyball"
   },
-  "bicycle_path": {},
+  "bicycle_path": {
+    "highway": "cycleway"
+  },
   "bocce_ball_court": {
     "leisure": "pitch",
     "sport": "boules"
@@ -1447,7 +1763,10 @@
   "gym": {
     "leisure": "fitness_centre"
   },
-  "gymnastics_center": {},
+  "gymnastics_center": {
+    "leisure": "sports_centre",
+    "sport": "gymnastics"
+  },
   "handball_court": {
     "leisure": "pitch",
     "sport": "handball"
@@ -1459,13 +1778,30 @@
   "horse_riding": {
     "leisure": "horse_riding"
   },
-  "equestrian_facility": {},
-  "horse_racing_track": {},
-  "skate_park": {},
-  "skating_rink": {},
+  "equestrian_facility": {
+    "leisure": "horse_riding"
+  },
+  "horse_racing_track": {
+    "leisure": "track",
+    "sport": "horse_racing"
+  },
+  "skate_park": {
+    "leisure": "pitch",
+    "sport": "skateboard"
+  },
+  "skating_rink": {
+    "leisure": "sports_centre",
+    "sport": "skating"
+  },
   "ice_skating_rink": {},
-  "roller_skating_rink": {},
-  "hang_gliding_center": {},
+  "roller_skating_rink": {
+    "leisure": "pitch",
+    "sport": "roller_skating"
+  },
+  "hang_gliding_center": {
+    "leisure": "sports_centre",
+    "sport": "hang_gliding"
+  },
   "kiteboarding": {},
   "miniature_golf_course": {
     "leisure": "miniature_golf"
@@ -1474,8 +1810,14 @@
   "playground": {
     "leisure": "playground"
   },
-  "pool_billiards": {},
-  "pool_hall": {},
+  "pool_billiards": {
+    "leisure": "sports_centre",
+    "sport": "pool;billiards"
+  },
+  "pool_hall": {
+    "leisure": "sports_centre",
+    "sport": "pool"
+  },
   "racquetball_court": {
     "leisure": "pitch",
     "sport": "racquetball"
@@ -1489,7 +1831,10 @@
     "leisure": "pitch",
     "sport": "rugby"
   },
-  "shooting_range": {},
+  "shooting_range": {
+    "leisure": "pitch",
+    "sport": "shooting"
+  },
   "sky_diving": {},
   "soccer_field": {
     "leisure": "pitch",
@@ -1509,43 +1854,80 @@
   "trampoline_park": {
     "leisure": "trampoline_park"
   },
-  "tubing_provider": {},
+  "tubing_provider": {
+    "shop": "wholesale",
+    "wholesale": "tubing"
+  },
   "volleyball_court": {
     "leisure": "pitch",
     "sport": "volleyball"
   },
-  "wildlife_hunting_range": {},
+  "wildlife_hunting_range": {
+    "leisure": "nature_reserve",
+    "hunting": "yes"
+  },
   "zorbing_center": {},
   "diving_center": {},
   "free_diving_center": {},
   "scuba_diving_center": {},
-  "race_track": {},
+  "race_track": {
+    "leisure": "track"
+  },
   "sports_and_fitness_instruction": {},
   "climbing_class": {},
   "cycling_classes": {},
   "golf_instructor": {},
   "paddleboarding_lessons": {},
   "racing_experience": {},
-  "rock_climbing_instructor": {},
+  "rock_climbing_instructor": {
+    "leisure": "sports_hall",
+    "sport": "climbing"
+  },
   "free_diving_instruction": {},
   "scuba_diving_instruction": {},
   "aerial_fitness_center": {},
-  "barre_classes": {},
-  "boot_camp": {},
-  "boxing_class": {},
-  "boxing_club": {},
-  "boxing_gym": {},
-  "cardio_classes": {},
+  "barre_classes": {
+    "leisure": "fitness_centre",
+    "sport": "barre"
+  },
+  "boot_camp": {
+    "amenity": "fitness_centre"
+  },
+  "boxing_class": {
+    "leisure": "fitness_centre",
+    "sport": "boxing"
+  },
+  "boxing_club": {
+    "leisure": "fitness_centre",
+    "sport": "boxing"
+  },
+  "boxing_gym": {
+    "leisure": "fitness_centre",
+    "sport": "boxing"
+  },
+  "cardio_classes": {
+    "leisure": "fitness_centre",
+    "sport": "cardio"
+  },
   "dance_school": {
     "leisure": "dance",
     "dance:teaching": "yes"
   },
-  "ems_training": {},
+  "ems_training": {
+    "amenity": "training",
+    "training": "emergency_medical_services"
+  },
   "fitness_trainer": {},
   "health_consultant": {},
   "meditation_center": {},
-  "pilates_studio": {},
-  "qi_gong_studio": {},
+  "pilates_studio": {
+    "amenity": "gym",
+    "sport": "pilates"
+  },
+  "qi_gong_studio": {
+    "leisure": "fitness_centre",
+    "sport": "qi_gong"
+  },
   "self_defense_classes": {},
   "ski_and_snowboard_school": {
     "amenity": "school"
@@ -1567,7 +1949,6 @@
   "esports_league": {},
   "esports_team": {},
   "fencing_club": {
-    "leisure": "sports_centre",
     "sport": "fencing"
   },
   "fishing_club": {},
@@ -1580,7 +1961,10 @@
   "lawn_bowling_club": {},
   "nudist_clubs": {},
   "paddle_tennis_club": {},
-  "professional_sports_league": {},
+  "professional_sports_league": {
+    "office": "sports",
+    "sport": "professional_sports"
+  },
   "professional_sports_team": {},
   "rowing_club": {},
   "sailing_club": {},
@@ -1590,7 +1974,11 @@
     "leisure": "sports_centre",
     "sport": "soccer"
   },
-  "surf_lifesaving_club": {},
+  "surf_lifesaving_club": {
+    "emergency": "lifeguard",
+    "club": "sport",
+    "sport": "surfing"
+  },
   "table_tennis_club": {
     "leisure": "sports_centre",
     "sport": "table_tennis"
@@ -1608,45 +1996,88 @@
     "indoor": "yes"
   },
   "martial_arts_club": {
+    "amenity": "dojo",
+    "club": "martial_arts"
+  },
+  "brazilian_jiu_jitsu_club": {
+    "leisure": "sports_centre",
+    "sport": "brazilian_jiu_jitsu"
+  },
+  "chinese_martial_arts_club": {
+    "leisure": "sports_centre",
     "sport": "martial_arts"
   },
-  "brazilian_jiu_jitsu_club": {},
-  "chinese_martial_arts_club": {},
   "karate_club": {
-    "leisure": "sports_centre",
+    "amenity": "dojo",
     "sport": "karate"
   },
-  "kickboxing_club": {},
-  "muay_thai_club": {},
-  "taekwondo_club": {
+  "kickboxing_club": {
     "leisure": "sports_centre",
+    "sport": "kickboxing"
+  },
+  "muay_thai_club": {
+    "leisure": "sports_centre",
+    "sport": "muay_thai"
+  },
+  "taekwondo_club": {
+    "club": "sport",
     "sport": "taekwondo"
   },
   "sports_and_recreation_rental_and_services": {},
-  "beach_equipment_rentals": {},
+  "beach_equipment_rentals": {
+    "shop": "rental",
+    "rental": "beach_equipment"
+  },
   "bike_rentals": {
     "amenity": "bicycle_rental"
   },
   "canoe_and_kayak_hire_service": {},
   "scooter_rental": {},
-  "sport_equipment_rentals": {},
+  "sport_equipment_rentals": {
+    "shop": "rental",
+    "rental": "sports_equipment"
+  },
   "beauty_and_spa": {
     "amenity": "spa"
   },
-  "aromatherapy": {},
+  "aromatherapy": {
+    "healthcare": "alternative",
+    "healthcare:speciality": "aromatherapy"
+  },
   "beauty_salon": {
     "shop": "beauty"
   },
-  "acne_treatment": {},
+  "acne_treatment": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "dermatology"
+  },
   "barber": {
     "shop": "hairdresser"
   },
-  "eyebrow_service": {},
-  "eyelash_service": {},
-  "foot_care": {},
-  "hair_extensions": {},
-  "hair_loss_center": {},
-  "hair_replacement": {},
+  "eyebrow_service": {
+    "shop": "beauty",
+    "beauty": "eyebrows"
+  },
+  "eyelash_service": {
+    "shop": "beauty",
+    "beauty": "eyelash"
+  },
+  "foot_care": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "podiatry"
+  },
+  "hair_extensions": {
+    "shop": "hairdresser;beauty",
+    "beauty": "hair_extensions"
+  },
+  "hair_loss_center": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "trichology"
+  },
+  "hair_replacement": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "hair"
+  },
   "health_spa": {
     "amenity": "spa"
   },
@@ -1654,12 +2085,17 @@
   "massage": {
     "shop": "massage"
   },
-  "nail_salon": {},
+  "nail_salon": {
+    "shop": "beauty",
+    "beauty": "nails"
+  },
   "onsen": {},
-  "permanent_makeup": {},
+  "permanent_makeup": {
+    "shop": "beauty",
+    "beauty": "permanent_makeup"
+  },
   "tattoo_and_piercing": {
-    "shop": "tattoo",
-    "piercing": "yes"
+    "shop": "tattoo"
   },
   "piercing": {
     "shop": "tattoo",
@@ -1668,18 +2104,40 @@
   "tattoo": {
     "shop": "tattoo"
   },
-  "public_bath_houses": {},
-  "teeth_whitening": {},
+  "public_bath_houses": {
+    "amenity": "public_bath"
+  },
+  "teeth_whitening": {
+    "amenity": "dentist",
+    "healthcare": "dentist",
+    "healthcare:speciality": "teeth_whitening"
+  },
   "turkish_baths": {},
-  "hair_removal": {},
-  "laser_hair_removal": {},
+  "hair_removal": {
+    "shop": "beauty",
+    "beauty": "hair_removal"
+  },
+  "laser_hair_removal": {
+    "shop": "beauty",
+    "beauty:salon:waxing": "laser_hair_removal"
+  },
   "sugaring": {},
   "threading_service": {},
-  "waxing": {},
-  "hair_salon": {},
+  "waxing": {
+    "shop": "beauty",
+    "beauty": "waxing"
+  },
+  "hair_salon": {
+    "shop": "hairdresser"
+  },
   "blow_dry_blow_out_service": {},
-  "hair_stylist": {},
-  "kids_hair_salon": {},
+  "hair_stylist": {
+    "shop": "hairdresser"
+  },
+  "kids_hair_salon": {
+    "shop": "hairdresser",
+    "hairdresser": "kids"
+  },
   "spas": {
     "amenity": "spa"
   },
@@ -1689,11 +2147,23 @@
   "day_spa": {
     "amenity": "spa"
   },
-  "skin_care": {},
-  "esthetician": {},
-  "tanning_salon": {},
-  "spray_tanning": {},
-  "tanning_bed": {},
+  "skin_care": {
+    "shop": "cosmetics"
+  },
+  "esthetician": {
+    "shop": "beauty"
+  },
+  "tanning_salon": {
+    "shop": "beauty",
+    "beauty": "tanning"
+  },
+  "spray_tanning": {
+    "shop": "beauty",
+    "beauty": "tanning"
+  },
+  "tanning_bed": {
+    "leisure": "tanning_salon"
+  },
   "image_consultant": {},
   "education": {},
   "adult_education": {},
@@ -1707,10 +2177,19 @@
   "architecture_schools": {},
   "business_schools": {},
   "engineering_schools": {},
-  "law_schools": {},
-  "medical_sciences_schools": {},
+  "law_schools": {
+    "amenity": "university",
+    "education": "law"
+  },
+  "medical_sciences_schools": {
+    "amenity": "school",
+    "school": "medical_sciences"
+  },
   "dentistry_schools": {},
-  "pharmacy_schools": {},
+  "pharmacy_schools": {
+    "amenity": "college",
+    "education": "pharmacy"
+  },
   "veterinary_schools": {},
   "science_schools": {},
   "educational_research_institute": {},
@@ -1722,7 +2201,8 @@
     "amenity": "school"
   },
   "charter_school": {
-    "amenity": "school"
+    "amenity": "school",
+    "school:type": "charter"
   },
   "elementary_school": {
     "amenity": "school",
@@ -1744,7 +2224,8 @@
     "isced:level": "0"
   },
   "private_school": {
-    "amenity": "school"
+    "amenity": "school",
+    "school:type": "private"
   },
   "public_school": {
     "amenity": "school"
@@ -1753,11 +2234,13 @@
     "amenity": "school"
   },
   "waldorf_school": {
-    "amenity": "school"
+    "amenity": "school",
+    "operator:type": "waldorf"
   },
   "school_district_offices": {},
   "specialty_school": {
-    "amenity": "school"
+    "amenity": "school",
+    "education": "speciality"
   },
   "art_school": {
     "amenity": "school",
@@ -1767,7 +2250,10 @@
     "amenity": "school",
     "school": "bartending"
   },
-  "cheerleading": {},
+  "cheerleading": {
+    "leisure": "sports_centre",
+    "sport": "cheerleading"
+  },
   "childbirth_education": {},
   "circus_school": {
     "amenity": "school",
@@ -1782,7 +2268,10 @@
     "amenity": "school",
     "school": "cosmetology"
   },
-  "cpr_classes": {},
+  "cpr_classes": {
+    "amenity": "training",
+    "training": "cpr"
+  },
   "drama_school": {
     "amenity": "school",
     "school": "drama"
@@ -1793,12 +2282,21 @@
   "dui_school": {
     "amenity": "school"
   },
-  "firearm_training": {},
-  "first_aid_class": {},
+  "firearm_training": {
+    "amenity": "training",
+    "training": "firearm"
+  },
+  "first_aid_class": {
+    "amenity": "training",
+    "training": "first_aid"
+  },
   "flight_school": {
     "amenity": "school"
   },
-  "food_safety_training": {},
+  "food_safety_training": {
+    "amenity": "training",
+    "training": "food_safety"
+  },
   "language_school": {
     "amenity": "language_school"
   },
@@ -1806,7 +2304,8 @@
     "amenity": "school"
   },
   "medical_school": {
-    "amenity": "school"
+    "amenity": "university",
+    "education": "medicine"
   },
   "music_school": {
     "amenity": "music_school"
@@ -1814,20 +2313,29 @@
   "nursing_school": {
     "amenity": "school"
   },
-  "parenting_classes": {},
-  "photography_classes": {},
+  "parenting_classes": {
+    "amenity": "community_centre",
+    "community_centre": "parenting_classes"
+  },
+  "photography_classes": {
+    "amenity": "training",
+    "training": "photography"
+  },
   "speech_training": {},
   "sports_school": {
     "amenity": "school"
   },
   "traffic_school": {
-    "amenity": "school"
+    "amenity": "driving_school"
   },
   "vocational_and_technical_school": {
     "amenity": "school"
   },
   "student_union": {},
-  "tasting_classes": {},
+  "tasting_classes": {
+    "office": "guide",
+    "guide": "tasting_classes"
+  },
   "cheese_tasting_classes": {},
   "wine_tasting_classes": {},
   "test_preparation": {},
@@ -1859,17 +2367,33 @@
   "business_banking_service": {},
   "business_financing": {},
   "check_cashing_payday_loans": {},
-  "coin_dealers": {},
+  "coin_dealers": {
+    "shop": "collector",
+    "collector": "coins"
+  },
   "collection_agencies": {},
-  "credit_and_debt_counseling": {},
-  "currency_exchange": {},
-  "debt_relief_services": {},
-  "financial_advising": {},
+  "credit_and_debt_counseling": {
+    "amenity": "social_facility",
+    "social_facility:for": "debt_counseling"
+  },
+  "currency_exchange": {
+    "amenity": "bureau_de_change"
+  },
+  "debt_relief_services": {
+    "office": "financial_advisor"
+  },
+  "financial_advising": {
+    "office": "financial_adviser"
+  },
   "holding_companies": {},
   "investment_management_company": {},
-  "installment_loans": {},
+  "installment_loans": {
+    "shop": "money_lender"
+  },
   "mortgage_lender": {},
-  "auto_loan_provider": {},
+  "auto_loan_provider": {
+    "office": "money_lender"
+  },
   "insurance_agency": {
     "office": "insurance"
   },
@@ -1893,7 +2417,9 @@
   "investing": {
     "office": "financial_advisor"
   },
-  "money_transfer_services": {},
+  "money_transfer_services": {
+    "amenity": "bureau_de_change"
+  },
   "tax_services": {
     "office": "tax_advisor"
   },
@@ -1906,11 +2432,15 @@
   "corporate_entertainment_services": {},
   "corporate_gift_supplier": {},
   "corporate_office": {},
-  "private_equity_firm": {},
+  "private_equity_firm": {
+    "office": "financial"
+  },
   "retail": {
     "shop": "yes"
   },
-  "food": {},
+  "food": {
+    "amenity": "restaurant"
+  },
   "back_shop": {},
   "bagel_shop": {
     "amenity": "cafe",
@@ -1925,13 +2455,20 @@
   "beer_wine_and_spirits": {
     "shop": "alcohol"
   },
-  "box_lunch_supplier": {},
-  "patisserie_cake_shop": {
-    "shop": "pastry"
+  "box_lunch_supplier": {
+    "shop": "caterer"
   },
-  "chimney_cake_shop": {},
+  "patisserie_cake_shop": {
+    "shop": "pastry",
+    "cuisine": "cake"
+  },
+  "chimney_cake_shop": {
+    "shop": "pastry",
+    "cuisine": "chimney_cake"
+  },
   "cupcake_shop": {
-    "shop": "pastry"
+    "shop": "pastry",
+    "cuisine": "cupcake"
   },
   "custom_cakes_shop": {
     "shop": "pastry"
@@ -1939,22 +2476,37 @@
   "coffee_and_tea_supplies": {
     "shop": "coffee"
   },
-  "csa_farm": {},
+  "csa_farm": {
+    "landuse": "farm"
+  },
   "desserts": {},
-  "donuts": {},
-  "fishmonger": {},
+  "donuts": {
+    "amenity": "fast_food",
+    "cuisine": "donut"
+  },
+  "fishmonger": {
+    "shop": "fishmonger"
+  },
   "food_delivery_service": {},
-  "food_stand": {},
-  "food_truck": {},
-  "friterie": {},
+  "food_stand": {
+    "amenity": "fast_food"
+  },
+  "food_truck": {
+    "amenity": "fast_food"
+  },
+  "friterie": {
+    "amenity": "fast_food",
+    "cuisine": "friterie"
+  },
   "health_food_store": {
-    "shop": "herbalist"
+    "shop": "health_food"
   },
   "ice_cream_and_frozen_yoghurt": {
     "amenity": "ice_cream"
   },
   "gelato": {
-    "amenity": "ice_cream"
+    "amenity": "ice_cream",
+    "cuisine": "gelato"
   },
   "ice_cream_shop": {
     "amenity": "ice_cream"
@@ -1964,36 +2516,53 @@
   },
   "shaved_ice_shop": {},
   "shaved_snow_shop": {},
-  "imported_food": {},
-  "kiosk": {},
+  "imported_food": {
+    "shop": "food"
+  },
+  "kiosk": {
+    "shop": "kiosk"
+  },
   "liquor_store": {
     "shop": "alcohol"
   },
   "mulled_wine": {
     "shop": "wine"
   },
-  "pie_shop": {},
-  "pretzels": {},
+  "pie_shop": {
+    "shop": "pastry",
+    "cuisine": "pie"
+  },
+  "pretzels": {
+    "shop": "bakery",
+    "cuisine": "pretzel"
+  },
   "sandwich_shop": {
     "amenity": "fast_food",
     "cuisine": "sandwich"
   },
   "smokehouse": {},
   "street_vendor": {},
-  "pizza_delivery_service": {},
+  "pizza_delivery_service": {
+    "amenity": "fast_food",
+    "cuisine": "pizza"
+  },
   "specialty_foods": {},
   "delicatessen": {
     "shop": "deli"
   },
   "frozen_foods": {},
-  "indian_sweets_shop": {},
+  "indian_sweets_shop": {
+    "shop": "confectionery",
+    "cuisine": "indian"
+  },
   "macarons": {},
   "pasta_shop": {},
   "winery": {
     "craft": "winery"
   },
   "wine_tasting_room": {
-    "craft": "winery"
+    "craft": "winery",
+    "amenity": "bar"
   },
   "auto_parts_and_supply_store": {
     "shop": "car_parts"
@@ -2001,7 +2570,9 @@
   "beverage_store": {
     "shop": "alcohol"
   },
-  "boat_parts_and_supply_store": {},
+  "boat_parts_and_supply_store": {
+    "shop": "boat"
+  },
   "butcher_shop": {
     "shop": "butcher"
   },
@@ -2009,7 +2580,8 @@
     "shop": "confectionery"
   },
   "japanese_confectionery_shop": {
-    "shop": "confectionery"
+    "shop": "confectionery",
+    "cuisine": "japanese"
   },
   "carpet_store": {
     "shop": "carpet"
@@ -2023,25 +2595,46 @@
   "distillery": {
     "craft": "distillery"
   },
-  "drugstore": {},
+  "drugstore": {
+    "shop": "chemist"
+  },
   "flooring_store": {
     "shop": "flooring"
   },
-  "fruits_and_vegetables": {},
+  "fruits_and_vegetables": {
+    "shop": "greengrocer"
+  },
   "health_market": {},
   "hearing_aid_provider": {},
-  "herb_and_spice_shop": {},
-  "honey_farm_shop": {},
+  "herb_and_spice_shop": {
+    "shop": "farm",
+    "produce": "herb"
+  },
+  "honey_farm_shop": {
+    "shop": "farm",
+    "produce": "honey"
+  },
   "meat_shop": {
     "shop": "butcher"
   },
-  "olive_oil": {},
-  "party_supply": {},
+  "olive_oil": {
+    "shop": "farm",
+    "produce": "olive_oil"
+  },
+  "party_supply": {
+    "shop": "party"
+  },
   "pharmacy": {
     "amenity": "pharmacy"
   },
-  "popcorn_shop": {},
-  "seafood_market": {},
+  "popcorn_shop": {
+    "shop": "confectionery",
+    "cuisine": "popcorn"
+  },
+  "seafood_market": {
+    "amenity": "marketplace",
+    "cuisine": "seafood"
+  },
   "water_store": {
     "shop": "water"
   },
@@ -2057,7 +2650,8 @@
   "atelier": {},
   "cooking_classes": {},
   "costume_store": {
-    "shop": "costume"
+    "shop": "clothes",
+    "clothes": "costume"
   },
   "craft_shop": {
     "shop": "craft"
@@ -2075,48 +2669,99 @@
     "shop": "craft"
   },
   "paint_your_own_pottery": {},
-  "books_mags_music_and_video": {},
+  "books_mags_music_and_video": {
+    "shop": "books"
+  },
   "bookstore": {
     "shop": "books"
   },
-  "academic_bookstore": {},
-  "comic_books_store": {},
-  "music_and_dvd_store": {},
-  "newspaper_and_magazines_store": {},
-  "video_and_video_game_rentals": {},
-  "video_game_store": {},
-  "vinyl_record_store": {},
-  "building_supply_store": {},
-  "lumber_store": {},
+  "academic_bookstore": {
+    "shop": "books"
+  },
+  "comic_books_store": {
+    "shop": "books",
+    "books": "comic"
+  },
+  "music_and_dvd_store": {
+    "shop": "music;video"
+  },
+  "newspaper_and_magazines_store": {
+    "shop": "newsagent"
+  },
+  "video_and_video_game_rentals": {
+    "shop": "rental",
+    "rental": "video_games"
+  },
+  "video_game_store": {
+    "shop": "video_games"
+  },
+  "vinyl_record_store": {
+    "shop": "music"
+  },
+  "building_supply_store": {
+    "shop": "doityourself"
+  },
+  "lumber_store": {
+    "shop": "doityourself"
+  },
   "fashion": {
-    "shop": "clothes",
-    "clothes": "fashion"
+    "shop": "clothes"
   },
   "clothing_store": {
     "shop": "clothes"
   },
-  "ceremonial_clothing": {},
+  "ceremonial_clothing": {
+    "shop": "clothes",
+    "clothes": "ceremonial"
+  },
   "children's_clothing_store": {
     "shop": "clothes",
     "clothes": "children"
   },
-  "clothing_rental": {},
+  "clothing_rental": {
+    "shop": "rental",
+    "rental": "clothing"
+  },
   "denim_wear_store": {
     "shop": "clothes",
     "clothes": "denim"
   },
-  "designer_clothing": {},
-  "formal_wear_store": {},
-  "fur_clothing": {},
-  "lingerie_store": {},
-  "maternity_wear": {},
+  "designer_clothing": {
+    "shop": "clothes",
+    "clothes": "fashion"
+  },
+  "formal_wear_store": {
+    "shop": "clothes",
+    "clothes": "formal_wear"
+  },
+  "fur_clothing": {
+    "shop": "clothes",
+    "clothes": "fur"
+  },
+  "lingerie_store": {
+    "shop": "clothes",
+    "clothes": "underwear"
+  },
+  "maternity_wear": {
+    "shop": "clothes",
+    "clothes": "maternity"
+  },
   "men's_clothing_store": {
     "shop": "clothes",
     "clothes": "men"
   },
-  "t_shirt_store": {},
-  "custom_t_shirt_store": {},
-  "traditional_clothing": {},
+  "t_shirt_store": {
+    "shop": "clothes",
+    "clothes": "custom_t_shirts"
+  },
+  "custom_t_shirt_store": {
+    "shop": "clothes",
+    "clothes": "custom_t_shirts"
+  },
+  "traditional_clothing": {
+    "shop": "clothes",
+    "clothes": "traditional"
+  },
   "women's_clothing_store": {
     "shop": "clothes",
     "clothes": "women"
@@ -2128,13 +2773,28 @@
     "shop": "clothes",
     "clothes": "hats"
   },
-  "leather_goods": {},
-  "plus_size_clothing": {},
-  "saree_shop": {},
-  "sleepwear": {},
+  "leather_goods": {
+    "shop": "leather"
+  },
+  "plus_size_clothing": {
+    "shop": "clothes",
+    "clothes": "plus_size"
+  },
+  "saree_shop": {
+    "shop": "clothes",
+    "clothes": "saree"
+  },
+  "sleepwear": {
+    "shop": "clothes",
+    "clothes": "sleepwear"
+  },
   "stocking": {},
-  "used_vintage_and_consignment": {},
-  "handbag_stores": {},
+  "used_vintage_and_consignment": {
+    "shop": "second_hand"
+  },
+  "handbag_stores": {
+    "shop": "bag"
+  },
   "shoe_store": {
     "shop": "shoes"
   },
@@ -2142,12 +2802,19 @@
     "shop": "shoes",
     "shoes": "orthopaedic"
   },
-  "cosmetic_and_beauty_supplies": {},
-  "hair_supply_stores": {},
+  "cosmetic_and_beauty_supplies": {
+    "shop": "beauty"
+  },
+  "hair_supply_stores": {
+    "shop": "wholesale",
+    "wholesale": "hair_supply"
+  },
   "eyewear_and_optician": {
     "shop": "optician"
   },
-  "sunglasses_store": {},
+  "sunglasses_store": {
+    "shop": "optician"
+  },
   "farming_equipment_store": {},
   "forklift_dealer": {},
   "flowers_and_gifts_shop": {
@@ -2169,8 +2836,12 @@
     "shop": "supermarket",
     "cuisine": "asian"
   },
-  "dairy_stores": {},
-  "ethical_grocery": {},
+  "dairy_stores": {
+    "shop": "dairy"
+  },
+  "ethical_grocery": {
+    "shop": "supermarket"
+  },
   "indian_grocery_store": {
     "shop": "supermarket",
     "cuisine": "indian"
@@ -2215,7 +2886,9 @@
     "shop": "candles"
   },
   "christmas_trees": {},
-  "electrical_supply_store": {},
+  "electrical_supply_store": {
+    "shop": "electronics"
+  },
   "furniture_accessory_store": {
     "shop": "furniture"
   },
@@ -2224,27 +2897,52 @@
   },
   "grilling_equipment": {},
   "holiday_decor": {},
-  "home_decor": {},
-  "home_goods_store": {},
+  "home_decor": {
+    "shop": "houseware"
+  },
+  "home_goods_store": {
+    "shop": "houseware"
+  },
   "home_improvement_store": {
     "shop": "doityourself"
   },
-  "hot_tubs_and_pools": {},
+  "hot_tubs_and_pools": {
+    "shop": "swimming_pool;hot_tub"
+  },
   "lawn_mower_store": {},
-  "lighting_store": {},
-  "linen": {},
+  "lighting_store": {
+    "shop": "lighting"
+  },
+  "linen": {
+    "shop": "bedding"
+  },
   "mattress_store": {
     "shop": "bed"
   },
-  "nursery_and_gardening": {},
-  "outdoor_furniture_store": {},
+  "nursery_and_gardening": {
+    "shop": "garden_centre"
+  },
+  "outdoor_furniture_store": {
+    "shop": "outdoor",
+    "product": "furniture"
+  },
   "paint_store": {
     "shop": "paint"
   },
-  "playground_equipment_supplier": {},
-  "pumpkin_patch": {},
-  "rug_store": {},
-  "tableware_supplier": {},
+  "playground_equipment_supplier": {
+    "shop": "wholesale",
+    "wholesale": "playground_equipment"
+  },
+  "pumpkin_patch": {
+    "landuse": "orchard"
+  },
+  "rug_store": {
+    "shop": "carpet"
+  },
+  "tableware_supplier": {
+    "shop": "wholesale",
+    "wholesale": "tableware"
+  },
   "tile_store": {},
   "wallpaper_store": {},
   "window_treatment_store": {},
@@ -2252,7 +2950,10 @@
   "kitchen_and_bath": {},
   "bathroom_fixture_stores": {},
   "kitchen_supply_store": {},
-  "hydroponic_gardening": {},
+  "hydroponic_gardening": {
+    "shop": "garden_centre",
+    "product": "hydroponics"
+  },
   "medical_supply": {
     "shop": "medical_supply"
   },
@@ -2263,23 +2964,40 @@
   "pet_store": {
     "shop": "pet"
   },
-  "bird_shop": {},
-  "aquatic_pet_store": {},
+  "bird_shop": {
+    "shop": "pet",
+    "pet": "bird"
+  },
+  "aquatic_pet_store": {
+    "shop": "pet",
+    "pet": "fish"
+  },
   "reptile_shop": {},
-  "adult_store": {},
+  "adult_store": {
+    "shop": "erotic"
+  },
   "agricultural_seed_store": {},
-  "antique_store": {},
+  "antique_store": {
+    "shop": "antiques"
+  },
   "army_and_navy_store": {},
   "auction_house": {},
   "car_auction": {},
   "baby_gear_and_furniture": {},
   "battery_store": {},
-  "bazaars": {},
+  "bazaars": {
+    "amenity": "marketplace"
+  },
   "boutique": {},
   "brewing_supply_store": {},
-  "bridal_shop": {},
+  "bridal_shop": {
+    "shop": "clothes",
+    "clothes": "wedding"
+  },
   "cannabis_dispensary": {},
-  "cards_and_stationery_store": {},
+  "cards_and_stationery_store": {
+    "shop": "stationery"
+  },
   "computer_store": {
     "shop": "computer"
   },
@@ -2287,8 +3005,13 @@
   "convenience_store": {
     "shop": "convenience"
   },
-  "custom_clothing": {},
-  "customized_merchandise": {},
+  "custom_clothing": {
+    "shop": "clothes",
+    "clothes": "custom"
+  },
+  "customized_merchandise": {
+    "shop": "gift"
+  },
   "department_store": {
     "shop": "department_store"
   },
@@ -2300,53 +3023,92 @@
   },
   "drone_store": {},
   "duty_free_shop": {},
-  "educational_supply_store": {},
+  "educational_supply_store": {
+    "shop": "stationery"
+  },
   "electronics": {
     "shop": "electronics"
   },
   "farmers_market": {},
   "firework_retailer": {},
-  "fitness_exercise_equipment": {},
-  "flea_market": {},
-  "flower_markets": {},
+  "fitness_exercise_equipment": {
+    "shop": "sports"
+  },
+  "flea_market": {
+    "amenity": "marketplace"
+  },
+  "flower_markets": {
+    "shop": "florist"
+  },
   "gemstone_and_mineral": {},
   "gold_buyer": {},
-  "guitar_store": {},
-  "gun_and_ammo": {},
-  "herbal_shop": {},
-  "audio_visual_equipment_store": {},
+  "guitar_store": {
+    "shop": "musical_instrument",
+    "musical_instrument": "guitar"
+  },
+  "gun_and_ammo": {
+    "shop": "gun"
+  },
+  "herbal_shop": {
+    "shop": "herbalist"
+  },
+  "audio_visual_equipment_store": {
+    "shop": "electronics"
+  },
   "hobby_shop": {},
   "home_theatre_systems_stores": {},
   "horse_equipment_shop": {},
-  "international_grocery_store": {},
+  "international_grocery_store": {
+    "shop": "supermarket",
+    "cuisine": "international"
+  },
   "jewelry_store": {
     "shop": "jewelry"
   },
   "knitting_supply": {},
   "livestock_feed_and_supply_store": {},
-  "luggage_store": {},
-  "market_stall": {},
+  "luggage_store": {
+    "shop": "luggage"
+  },
+  "market_stall": {
+    "shop": "kiosk"
+  },
   "military_surplus_store": {},
   "mobile_phone_accessories": {},
   "mobile_phone_store": {
     "shop": "mobile_phone"
   },
-  "musical_instrument_store": {},
-  "night_market": {},
-  "office_equipment": {},
+  "musical_instrument_store": {
+    "shop": "musical_instrument"
+  },
+  "night_market": {
+    "amenity": "marketplace"
+  },
+  "office_equipment": {
+    "shop": "stationery"
+  },
   "online_shop": {},
   "outlet_store": {},
   "packing_supply": {},
-  "pawn_shop": {},
-  "pen_store": {},
+  "pawn_shop": {
+    "shop": "pawnbroker"
+  },
+  "pen_store": {
+    "shop": "stationery"
+  },
   "perfume_store": {},
   "personal_shopper": {},
   "photography_store_and_services": {},
   "piano_store": {},
-  "pool_and_billiards": {},
+  "pool_and_billiards": {
+    "leisure": "sports_centre",
+    "sport": "pool;billiards"
+  },
   "pop_up_shop": {},
   "props": {},
-  "public_market": {},
+  "public_market": {
+    "amenity": "marketplace"
+  },
   "religious_items": {},
   "rental_kiosks": {},
   "safe_store": {},
@@ -2355,7 +3117,9 @@
     "shop": "mall"
   },
   "shopping_passage": {},
-  "souvenir_shop": {},
+  "souvenir_shop": {
+    "shop": "gift"
+  },
   "spiritual_shop": {},
   "supermarket": {
     "shop": "supermarket"
@@ -2364,7 +3128,9 @@
     "shop": "supermarket"
   },
   "tabletop_games": {},
-  "thrift_store": {},
+  "thrift_store": {
+    "shop": "second_hand"
+  },
   "tobacco_shop": {
     "shop": "tobacco"
   },
@@ -2372,7 +3138,10 @@
     "shop": "toys"
   },
   "trophy_shop": {},
-  "uniform_store": {},
+  "uniform_store": {
+    "shop": "clothes",
+    "clothes": "workwear"
+  },
   "used_bookstore": {
     "shop": "books",
     "second_hand": "only"
@@ -2388,33 +3157,79 @@
     "shop": "wholesale"
   },
   "wig_store": {},
-  "sporting_goods": {},
-  "archery_shop": {},
+  "sporting_goods": {
+    "shop": "sports"
+  },
+  "archery_shop": {
+    "shop": "sports",
+    "sport": "archery"
+  },
   "bicycle_shop": {
     "shop": "bicycle"
   },
-  "dive_shop": {},
-  "golf_equipment": {},
-  "hockey_equipment": {},
-  "hunting_and_fishing_supplies": {},
-  "outdoor_gear": {},
-  "skate_shop": {},
-  "ski_and_snowboard_shop": {},
-  "sports_wear": {},
-  "dance_wear": {},
-  "surf_shop": {},
+  "dive_shop": {
+    "shop": "scuba_diving"
+  },
+  "golf_equipment": {
+    "shop": "sports",
+    "sport": "golf"
+  },
+  "hockey_equipment": {
+    "shop": "sports",
+    "sport": "hockey"
+  },
+  "hunting_and_fishing_supplies": {
+    "shop": "hunting;fishing"
+  },
+  "outdoor_gear": {
+    "shop": "outdoor"
+  },
+  "skate_shop": {
+    "shop": "sports",
+    "sport": "skateboard"
+  },
+  "ski_and_snowboard_shop": {
+    "shop": "sports",
+    "sport": "skiing"
+  },
+  "sports_wear": {
+    "shop": "clothes",
+    "clothes": "sports_wear"
+  },
+  "dance_wear": {
+    "shop": "sports",
+    "sport": "dance"
+  },
+  "surf_shop": {
+    "shop": "sports",
+    "sport": "surfing"
+  },
   "swimwear_store": {
     "shop": "clothes",
     "clothes": "swimwear"
   },
-  "tire_shop": {},
-  "tire_repair_shop": {},
+  "tire_shop": {
+    "shop": "tyres"
+  },
+  "tire_repair_shop": {
+    "shop": "car_repair"
+  },
   "health_and_medical": {
     "healthcare": "yes"
   },
-  "abuse_and_addiction_treatment": {},
-  "alcohol_and_drug_treatment_centers": {},
-  "crisis_intervention_services": {},
+  "abuse_and_addiction_treatment": {
+    "healthcare": "counselling",
+    "healthcare:counselling": "addiction"
+  },
+  "alcohol_and_drug_treatment_centers": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "healthcare:speciality": "substance_abuse"
+  },
+  "crisis_intervention_services": {
+    "amenity": "social_facility",
+    "social_facility": "crisis_intervention_services"
+  },
   "eating_disorder_treatment_centers": {},
   "counseling_and_mental_health": {
     "healthcare": "psychotherapist"
@@ -2424,173 +3239,390 @@
     "healthcare:counselling": "family"
   },
   "marriage_or_relationship_counselor": {},
-  "psychoanalyst": {},
-  "psychologist": {},
+  "psychoanalyst": {
+    "healthcare": "psychotherapist"
+  },
+  "psychologist": {
+    "healthcare": "psychotherapist"
+  },
   "psychotherapist": {
     "healthcare": "psychotherapist"
   },
-  "sex_therapist": {},
+  "sex_therapist": {
+    "office": "therapist",
+    "healthcare:speciality": "sex_therapist"
+  },
   "sophrologist": {},
-  "sports_psychologist": {},
-  "stress_management_services": {},
-  "suicide_prevention_services": {},
+  "sports_psychologist": {
+    "healthcare": "psychotherapist",
+    "healthcare:speciality": "sports_psychology"
+  },
+  "stress_management_services": {
+    "healthcare": "therapist",
+    "healthcare:speciality": "stress_management"
+  },
+  "suicide_prevention_services": {
+    "healthcare": "counselling",
+    "healthcare:speciality": "suicide_prevention"
+  },
   "dental_hygienist": {},
-  "mobile_clinic": {},
+  "mobile_clinic": {
+    "amenity": "clinic"
+  },
   "storefront_clinic": {},
   "dentist": {
     "amenity": "dentist"
   },
-  "cosmetic_dentist": {},
-  "endodontist": {},
-  "general_dentistry": {},
-  "oral_surgeon": {},
-  "orthodontist": {},
-  "pediatric_dentist": {},
-  "periodontist": {},
-  "diagnostic_services": {},
-  "diagnostic_imaging": {},
-  "laboratory_testing": {},
-  "doctor": {
-    "amenity": "doctor"
+  "cosmetic_dentist": {
+    "amenity": "dentist",
+    "healthcare": "dentist",
+    "healthcare:speciality": "cosmetic_dentistry"
   },
-  "allergist": {},
-  "anesthesiologist": {},
+  "endodontist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "endodontics"
+  },
+  "general_dentistry": {
+    "amenity": "dentist"
+  },
+  "oral_surgeon": {
+    "healthcare": "surgeon",
+    "healthcare:speciality": "oral_surgery"
+  },
+  "orthodontist": {
+    "healthcare": "dentist",
+    "healthcare:speciality": "orthodontics"
+  },
+  "pediatric_dentist": {
+    "amenity": "dentist",
+    "dentist.speciality": "pediatric"
+  },
+  "periodontist": {
+    "healthcare": "dentist",
+    "amenity": "dentist",
+    "healthcare:speciality": "periodontics"
+  },
+  "diagnostic_services": {
+    "amenity": "clinic",
+    "healthcare:speciality": "diagnostic_services"
+  },
+  "diagnostic_imaging": {
+    "amenity": "doctors",
+    "healthcare": "doctor",
+    "healthcare:speciality": "radiology"
+  },
+  "laboratory_testing": {
+    "healthcare": "laboratory"
+  },
+  "doctor": {
+    "amenity": "doctors"
+  },
+  "allergist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "allergist"
+  },
+  "anesthesiologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "anesthesiology"
+  },
   "audiologist": {
     "healthcare": "audiologist"
   },
-  "cardiologist": {},
-  "cosmetic_surgeon": {},
+  "cardiologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "cardiology"
+  },
+  "cosmetic_surgeon": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "cosmetic_surgery"
+  },
   "dermatologist": {
+    "healthcare": "doctor",
     "healthcare:speciality": "dermatology"
   },
-  "ear_nose_and_throat": {},
-  "emergency_medicine": {},
-  "endocrinologist": {},
-  "endoscopist": {},
-  "family_practice": {},
+  "ear_nose_and_throat": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "ear_nose_and_throat"
+  },
+  "emergency_medicine": {
+    "amenity": "doctors",
+    "healthcare": "doctor",
+    "emergency": "yes"
+  },
+  "endocrinologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "endocrinology"
+  },
+  "endoscopist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "endoscopy"
+  },
+  "family_practice": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "healthcare:speciality": "family_practice"
+  },
   "fertility": {
     "amenity": "clinic",
     "healthcare": "clinic",
     "healthcare:speciality": "fertility"
   },
   "gastroenterologist": {
+    "healthcare": "doctor",
     "healthcare:speciality": "gastroenterology"
   },
   "geneticist": {
     "healthcare:speciality": "genetics"
   },
   "gerontologist": {
+    "healthcare": "doctor",
     "healthcare:speciality": "gerontology"
   },
   "hepatologist": {
+    "healthcare": "doctor",
     "healthcare:speciality": "hepatology"
   },
   "homeopathic_medicine": {},
-  "hospitalist": {},
-  "immunodermatologist": {},
-  "infectious_disease_specialist": {},
-  "naturopathic_holistic": {},
-  "nephrologist": {},
+  "hospitalist": {
+    "amenity": "hospital"
+  },
+  "immunodermatologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "immunodermatology"
+  },
+  "infectious_disease_specialist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "infectious_diseases"
+  },
+  "naturopathic_holistic": {
+    "healthcare": "alternative",
+    "healthcare:speciality": "naturopathy"
+  },
+  "nephrologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "nephrology"
+  },
   "neurologist": {
+    "healthcare": "doctor",
     "healthcare:speciality": "neurology"
   },
-  "neurotologist": {},
-  "neuropathologist": {},
+  "neurotologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "neurotology"
+  },
+  "neuropathologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "neuropathology"
+  },
   "obstetrician_and_gynecologist": {
-    "healthcare:speciality": "gynaecology"
+    "healthcare": "doctor",
+    "healthcare:speciality": "obstetrics_gynecology"
   },
   "oncologist": {
+    "healthcare": "doctor",
     "healthcare:speciality": "oncology"
   },
-  "orthopedist": {},
-  "osteopathic_physician": {},
-  "otologist": {},
-  "pain_management": {},
+  "orthopedist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "orthopedics"
+  },
+  "osteopathic_physician": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "osteopathic_physician"
+  },
+  "otologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "otolology"
+  },
+  "pain_management": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pain_management"
+  },
   "pathologist": {},
-  "phlebologist": {},
+  "phlebologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "phlebology"
+  },
   "physician_assistant": {},
-  "plastic_surgeon": {},
+  "plastic_surgeon": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "plastic_surgery"
+  },
   "podiatrist": {
     "healthcare": "podiatrist"
   },
-  "preventive_medicine": {},
-  "proctologist": {},
-  "pulmonologist": {},
-  "radiologist": {},
-  "rheumatologist": {},
-  "spine_surgeon": {},
-  "sports_medicine": {},
+  "preventive_medicine": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "preventive"
+  },
+  "proctologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "proctology"
+  },
+  "pulmonologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pulmonology"
+  },
+  "radiologist": {
+    "healthcare": "radiologist"
+  },
+  "rheumatologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "rheumatology"
+  },
+  "spine_surgeon": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "spinal_surgery"
+  },
+  "sports_medicine": {
+    "healthcare": "sports"
+  },
   "tattoo_removal": {},
-  "toxicologist": {},
+  "toxicologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "toxicology"
+  },
   "tropical_medicine": {},
   "undersea_hyperbaric_medicine": {},
-  "urologist": {},
-  "vascular_medicine": {},
-  "geriatric_medicine": {},
-  "geriatric_psychiatry": {},
-  "abortion_clinic": {},
+  "urologist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "urology"
+  },
+  "vascular_medicine": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "vascular"
+  },
+  "geriatric_medicine": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "geriatric"
+  },
+  "geriatric_psychiatry": {
+    "healthcare": "psychiatrist",
+    "healthcare:speciality": "geriatric_psychiatry"
+  },
+  "abortion_clinic": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "healthcare:speciality": "abortion"
+  },
   "acupuncture": {
     "healthcare": "alternative",
     "healthcare:speciality": "acupuncture"
   },
-  "aesthetician": {},
-  "alcohol_and_drug_treatment_center": {},
+  "aesthetician": {
+    "shop": "beauty"
+  },
+  "alcohol_and_drug_treatment_center": {
+    "healthcare": "addiction"
+  },
   "alternative_medicine": {},
   "ambulance_and_ems_services": {},
   "animal_assisted_therapy": {},
-  "assisted_living_facility": {},
+  "assisted_living_facility": {
+    "amenity": "social_facility",
+    "social_facility": "assisted_living"
+  },
   "ayurveda": {
     "healthcare": "alternative",
     "healthcare:speciality": "ayurveda"
   },
-  "behavior_analyst": {},
+  "behavior_analyst": {
+    "office": "therapist",
+    "therapist": "behavioral"
+  },
   "blood_and_plasma_donation_center": {},
-  "body_contouring": {},
+  "body_contouring": {
+    "shop": "beauty",
+    "beauty": "contouring"
+  },
   "cancer_treatment_center": {},
   "cannabis_clinic": {},
-  "cannabis_collective": {},
-  "childrens_hospital": {},
+  "cannabis_collective": {
+    "shop": "cannabis"
+  },
+  "childrens_hospital": {
+    "healthcare": "hospital",
+    "healthcare:speciality": "paediatrics"
+  },
   "chiropractor": {
     "healthcare": "alternative",
-    "healthcare:specialty": "chiropractic"
+    "healthcare:speciality": "chiropractic"
   },
   "colonics": {},
-  "community_health_center": {},
+  "community_health_center": {
+    "amenity": "clinic"
+  },
   "concierge_medicine": {},
-  "cryotherapy": {},
-  "dialysis_clinic": {},
+  "cryotherapy": {
+    "healthcare": "cryotherapy"
+  },
+  "dialysis_clinic": {
+    "amenity": "clinic",
+    "healthcare": "dialysis"
+  },
   "dietitian": {},
   "doula": {},
-  "emergency_room": {},
-  "environmental_medicine": {},
-  "eye_care_clinic": {},
+  "emergency_room": {
+    "emergency": "emergency_ward_entrance",
+    "entrance": "yes"
+  },
+  "environmental_medicine": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "environmental"
+  },
+  "eye_care_clinic": {
+    "amenity": "clinic",
+    "healthcare": "optometrist"
+  },
   "float_spa": {
     "amenity": "spa"
   },
-  "halfway_house": {},
+  "halfway_house": {
+    "amenity": "social_facility",
+    "social_facility": "group_home"
+  },
   "halotherapy": {
     "healthcare:speciality": "halotherapy"
   },
-  "health_and_wellness_club": {},
+  "health_and_wellness_club": {
+    "leisure": "fitness_centre"
+  },
   "health_coach": {},
-  "health_department": {},
-  "health_insurance_office": {},
+  "health_department": {
+    "office": "government",
+    "government": "health_department"
+  },
+  "health_insurance_office": {
+    "office": "insurance",
+    "insurance": "health"
+  },
   "hospice": {
     "healthcare": "hospice"
   },
   "hospital": {
     "amenity": "hospital"
   },
-  "hydrotherapy": {},
+  "hydrotherapy": {
+    "healthcare": "alternative",
+    "healthcare:speciality": "hydrotherapy"
+  },
   "hypnosis_hypnotherapy": {},
   "iv_hydration": {},
   "lactation_services": {},
-  "laser_eye_surgery_lasik": {},
+  "laser_eye_surgery_lasik": {
+    "healthcare": "surgery",
+    "healthcare:speciality": "ophthalmology",
+    "ophthalmology:laser_surgery": "yes"
+  },
   "lice_treatment": {},
   "massage_therapy": {
     "shop": "massage"
   },
-  "maternity_centers": {},
+  "maternity_centers": {
+    "amenity": "clinic",
+    "healthcare": "doctor",
+    "healthcare:speciality": "obstetrics"
+  },
   "medical_cannabis_referral": {},
   "medical_service_organizations": {},
   "medical_transportation": {},
@@ -2600,8 +3632,14 @@
   },
   "nurse_practitioner": {},
   "nutritionist": {},
-  "occupational_medicine": {},
-  "occupational_therapy": {},
+  "occupational_medicine": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "occupational"
+  },
+  "occupational_therapy": {
+    "healthcare": "occupational_therapist",
+    "healthcare:speciality": "orthodonticslist"
+  },
   "optometrist": {
     "healthcare": "optometrist"
   },
@@ -2617,52 +3655,123 @@
     "amenity": "doctors",
     "healthcare:speciality": "podiatry"
   },
-  "prenatal_perinatal_care": {},
+  "prenatal_perinatal_care": {
+    "healthcare": "prenatal_perinatal_care"
+  },
   "prosthetics": {},
-  "prosthodontist": {},
+  "prosthodontist": {
+    "healthcare": "dentist",
+    "amenity": "dentist",
+    "healthcare:speciality": "prosthodontics"
+  },
   "psychomotor_therapist": {},
-  "public_health_clinic": {},
-  "reflexology": {},
+  "public_health_clinic": {
+    "amenity": "clinic"
+  },
+  "reflexology": {
+    "healthcare": "alternative",
+    "healthcare:speciality": "reflexology"
+  },
   "reiki": {},
   "sauna": {
     "leisure": "sauna"
   },
   "skilled_nursing": {},
-  "sleep_specialist": {},
+  "sleep_specialist": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "sleep_specialist"
+  },
   "speech_therapist": {
     "healthcare": "speech_therapist"
   },
   "sperm_clinic": {},
-  "surgical_center": {},
+  "surgical_center": {
+    "amenity": "hospital",
+    "healthcare:speciality": "surgery"
+  },
   "ultrasound_imaging_center": {},
-  "urgent_care_clinic": {},
+  "urgent_care_clinic": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "emergency": "yes"
+  },
   "weight_loss_center": {},
   "wellness_program": {},
-  "women's_health_clinic": {},
+  "women's_health_clinic": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "healthcare:speciality": "women"
+  },
   "internal_medicine": {
     "healthcare": "doctor",
     "healthcare:speciality": "internal"
   },
-  "hematology": {},
-  "medical_center": {},
+  "hematology": {
+    "healthcare": "laboratory",
+    "healthcare:speciality": "hematology"
+  },
+  "medical_center": {
+    "amenity": "clinic"
+  },
   "bulk_billing": {},
   "osteopath": {},
-  "walk_in_clinic": {},
+  "walk_in_clinic": {
+    "amenity": "clinic"
+  },
   "ophthalmologist": {},
   "retina_specialist": {},
-  "pediatrician": {},
-  "pediatric_anesthesiology": {},
-  "pediatric_cardiology": {},
-  "pediatric_endocrinology": {},
-  "pediatric_gastroenterology": {},
-  "pediatric_infectious_disease": {},
-  "pediatric_nephrology": {},
-  "pediatric_neurology": {},
-  "pediatric_oncology": {},
-  "pediatric_orthopedic_surgery": {},
-  "pediatric_pulmonology": {},
-  "pediatric_radiology": {},
-  "pediatric_surgery": {},
+  "pediatrician": {
+    "amenity": "doctors",
+    "healthcare:speciality": "pediatric"
+  },
+  "pediatric_anesthesiology": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "anesthesiology"
+  },
+  "pediatric_cardiology": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "paediatric_cardiology"
+  },
+  "pediatric_endocrinology": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pediatric_endocrinology"
+  },
+  "pediatric_gastroenterology": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pediatric_gastroenterology"
+  },
+  "pediatric_infectious_disease": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pediatric_infectious_disease"
+  },
+  "pediatric_nephrology": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pediatric_nephrology"
+  },
+  "pediatric_neurology": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pediatric_neurology"
+  },
+  "pediatric_oncology": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pediatric_oncology"
+  },
+  "pediatric_orthopedic_surgery": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pediatric_orthopedic_surgery"
+  },
+  "pediatric_pulmonology": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pediatric_pulmonology"
+  },
+  "pediatric_radiology": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "paediatric_radiology"
+  },
+  "pediatric_surgery": {
+    "healthcare": "doctor",
+    "healthcare:speciality": "pediatric_surgery"
+  },
   "personal_care_service": {},
   "home_health_care": {},
   "psychiatrist": {
@@ -2672,43 +3781,82 @@
   "child_psychiatrist": {},
   "rehabilitation_center": {},
   "addiction_rehabilitation_center": {},
-  "surgeon": {},
+  "surgeon": {
+    "amenity": "doctors",
+    "healthcare": "doctor",
+    "healthcare:speciality": "surgery"
+  },
   "cardiovascular_and_thoracic_surgeon": {},
   "traditional_chinese_medicine": {
     "healthcare": "alternative",
-    "healthcare:speciality": "traditional_chinese_medicine"
+    "healthcare:speciality": "traditional_chinese"
   },
   "tui_na": {},
-  "pets": {},
+  "pets": {
+    "shop": "pet"
+  },
   "pet_services": {},
-  "animal_hospital": {},
-  "animal_physical_therapy": {},
+  "animal_hospital": {
+    "amenity": "veterinary"
+  },
+  "animal_physical_therapy": {
+    "amenity": "veterinary",
+    "veterinary": "physiotherapist"
+  },
   "aquarium_services": {},
   "dog_walkers": {},
-  "emergency_pet_hospital": {},
+  "emergency_pet_hospital": {
+    "amenity": "veterinary",
+    "emergency": "yes"
+  },
   "farrier_services": {},
   "holistic_animal_care": {},
   "pet_breeder": {},
-  "pet_cemetery_and_crematorium_services": {},
+  "pet_cemetery_and_crematorium_services": {
+    "amenity": "crematorium",
+    "landuse": "cemetery"
+  },
   "pet_groomer": {
     "shop": "pet_grooming"
   },
   "pet_hospice": {},
-  "pet_insurance": {},
+  "pet_insurance": {
+    "office": "insurance",
+    "insurance": "pet"
+  },
   "pet_photography": {},
-  "pet_sitting": {},
+  "pet_sitting": {
+    "amenity": "animal_boarding"
+  },
   "pet_transportation": {},
   "pet_waste_removal": {},
-  "pet_boarding": {},
-  "pet_training": {},
-  "dog_trainer": {},
-  "horse_trainer": {},
-  "animal_rescue_service": {},
+  "pet_boarding": {
+    "amenity": "animal_boarding"
+  },
+  "pet_training": {
+    "amenity": "animal_training"
+  },
+  "dog_trainer": {
+    "amenity": "animal_training",
+    "animal_training": "dog"
+  },
+  "horse_trainer": {
+    "amenity": "animal_training",
+    "animal_training": "horse"
+  },
+  "animal_rescue_service": {
+    "amenity": "animal_shelter"
+  },
   "animal_shelter": {
     "amenity": "animal_shelter"
   },
-  "horse_boarding": {},
-  "pet_adoption": {},
+  "horse_boarding": {
+    "amenity": "animal_boarding",
+    "animal_boarding": "horse"
+  },
+  "pet_adoption": {
+    "amenity": "animal_shelter"
+  },
   "veterinarian": {
     "amenity": "veterinary"
   },
@@ -2718,10 +3866,14 @@
   "business": {},
   "travel_company": {},
   "ferry_boat_company": {},
-  "airline": {},
+  "airline": {
+    "office": "airline"
+  },
   "food_beverage_service_distribution": {},
   "bottled_water_company": {},
-  "tobacco_company": {},
+  "tobacco_company": {
+    "shop": "tobacco"
+  },
   "clothing_company": {},
   "bags_luggage_company": {},
   "hotel_supply_service": {},
@@ -2729,15 +3881,28 @@
   "inventory_control_service": {},
   "industrial_company": {},
   "automation_services": {},
-  "occupational_safety": {},
+  "occupational_safety": {
+    "amenity": "social_facility",
+    "social_facility": "occupational_safety"
+  },
   "b2b_agriculture_and_food": {},
   "agricultural_service": {},
   "agricultural_cooperatives": {},
-  "agriculture": {},
+  "agriculture": {
+    "landuse": "farmland"
+  },
   "agricultural_engineering_service": {},
-  "apiaries_and_beekeepers": {},
-  "b2b_dairies": {},
-  "b2b_food_products": {},
+  "apiaries_and_beekeepers": {
+    "craft": "beekeeper"
+  },
+  "b2b_dairies": {
+    "shop": "wholesale",
+    "wholesale": "dairy"
+  },
+  "b2b_food_products": {
+    "shop": "wholesale",
+    "wolesale": "food"
+  },
   "fish_farms_and_hatcheries": {},
   "fish_farm": {},
   "livestock_breeder": {},
@@ -2759,28 +3924,50 @@
   "orchards_production": {},
   "business_manufacturing_and_supply": {},
   "mattress_manufacturing": {},
-  "glass_manufacturer": {},
+  "glass_manufacturer": {
+    "man_made": "works",
+    "product": "glass"
+  },
   "appliance_manufacturer": {},
-  "aircraft_manufacturer": {},
+  "aircraft_manufacturer": {
+    "man_made": "works",
+    "product": "aircraft"
+  },
   "b2b_autos_and_vehicles": {},
-  "auto_manufacturers_and_distributors": {},
+  "auto_manufacturers_and_distributors": {
+    "man_made": "works",
+    "product": "car"
+  },
   "b2b_tires": {},
   "b2b_furniture_and_housewares": {},
-  "furniture_manufacturers": {},
-  "furniture_wholesalers": {},
+  "furniture_manufacturers": {
+    "man_made": "works",
+    "product": "furniture"
+  },
+  "furniture_wholesalers": {
+    "shop": "furniture"
+  },
   "b2b_machinery_and_tools": {},
   "b2b_equipment_maintenance_and_repair": {},
   "industrial_equipment": {},
   "abrasives_supplier": {},
   "aggregate_supplier": {},
-  "aluminum_supplier": {},
+  "aluminum_supplier": {
+    "shop": "wholesale",
+    "wholesale": "aluminum"
+  },
   "b2b_apparel": {},
-  "b2b_electronic_equipment": {},
+  "b2b_electronic_equipment": {
+    "shop": "electronics"
+  },
   "b2b_hardware": {},
   "b2b_jewelers": {},
   "b2b_rubber_and_plastics": {},
   "plastic_company": {},
-  "plastic_manufacturer": {},
+  "plastic_manufacturer": {
+    "man_made": "works",
+    "product": "plastic"
+  },
   "b2b_sporting_and_recreation_goods": {},
   "b2b_textiles": {},
   "battery_inverter_supplier": {},
@@ -2789,27 +3976,60 @@
   "cement_supplier": {},
   "chemical_plant": {},
   "cleaning_products_supplier": {},
-  "cosmetic_products_manufacturer": {},
-  "drinking_water_dispenser": {},
+  "cosmetic_products_manufacturer": {
+    "man_made": "works",
+    "product": "cosmetics"
+  },
+  "drinking_water_dispenser": {
+    "amenity": "drinking_water"
+  },
   "fastener_supplier": {},
   "granite_supplier": {},
-  "hvac_supplier": {},
+  "hvac_supplier": {
+    "shop": "trade",
+    "trade": "hvac"
+  },
   "jewelry_and_watches_manufacturer": {},
-  "jewelry_manufacturer": {},
-  "leather_products_manufacturer": {},
-  "lighting_fixture_manufacturers": {},
-  "pipe_supplier": {},
-  "plastic_fabrication_company": {},
+  "jewelry_manufacturer": {
+    "man_made": "works",
+    "product": "jewelry"
+  },
+  "leather_products_manufacturer": {
+    "man_made": "works",
+    "product": "leather"
+  },
+  "lighting_fixture_manufacturers": {
+    "man_made": "works",
+    "product": "lighting_fixture"
+  },
+  "pipe_supplier": {
+    "shop": "wholesale",
+    "wholesale": "pipes"
+  },
+  "plastic_fabrication_company": {
+    "man_made": "works",
+    "product": "plastic"
+  },
   "plastic_injection_molding_workshop": {},
-  "printing_equipment_and_supply": {},
+  "printing_equipment_and_supply": {
+    "shop": "copyshop"
+  },
   "retaining_wall_supplier": {},
-  "sand_and_gravel_supplier": {},
+  "sand_and_gravel_supplier": {
+    "shop": "wholesale",
+    "wholesale": "sand_and_gravel"
+  },
   "scale_supplier": {},
   "seal_and_hanko_dealers": {},
-  "shoe_factory": {},
+  "shoe_factory": {
+    "man_made": "works",
+    "product": "shoes"
+  },
   "spring_supplier": {},
   "stone_supplier": {},
-  "turnery": {},
+  "turnery": {
+    "craft": "carpenter"
+  },
   "window_supplier": {},
   "metals": {},
   "metal_supplier": {},
@@ -2817,18 +4037,30 @@
   "metal_fabricator": {},
   "iron_and_steel_industry": {},
   "iron_work": {},
-  "scrap_metals": {},
+  "scrap_metals": {
+    "industrial": "scrap_yard",
+    "landuse": "industrial"
+  },
   "sheet_metal": {},
   "steel_fabricators": {},
   "mills": {},
-  "cotton_mill": {},
+  "cotton_mill": {
+    "man_made": "works",
+    "product": "cotton"
+  },
   "flour_mill": {},
   "paper_mill": {},
   "rice_mill": {},
   "saw_mill": {},
-  "textile_mill": {},
+  "textile_mill": {
+    "man_made": "works",
+    "product": "textile"
+  },
   "weaving_mill": {},
-  "wood_and_pulp": {},
+  "wood_and_pulp": {
+    "man_made": "works",
+    "product": "wood_and_pulp"
+  },
   "logging_equipment_and_supplies": {},
   "logging_services": {},
   "logging_contractor": {},
@@ -2872,36 +4104,57 @@
   "spices_wholesaler": {},
   "computer_wholesaler": {},
   "electrical_wholesaler": {},
-  "fabric_wholesaler": {},
+  "fabric_wholesaler": {
+    "shop": "wholesale",
+    "wholesale": "fabric"
+  },
   "fitness_equipment_wholesaler": {},
   "fmcg_wholesaler": {},
   "footwear_wholesaler": {},
-  "greengrocer": {},
+  "greengrocer": {
+    "shop": "greengrocer"
+  },
   "industrial_spares_and_products_wholesaler": {},
   "iron_and_steel_store": {},
   "lingerie_wholesaler": {},
   "meat_wholesaler": {},
   "optical_wholesaler": {},
-  "pharmaceutical_products_wholesaler": {},
+  "pharmaceutical_products_wholesaler": {
+    "shop": "wholesale",
+    "wholesale": "pharmaceuticals"
+  },
   "produce_wholesaler": {},
   "seafood_wholesaler": {},
   "tea_wholesaler": {},
   "threads_and_yarns_wholesaler": {},
   "tools_wholesaler": {},
   "wholesale_florist": {},
-  "wine_wholesaler": {},
+  "wine_wholesaler": {
+    "shop": "wholesale",
+    "wholesale": "wine"
+  },
   "restaurant_wholesale": {},
   "restaurant_equipment_and_supply": {},
   "business_storage_and_transportation": {},
   "motor_freight_trucking": {},
   "pipeline_transportation": {},
-  "railroad_freight": {},
+  "railroad_freight": {
+    "office": "logistics"
+  },
   "b2b_storage_and_warehouses": {},
   "warehouse_rental_services_and_yards": {},
-  "warehouses": {},
-  "freight_and_cargo_service": {},
-  "distribution_services": {},
-  "freight_forwarding_agency": {},
+  "warehouses": {
+    "building": "warehouse"
+  },
+  "freight_and_cargo_service": {
+    "office": "logistics"
+  },
+  "distribution_services": {
+    "office": "logistics"
+  },
+  "freight_forwarding_agency": {
+    "office": "logistics"
+  },
   "trucks_and_industrial_vehicles": {},
   "b2b_forklift_dealers": {},
   "b2b_tractor_dealers": {},
@@ -2947,17 +4200,24 @@
   "background_check_services": {},
   "international_business_and_trade_services": {},
   "importer_and_exporter": {},
-  "exporters": {},
-  "importers": {},
+  "exporters": {
+    "office": "export"
+  },
+  "importers": {
+    "office": "importer"
+  },
   "restaurant_management": {},
   "b2b_energy_mining": {},
   "mining": {
+    "landuse": "industrial",
     "industrial": "mine"
   },
   "coal_and_coke": {
     "industrial": "mine"
   },
-  "quarries": {},
+  "quarries": {
+    "landuse": "quarry"
+  },
   "oil_and_gas": {},
   "b2b_oil_and_gas_extraction_and_services": {},
   "oil_and_gas_exploration_and_development": {},
@@ -2972,7 +4232,9 @@
   "energy_company": {},
   "electric_utility_provider": {},
   "public_utility_company": {},
-  "law_enforcement": {},
+  "law_enforcement": {
+    "amenity": "police"
+  },
   "organization": {},
   "agriculture_association": {},
   "environmental_conservation_organization": {},
@@ -3012,7 +4274,9 @@
     "amenity": "community_centre"
   },
   "disability_services_and_support_organization": {},
-  "government_services": {},
+  "government_services": {
+    "office": "government"
+  },
   "social_security_services": {},
   "jail_and_prison": {
     "amenity": "prison"
@@ -3023,30 +4287,43 @@
   "post_office": {
     "amenity": "post_office"
   },
-  "shipping_collection_services": {},
+  "shipping_collection_services": {
+    "amenity": "post_office"
+  },
   "public_toilet": {
     "amenity": "toilets",
     "access": "yes"
   },
   "armed_forces_branch": {},
-  "central_government_office": {},
+  "central_government_office": {
+    "office": "government"
+  },
   "chambers_of_commerce": {},
-  "children_hall": {},
-  "civic_center": {},
+  "children_hall": {
+    "amenity": "childcare"
+  },
+  "civic_center": {
+    "amenity": "community_centre"
+  },
   "community_center": {
     "amenity": "community_centre"
   },
   "courthouse": {
     "amenity": "courthouse"
   },
-  "department_of_motor_vehicles": {},
+  "department_of_motor_vehicles": {
+    "office": "government",
+    "government": "transportation"
+  },
   "department_of_social_service": {},
   "embassy": {
     "office": "diplomatic",
     "diplomatic": "embassy"
   },
   "family_service_center": {},
-  "federal_government_offices": {},
+  "federal_government_offices": {
+    "office": "government"
+  },
   "fire_department": {
     "amenity": "fire_station"
   },
@@ -3067,15 +4344,22 @@
   "registry_office": {},
   "retirement_home": {
     "amenity": "social_facility",
-    "social_facility": "assisted_living"
+    "social_facility": "assisted_living",
+    "social_facility:for": "senior_citizen"
   },
-  "scout_hall": {},
+  "scout_hall": {
+    "amenity": "social_facility",
+    "social_facility:for": "scouts"
+  },
   "tax_office": {},
   "town_hall": {
     "amenity": "townhall"
   },
   "unemployment_office": {},
-  "weather_station": {},
+  "weather_station": {
+    "man_made": "monitoring_station",
+    "monitoring:weather": "yes"
+  },
   "religious_organization": {
     "amenity": "place_of_worship"
   },
@@ -3108,7 +4392,10 @@
     "religion": "christian",
     "denomination": "evangelical"
   },
-  "jehovahs_witness_kingdom_hall": {},
+  "jehovahs_witness_kingdom_hall": {
+    "amenity": "place_of_worship",
+    "religion": "jehovahs_witness"
+  },
   "pentecostal_church": {
     "amenity": "place_of_worship",
     "religion": "christian",
@@ -3119,7 +4406,9 @@
     "amenity": "place_of_worship",
     "religion": "buddhist"
   },
-  "convents_and_monasteries": {},
+  "convents_and_monasteries": {
+    "amenity": "monastery"
+  },
   "hindu_temple": {
     "amenity": "place_of_worship",
     "religion": "hindu"
@@ -3129,6 +4418,7 @@
     "religion": "muslim"
   },
   "religious_destination": {
+    "tourism": "attraction",
     "amenity": "place_of_worship"
   },
   "shinto_shrines": {
@@ -3144,7 +4434,6 @@
     "religion": "jewish"
   },
   "temple": {
-    "building": "temple",
     "amenity": "place_of_worship"
   },
   "real_estate": {
@@ -3159,7 +4448,9 @@
     "building": "apartments"
   },
   "art_space_rental": {},
-  "commercial_real_estate": {},
+  "commercial_real_estate": {
+    "office": "real_estate"
+  },
   "condominium": {
     "building": "apartments"
   },
@@ -3481,7 +4772,9 @@
   "tree_services": {
     "craft": "arborist"
   },
-  "plumbing": {},
+  "plumbing": {
+    "craft": "plumber"
+  },
   "backflow_services": {},
   "windows_installation": {},
   "skylight_installation": {},
@@ -3648,9 +4941,15 @@
   "session_photography": {
     "craft": "photographer"
   },
-  "funeral_services_and_cemeteries": {},
-  "cremation_services": {},
-  "mortuary_services": {},
+  "funeral_services_and_cemeteries": {
+    "amenity": "funeral_hall"
+  },
+  "cremation_services": {
+    "amenity": "crematorium"
+  },
+  "mortuary_services": {
+    "amenity": "mortuary"
+  },
   "internet_service_provider": {},
   "web_hosting_service": {},
   "it_service_and_computer_repair": {},
@@ -3704,7 +5003,9 @@
   "bail_bonds_service": {
     "office": "bail_bond_agent"
   },
-  "bike_repair_maintenance": {},
+  "bike_repair_maintenance": {
+    "service:bicycle:repair": "yes"
+  },
   "billing_services": {},
   "bookbinding": {},
   "bookkeeper": {},
@@ -3824,7 +5125,9 @@
   "screen_printing_t_shirt_printing": {},
   "security_services": {},
   "septic_services": {},
-  "shipping_center": {},
+  "shipping_center": {
+    "amenity": "post_office"
+  },
   "shoe_repair": {
     "shop": "shoe_repair"
   },

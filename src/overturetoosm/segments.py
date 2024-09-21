@@ -286,8 +286,6 @@ class When(
 ):
     """Model for transportation segment when."""
 
-    pass
-
 
 class AccessContainer(BaseModel):
     """Model for transportation segment access container item."""

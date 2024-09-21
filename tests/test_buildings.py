@@ -16,7 +16,7 @@ def clean_fix() -> Dict[str, Any]:
         "building:levels": 4,
         "building:levels:underground": 1,
         "height": 21.34,
-        "source": "microsoftMLBuildings, metaLidarExtractions via overturetoosm",
+        "source": "metaLidarExtractions, microsoftMLBuildings via overturetoosm",
         "name": "Clarendon Family Dentistry",
     }
 

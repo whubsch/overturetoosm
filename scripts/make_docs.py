@@ -4,7 +4,7 @@ from pathlib import Path
 import pdoc
 import pdoc.render
 
-
+print("Generating docs...")
 here = Path(__file__).parent
 
 pdoc.render.configure(
@@ -14,3 +14,4 @@ pdoc.render.configure(
     logo="https://whubsch.github.io/overturetoosm/logo.svg",
 )
 pdoc.pdoc("src/overturetoosm", output_directory=here.parent / "docs")
+print("Done!")

@@ -1,29 +1,4 @@
-[[Overture Maps|Overture]] categories are described [https://github.com/OvertureMaps/schema/blob/main/task-force-docs/places/overture_categories.csv here], unfortunately there are no descriptions. We can however infer some details from the hierarchy. The following are "root"/"top level tags" in Overture.
-* eat_and_drink
-* accommodation
-* automotive
-* arts_and_entertainment
-* attractions_and_activities
-* active_life
-* beauty_and_spa
-* education
-* financial_service
-* private_establishments_and_corporates
-* retail
-* health_and_medical
-* pets
-* business_to_business
-* public_service_and_government
-* religious_organization
-* real_estate
-* travel
-* mass_media
-* home_service
-* professional_services
-* structure_and_geography
-
-== Mapping ==
-
+This page holds some of the community-contributed conversions for the [[Overture Maps|Overture]] schema <code>places</code> layer. The full schema is described [https://github.com/OvertureMaps/schema/blob/main/task-force-docs/places/overture_categories.csv here]. Check out the [[overturetoosm|overturetoosm]] Python package for a way to quickly parse Overture data. The following are top-level tags for POIs in Overture:
 {| class="wikitable" id="mapping_table"
 !Overture!!OSM
 |-
@@ -85,13 +60,13 @@
 |-
 |peruvian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|peruvian}}
 |-
-|puerto_rican_restaurant||{{tag|amenity|restaurant}}
+|puerto_rican_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|puerto_rican}}
 |-
-|salvadoran_restaurant||{{tag|amenity|restaurant}}
+|salvadoran_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|el_salvador}}
 |-
 |texmex_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|tex-mex}}
 |-
-|uruguayan_restaurant||{{tag|amenity|restaurant}}
+|uruguayan_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|uruguayan}}
 |-
 |venezuelan_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|venezuelan}}
 |-
@@ -99,7 +74,7 @@
 |-
 |armenian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|armenian}}
 |-
-|azerbaijani_restaurant||{{tag|amenity|restaurant}}
+|azerbaijani_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|azerbaijani}}
 |-
 |egyptian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|egyptian}}
 |-
@@ -107,9 +82,9 @@
 |-
 |israeli_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|israeli}}
 |-
-|kofta_restaurant||{{tag|amenity|restaurant}}
+|kofta_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|kofta}}
 |-
-|kurdish_restaurant||{{tag|amenity|restaurant}}
+|kurdish_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|kurdish}}
 |-
 |lebanese_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|lebanese}}
 |-
@@ -121,21 +96,21 @@
 |-
 |asian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|asian}}
 |-
-|asian_fusion_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|fusion}}
+|asian_fusion_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|asian_fusion}}
 |-
-|pan_asian_restaurant||{{tag|amenity|restaurant}}
+|pan_asian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|pan_asian}}
 |-
-|burmese_restaurant||{{tag|amenity|restaurant}}
+|burmese_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|burmese}}
 |-
 |cambodian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|cambodian}}
 |-
 |chinese_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|chinese}}
 |-
-|dim_sum_restaurant||{{tag|amenity|restaurant}}
+|dim_sum_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|dim_sum}}
 |-
 |filipino_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|filipino}}
 |-
-|indo_chinese_restaurant||{{tag|amenity|restaurant}}
+|indo_chinese_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|indo_chinese}}
 |-
 |indonesian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|indonesian}}
 |-
@@ -145,13 +120,13 @@
 |-
 |sushi_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|sushi}}
 |-
-|laotian_restaurant||{{tag|amenity|restaurant}}
+|laotian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|laotian}}
 |-
 |malaysian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|malaysian}}
 |-
 |mongolian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|mongolian}}
 |-
-|noodles_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|noodle}}
+|noodles_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|noodles}}
 |-
 |singaporean_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|singaporean}}
 |-
@@ -161,7 +136,7 @@
 |-
 |vietnamese_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|vietnamese}}
 |-
-|hong_kong_style_cafe||
+|hong_kong_style_cafe||{{tag|amenity|cafe}} {{tag|cuisine|hong_kong_style}}
 |-
 |australian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|australian}}
 |-
@@ -175,15 +150,15 @@
 |-
 |british_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|british}}
 |-
-|eastern_european_restaurant||{{tag|amenity|restaurant}}
+|eastern_european_restaurant||{{tag|cuisine|eastern_european}} {{tag|amenity|restaurant}}
 |-
-|belarusian_restaurant||{{tag|amenity|restaurant}}
+|belarusian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|belarusian}}
 |-
 |bulgarian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|bulgarian}}
 |-
 |romanian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|romanian}}
 |-
-|tatar_restaurant||{{tag|amenity|restaurant}}
+|tatar_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|tatar}}
 |-
 |ukrainian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|ukrainian}}
 |-
@@ -191,21 +166,21 @@
 |-
 |cajun_creole_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|cajun}}
 |-
-|canadian_restaurant||{{tag|amenity|restaurant}}
+|canadian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|canadian}}
 |-
 |caribbean_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|caribbean}}
 |-
-|dominican_restaurant||{{tag|amenity|restaurant}}
+|dominican_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|dominican}}
 |-
-|haitian_restaurant||{{tag|amenity|restaurant}}
+|haitian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|haitian}}
 |-
 |jamaican_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|jamaican}}
 |-
-|trinidadian_restaurant||{{tag|amenity|restaurant}}
+|trinidadian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|trinidadian}}
 |-
 |german_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|german}}
 |-
-|catalan_restaurant||{{tag|amenity|restaurant}}
+|catalan_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|catalan}}
 |-
 |italian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|italian}}
 |-
@@ -219,135 +194,135 @@
 |-
 |hawaiian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|hawaiian}}
 |-
-|himalayan_nepalese_restaurant||{{tag|amenity|restaurant}}
+|himalayan_nepalese_restaurant||{{tag|cuisine|nepalese}} {{tag|amenity|restaurant}}
 |-
 |hungarian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|hungarian}}
 |-
-|iberian_restaurant||{{tag|amenity|restaurant}}
+|iberian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|iberian}}
 |-
 |irish_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|irish}}
 |-
-|jewish_restaurant||{{tag|amenity|restaurant}}
+|jewish_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|jewish}}
 |-
-|international_restaurant||{{tag|amenity|restaurant}}
+|international_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|international}}
 |-
-|european_restaurant||{{tag|amenity|restaurant}}
+|european_restaurant||{{tag|cuisine|european}} {{tag|amenity|restaurant}}
 |-
-|oriental_restaurant||{{tag|amenity|restaurant}}
+|oriental_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|oriental}}
 |-
 |pakistani_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|pakistani}}
 |-
 |polish_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|polish}}
 |-
-|polynesian_restaurant||{{tag|amenity|restaurant}}
+|polynesian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|polynesian}}
 |-
 |portuguese_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|portuguese}}
 |-
 |russian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|russian}}
 |-
-|scandinavian_restaurant||{{tag|amenity|restaurant}}
+|scandinavian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|scandinavian}}
 |-
-|danish_restaurant||{{tag|amenity|restaurant}}
+|danish_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|danish}}
 |-
 |norwegian_restaurant||{{tag|amenity|restaurant}}
 |-
-|scottish_restaurant||{{tag|amenity|restaurant}}
+|scottish_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|scottish}}
 |-
 |seafood_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|seafood}}
 |-
-|serbo_croation_restaurant||{{tag|amenity|restaurant}}
+|serbo_croation_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|serbo_croatian}}
 |-
-|slovakian_restaurant||{{tag|amenity|restaurant}}
+|slovakian_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|slovak}}
 |-
-|southern_restaurant||{{tag|amenity|restaurant}}
+|southern_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|southern}}
 |-
 |spanish_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|spanish}}
 |-
-|sri_lankan_restaurant||{{tag|amenity|restaurant}}
+|sri_lankan_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|sri_lankan}}
 |-
-|swiss_restaurant||{{tag|amenity|restaurant}}
+|swiss_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|swiss}}
 |-
-|uzbek_restaurant||{{tag|amenity|restaurant}}
+|uzbek_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|uzbek}}
 |-
-|molecular_gastronomy_restaurant||{{tag|amenity|restaurant}}
+|molecular_gastronomy_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|molecular_gastronomy}}
 |-
-|haute_cuisine_restaurant||{{tag|amenity|restaurant}}
+|haute_cuisine_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|haute_cuisine}}
 |-
-|salad_bar||
+|salad_bar||{{tag|amenity|cafe}} {{tag|cuisine|salad}}
 |-
 |brasserie||{{tag|amenity|restaurant}}
 |-
-|buffet_restaurant||{{tag|amenity|restaurant}}
+|buffet_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|buffet}}
 |-
-|barbecue_restaurant||{{tag|amenity|restaurant}}
+|barbecue_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|barbecue}}
 |-
 |burger_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|burger}}
 |-
-|canteen||
+|canteen||{{tag|amenity|food_court}}
 |-
 |cafeteria||
 |-
-|cheesesteak_restaurant||{{tag|amenity|restaurant}}
+|cheesesteak_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|cheesesteak}}
 |-
-|chicken_restaurant||{{tag|amenity|restaurant}}
+|chicken_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|chicken}}
 |-
-|chicken_wings_restaurant||{{tag|amenity|restaurant}}
+|chicken_wings_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|chicken}}
 |-
 |dog_meat_restaurant||{{tag|amenity|restaurant}}
 |-
-|dumpling_restaurant||{{tag|amenity|restaurant}}
+|dumpling_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|dumpling}}
 |-
 |fast_food_restaurant||{{tag|amenity|fast_food}}
 |-
 |fishchbroetchen_restaurant||{{tag|amenity|restaurant}}
 |-
-|acai_bowls||
+|acai_bowls||{{tag|amenity|cafe}} {{tag|cuisine|acai_bowls}}
 |-
-|fish_restaurant||{{tag|amenity|restaurant}}
+|fish_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|seafood}}
 |-
-|fish_and_chips_restaurant||{{tag|amenity|restaurant}}
+|fish_and_chips_restaurant||{{tag|cuisine|fish_and_chips}} {{tag|amenity|restaurant}}
 |-
-|fondue_restaurant||{{tag|amenity|restaurant}}
+|fondue_restaurant||{{tag|cuisine|fondue}} {{tag|amenity|restaurant}}
 |-
-|gluten_free_restaurant||{{tag|amenity|restaurant}}
+|gluten_free_restaurant||{{tag|amenity|restaurant}} {{tag|diet:gluten_free|yes}}
 |-
 |baozi_restaurant||{{tag|amenity|restaurant}}
 |-
-|halal_restaurant||{{tag|amenity|restaurant}}
+|halal_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|halal}}
 |-
 |bistro||{{tag|amenity|restaurant}}
 |-
-|health_food_restaurant||{{tag|amenity|restaurant}}
+|health_food_restaurant||{{tag|amenity|restaurant}} {{tag|diet:health_food|yes}}
 |-
-|kosher_restaurant||{{tag|amenity|restaurant}}
+|kosher_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|kosher}}
 |-
-|comfort_food_restaurant||{{tag|amenity|restaurant}}
+|comfort_food_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|comfort_food}}
 |-
 |meat_restaurant||{{tag|amenity|restaurant}}
 |-
-|curry_sausage_restaurant||{{tag|amenity|restaurant}}
+|curry_sausage_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|curry_sausage}}
 |-
-|diner||{{tag|amenity|restaurant}}
+|diner||{{tag|amenity|restaurant}} {{tag|cuisine|diner}}
 |-
-|diy_foods_restaurant||
+|diy_foods_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|doityourself}}
 |-
-|doner_kebab||
+|doner_kebab||{{tag|amenity|restaurant}} {{tag|cuisine|doner_kebab}}
 |-
-|empanadas||
+|empanadas||{{tag|amenity|restaurant}} {{tag|cuisine|empanadas}}
 |-
 |nasi_restaurant||{{tag|amenity|restaurant}}
 |-
-|flatbread_restaurant||{{tag|amenity|restaurant}}
+|flatbread_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|flatbread}}
 |-
 |food_court||{{tag|amenity|food_court}}
 |-
-|gastropub||{{tag|amenity|restaurant}}
+|gastropub||{{tag|amenity|pub}} {{tag|cuisine|gastropub}}
 |-
 |pizza_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|pizza}}
 |-
 |pop_up_restaurant||{{tag|amenity|restaurant}}
 |-
-|poutinerie_restaurant||{{tag|amenity|restaurant}}
+|poutinerie_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|poutine}}
 |-
 |vegan_restaurant||{{tag|amenity|restaurant}} {{tag|diet:vegan|yes}}
 |-
@@ -357,39 +332,39 @@
 |-
 |wrap_restaurant||{{tag|amenity|restaurant}}
 |-
-|piadina_restaurant||{{tag|amenity|restaurant}}
+|piadina_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|piadina}}
 |-
-|poke||
+|poke||{{tag|amenity|restaurant}} {{tag|cuisine|poke}}
 |-
 |pigs_trotters_restaurant||{{tag|amenity|restaurant}}
 |-
-|potato_restaurant||{{tag|amenity|restaurant}}
+|potato_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|potato}}
 |-
 |rotisserie_chicken_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|chicken}}
 |-
 |schnitzel_restaurant||{{tag|amenity|restaurant}}
 |-
-|soul_food||
+|soul_food||{{tag|amenity|restaurant}} {{tag|cuisine|soul_food}}
 |-
 |steakhouse||{{tag|amenity|restaurant}} {{tag|cuisine|steak_house}}
 |-
-|supper_club||
+|supper_club||{{tag|amenity|restaurant}}
 |-
 |tapas_bar||{{tag|amenity|restaurant}}
 |-
 |venison_restaurant||{{tag|amenity|restaurant}}
 |-
-|wild_game_meats_restaurant||{{tag|amenity|restaurant}}
+|wild_game_meats_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|wild_game}}
 |-
-|falafel_restaurant||{{tag|amenity|restaurant}}
+|falafel_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|falafel}}
 |-
 |taco_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|mexican}}
 |-
 |hot_dog_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|american}}
 |-
-|live_and_raw_food_restaurant||
+|live_and_raw_food_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|raw_food}}
 |-
-|soup_restaurant||{{tag|amenity|restaurant}}
+|soup_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|soup}}
 |-
 |theme_restaurant||{{tag|amenity|restaurant}}
 |-
@@ -403,17 +378,17 @@
 |-
 |pancake_house||{{tag|amenity|restaurant}} {{tag|cuisine|breakfast}}
 |-
-|bagel_restaurant||{{tag|amenity|restaurant}}
+|bagel_restaurant||{{tag|amenity|restaurant}} {{tag|cuisine|bagel}}
 |-
 |baguettes||
 |-
 |bar||{{tag|amenity|bar}}
 |-
-|airport_lounge||
+|airport_lounge||{{tag|amenity|lounge}}
 |-
-|beach_bar||{{tag|amenity|bar}}
+|beach_bar||{{tag|amenity|bar}} {{tag|bar|beach_bar}}
 |-
-|beer_bar||{{tag|amenity|bar}}
+|beer_bar||{{tag|amenity|bar}} {{tag|drink|beer}}
 |-
 |beer_garden||{{tag|amenity|biergarten}}
 |-
@@ -421,13 +396,13 @@
 |-
 |bubble_tea||{{tag|amenity|cafe}} {{tag|cuisine|bubble_tea}}
 |-
-|champagne_bar||
+|champagne_bar||{{tag|amenity|bar}} {{tag|drink:alcohol|champagne}}
 |-
-|cidery||
+|cidery||{{tag|craft|cidery}}
 |-
-|cigar_bar||
+|cigar_bar||{{tag|amenity|bar}} {{tag|smoking|cigar}}
 |-
-|cocktail_bar||{{tag|amenity|bar}}
+|cocktail_bar||{{tag|amenity|bar}} {{tag|drink:cocktail|yes}}
 |-
 |dive_bar||{{tag|amenity|bar}}
 |-
@@ -435,15 +410,15 @@
 |-
 |gay_bar||{{tag|amenity|bar}} {{tag|lgbtq|primary}}
 |-
-|hookah_bar||{{tag|amenity|bar}}
+|hookah_bar||{{tag|amenity|hookah_lounge}}
 |-
 |hotel_bar||{{tag|amenity|bar}}
 |-
-|irish_pub||{{tag|amenity|bar}} {{tag|cuisine|irish}}
+|irish_pub||{{tag|amenity|pub}} {{tag|theme|irish}}
 |-
-|kombucha||
+|kombucha||{{tag|shop|beverages}} {{tag|produce|kombucha}}
 |-
-|lounge||
+|lounge||{{tag|amenity|bar}}
 |-
 |milk_bar||{{tag|amenity|fast_food}}
 |-
@@ -451,7 +426,7 @@
 |-
 |pub||{{tag|amenity|pub}}
 |-
-|sake_bar||{{tag|amenity|bar}}
+|sake_bar||{{tag|amenity|bar}} {{tag|cuisine|sake}}
 |-
 |speakeasy||{{tag|amenity|bar}}
 |-
@@ -459,29 +434,29 @@
 |-
 |sugar_shack||
 |-
-|tabac||
+|tabac||{{tag|shop|tobacco}}
 |-
-|tiki_bar||{{tag|amenity|bar}}
+|tiki_bar||{{tag|amenity|bar}} {{tag|cuisine|tiki}}
 |-
 |vermouth_bar||{{tag|amenity|bar}}
 |-
-|whiskey_bar||{{tag|amenity|bar}}
+|whiskey_bar||{{tag|amenity|bar}} {{tag|bar|whiskey}}
 |-
-|wine_bar||{{tag|amenity|bar}}
+|wine_bar||{{tag|amenity|bar}} {{tag|bar|wine}}
 |-
-|smoothie_juice_bar||
+|smoothie_juice_bar||{{tag|amenity|cafe}} {{tag|cuisine|smoothies}}
 |-
-|piano_bar||{{tag|amenity|bar}} {{tag|live_music|yes}}
+|piano_bar||{{tag|amenity|bar}} {{tag|live_music|yes}} {{tag|music_genre|piano}}
 |-
 |cafe||{{tag|amenity|cafe}}
 |-
 |coffee_roastery||{{tag|shop|coffee}}
 |-
-|tea_room||{{tag|amenity|cafe}}
+|tea_room||{{tag|amenity|cafe}} {{tag|cuisine|tea}}
 |-
 |coffee_shop||{{tag|amenity|cafe}} {{tag|cuisine|coffee_shop}}
 |-
-|accommodation||{{tag|tourism|yes}}
+|accommodation||{{tag|amenity|hotel}}
 |-
 |bed_and_breakfast||{{tag|tourism|guest_house}} {{tag|guest_house|bed_and_breakfast}}
 |-
@@ -493,21 +468,21 @@
 |-
 |guest_house||{{tag|tourism|guest_house}}
 |-
-|health_retreats||
+|health_retreats||{{tag|leisure|spa}}
 |-
-|holiday_rental_home||
+|holiday_rental_home||{{tag|tourism|apartment}}
 |-
 |hostel||{{tag|tourism|hostel}}
 |-
 |hotel||{{tag|tourism|hotel}}
 |-
-|inn||
+|inn||{{tag|tourism|hotel}}
 |-
-|lodge||
+|lodge||{{tag|tourism|lodge}}
 |-
 |motel||{{tag|tourism|motel}}
 |-
-|mountain_huts||
+|mountain_huts||{{tag|tourism|alpine_hut}}
 |-
 |resort||{{tag|leisure|resort}}
 |-
@@ -517,33 +492,33 @@
 |-
 |service_apartments||{{tag|tourism|apartment}}
 |-
-|automotive||
+|automotive||{{tag|shop|car}}
 |-
 |automotive_dealer||{{tag|shop|car}}
 |-
-|car_buyer||
+|car_buyer||{{tag|shop|car}}
 |-
 |car_dealer||{{tag|shop|car}}
 |-
-|commercial_vehicle_dealer||
+|commercial_vehicle_dealer||{{tag|shop|car}}
 |-
 |golf_cart_dealer||
 |-
 |motorcycle_dealer||{{tag|shop|motorcycle}}
 |-
-|motorsport_vehicle_dealer||
+|motorsport_vehicle_dealer||{{tag|shop|car}} {{tag|car|motorsport}}
 |-
-|recreational_vehicle_dealer||
+|recreational_vehicle_dealer||{{tag|shop|recreational_vehicle}}
 |-
-|scooter_dealers||
+|scooter_dealers||{{tag|shop|motorcycle}}
 |-
-|trailer_dealer||
+|trailer_dealer||{{tag|shop|trailer}}
 |-
-|truck_dealer||
+|truck_dealer||{{tag|shop|truck}}
 |-
 |used_car_dealer||{{tag|shop|car}} {{tag|second_hand|only}}
 |-
-|automotive_services_and_repair||{{tag|amenity|car_repair}}
+|automotive_services_and_repair||{{tag|shop|car_repair}}
 |-
 |auto_body_shop||{{tag|shop|car_repair}} {{tag|car_repair|bodywork}}
 |-
@@ -561,23 +536,23 @@
 |-
 |auto_security||{{tag|shop|car_repair}} {{tag|car_repair|security}}
 |-
-|automobile_registration_service||
+|automobile_registration_service||{{tag|office|vehicle_registration_service}}
 |-
 |automotive_consultant||{{tag|office|consulting}} {{tag|consulting|automotive}}
 |-
-|automotive_storage_facility||{{tag|amenity|parking}}
+|automotive_storage_facility||{{tag|amenity|parking}} {{tag|parking|long_term}}
 |-
-|brake_service_and_repair||
+|brake_service_and_repair||{{tag|shop|car_repair}}
 |-
 |car_inspector||
 |-
-|car_stereo_installation||
+|car_stereo_installation||{{tag|shop|car_parts}}
 |-
 |car_wash||{{tag|amenity|car_wash}}
 |-
 |diy_auto_shop||
 |-
-|emissions_inspection||
+|emissions_inspection||{{tag|amenity|vehicle_inspection}}
 |-
 |engine_repair_service||
 |-
@@ -587,23 +562,23 @@
 |-
 |motorcycle_repair||{{tag|shop|motorcycle_repair}}
 |-
-|motorsport_vehicle_repair||
+|motorsport_vehicle_repair||{{tag|shop|car_repair}} {{tag|repair:vehicle|motorsport}}
 |-
-|oil_change_station||
+|oil_change_station||{{tag|amenity|fuel}} {{tag|service|oil_change}}
 |-
-|recreation_vehicle_repair||
+|recreation_vehicle_repair||{{tag|shop|repair}} {{tag|repair|rv}}
 |-
 |roadside_assistance||
 |-
 |emergency_roadside_service||
 |-
-|mobile_dent_repair||
+|mobile_dent_repair||{{tag|shop|car_repair}}
 |-
 |tire_dealer_and_repair||{{tag|shop|tyres}}
 |-
-|transmission_repair||
+|transmission_repair||{{tag|shop|car_repair}} {{tag|car_repair|transmission}}
 |-
-|towing_service||
+|towing_service||{{tag|shop|car_repair}} {{tag|service|towing}}
 |-
 |trailer_repair||
 |-
@@ -611,25 +586,25 @@
 |-
 |auto_upholstery||
 |-
-|vehicle_wrap||
+|vehicle_wrap||{{tag|shop|car}} {{tag|service:vehicle:wrapping|yes}}
 |-
-|vehicle_shipping||
+|vehicle_shipping||{{tag|office|logistics}} {{tag|service|vehicle_shipping}}
 |-
-|wheel_and_rim_repair||
+|wheel_and_rim_repair||{{tag|shop|car_repair}} {{tag|service:vehicle:wheels|yes}}
 |-
-|automotive_wheel_polishing_service||
+|automotive_wheel_polishing_service||{{tag|shop|car_wash}}
 |-
-|windshield_installation_and_repair||
+|windshield_installation_and_repair||{{tag|shop|car_repair}}
 |-
 |automotive_parts_and_accessories||{{tag|shop|car_parts}}
 |-
-|recreational_vehicle_parts_and_accessories||
+|recreational_vehicle_parts_and_accessories||{{tag|shop|car_parts}} {{tag|car_parts|recreational_vehicle}}
 |-
-|car_stereo_store||
+|car_stereo_store||{{tag|shop|car_parts}} {{tag|car_parts|stereo}}
 |-
-|motorcycle_gear||
+|motorcycle_gear||{{tag|shop|motorcycle}}
 |-
-|motorsports_store||
+|motorsports_store||{{tag|shop|motorcycle}}
 |-
 |interlock_system||
 |-
@@ -641,7 +616,7 @@
 |-
 |avionics_shop||
 |-
-|boat_dealer||
+|boat_dealer||{{tag|shop|boat}}
 |-
 |boat_service_and_repair||
 |-
@@ -655,39 +630,39 @@
 |-
 |ev_charging_station||{{tag|amenity|charging_station}}
 |-
-|truck_stop||
+|truck_stop||{{tag|highway|services}}
 |-
-|automobile_leasing||
+|automobile_leasing||{{tag|amenity|car_rental}}
 |-
 |automotive_repair||{{tag|shop|car_repair}}
 |-
 |auto_company||{{tag|shop|car}}
 |-
-|motorcycle_manufacturer||
+|motorcycle_manufacturer||{{tag|man_made|works}} {{tag|product|motorcycle}}
 |-
-|arts_and_entertainment||
+|arts_and_entertainment||{{tag|amenity|arts_centre}}
 |-
-|adult_entertainment||
+|adult_entertainment||{{tag|amenity|stripclub}}
 |-
-|erotic_massage||
+|erotic_massage||{{tag|shop|massage}}
 |-
-|strip_club||
+|strip_club||{{tag|amenity|stripclub}}
 |-
-|striptease_dancer||
+|striptease_dancer||{{tag|amenity|stripclub}}
 |-
-|arcade||
+|arcade||{{tag|leisure|amusement_arcade}}
 |-
-|auditorium||
+|auditorium||{{tag|amenity|conference_centre}} {{tag|room|auditorium}}
 |-
-|bar_crawl||
+|bar_crawl||{{tag|office|guide}} {{tag|guide|bar_crawl}}
 |-
 |betting_center||{{tag|shop|bookmaker}}
 |-
-|bingo_hall||
+|bingo_hall||{{tag|leisure|bing_hall}}
 |-
 |bookmakers||{{tag|shop|bookmaker}}
 |-
-|cabaret||
+|cabaret||{{tag|amenity|theatre}} {{tag|theatre:genre|cabaret}}
 |-
 |carousel||{{tag|attraction|carousel}}
 |-
@@ -701,7 +676,7 @@
 |-
 |club_crawl||
 |-
-|comedy_club||{{tag|amenity|theatre}} {{tag|theatre:genre|comedy}}
+|comedy_club||{{tag|amenity|theatre}}
 |-
 |topic_concert_venue||{{tag|amenity|music_venue}}
 |-
@@ -713,77 +688,77 @@
 |-
 |dinner_theatre||
 |-
-|eatertainment||
+|eatertainment||{{tag|amenity|restaurant}}
 |-
 |escape_rooms||{{tag|leisure|escape_game}}
 |-
 |exhibition_and_trade_center||
 |-
-|glass_blowing||
+|glass_blowing||{{tag|craft|glass_blowing}}
 |-
-|indoor_playcenter||
+|indoor_playcenter||{{tag|leisure|playground}} {{tag|indoor|yes}}
 |-
 |internet_cafe||{{tag|amenity|internet_cafe}}
 |-
-|jazz_and_blues||
+|jazz_and_blues||{{tag|amenity|nightclub}} {{tag|live_music|yes}} {{tag|music_genre|jazz_and_blues}}
 |-
-|karaoke||
+|karaoke||{{tag|amenity|karaoke_box}}
 |-
-|laser_tag||
+|laser_tag||{{tag|leisure|sports_centre}} {{tag|sport|laser_tag}}
 |-
-|makerspace||
+|makerspace||{{tag|leisure|hackerspace}}
 |-
 |marching_band||
 |-
-|music_venue||
+|music_venue||{{tag|amenity|theatre}}
 |-
-|musical_band_orchestras_and_symphonies||
+|musical_band_orchestras_and_symphonies||{{tag|amenity|theatre}} {{tag|theatre:type|concert_hall}}
 |-
-|opera_and_ballet||
+|opera_and_ballet||{{tag|amenity|theatre}} {{tag|theatre:type|ballet}}
 |-
 |paint_and_sip||
 |-
 |paintball||{{tag|leisure|pitch}} {{tag|sport|paintball}}
 |-
-|performing_arts||
+|performing_arts||{{tag|amenity|theatre}}
 |-
 |planetarium||{{tag|amenity|planetarium}}
 |-
-|rodeo||
+|rodeo||{{tag|leisure|pitch}} {{tag|sport|rodeo}}
 |-
-|salsa_club||
+|salsa_club||{{tag|amenity|nightclub}} {{tag|music_genre|salsa}}
 |-
-|wildlife_sanctuary||
+|wildlife_sanctuary||{{tag|leisure|nature_reserve}}
 |-
 |stadium_arena||{{tag|leisure|stadium}}
 |-
-|baseball_stadium||{{tag|leisure|pitch}} {{tag|sport|baseball}}
+|baseball_stadium||{{tag|leisure|stadium}} {{tag|sport|baseball}}
 |-
-|basketball_stadium||{{tag|leisure|pitch}} {{tag|sport|basketball}}
+|basketball_stadium||{{tag|leisure|stadium}} {{tag|sport|basketball}}
 |-
 |cricket_ground||{{tag|leisure|pitch}} {{tag|sport|cricket}}
 |-
-|football_stadium||{{tag|leisure|pitch}} {{tag|sport|american_football}}
+|football_stadium||{{tag|leisure|stadium}} {{tag|sport|soccer}}
 |-
-|hockey_arena||{{tag|leisure|stadium}} {{tag|sport|hockey}}
+|hockey_arena||{{tag|leisure|sports_centre}} {{tag|sport|hockey}}
 |-
 |rugby_stadium||{{tag|leisure|stadium}} {{tag|sport|rugby}}
 |-
-|soccer_stadium||{{tag|leisure|pitch}} {{tag|sport|soccer}}
+|soccer_stadium||{{tag|leisure|stadium}} {{tag|sport|football}}
 |-
-|tennis_stadium||{{tag|leisure|pitch}} {{tag|sport|tennis}}
+|tennis_stadium||{{tag|leisure|stadium}} {{tag|sport|tennis}}
 |-
 |track_stadium||{{tag|leisure|stadium}} {{tag|sport|track}}
 |-
-|studio_taping||
+|studio_taping||{{tag|amenity|studio}}
 |-
 |theatres_and_performance_venues||
 |-
 |theatre||{{tag|amenity|theatre}}
 |-
-|ticket_sales||
+|ticket_sales||{{tag|shop|ticket}}
 |-
-|virtual_reality_center||
+|virtual_reality_center||{{tag|leisure|amusement_arcade}}
 |-
 |water_park||{{tag|leisure|water_park}}
 |-
@@ -795,69 +770,69 @@
 |-
 |farm||{{tag|shop|farm}}
 |-
-|attraction_farm||{{tag|shop|farm}}
+|attraction_farm||{{tag|tourism|attraction}} {{tag|attraction|farm}}
 |-
-|orchard||
+|orchard||{{tag|landuse|orchard}}
 |-
-|pick_your_own_farm||
+|pick_your_own_farm||{{tag|tourism|attraction}} {{tag|produce|pick_your_own}}
 |-
 |poultry_farm||
 |-
-|ranch||
+|ranch||{{tag|landuse|farmland}}
 |-
-|festival||
+|festival||{{tag|amenity|festival_grounds}}
 |-
-|fair||
+|fair||{{tag|leisure|festival_grounds}}
 |-
 |film_festivals_and_organizations||
 |-
-|general_festivals||
+|general_festivals||{{tag|amenity|festival_grounds}}
 |-
-|holiday_market||
+|holiday_market||{{tag|amenity|marketplace}} {{tag|seasonal|christmas}}
 |-
-|music_festivals_and_organizations||
+|music_festivals_and_organizations||{{tag|amenity|events_venue}}
 |-
-|trade_fair||
+|trade_fair||{{tag|amenity|events_venue}}
 |-
-|social_club||
+|social_club||{{tag|amenity|social_club}}
 |-
-|fraternal_organization||
+|fraternal_organization||{{tag|amenity|social_facility}}
 |-
-|veterans_organization||
+|veterans_organization||{{tag|office|social_facility}} {{tag|social_facility:for|veterans}}
 |-
-|supernatural_reading||
+|supernatural_reading||{{tag|shop|psychic}}
 |-
-|astrologer||
+|astrologer||{{tag|shop|psychic}} {{tag|psychic|astrologer}}
 |-
-|mystic||
+|mystic||{{tag|shop|psychic}} {{tag|psychic|mystic}}
 |-
 |psychic||{{tag|shop|psychic}}
 |-
-|psychic_medium||
+|psychic_medium||{{tag|shop|psychic}}
 |-
-|attractions_and_activities||
+|attractions_and_activities||{{tag|tourism|attraction}}
 |-
 |amusement_park||{{tag|tourism|theme_park}}
 |-
 |aquarium||{{tag|tourism|aquarium}}
 |-
-|architecture||
+|architecture||{{tag|office|architect}}
 |-
 |art_gallery||{{tag|tourism|gallery}}
 |-
-|atv_rentals_and_tours||
+|atv_rentals_and_tours||{{tag|shop|rental}} {{tag|rental|atvs}} {{tag|office|guide}} {{tag|guide|atv_tours}}
 |-
-|axe_throwing||
+|axe_throwing||{{tag|leisure|sports_centre}} {{tag|sport|axe_throwing}}
 |-
-|backpacking_area||
+|backpacking_area||{{tag|highway|trailhead}}
 |-
 |beach||{{tag|natural|beach}}
 |-
 |beach_combing_area||
 |-
-|boat_rental_and_training||
+|boat_rental_and_training||{{tag|amenity|boat_rental}}
 |-
-|boating_places||
+|boating_places||{{tag|leisure|marina}}
 |-
 |bobsledding_field||
 |-
@@ -871,7 +846,7 @@
 |-
 |cave||{{tag|natural|cave_entrance}}
 |-
-|challenge_courses_center||
+|challenge_courses_center||{{tag|leisure|sports_centre}} {{tag|sport|obstacle_course}}
 |-
 |cliff_jumping_center||
 |-
@@ -879,27 +854,27 @@
 |-
 |crater||
 |-
-|cultural_center||
+|cultural_center||{{tag|amenity|arts_centre}}
 |-
-|fishing_charter||
+|fishing_charter||{{tag|office|guide}} {{tag|guide|fishing }}
 |-
-|flyboarding_rental||
+|flyboarding_rental||{{tag|shop|rental}} {{tag|rental|flyboard}} {{tag|sport|flyboarding}}
 |-
 |fort||{{tag|historic|fort}}
 |-
 |fountain||{{tag|amenity|fountain}}
 |-
-|go_kart_track||
+|go_kart_track||{{tag|highway|raceway}} {{tag|sport|karting}}
 |-
-|haunted_house||
+|haunted_house||{{tag|attraction|haunted_house}}
 |-
-|high_gliding_center||
+|high_gliding_center||{{tag|leisure|sports_centre}} {{tag|sport|hang_gliding}}
 |-
-|horseback_riding_service||
+|horseback_riding_service||{{tag|leisure|horse_riding}}
 |-
-|hot_air_balloons_tour||
+|hot_air_balloons_tour||{{tag|office|guide}} {{tag|guide|hot_air_balloon}}
 |-
-|hot_springs||
+|hot_springs||{{tag|natural|hot_spring}}
 |-
 |jet_skis_rental||
 |-
@@ -917,11 +892,11 @@
 |-
 |monument||{{tag|historic|monument}}
 |-
-|mountain_bike_parks||
+|mountain_bike_parks||{{tag|leisure|track}} {{tag|sport|mountain_biking}}
 |-
 |observatory||{{tag|man_made|observatory}}
 |-
-|paddleboard_rental||
+|paddleboard_rental||{{tag|shop|rental}} {{tag|rental|paddleboard}} {{tag|sport|paddleboarding}}
 |-
 |palace||{{tag|historic|castle}} {{tag|castle_type|palace}}
 |-
@@ -929,7 +904,7 @@
 |-
 |plaza||{{tag|place|square}}
 |-
-|rafting_kayaking_area||
+|rafting_kayaking_area||{{tag|tourism|attraction}} {{tag|sport|kayak}}
 |-
 |rock_climbing_spot||
 |-
@@ -937,17 +912,17 @@
 |-
 |sailing_area||
 |-
-|sand_dune||
+|sand_dune||{{tag|natural|sand}}
 |-
 |scavenger_hunts_provider||
 |-
 |sculpture_statue||{{tag|historic|memorial}} {{tag|memorial|statue}}
 |-
-|ski_area||
+|ski_area||{{tag|landuse|winter_sports}}
 |-
 |skyline||
 |-
-|sledding_rental||
+|sledding_rental||{{tag|shop|rental}} {{tag|rental|sledding}}
 |-
 |snorkeling_equipment_rental||
 |-
@@ -957,7 +932,7 @@
 |-
 |stargazing_area||
 |-
-|street_art||
+|street_art||{{tag|tourism|artwork}} {{tag|artwork_type|street_art}}
 |-
 |trail||{{tag|highway|path}}
 |-
@@ -967,7 +942,7 @@
 |-
 |waterfall||{{tag|waterway|waterfall}}
 |-
-|surfing||
+|surfing||{{tag|leisure|sports_centre}} {{tag|sport|surfing}}
 |-
 |surfboard_rental||
 |-
@@ -985,63 +960,63 @@
 |-
 |asian_art_museum||{{tag|tourism|gallery}}
 |-
-|cartooning_museum||
+|cartooning_museum||{{tag|tourism|museum}} {{tag|museum|cartooning}}
 |-
 |contemporary_art_museum||{{tag|tourism|gallery}}
 |-
-|children's_museum||{{tag|tourism|museum}}
+|children's_museum||{{tag|tourism|museum}} {{tag|museum|children}}
 |-
-|costume_museum||{{tag|tourism|museum}}
+|costume_museum||{{tag|tourism|museum}} {{tag|museum|costume}}
 |-
 |decorative_arts_museum||{{tag|tourism|gallery}}
 |-
-|design_museum||{{tag|tourism|museum}}
+|design_museum||{{tag|tourism|museum}} {{tag|museum|design}}
 |-
 |modern_art_museum||{{tag|tourism|gallery}}
 |-
 |photography_museum||{{tag|tourism|gallery}}
 |-
-|textile_museum||
+|textile_museum||{{tag|tourism|museum}} {{tag|museum|textile}}
 |-
-|history_museum||{{tag|tourism|museum}}
+|history_museum||{{tag|tourism|museum}} {{tag|museum|history}}
 |-
-|civilization_museum||
+|civilization_museum||{{tag|tourism|museum}} {{tag|museum|history}}
 |-
-|community_museum||{{tag|tourism|museum}}
+|community_museum||{{tag|tourism|museum}} {{tag|museum|community}}
 |-
-|military_museum||{{tag|tourism|museum}}
+|military_museum||{{tag|tourism|museum}} {{tag|museum|military}}
 |-
-|national_museum||{{tag|tourism|museum}}
+|national_museum||{{tag|tourism|museum}} {{tag|museum|national}}
 |-
-|science_museum||{{tag|tourism|museum}}
+|science_museum||{{tag|tourism|museum}} {{tag|museum|science}}
 |-
-|computer_museum||
+|computer_museum||{{tag|tourism|museum}} {{tag|museum|computer}}
 |-
 |state_museum||{{tag|tourism|museum}}
 |-
-|aviation_museum||{{tag|tourism|museum}}
+|aviation_museum||{{tag|tourism|museum}} {{tag|museum|aviation}}
 |-
-|sports_museum||{{tag|tourism|museum}}
+|sports_museum||{{tag|tourism|museum}} {{tag|museum|sports}}
 |-
 |park||{{tag|leisure|park}}
 |-
 |dog_park||{{tag|leisure|dog_park}}
 |-
-|memorial_park||{{tag|leisure|park}}
+|memorial_park||{{tag|leisure|park}} {{tag|historic|memorial}}
 |-
-|national_park||{{tag|boundary|protected_area}}
+|national_park||{{tag|leisure|nature_reserve}}
 |-
-|state_park||{{tag|boundary|protected_area}}
+|state_park||{{tag|leisure|park}} {{tag|boundary|protected_area}}
 |-
-|active_life||
+|active_life||{{tag|leisure|sports_centre}}
 |-
-|sports_and_recreation_venue||
+|sports_and_recreation_venue||{{tag|leisure|sports_centre}}
 |-
-|adventure_sports_center||
+|adventure_sports_center||{{tag|leisure|sports_centre}} {{tag|sport|adventure}}
 |-
 |american_football_field||{{tag|leisure|pitch}} {{tag|sport|american_football}}
 |-
-|airsoft_fields||
+|airsoft_fields||{{tag|leisure|pitch}} {{tag|sport|airsoft}}
 |-
 |archery_range||{{tag|leisure|pitch}} {{tag|sport|archery}}
 |-
@@ -1053,11 +1028,11 @@
 |-
 |basketball_court||{{tag|leisure|pitch}} {{tag|sport|basketball}}
 |-
-|batting_cage||
+|batting_cage||{{tag|leisure|pitch}} {{tag|sport|baseball}}
 |-
 |beach_volleyball_court||{{tag|leisure|pitch}} {{tag|sport|beachvolleyball}}
 |-
-|bicycle_path||
+|bicycle_path||{{tag|highway|cycleway}}
 |-
 |bocce_ball_court||{{tag|leisure|pitch}} {{tag|sport|boules}}
 |-
@@ -1077,7 +1052,7 @@
 |-
 |gym||{{tag|leisure|fitness_centre}}
 |-
-|gymnastics_center||
+|gymnastics_center||{{tag|leisure|sports_centre}} {{tag|sport|gymnastics}}
 |-
 |handball_court||{{tag|leisure|pitch}} {{tag|sport|handball}}
 |-
@@ -1085,19 +1060,19 @@
 |-
 |horse_riding||{{tag|leisure|horse_riding}}
 |-
-|equestrian_facility||
+|equestrian_facility||{{tag|leisure|horse_riding}}
 |-
-|horse_racing_track||
+|horse_racing_track||{{tag|leisure|track}} {{tag|sport|horse_racing}}
 |-
-|skate_park||
+|skate_park||{{tag|leisure|pitch}} {{tag|sport|skateboard}}
 |-
-|skating_rink||
+|skating_rink||{{tag|leisure|sports_centre}} {{tag|sport|skating}}
 |-
 |ice_skating_rink||
 |-
-|roller_skating_rink||
+|roller_skating_rink||{{tag|leisure|pitch}} {{tag|sport|roller_skating}}
 |-
-|hang_gliding_center||
+|hang_gliding_center||{{tag|leisure|sports_centre}} {{tag|sport|hang_gliding}}
 |-
 |kiteboarding||
 |-
@@ -1107,9 +1082,9 @@
 |-
 |playground||{{tag|leisure|playground}}
 |-
-|pool_billiards||
+|pool_billiards||{{tag|leisure|sports_centre}} {{tag|sport|pool;billiards}}
 |-
-|pool_hall||
+|pool_hall||{{tag|leisure|sports_centre}} {{tag|sport|pool}}
 |-
 |racquetball_court||{{tag|leisure|pitch}} {{tag|sport|racquetball}}
 |-
@@ -1117,7 +1092,7 @@
 |-
 |rugby_pitch||{{tag|leisure|pitch}} {{tag|sport|rugby}}
 |-
-|shooting_range||
+|shooting_range||{{tag|leisure|pitch}} {{tag|sport|shooting}}
 |-
 |sky_diving||
 |-
@@ -1131,11 +1106,11 @@
 |-
 |trampoline_park||{{tag|leisure|trampoline_park}}
 |-
-|tubing_provider||
+|tubing_provider||{{tag|shop|wholesale}} {{tag|wholesale|tubing}}
 |-
 |volleyball_court||{{tag|leisure|pitch}} {{tag|sport|volleyball}}
 |-
-|wildlife_hunting_range||
+|wildlife_hunting_range||{{tag|leisure|nature_reserve}} {{tag|hunting|yes}}
 |-
 |zorbing_center||
 |-
@@ -1145,7 +1120,7 @@
 |-
 |scuba_diving_center||
 |-
-|race_track||
+|race_track||{{tag|leisure|track}}
 |-
 |sports_and_fitness_instruction||
 |-
@@ -1159,7 +1134,7 @@
 |-
 |racing_experience||
 |-
-|rock_climbing_instructor||
+|rock_climbing_instructor||{{tag|leisure|sports_hall}} {{tag|sport|climbing}}
 |-
 |free_diving_instruction||
 |-
@@ -1167,21 +1142,21 @@
 |-
 |aerial_fitness_center||
 |-
-|barre_classes||
+|barre_classes||{{tag|leisure|fitness_centre}} {{tag|sport|barre}}
 |-
-|boot_camp||
+|boot_camp||{{tag|amenity|fitness_centre}}
 |-
-|boxing_class||
+|boxing_class||{{tag|leisure|fitness_centre}} {{tag|sport|boxing}}
 |-
-|boxing_club||
+|boxing_club||{{tag|leisure|fitness_centre}} {{tag|sport|boxing}}
 |-
-|boxing_gym||
+|boxing_gym||{{tag|leisure|fitness_centre}} {{tag|sport|boxing}}
 |-
-|cardio_classes||
+|cardio_classes||{{tag|leisure|fitness_centre}} {{tag|sport|cardio}}
 |-
 |dance_school||{{tag|leisure|dance}} {{tag|dance:teaching|yes}}
 |-
-|ems_training||
+|ems_training||{{tag|amenity|training}} {{tag|training|emergency_medical_services}}
 |-
 |fitness_trainer||
 |-
@@ -1189,9 +1164,9 @@
 |-
 |meditation_center||
 |-
-|pilates_studio||
+|pilates_studio||{{tag|amenity|gym}} {{tag|sport|pilates}}
 |-
-|qi_gong_studio||
+|qi_gong_studio||{{tag|leisure|fitness_centre}} {{tag|sport|qi_gong}}
 |-
 |self_defense_classes||
 |-
@@ -1219,7 +1194,7 @@
 |-
 |esports_team||
 |-
-|fencing_club||{{tag|leisure|sports_centre}} {{tag|sport|fencing}}
+|fencing_club||{{tag|sport|fencing}}
 |-
 |fishing_club||
 |-
@@ -1235,7 +1210,7 @@
 |-
 |paddle_tennis_club||
 |-
-|professional_sports_league||
+|professional_sports_league||{{tag|office|sports}} {{tag|sport|professional_sports}}
 |-
 |professional_sports_team||
 |-
@@ -1249,7 +1224,7 @@
 |-
 |soccer_club||{{tag|leisure|sports_centre}} {{tag|sport|soccer}}
 |-
-|surf_lifesaving_club||
+|surf_lifesaving_club||{{tag|emergency|lifeguard}} {{tag|club|sport}} {{tag|sport|surfing}}
 |-
 |table_tennis_club||{{tag|leisure|sports_centre}} {{tag|sport|table_tennis}}
 |-
@@ -1259,23 +1234,23 @@
 |-
 |indoor_golf_center||{{tag|leisure|golf_course}} {{tag|golf:course|driving_range}} {{tag|indoor|yes}}
 |-
-|martial_arts_club||{{tag|sport|martial_arts}}
+|martial_arts_club||{{tag|amenity|dojo}} {{tag|club|martial_arts}}
 |-
-|brazilian_jiu_jitsu_club||
+|brazilian_jiu_jitsu_club||{{tag|leisure|sports_centre}} {{tag|sport|brazilian_jiu_jitsu}}
 |-
-|chinese_martial_arts_club||
+|chinese_martial_arts_club||{{tag|leisure|sports_centre}} {{tag|sport|martial_arts}}
 |-
-|karate_club||{{tag|leisure|sports_centre}} {{tag|sport|karate}}
+|karate_club||{{tag|amenity|dojo}} {{tag|sport|karate}}
 |-
-|kickboxing_club||
+|kickboxing_club||{{tag|leisure|sports_centre}} {{tag|sport|kickboxing}}
 |-
-|muay_thai_club||
+|muay_thai_club||{{tag|leisure|sports_centre}} {{tag|sport|muay_thai}}
 |-
-|taekwondo_club||{{tag|leisure|sports_centre}} {{tag|sport|taekwondo}}
+|taekwondo_club||{{tag|club|sport}} {{tag|sport|taekwondo}}
 |-
 |sports_and_recreation_rental_and_services||
 |-
-|beach_equipment_rentals||
+|beach_equipment_rentals||{{tag|shop|rental}} {{tag|rental|beach_equipment}}
 |-
 |bike_rentals||{{tag|amenity|bicycle_rental}}
 |-
@@ -1283,29 +1258,29 @@
 |-
 |scooter_rental||
 |-
-|sport_equipment_rentals||
+|sport_equipment_rentals||{{tag|shop|rental}} {{tag|rental|sports_equipment}}
 |-
 |beauty_and_spa||{{tag|amenity|spa}}
 |-
-|aromatherapy||
+|aromatherapy||{{tag|healthcare|alternative}} {{tag|healthcare:speciality|aromatherapy}}
 |-
 |beauty_salon||{{tag|shop|beauty}}
 |-
-|acne_treatment||
+|acne_treatment||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|dermatology}}
 |-
 |barber||{{tag|shop|hairdresser}}
 |-
-|eyebrow_service||
+|eyebrow_service||{{tag|shop|beauty}} {{tag|beauty|eyebrows}}
 |-
-|eyelash_service||
+|eyelash_service||{{tag|shop|beauty}} {{tag|beauty|eyelash}}
 |-
-|foot_care||
+|foot_care||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|podiatry}}
 |-
-|hair_extensions||
+|hair_extensions||{{tag|shop|hairdresser;beauty}} {{tag|beauty|hair_extensions}}
 |-
-|hair_loss_center||
+|hair_loss_center||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|trichology}}
 |-
-|hair_replacement||
+|hair_replacement||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|hair}}
 |-
 |health_spa||{{tag|amenity|spa}}
 |-
@@ -1313,41 +1288,41 @@
 |-
 |massage||{{tag|shop|massage}}
 |-
-|nail_salon||
+|nail_salon||{{tag|shop|beauty}} {{tag|beauty|nails}}
 |-
 |onsen||
 |-
-|permanent_makeup||
+|permanent_makeup||{{tag|shop|beauty}} {{tag|beauty|permanent_makeup}}
 |-
-|tattoo_and_piercing||{{tag|shop|tattoo}} {{tag|piercing|yes}}
+|tattoo_and_piercing||{{tag|shop|tattoo}}
 |-
 |piercing||{{tag|shop|tattoo}} {{tag|piercing|yes}}
 |-
 |tattoo||{{tag|shop|tattoo}}
 |-
-|public_bath_houses||
+|public_bath_houses||{{tag|amenity|public_bath}}
 |-
-|teeth_whitening||
+|teeth_whitening||{{tag|amenity|dentist}} {{tag|healthcare|dentist}} {{tag|healthcare:speciality|teeth_whitening}}
 |-
 |turkish_baths||
 |-
-|hair_removal||
+|hair_removal||{{tag|shop|beauty}} {{tag|beauty|hair_removal}}
 |-
-|laser_hair_removal||
+|laser_hair_removal||{{tag|shop|beauty}} {{tag|beauty:salon:waxing|laser_hair_removal}}
 |-
 |sugaring||
 |-
 |threading_service||
 |-
-|waxing||
+|waxing||{{tag|shop|beauty}} {{tag|beauty|waxing}}
 |-
-|hair_salon||
+|hair_salon||{{tag|shop|hairdresser}}
 |-
 |blow_dry_blow_out_service||
 |-
-|hair_stylist||
+|hair_stylist||{{tag|shop|hairdresser}}
 |-
-|kids_hair_salon||
+|kids_hair_salon||{{tag|shop|hairdresser}} {{tag|hairdresser|kids}}
 |-
 |spas||{{tag|amenity|spa}}
 |-
@@ -1355,15 +1330,15 @@
 |-
 |day_spa||{{tag|amenity|spa}}
 |-
-|skin_care||
+|skin_care||{{tag|shop|cosmetics}}
 |-
-|esthetician||
+|esthetician||{{tag|shop|beauty}}
 |-
-|tanning_salon||
+|tanning_salon||{{tag|shop|beauty}} {{tag|beauty|tanning}}
 |-
-|spray_tanning||
+|spray_tanning||{{tag|shop|beauty}} {{tag|beauty|tanning}}
 |-
-|tanning_bed||
+|tanning_bed||{{tag|leisure|tanning_salon}}
 |-
 |image_consultant||
 |-
@@ -1385,13 +1360,13 @@
 |-
 |engineering_schools||
 |-
-|law_schools||
+|law_schools||{{tag|amenity|university}} {{tag|education|law}}
 |-
-|medical_sciences_schools||
+|medical_sciences_schools||{{tag|amenity|school}} {{tag|school|medical_sciences}}
 |-
 |dentistry_schools||
 |-
-|pharmacy_schools||
+|pharmacy_schools||{{tag|amenity|college}} {{tag|education|pharmacy}}
 |-
 |veterinary_schools||
 |-
@@ -1409,7 +1384,7 @@
 |-
 |school||{{tag|amenity|school}}
 |-
-|charter_school||{{tag|amenity|school}}
+|charter_school||{{tag|amenity|school}} {{tag|school:type|charter}}
 |-
 |elementary_school||{{tag|amenity|school}} {{tag|isced:level|1}}
 |-
@@ -1421,23 +1396,23 @@
 |-
 |preschool||{{tag|amenity|school}} {{tag|isced:level|0}}
 |-
-|private_school||{{tag|amenity|school}}
+|private_school||{{tag|amenity|school}} {{tag|school:type|private}}
 |-
 |public_school||{{tag|amenity|school}}
 |-
 |religious_school||{{tag|amenity|school}}
 |-
-|waldorf_school||{{tag|amenity|school}}
+|waldorf_school||{{tag|amenity|school}} {{tag|operator:type|waldorf}}
 |-
 |school_district_offices||
 |-
-|specialty_school||{{tag|amenity|school}}
+|specialty_school||{{tag|amenity|school}} {{tag|education|speciality}}
 |-
 |art_school||{{tag|amenity|school}} {{tag|school|art}}
 |-
 |bartending_school||{{tag|amenity|school}} {{tag|school|bartending}}
 |-
-|cheerleading||
+|cheerleading||{{tag|leisure|sports_centre}} {{tag|sport|cheerleading}}
 |-
 |childbirth_education||
 |-
@@ -1449,7 +1424,7 @@
 |-
 |cosmetology_school||{{tag|amenity|school}} {{tag|school|cosmetology}}
 |-
-|cpr_classes||
+|cpr_classes||{{tag|amenity|training}} {{tag|training|cpr}}
 |-
 |drama_school||{{tag|amenity|school}} {{tag|school|drama}}
 |-
@@ -1457,39 +1432,39 @@
 |-
 |dui_school||{{tag|amenity|school}}
 |-
-|firearm_training||
+|firearm_training||{{tag|amenity|training}} {{tag|training|firearm}}
 |-
-|first_aid_class||
+|first_aid_class||{{tag|amenity|training}} {{tag|training|first_aid}}
 |-
 |flight_school||{{tag|amenity|school}}
 |-
-|food_safety_training||
+|food_safety_training||{{tag|amenity|training}} {{tag|training|food_safety}}
 |-
 |language_school||{{tag|amenity|language_school}}
 |-
 |massage_school||{{tag|amenity|school}}
 |-
-|medical_school||{{tag|amenity|school}}
+|medical_school||{{tag|amenity|university}} {{tag|education|medicine}}
 |-
 |music_school||{{tag|amenity|music_school}}
 |-
 |nursing_school||{{tag|amenity|school}}
 |-
-|parenting_classes||
+|parenting_classes||{{tag|amenity|community_centre}} {{tag|community_centre|parenting_classes}}
 |-
-|photography_classes||
+|photography_classes||{{tag|amenity|training}} {{tag|training|photography}}
 |-
 |speech_training||
 |-
 |sports_school||{{tag|amenity|school}}
 |-
-|traffic_school||{{tag|amenity|school}}
+|traffic_school||{{tag|amenity|driving_school}}
 |-
 |vocational_and_technical_school||{{tag|amenity|school}}
 |-
 |student_union||
 |-
-|tasting_classes||
+|tasting_classes||{{tag|office|guide}} {{tag|guide|tasting_classes}}
 |-
 |cheese_tasting_classes||
 |-
@@ -1525,27 +1500,27 @@
 |-
 |check_cashing_payday_loans||
 |-
-|coin_dealers||
+|coin_dealers||{{tag|shop|collector}} {{tag|collector|coins}}
 |-
 |collection_agencies||
 |-
-|credit_and_debt_counseling||
+|credit_and_debt_counseling||{{tag|amenity|social_facility}} {{tag|social_facility:for|debt_counseling}}
 |-
-|currency_exchange||
+|currency_exchange||{{tag|amenity|bureau_de_change}}
 |-
-|debt_relief_services||
+|debt_relief_services||{{tag|office|financial_advisor}}
 |-
-|financial_advising||
+|financial_advising||{{tag|office|financial_adviser}}
 |-
 |holding_companies||
 |-
 |investment_management_company||
 |-
-|installment_loans||
+|installment_loans||{{tag|shop|money_lender}}
 |-
 |mortgage_lender||
 |-
-|auto_loan_provider||
+|auto_loan_provider||{{tag|office|money_lender}}
 |-
 |insurance_agency||{{tag|office|insurance}}
 |-
@@ -1561,7 +1536,7 @@
 |-
 |investing||{{tag|office|financial_advisor}}
 |-
-|money_transfer_services||
+|money_transfer_services||{{tag|amenity|bureau_de_change}}
 |-
 |tax_services||{{tag|office|tax_advisor}}
 |-
@@ -1575,11 +1550,11 @@
 |-
 |corporate_office||
 |-
-|private_equity_firm||
+|private_equity_firm||{{tag|office|financial}}
 |-
 |retail||{{tag|shop|yes}}
 |-
-|food||
+|food||{{tag|amenity|restaurant}}
 |-
 |back_shop||
 |-
@@ -1591,39 +1566,39 @@
 |-
 |beer_wine_and_spirits||{{tag|shop|alcohol}}
 |-
-|box_lunch_supplier||
+|box_lunch_supplier||{{tag|shop|caterer}}
 |-
-|patisserie_cake_shop||{{tag|shop|pastry}}
+|patisserie_cake_shop||{{tag|shop|pastry}} {{tag|cuisine|cake}}
 |-
-|chimney_cake_shop||
+|chimney_cake_shop||{{tag|shop|pastry}} {{tag|cuisine|chimney_cake}}
 |-
-|cupcake_shop||{{tag|shop|pastry}}
+|cupcake_shop||{{tag|shop|pastry}} {{tag|cuisine|cupcake}}
 |-
 |custom_cakes_shop||{{tag|shop|pastry}}
 |-
 |coffee_and_tea_supplies||{{tag|shop|coffee}}
 |-
-|csa_farm||
+|csa_farm||{{tag|landuse|farm}}
 |-
 |desserts||
 |-
-|donuts||
+|donuts||{{tag|amenity|fast_food}} {{tag|cuisine|donut}}
 |-
-|fishmonger||
+|fishmonger||{{tag|shop|fishmonger}}
 |-
 |food_delivery_service||
 |-
-|food_stand||
+|food_stand||{{tag|amenity|fast_food}}
 |-
-|food_truck||
+|food_truck||{{tag|amenity|fast_food}}
 |-
-|friterie||
+|friterie||{{tag|amenity|fast_food}} {{tag|cuisine|friterie}}
 |-
-|health_food_store||{{tag|shop|herbalist}}
+|health_food_store||{{tag|shop|health_food}}
 |-
 |ice_cream_and_frozen_yoghurt||{{tag|amenity|ice_cream}}
 |-
-|gelato||{{tag|amenity|ice_cream}}
+|gelato||{{tag|amenity|ice_cream}} {{tag|cuisine|gelato}}
 |-
 |ice_cream_shop||{{tag|amenity|ice_cream}}
 |-
@@ -1633,17 +1608,17 @@
 |-
 |shaved_snow_shop||
 |-
-|imported_food||
+|imported_food||{{tag|shop|food}}
 |-
-|kiosk||
+|kiosk||{{tag|shop|kiosk}}
 |-
 |liquor_store||{{tag|shop|alcohol}}
 |-
 |mulled_wine||{{tag|shop|wine}}
 |-
-|pie_shop||
+|pie_shop||{{tag|shop|pastry}} {{tag|cuisine|pie}}
 |-
-|pretzels||
+|pretzels||{{tag|shop|bakery}} {{tag|cuisine|pretzel}}
 |-
 |sandwich_shop||{{tag|amenity|fast_food}} {{tag|cuisine|sandwich}}
 |-
@@ -1651,7 +1626,7 @@
 |-
 |street_vendor||
 |-
-|pizza_delivery_service||
+|pizza_delivery_service||{{tag|amenity|fast_food}} {{tag|cuisine|pizza}}
 |-
 |specialty_foods||
 |-
@@ -1659,7 +1634,7 @@
 |-
 |frozen_foods||
 |-
-|indian_sweets_shop||
+|indian_sweets_shop||{{tag|shop|confectionery}} {{tag|cuisine|indian}}
 |-
 |macarons||
 |-
@@ -1667,19 +1642,19 @@
 |-
 |winery||{{tag|craft|winery}}
 |-
-|wine_tasting_room||{{tag|craft|winery}}
+|wine_tasting_room||{{tag|craft|winery}} {{tag|amenity|bar}}
 |-
 |auto_parts_and_supply_store||{{tag|shop|car_parts}}
 |-
 |beverage_store||{{tag|shop|alcohol}}
 |-
-|boat_parts_and_supply_store||
+|boat_parts_and_supply_store||{{tag|shop|boat}}
 |-
 |butcher_shop||{{tag|shop|butcher}}
 |-
 |candy_store||{{tag|shop|confectionery}}
 |-
-|japanese_confectionery_shop||{{tag|shop|confectionery}}
+|japanese_confectionery_shop||{{tag|shop|confectionery}} {{tag|cuisine|japanese}}
 |-
 |carpet_store||{{tag|shop|carpet}}
 |-
@@ -1689,31 +1664,31 @@
 |-
 |distillery||{{tag|craft|distillery}}
 |-
-|drugstore||
+|drugstore||{{tag|shop|chemist}}
 |-
 |flooring_store||{{tag|shop|flooring}}
 |-
-|fruits_and_vegetables||
+|fruits_and_vegetables||{{tag|shop|greengrocer}}
 |-
 |health_market||
 |-
 |hearing_aid_provider||
 |-
-|herb_and_spice_shop||
+|herb_and_spice_shop||{{tag|shop|farm}} {{tag|produce|herb}}
 |-
-|honey_farm_shop||
+|honey_farm_shop||{{tag|shop|farm}} {{tag|produce|honey}}
 |-
 |meat_shop||{{tag|shop|butcher}}
 |-
-|olive_oil||
+|olive_oil||{{tag|shop|farm}} {{tag|produce|olive_oil}}
 |-
-|party_supply||
+|party_supply||{{tag|shop|party}}
 |-
 |pharmacy||{{tag|amenity|pharmacy}}
 |-
-|popcorn_shop||
+|popcorn_shop||{{tag|shop|confectionery}} {{tag|cuisine|popcorn}}
 |-
-|seafood_market||
+|seafood_market||{{tag|amenity|marketplace}} {{tag|cuisine|seafood}}
 |-
 |water_store||{{tag|shop|water}}
 |-
@@ -1727,7 +1702,7 @@
 |-
 |cooking_classes||
 |-
-|costume_store||{{tag|shop|costume}}
+|costume_store||{{tag|shop|clothes}} {{tag|clothes|costume}}
 |-
 |craft_shop||{{tag|shop|craft}}
 |-
@@ -1741,57 +1716,57 @@
 |-
 |paint_your_own_pottery||
 |-
-|books_mags_music_and_video||
+|books_mags_music_and_video||{{tag|shop|books}}
 |-
 |bookstore||{{tag|shop|books}}
 |-
-|academic_bookstore||
+|academic_bookstore||{{tag|shop|books}}
 |-
-|comic_books_store||
+|comic_books_store||{{tag|shop|books}} {{tag|books|comic}}
 |-
-|music_and_dvd_store||
+|music_and_dvd_store||{{tag|shop|music;video}}
 |-
-|newspaper_and_magazines_store||
+|newspaper_and_magazines_store||{{tag|shop|newsagent}}
 |-
-|video_and_video_game_rentals||
+|video_and_video_game_rentals||{{tag|shop|rental}} {{tag|rental|video_games}}
 |-
-|video_game_store||
+|video_game_store||{{tag|shop|video_games}}
 |-
-|vinyl_record_store||
+|vinyl_record_store||{{tag|shop|music}}
 |-
-|building_supply_store||
+|building_supply_store||{{tag|shop|doityourself}}
 |-
-|lumber_store||
+|lumber_store||{{tag|shop|doityourself}}
 |-
-|fashion||{{tag|shop|clothes}} {{tag|clothes|fashion}}
+|fashion||{{tag|shop|clothes}}
 |-
 |clothing_store||{{tag|shop|clothes}}
 |-
-|ceremonial_clothing||
+|ceremonial_clothing||{{tag|shop|clothes}} {{tag|clothes|ceremonial}}
 |-
 |children's_clothing_store||{{tag|shop|clothes}} {{tag|clothes|children}}
 |-
-|clothing_rental||
+|clothing_rental||{{tag|shop|rental}} {{tag|rental|clothing}}
 |-
 |denim_wear_store||{{tag|shop|clothes}} {{tag|clothes|denim}}
 |-
-|designer_clothing||
+|designer_clothing||{{tag|shop|clothes}} {{tag|clothes|fashion}}
 |-
-|formal_wear_store||
+|formal_wear_store||{{tag|shop|clothes}} {{tag|clothes|formal_wear}}
 |-
-|fur_clothing||
+|fur_clothing||{{tag|shop|clothes}} {{tag|clothes|fur}}
 |-
-|lingerie_store||
+|lingerie_store||{{tag|shop|clothes}} {{tag|clothes|underwear}}
 |-
-|maternity_wear||
+|maternity_wear||{{tag|shop|clothes}} {{tag|clothes|maternity}}
 |-
 |men's_clothing_store||{{tag|shop|clothes}} {{tag|clothes|men}}
 |-
-|t_shirt_store||
+|t_shirt_store||{{tag|shop|clothes}} {{tag|clothes|custom_t_shirts}}
 |-
-|custom_t_shirt_store||
+|custom_t_shirt_store||{{tag|shop|clothes}} {{tag|clothes|custom_t_shirts}}
 |-
-|traditional_clothing||
+|traditional_clothing||{{tag|shop|clothes}} {{tag|clothes|traditional}}
 |-
 |women's_clothing_store||{{tag|shop|clothes}} {{tag|clothes|women}}
 |-
@@ -1799,31 +1774,31 @@
 |-
 |hat_shop||{{tag|shop|clothes}} {{tag|clothes|hats}}
 |-
-|leather_goods||
+|leather_goods||{{tag|shop|leather}}
 |-
-|plus_size_clothing||
+|plus_size_clothing||{{tag|shop|clothes}} {{tag|clothes|plus_size}}
 |-
-|saree_shop||
+|saree_shop||{{tag|shop|clothes}} {{tag|clothes|saree}}
 |-
-|sleepwear||
+|sleepwear||{{tag|shop|clothes}} {{tag|clothes|sleepwear}}
 |-
 |stocking||
 |-
-|used_vintage_and_consignment||
+|used_vintage_and_consignment||{{tag|shop|second_hand}}
 |-
-|handbag_stores||
+|handbag_stores||{{tag|shop|bag}}
 |-
 |shoe_store||{{tag|shop|shoes}}
 |-
 |orthopedic_shoe_store||{{tag|shop|shoes}} {{tag|shoes|orthopaedic}}
 |-
-|cosmetic_and_beauty_supplies||
+|cosmetic_and_beauty_supplies||{{tag|shop|beauty}}
 |-
-|hair_supply_stores||
+|hair_supply_stores||{{tag|shop|wholesale}} {{tag|wholesale|hair_supply}}
 |-
 |eyewear_and_optician||{{tag|shop|optician}}
 |-
-|sunglasses_store||
+|sunglasses_store||{{tag|shop|optician}}
 |-
 |farming_equipment_store||
 |-
@@ -1841,9 +1816,9 @@
 |-
 |asian_grocery_store||{{tag|shop|supermarket}} {{tag|cuisine|asian}}
 |-
-|dairy_stores||
+|dairy_stores||{{tag|shop|dairy}}
 |-
-|ethical_grocery||
+|ethical_grocery||{{tag|shop|supermarket}}
 |-
 |indian_grocery_store||{{tag|shop|supermarket}} {{tag|cuisine|indian}}
 |-
@@ -1875,7 +1850,7 @@
 |-
 |christmas_trees||
 |-
-|electrical_supply_store||
+|electrical_supply_store||{{tag|shop|electronics}}
 |-
 |furniture_accessory_store||{{tag|shop|furniture}}
 |-
@@ -1885,35 +1860,35 @@
 |-
 |holiday_decor||
 |-
-|home_decor||
+|home_decor||{{tag|shop|houseware}}
 |-
-|home_goods_store||
+|home_goods_store||{{tag|shop|houseware}}
 |-
 |home_improvement_store||{{tag|shop|doityourself}}
 |-
-|hot_tubs_and_pools||
+|hot_tubs_and_pools||{{tag|shop|swimming_pool;hot_tub}}
 |-
 |lawn_mower_store||
 |-
-|lighting_store||
+|lighting_store||{{tag|shop|lighting}}
 |-
-|linen||
+|linen||{{tag|shop|bedding}}
 |-
 |mattress_store||{{tag|shop|bed}}
 |-
-|nursery_and_gardening||
+|nursery_and_gardening||{{tag|shop|garden_centre}}
 |-
-|outdoor_furniture_store||
+|outdoor_furniture_store||{{tag|shop|outdoor}} {{tag|product|furniture}}
 |-
 |paint_store||{{tag|shop|paint}}
 |-
-|playground_equipment_supplier||
+|playground_equipment_supplier||{{tag|shop|wholesale}} {{tag|wholesale|playground_equipment}}
 |-
-|pumpkin_patch||
+|pumpkin_patch||{{tag|landuse|orchard}}
 |-
-|rug_store||
+|rug_store||{{tag|shop|carpet}}
 |-
-|tableware_supplier||
+|tableware_supplier||{{tag|shop|wholesale}} {{tag|wholesale|tableware}}
 |-
 |tile_store||
 |-
@@ -1929,7 +1904,7 @@
 |-
 |kitchen_supply_store||
 |-
-|hydroponic_gardening||
+|hydroponic_gardening||{{tag|shop|garden_centre}} {{tag|product|hydroponics}}
 |-
 |medical_supply||{{tag|shop|medical_supply}}
 |-
@@ -1939,17 +1914,17 @@
 |-
 |pet_store||{{tag|shop|pet}}
 |-
-|bird_shop||
+|bird_shop||{{tag|shop|pet}} {{tag|pet|bird}}
 |-
-|aquatic_pet_store||
+|aquatic_pet_store||{{tag|shop|pet}} {{tag|pet|fish}}
 |-
 |reptile_shop||
 |-
-|adult_store||
+|adult_store||{{tag|shop|erotic}}
 |-
 |agricultural_seed_store||
 |-
-|antique_store||
+|antique_store||{{tag|shop|antiques}}
 |-
 |army_and_navy_store||
 |-
@@ -1961,17 +1936,17 @@
 |-
 |battery_store||
 |-
-|bazaars||
+|bazaars||{{tag|amenity|marketplace}}
 |-
 |boutique||
 |-
 |brewing_supply_store||
 |-
-|bridal_shop||
+|bridal_shop||{{tag|shop|clothes}} {{tag|clothes|wedding}}
 |-
 |cannabis_dispensary||
 |-
-|cards_and_stationery_store||
+|cards_and_stationery_store||{{tag|shop|stationery}}
 |-
 |computer_store||{{tag|shop|computer}}
 |-
@@ -1979,9 +1954,9 @@
 |-
 |convenience_store||{{tag|shop|convenience}}
 |-
-|custom_clothing||
+|custom_clothing||{{tag|shop|clothes}} {{tag|clothes|custom}}
 |-
-|customized_merchandise||
+|customized_merchandise||{{tag|shop|gift}}
 |-
 |department_store||{{tag|shop|department_store}}
 |-
@@ -1993,7 +1968,7 @@
 |-
 |duty_free_shop||
 |-
-|educational_supply_store||
+|educational_supply_store||{{tag|shop|stationery}}
 |-
 |electronics||{{tag|shop|electronics}}
 |-
@@ -2001,23 +1976,23 @@
 |-
 |firework_retailer||
 |-
-|fitness_exercise_equipment||
+|fitness_exercise_equipment||{{tag|shop|sports}}
 |-
-|flea_market||
+|flea_market||{{tag|amenity|marketplace}}
 |-
-|flower_markets||
+|flower_markets||{{tag|shop|florist}}
 |-
 |gemstone_and_mineral||
 |-
 |gold_buyer||
 |-
-|guitar_store||
+|guitar_store||{{tag|shop|musical_instrument}} {{tag|musical_instrument|guitar}}
 |-
-|gun_and_ammo||
+|gun_and_ammo||{{tag|shop|gun}}
 |-
-|herbal_shop||
+|herbal_shop||{{tag|shop|herbalist}}
 |-
-|audio_visual_equipment_store||
+|audio_visual_equipment_store||{{tag|shop|electronics}}
 |-
 |hobby_shop||
 |-
@@ -2025,7 +2000,7 @@
 |-
 |horse_equipment_shop||
 |-
-|international_grocery_store||
+|international_grocery_store||{{tag|shop|supermarket}} {{tag|cuisine|international}}
 |-
 |jewelry_store||{{tag|shop|jewelry}}
 |-
@@ -2033,9 +2008,9 @@
 |-
 |livestock_feed_and_supply_store||
 |-
-|luggage_store||
+|luggage_store||{{tag|shop|luggage}}
 |-
-|market_stall||
+|market_stall||{{tag|shop|kiosk}}
 |-
 |military_surplus_store||
 |-
@@ -2043,11 +2018,11 @@
 |-
 |mobile_phone_store||{{tag|shop|mobile_phone}}
 |-
-|musical_instrument_store||
+|musical_instrument_store||{{tag|shop|musical_instrument}}
 |-
-|night_market||
+|night_market||{{tag|amenity|marketplace}}
 |-
-|office_equipment||
+|office_equipment||{{tag|shop|stationery}}
 |-
 |online_shop||
 |-
@@ -2055,9 +2030,9 @@
 |-
 |packing_supply||
 |-
-|pawn_shop||
+|pawn_shop||{{tag|shop|pawnbroker}}
 |-
-|pen_store||
+|pen_store||{{tag|shop|stationery}}
 |-
 |perfume_store||
 |-
@@ -2067,13 +2042,13 @@
 |-
 |piano_store||
 |-
-|pool_and_billiards||
+|pool_and_billiards||{{tag|leisure|sports_centre}} {{tag|sport|pool;billiards}}
 |-
 |pop_up_shop||
 |-
 |props||
 |-
-|public_market||
+|public_market||{{tag|amenity|marketplace}}
 |-
 |religious_items||
 |-
@@ -2087,7 +2062,7 @@
 |-
 |shopping_passage||
 |-
-|souvenir_shop||
+|souvenir_shop||{{tag|shop|gift}}
 |-
 |spiritual_shop||
 |-
@@ -2097,7 +2072,7 @@
 |-
 |tabletop_games||
 |-
-|thrift_store||
+|thrift_store||{{tag|shop|second_hand}}
 |-
 |tobacco_shop||{{tag|shop|tobacco}}
 |-
@@ -2105,7 +2080,7 @@
 |-
 |trophy_shop||
 |-
-|uniform_store||
+|uniform_store||{{tag|shop|clothes}} {{tag|clothes|workwear}}
 |-
 |used_bookstore||{{tag|shop|books}} {{tag|second_hand|only}}
 |-
@@ -2119,45 +2094,45 @@
 |-
 |wig_store||
 |-
-|sporting_goods||
+|sporting_goods||{{tag|shop|sports}}
 |-
-|archery_shop||
+|archery_shop||{{tag|shop|sports}} {{tag|sport|archery}}
 |-
 |bicycle_shop||{{tag|shop|bicycle}}
 |-
-|dive_shop||
+|dive_shop||{{tag|shop|scuba_diving}}
 |-
-|golf_equipment||
+|golf_equipment||{{tag|shop|sports}} {{tag|sport|golf}}
 |-
-|hockey_equipment||
+|hockey_equipment||{{tag|shop|sports}} {{tag|sport|hockey}}
 |-
-|hunting_and_fishing_supplies||
+|hunting_and_fishing_supplies||{{tag|shop|hunting;fishing}}
 |-
-|outdoor_gear||
+|outdoor_gear||{{tag|shop|outdoor}}
 |-
-|skate_shop||
+|skate_shop||{{tag|shop|sports}} {{tag|sport|skateboard}}
 |-
-|ski_and_snowboard_shop||
+|ski_and_snowboard_shop||{{tag|shop|sports}} {{tag|sport|skiing}}
 |-
-|sports_wear||
+|sports_wear||{{tag|shop|clothes}} {{tag|clothes|sports_wear}}
 |-
-|dance_wear||
+|dance_wear||{{tag|shop|sports}} {{tag|sport|dance}}
 |-
-|surf_shop||
+|surf_shop||{{tag|shop|sports}} {{tag|sport|surfing}}
 |-
 |swimwear_store||{{tag|shop|clothes}} {{tag|clothes|swimwear}}
 |-
-|tire_shop||
+|tire_shop||{{tag|shop|tyres}}
 |-
-|tire_repair_shop||
+|tire_repair_shop||{{tag|shop|car_repair}}
 |-
 |health_and_medical||{{tag|healthcare|yes}}
 |-
-|abuse_and_addiction_treatment||
+|abuse_and_addiction_treatment||{{tag|healthcare|counselling}} {{tag|healthcare:counselling|addiction}}
 |-
-|alcohol_and_drug_treatment_centers||
+|alcohol_and_drug_treatment_centers||{{tag|amenity|clinic}} {{tag|healthcare|clinic}} {{tag|healthcare:speciality|substance_abuse}}
 |-
-|crisis_intervention_services||
+|crisis_intervention_services||{{tag|amenity|social_facility}} {{tag|social_facility|crisis_intervention_services}}
 |-
 |eating_disorder_treatment_centers||
 |-
@@ -2167,161 +2142,161 @@
 |-
 |marriage_or_relationship_counselor||
 |-
-|psychoanalyst||
+|psychoanalyst||{{tag|healthcare|psychotherapist}}
 |-
-|psychologist||
+|psychologist||{{tag|healthcare|psychotherapist}}
 |-
 |psychotherapist||{{tag|healthcare|psychotherapist}}
 |-
-|sex_therapist||
+|sex_therapist||{{tag|office|therapist}} {{tag|healthcare:speciality|sex_therapist}}
 |-
 |sophrologist||
 |-
-|sports_psychologist||
+|sports_psychologist||{{tag|healthcare|psychotherapist}} {{tag|healthcare:speciality|sports_psychology}}
 |-
-|stress_management_services||
+|stress_management_services||{{tag|healthcare|therapist}} {{tag|healthcare:speciality|stress_management}}
 |-
-|suicide_prevention_services||
+|suicide_prevention_services||{{tag|healthcare|counselling}} {{tag|healthcare:speciality|suicide_prevention}}
 |-
 |dental_hygienist||
 |-
-|mobile_clinic||
+|mobile_clinic||{{tag|amenity|clinic}}
 |-
 |storefront_clinic||
 |-
 |dentist||{{tag|amenity|dentist}}
 |-
-|cosmetic_dentist||
+|cosmetic_dentist||{{tag|amenity|dentist}} {{tag|healthcare|dentist}} {{tag|healthcare:speciality|cosmetic_dentistry}}
 |-
-|endodontist||
+|endodontist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|endodontics}}
 |-
-|general_dentistry||
+|general_dentistry||{{tag|amenity|dentist}}
 |-
-|oral_surgeon||
+|oral_surgeon||{{tag|healthcare|surgeon}} {{tag|healthcare:speciality|oral_surgery}}
 |-
-|orthodontist||
+|orthodontist||{{tag|healthcare|dentist}} {{tag|healthcare:speciality|orthodontics}}
 |-
-|pediatric_dentist||
+|pediatric_dentist||{{tag|amenity|dentist}} {{tag|dentist.speciality|pediatric}}
 |-
-|periodontist||
+|periodontist||{{tag|healthcare|dentist}} {{tag|amenity|dentist}} {{tag|healthcare:speciality|periodontics}}
 |-
-|diagnostic_services||
+|diagnostic_services||{{tag|amenity|clinic}} {{tag|healthcare:speciality|diagnostic_services}}
 |-
-|diagnostic_imaging||
+|diagnostic_imaging||{{tag|amenity|doctors}} {{tag|healthcare|doctor}} {{tag|healthcare:speciality|radiology}}
 |-
-|laboratory_testing||
+|laboratory_testing||{{tag|healthcare|laboratory}}
 |-
-|doctor||{{tag|amenity|doctor}}
+|doctor||{{tag|amenity|doctors}}
 |-
-|allergist||
+|allergist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|allergist}}
 |-
-|anesthesiologist||
+|anesthesiologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|anesthesiology}}
 |-
 |audiologist||{{tag|healthcare|audiologist}}
 |-
-|cardiologist||
+|cardiologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|cardiology}}
 |-
-|cosmetic_surgeon||
+|cosmetic_surgeon||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|cosmetic_surgery}}
 |-
-|dermatologist||{{tag|healthcare:speciality|dermatology}}
+|dermatologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|dermatology}}
 |-
-|ear_nose_and_throat||
+|ear_nose_and_throat||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|ear_nose_and_throat}}
 |-
-|emergency_medicine||
+|emergency_medicine||{{tag|amenity|doctors}} {{tag|healthcare|doctor}} {{tag|emergency|yes}}
 |-
-|endocrinologist||
+|endocrinologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|endocrinology}}
 |-
-|endoscopist||
+|endoscopist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|endoscopy}}
 |-
-|family_practice||
+|family_practice||{{tag|amenity|clinic}} {{tag|healthcare|clinic}} {{tag|healthcare:speciality|family_practice}}
 |-
 |fertility||{{tag|amenity|clinic}} {{tag|healthcare|clinic}} {{tag|healthcare:speciality|fertility}}
 |-
-|gastroenterologist||{{tag|healthcare:speciality|gastroenterology}}
+|gastroenterologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|gastroenterology}}
 |-
 |geneticist||{{tag|healthcare:speciality|genetics}}
 |-
-|gerontologist||{{tag|healthcare:speciality|gerontology}}
+|gerontologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|gerontology}}
 |-
-|hepatologist||{{tag|healthcare:speciality|hepatology}}
+|hepatologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|hepatology}}
 |-
 |homeopathic_medicine||
 |-
-|hospitalist||
+|hospitalist||{{tag|amenity|hospital}}
 |-
-|immunodermatologist||
+|immunodermatologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|immunodermatology}}
 |-
-|infectious_disease_specialist||
+|infectious_disease_specialist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|infectious_diseases}}
 |-
-|naturopathic_holistic||
+|naturopathic_holistic||{{tag|healthcare|alternative}} {{tag|healthcare:speciality|naturopathy}}
 |-
-|nephrologist||
+|nephrologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|nephrology}}
 |-
-|neurologist||{{tag|healthcare:speciality|neurology}}
+|neurologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|neurology}}
 |-
-|neurotologist||
+|neurotologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|neurotology}}
 |-
-|neuropathologist||
+|neuropathologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|neuropathology}}
 |-
-|obstetrician_and_gynecologist||{{tag|healthcare:speciality|gynaecology}}
+|obstetrician_and_gynecologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|obstetrics_gynecology}}
 |-
-|oncologist||{{tag|healthcare:speciality|oncology}}
+|oncologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|oncology}}
 |-
-|orthopedist||
+|orthopedist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|orthopedics}}
 |-
-|osteopathic_physician||
+|osteopathic_physician||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|osteopathic_physician}}
 |-
-|otologist||
+|otologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|otolology}}
 |-
-|pain_management||
+|pain_management||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pain_management}}
 |-
 |pathologist||
 |-
-|phlebologist||
+|phlebologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|phlebology}}
 |-
 |physician_assistant||
 |-
-|plastic_surgeon||
+|plastic_surgeon||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|plastic_surgery}}
 |-
 |podiatrist||{{tag|healthcare|podiatrist}}
 |-
-|preventive_medicine||
+|preventive_medicine||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|preventive}}
 |-
-|proctologist||
+|proctologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|proctology}}
 |-
-|pulmonologist||
+|pulmonologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pulmonology}}
 |-
-|radiologist||
+|radiologist||{{tag|healthcare|radiologist}}
 |-
-|rheumatologist||
+|rheumatologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|rheumatology}}
 |-
-|spine_surgeon||
+|spine_surgeon||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|spinal_surgery}}
 |-
-|sports_medicine||
+|sports_medicine||{{tag|healthcare|sports}}
 |-
 |tattoo_removal||
 |-
-|toxicologist||
+|toxicologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|toxicology}}
 |-
 |tropical_medicine||
 |-
 |undersea_hyperbaric_medicine||
 |-
-|urologist||
+|urologist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|urology}}
 |-
-|vascular_medicine||
+|vascular_medicine||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|vascular}}
 |-
-|geriatric_medicine||
+|geriatric_medicine||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|geriatric}}
 |-
-|geriatric_psychiatry||
+|geriatric_psychiatry||{{tag|healthcare|psychiatrist}} {{tag|healthcare:speciality|geriatric_psychiatry}}
 |-
-|abortion_clinic||
+|abortion_clinic||{{tag|amenity|clinic}} {{tag|healthcare|clinic}} {{tag|healthcare:speciality|abortion}}
 |-
 |acupuncture||{{tag|healthcare|alternative}} {{tag|healthcare:speciality|acupuncture}}
 |-
-|aesthetician||
+|aesthetician||{{tag|shop|beauty}}
 |-
-|alcohol_and_drug_treatment_center||
+|alcohol_and_drug_treatment_center||{{tag|healthcare|addiction}}
 |-
 |alternative_medicine||
 |-
@@ -2329,65 +2304,65 @@
 |-
 |animal_assisted_therapy||
 |-
-|assisted_living_facility||
+|assisted_living_facility||{{tag|amenity|social_facility}} {{tag|social_facility|assisted_living}}
 |-
 |ayurveda||{{tag|healthcare|alternative}} {{tag|healthcare:speciality|ayurveda}}
 |-
-|behavior_analyst||
+|behavior_analyst||{{tag|office|therapist}} {{tag|therapist|behavioral}}
 |-
 |blood_and_plasma_donation_center||
 |-
-|body_contouring||
+|body_contouring||{{tag|shop|beauty}} {{tag|beauty|contouring}}
 |-
 |cancer_treatment_center||
 |-
 |cannabis_clinic||
 |-
-|cannabis_collective||
+|cannabis_collective||{{tag|shop|cannabis}}
 |-
-|childrens_hospital||
+|childrens_hospital||{{tag|healthcare|hospital}} {{tag|healthcare:speciality|paediatrics}}
 |-
-|chiropractor||{{tag|healthcare|alternative}} {{tag|healthcare:specialty|chiropractic}}
+|chiropractor||{{tag|healthcare|alternative}} {{tag|healthcare:speciality|chiropractic}}
 |-
 |colonics||
 |-
-|community_health_center||
+|community_health_center||{{tag|amenity|clinic}}
 |-
 |concierge_medicine||
 |-
-|cryotherapy||
+|cryotherapy||{{tag|healthcare|cryotherapy}}
 |-
-|dialysis_clinic||
+|dialysis_clinic||{{tag|amenity|clinic}} {{tag|healthcare|dialysis}}
 |-
 |dietitian||
 |-
 |doula||
 |-
-|emergency_room||
+|emergency_room||{{tag|emergency|emergency_ward_entrance}} {{tag|entrance|yes}}
 |-
-|environmental_medicine||
+|environmental_medicine||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|environmental}}
 |-
-|eye_care_clinic||
+|eye_care_clinic||{{tag|amenity|clinic}} {{tag|healthcare|optometrist}}
 |-
 |float_spa||{{tag|amenity|spa}}
 |-
-|halfway_house||
+|halfway_house||{{tag|amenity|social_facility}} {{tag|social_facility|group_home}}
 |-
 |halotherapy||{{tag|healthcare:speciality|halotherapy}}
 |-
-|health_and_wellness_club||
+|health_and_wellness_club||{{tag|leisure|fitness_centre}}
 |-
 |health_coach||
 |-
-|health_department||
+|health_department||{{tag|office|government}} {{tag|government|health_department}}
 |-
-|health_insurance_office||
+|health_insurance_office||{{tag|office|insurance}} {{tag|insurance|health}}
 |-
 |hospice||{{tag|healthcare|hospice}}
 |-
 |hospital||{{tag|amenity|hospital}}
 |-
-|hydrotherapy||
+|hydrotherapy||{{tag|healthcare|alternative}} {{tag|healthcare:speciality|hydrotherapy}}
 |-
 |hypnosis_hypnotherapy||
 |-
@@ -2395,13 +2370,13 @@
 |-
 |lactation_services||
 |-
-|laser_eye_surgery_lasik||
+|laser_eye_surgery_lasik||{{tag|healthcare|surgery}} {{tag|healthcare:speciality|ophthalmology}} {{tag|ophthalmology:laser_surgery|yes}}
 |-
 |lice_treatment||
 |-
 |massage_therapy||{{tag|shop|massage}}
 |-
-|maternity_centers||
+|maternity_centers||{{tag|amenity|clinic}} {{tag|healthcare|doctor}} {{tag|healthcare:speciality|obstetrics}}
 |-
 |medical_cannabis_referral||
 |-
@@ -2417,9 +2392,9 @@
 |-
 |nutritionist||
 |-
-|occupational_medicine||
+|occupational_medicine||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|occupational}}
 |-
-|occupational_therapy||
+|occupational_therapy||{{tag|healthcare|occupational_therapist}} {{tag|healthcare:speciality|orthodonticslist}}
 |-
 |optometrist||{{tag|healthcare|optometrist}}
 |-
@@ -2437,17 +2412,17 @@
 |-
 |podiatry||{{tag|amenity|doctors}} {{tag|healthcare:speciality|podiatry}}
 |-
-|prenatal_perinatal_care||
+|prenatal_perinatal_care||{{tag|healthcare|prenatal_perinatal_care}}
 |-
 |prosthetics||
 |-
-|prosthodontist||
+|prosthodontist||{{tag|healthcare|dentist}} {{tag|amenity|dentist}} {{tag|healthcare:speciality|prosthodontics}}
 |-
 |psychomotor_therapist||
 |-
-|public_health_clinic||
+|public_health_clinic||{{tag|amenity|clinic}}
 |-
-|reflexology||
+|reflexology||{{tag|healthcare|alternative}} {{tag|healthcare:speciality|reflexology}}
 |-
 |reiki||
 |-
@@ -2455,65 +2430,65 @@
 |-
 |skilled_nursing||
 |-
-|sleep_specialist||
+|sleep_specialist||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|sleep_specialist}}
 |-
 |speech_therapist||{{tag|healthcare|speech_therapist}}
 |-
 |sperm_clinic||
 |-
-|surgical_center||
+|surgical_center||{{tag|amenity|hospital}} {{tag|healthcare:speciality|surgery}}
 |-
 |ultrasound_imaging_center||
 |-
-|urgent_care_clinic||
+|urgent_care_clinic||{{tag|amenity|clinic}} {{tag|healthcare|clinic}} {{tag|emergency|yes}}
 |-
 |weight_loss_center||
 |-
 |wellness_program||
 |-
-|women's_health_clinic||
+|women's_health_clinic||{{tag|amenity|clinic}} {{tag|healthcare|clinic}} {{tag|healthcare:speciality|women}}
 |-
 |internal_medicine||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|internal}}
 |-
-|hematology||
+|hematology||{{tag|healthcare|laboratory}} {{tag|healthcare:speciality|hematology}}
 |-
-|medical_center||
+|medical_center||{{tag|amenity|clinic}}
 |-
 |bulk_billing||
 |-
 |osteopath||
 |-
-|walk_in_clinic||
+|walk_in_clinic||{{tag|amenity|clinic}}
 |-
 |ophthalmologist||
 |-
 |retina_specialist||
 |-
-|pediatrician||
+|pediatrician||{{tag|amenity|doctors}} {{tag|healthcare:speciality|pediatric}}
 |-
-|pediatric_anesthesiology||
+|pediatric_anesthesiology||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|anesthesiology}}
 |-
-|pediatric_cardiology||
+|pediatric_cardiology||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|paediatric_cardiology}}
 |-
-|pediatric_endocrinology||
+|pediatric_endocrinology||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pediatric_endocrinology}}
 |-
-|pediatric_gastroenterology||
+|pediatric_gastroenterology||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pediatric_gastroenterology}}
 |-
-|pediatric_infectious_disease||
+|pediatric_infectious_disease||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pediatric_infectious_disease}}
 |-
-|pediatric_nephrology||
+|pediatric_nephrology||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pediatric_nephrology}}
 |-
-|pediatric_neurology||
+|pediatric_neurology||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pediatric_neurology}}
 |-
-|pediatric_oncology||
+|pediatric_oncology||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pediatric_oncology}}
 |-
-|pediatric_orthopedic_surgery||
+|pediatric_orthopedic_surgery||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pediatric_orthopedic_surgery}}
 |-
-|pediatric_pulmonology||
+|pediatric_pulmonology||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pediatric_pulmonology}}
 |-
-|pediatric_radiology||
+|pediatric_radiology||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|paediatric_radiology}}
 |-
-|pediatric_surgery||
+|pediatric_surgery||{{tag|healthcare|doctor}} {{tag|healthcare:speciality|pediatric_surgery}}
 |-
 |personal_care_service||
 |-
@@ -2527,27 +2502,27 @@
 |-
 |addiction_rehabilitation_center||
 |-
-|surgeon||
+|surgeon||{{tag|amenity|doctors}} {{tag|healthcare|doctor}} {{tag|healthcare:speciality|surgery}}
 |-
 |cardiovascular_and_thoracic_surgeon||
 |-
-|traditional_chinese_medicine||{{tag|healthcare|alternative}} {{tag|healthcare:speciality|traditional_chinese_medicine}}
+|traditional_chinese_medicine||{{tag|healthcare|alternative}} {{tag|healthcare:speciality|traditional_chinese}}
 |-
 |tui_na||
 |-
-|pets||
+|pets||{{tag|shop|pet}}
 |-
 |pet_services||
 |-
-|animal_hospital||
+|animal_hospital||{{tag|amenity|veterinary}}
 |-
-|animal_physical_therapy||
+|animal_physical_therapy||{{tag|amenity|veterinary}} {{tag|veterinary|physiotherapist}}
 |-
 |aquarium_services||
 |-
 |dog_walkers||
 |-
-|emergency_pet_hospital||
+|emergency_pet_hospital||{{tag|amenity|veterinary}} {{tag|emergency|yes}}
 |-
 |farrier_services||
 |-
@@ -2555,37 +2530,37 @@
 |-
 |pet_breeder||
 |-
-|pet_cemetery_and_crematorium_services||
+|pet_cemetery_and_crematorium_services||{{tag|amenity|crematorium}} {{tag|landuse|cemetery}}
 |-
 |pet_groomer||{{tag|shop|pet_grooming}}
 |-
 |pet_hospice||
 |-
-|pet_insurance||
+|pet_insurance||{{tag|office|insurance}} {{tag|insurance|pet}}
 |-
 |pet_photography||
 |-
-|pet_sitting||
+|pet_sitting||{{tag|amenity|animal_boarding}}
 |-
 |pet_transportation||
 |-
 |pet_waste_removal||
 |-
-|pet_boarding||
+|pet_boarding||{{tag|amenity|animal_boarding}}
 |-
-|pet_training||
+|pet_training||{{tag|amenity|animal_training}}
 |-
-|dog_trainer||
+|dog_trainer||{{tag|amenity|animal_training}} {{tag|animal_training|dog}}
 |-
-|horse_trainer||
+|horse_trainer||{{tag|amenity|animal_training}} {{tag|animal_training|horse}}
 |-
-|animal_rescue_service||
+|animal_rescue_service||{{tag|amenity|animal_shelter}}
 |-
 |animal_shelter||{{tag|amenity|animal_shelter}}
 |-
-|horse_boarding||
+|horse_boarding||{{tag|amenity|animal_boarding}} {{tag|animal_boarding|horse}}
 |-
-|pet_adoption||
+|pet_adoption||{{tag|amenity|animal_shelter}}
 |-
 |veterinarian||{{tag|amenity|veterinary}}
 |-
@@ -2597,13 +2572,13 @@
 |-
 |ferry_boat_company||
 |-
-|airline||
+|airline||{{tag|office|airline}}
 |-
 |food_beverage_service_distribution||
 |-
 |bottled_water_company||
 |-
-|tobacco_company||
+|tobacco_company||{{tag|shop|tobacco}}
 |-
 |clothing_company||
 |-
@@ -2619,7 +2594,7 @@
 |-
 |automation_services||
 |-
-|occupational_safety||
+|occupational_safety||{{tag|amenity|social_facility}} {{tag|social_facility|occupational_safety}}
 |-
 |b2b_agriculture_and_food||
 |-
@@ -2627,15 +2602,15 @@
 |-
 |agricultural_cooperatives||
 |-
-|agriculture||
+|agriculture||{{tag|landuse|farmland}}
 |-
 |agricultural_engineering_service||
 |-
-|apiaries_and_beekeepers||
+|apiaries_and_beekeepers||{{tag|craft|beekeeper}}
 |-
-|b2b_dairies||
+|b2b_dairies||{{tag|shop|wholesale}} {{tag|wholesale|dairy}}
 |-
-|b2b_food_products||
+|b2b_food_products||{{tag|shop|wholesale}} {{tag|wolesale|food}}
 |-
 |fish_farms_and_hatcheries||
 |-
@@ -2679,23 +2654,23 @@
 |-
 |mattress_manufacturing||
 |-
-|glass_manufacturer||
+|glass_manufacturer||{{tag|man_made|works}} {{tag|product|glass}}
 |-
 |appliance_manufacturer||
 |-
-|aircraft_manufacturer||
+|aircraft_manufacturer||{{tag|man_made|works}} {{tag|product|aircraft}}
 |-
 |b2b_autos_and_vehicles||
 |-
-|auto_manufacturers_and_distributors||
+|auto_manufacturers_and_distributors||{{tag|man_made|works}} {{tag|product|car}}
 |-
 |b2b_tires||
 |-
 |b2b_furniture_and_housewares||
 |-
-|furniture_manufacturers||
+|furniture_manufacturers||{{tag|man_made|works}} {{tag|product|furniture}}
 |-
-|furniture_wholesalers||
+|furniture_wholesalers||{{tag|shop|furniture}}
 |-
 |b2b_machinery_and_tools||
 |-
@@ -2707,11 +2682,11 @@
 |-
 |aggregate_supplier||
 |-
-|aluminum_supplier||
+|aluminum_supplier||{{tag|shop|wholesale}} {{tag|wholesale|aluminum}}
 |-
 |b2b_apparel||
 |-
-|b2b_electronic_equipment||
+|b2b_electronic_equipment||{{tag|shop|electronics}}
 |-
 |b2b_hardware||
 |-
@@ -2721,7 +2696,7 @@
 |-
 |plastic_company||
 |-
-|plastic_manufacturer||
+|plastic_manufacturer||{{tag|man_made|works}} {{tag|product|plastic}}
 |-
 |b2b_sporting_and_recreation_goods||
 |-
@@ -2739,47 +2714,47 @@
 |-
 |cleaning_products_supplier||
 |-
-|cosmetic_products_manufacturer||
+|cosmetic_products_manufacturer||{{tag|man_made|works}} {{tag|product|cosmetics}}
 |-
-|drinking_water_dispenser||
+|drinking_water_dispenser||{{tag|amenity|drinking_water}}
 |-
 |fastener_supplier||
 |-
 |granite_supplier||
 |-
-|hvac_supplier||
+|hvac_supplier||{{tag|shop|trade}} {{tag|trade|hvac}}
 |-
 |jewelry_and_watches_manufacturer||
 |-
-|jewelry_manufacturer||
+|jewelry_manufacturer||{{tag|man_made|works}} {{tag|product|jewelry}}
 |-
-|leather_products_manufacturer||
+|leather_products_manufacturer||{{tag|man_made|works}} {{tag|product|leather}}
 |-
-|lighting_fixture_manufacturers||
+|lighting_fixture_manufacturers||{{tag|man_made|works}} {{tag|product|lighting_fixture}}
 |-
-|pipe_supplier||
+|pipe_supplier||{{tag|shop|wholesale}} {{tag|wholesale|pipes}}
 |-
-|plastic_fabrication_company||
+|plastic_fabrication_company||{{tag|man_made|works}} {{tag|product|plastic}}
 |-
 |plastic_injection_molding_workshop||
 |-
-|printing_equipment_and_supply||
+|printing_equipment_and_supply||{{tag|shop|copyshop}}
 |-
 |retaining_wall_supplier||
 |-
-|sand_and_gravel_supplier||
+|sand_and_gravel_supplier||{{tag|shop|wholesale}} {{tag|wholesale|sand_and_gravel}}
 |-
 |scale_supplier||
 |-
 |seal_and_hanko_dealers||
 |-
-|shoe_factory||
+|shoe_factory||{{tag|man_made|works}} {{tag|product|shoes}}
 |-
 |spring_supplier||
 |-
 |stone_supplier||
 |-
-|turnery||
+|turnery||{{tag|craft|carpenter}}
 |-
 |window_supplier||
 |-
@@ -2795,7 +2770,7 @@
 |-
 |iron_work||
 |-
-|scrap_metals||
+|scrap_metals||{{tag|industrial|scrap_yard}} {{tag|landuse|industrial}}
 |-
 |sheet_metal||
 |-
@@ -2803,7 +2778,7 @@
 |-
 |mills||
 |-
-|cotton_mill||
+|cotton_mill||{{tag|man_made|works}} {{tag|product|cotton}}
 |-
 |flour_mill||
 |-
@@ -2813,11 +2788,11 @@
 |-
 |saw_mill||
 |-
-|textile_mill||
+|textile_mill||{{tag|man_made|works}} {{tag|product|textile}}
 |-
 |weaving_mill||
 |-
-|wood_and_pulp||
+|wood_and_pulp||{{tag|man_made|works}} {{tag|product|wood_and_pulp}}
 |-
 |logging_equipment_and_supplies||
 |-
@@ -2901,7 +2876,7 @@
 |-
 |electrical_wholesaler||
 |-
-|fabric_wholesaler||
+|fabric_wholesaler||{{tag|shop|wholesale}} {{tag|wholesale|fabric}}
 |-
 |fitness_equipment_wholesaler||
 |-
@@ -2909,7 +2884,7 @@
 |-
 |footwear_wholesaler||
 |-
-|greengrocer||
+|greengrocer||{{tag|shop|greengrocer}}
 |-
 |industrial_spares_and_products_wholesaler||
 |-
@@ -2921,7 +2896,7 @@
 |-
 |optical_wholesaler||
 |-
-|pharmaceutical_products_wholesaler||
+|pharmaceutical_products_wholesaler||{{tag|shop|wholesale}} {{tag|wholesale|pharmaceuticals}}
 |-
 |produce_wholesaler||
 |-
@@ -2935,7 +2910,7 @@
 |-
 |wholesale_florist||
 |-
-|wine_wholesaler||
+|wine_wholesaler||{{tag|shop|wholesale}} {{tag|wholesale|wine}}
 |-
 |restaurant_wholesale||
 |-
@@ -2947,19 +2922,19 @@
 |-
 |pipeline_transportation||
 |-
-|railroad_freight||
+|railroad_freight||{{tag|office|logistics}}
 |-
 |b2b_storage_and_warehouses||
 |-
 |warehouse_rental_services_and_yards||
 |-
-|warehouses||
+|warehouses||{{tag|building|warehouse}}
 |-
-|freight_and_cargo_service||
+|freight_and_cargo_service||{{tag|office|logistics}}
 |-
-|distribution_services||
+|distribution_services||{{tag|office|logistics}}
 |-
-|freight_forwarding_agency||
+|freight_forwarding_agency||{{tag|office|logistics}}
 |-
 |trucks_and_industrial_vehicles||
 |-
@@ -3039,19 +3014,19 @@
 |-
 |importer_and_exporter||
 |-
-|exporters||
+|exporters||{{tag|office|export}}
 |-
-|importers||
+|importers||{{tag|office|importer}}
 |-
 |restaurant_management||
 |-
 |b2b_energy_mining||
 |-
-|mining||{{tag|industrial|mine}}
+|mining||{{tag|landuse|industrial}} {{tag|industrial|mine}}
 |-
 |coal_and_coke||{{tag|industrial|mine}}
 |-
-|quarries||
+|quarries||{{tag|landuse|quarry}}
 |-
 |oil_and_gas||
 |-
@@ -3073,7 +3048,7 @@
 |-
 |public_utility_company||
 |-
-|law_enforcement||
+|law_enforcement||{{tag|amenity|police}}
 |-
 |organization||
 |-
@@ -3123,7 +3098,7 @@
 |-
 |disability_services_and_support_organization||
 |-
-|government_services||
+|government_services||{{tag|office|government}}
 |-
 |social_security_services||
 |-
@@ -3133,25 +3108,25 @@
 |-
 |post_office||{{tag|amenity|post_office}}
 |-
-|shipping_collection_services||
+|shipping_collection_services||{{tag|amenity|post_office}}
 |-
 |public_toilet||{{tag|amenity|toilets}} {{tag|access|yes}}
 |-
 |armed_forces_branch||
 |-
-|central_government_office||
+|central_government_office||{{tag|office|government}}
 |-
 |chambers_of_commerce||
 |-
-|children_hall||
+|children_hall||{{tag|amenity|childcare}}
 |-
-|civic_center||
+|civic_center||{{tag|amenity|community_centre}}
 |-
 |community_center||{{tag|amenity|community_centre}}
 |-
 |courthouse||{{tag|amenity|courthouse}}
 |-
-|department_of_motor_vehicles||
+|department_of_motor_vehicles||{{tag|office|government}} {{tag|government|transportation}}
 |-
 |department_of_social_service||
 |-
@@ -3159,7 +3134,7 @@
 |-
 |family_service_center||
 |-
-|federal_government_offices||
+|federal_government_offices||{{tag|office|government}}
 |-
 |fire_department||{{tag|amenity|fire_station}}
 |-
@@ -3185,9 +3160,9 @@
 |-
 |registry_office||
 |-
-|retirement_home||{{tag|amenity|social_facility}} {{tag|social_facility|assisted_living}}
+|retirement_home||{{tag|amenity|social_facility}} {{tag|social_facility|assisted_living}} {{tag|social_facility:for|senior_citizen}}
 |-
-|scout_hall||
+|scout_hall||{{tag|amenity|social_facility}} {{tag|social_facility:for|scouts}}
 |-
 |tax_office||
 |-
@@ -3195,7 +3170,7 @@
 |-
 |unemployment_office||
 |-
-|weather_station||
+|weather_station||{{tag|man_made|monitoring_station}} {{tag|monitoring:weather|yes}}
 |-
 |religious_organization||{{tag|amenity|place_of_worship}}
 |-
@@ -3211,7 +3186,7 @@
 |-
 |evangelical_church||{{tag|amenity|place_of_worship}} {{tag|religion|christian}} {{tag|denomination|evangelical}}
 |-
-|jehovahs_witness_kingdom_hall||
+|jehovahs_witness_kingdom_hall||{{tag|amenity|place_of_worship}} {{tag|religion|jehovahs_witness}}
 |-
 |pentecostal_church||{{tag|amenity|place_of_worship}} {{tag|religion|christian}} {{tag|denomination|pentecostal}}
 |-
@@ -3219,13 +3194,13 @@
 |-
 |buddhist_temple||{{tag|amenity|place_of_worship}} {{tag|religion|buddhist}}
 |-
-|convents_and_monasteries||
+|convents_and_monasteries||{{tag|amenity|monastery}}
 |-
 |hindu_temple||{{tag|amenity|place_of_worship}} {{tag|religion|hindu}}
 |-
 |mosque||{{tag|amenity|place_of_worship}} {{tag|religion|muslim}}
 |-
-|religious_destination||{{tag|amenity|place_of_worship}}
+|religious_destination||{{tag|tourism|attraction}} {{tag|amenity|place_of_worship}}
 |-
 |shinto_shrines||{{tag|amenity|place_of_worship}} {{tag|religion|shinto}}
 |-
@@ -3233,7 +3208,7 @@
 |-
 |synagogue||{{tag|amenity|place_of_worship}} {{tag|religion|jewish}}
 |-
-|temple||{{tag|building|temple}} {{tag|amenity|place_of_worship}}
+|temple||{{tag|amenity|place_of_worship}}
 |-
 |real_estate||{{tag|office|estate_agent}}
 |-
@@ -3247,7 +3222,7 @@
 |-
 |art_space_rental||
 |-
-|commercial_real_estate||
+|commercial_real_estate||{{tag|office|real_estate}}
 |-
 |condominium||{{tag|building|apartments}}
 |-
@@ -3677,7 +3652,7 @@
 |-
 |tree_services||{{tag|craft|arborist}}
 |-
-|plumbing||
+|plumbing||{{tag|craft|plumber}}
 |-
 |backflow_services||
 |-
@@ -3867,11 +3842,11 @@
 |-
 |session_photography||{{tag|craft|photographer}}
 |-
-|funeral_services_and_cemeteries||
+|funeral_services_and_cemeteries||{{tag|amenity|funeral_hall}}
 |-
-|cremation_services||
+|cremation_services||{{tag|amenity|crematorium}}
 |-
-|mortuary_services||
+|mortuary_services||{{tag|amenity|mortuary}}
 |-
 |internet_service_provider||
 |-
@@ -3949,7 +3924,7 @@
 |-
 |bail_bonds_service||{{tag|office|bail_bond_agent}}
 |-
-|bike_repair_maintenance||
+|bike_repair_maintenance||{{tag|service:bicycle:repair|yes}}
 |-
 |billing_services||
 |-
@@ -4151,7 +4126,7 @@
 |-
 |septic_services||
 |-
-|shipping_center||
+|shipping_center||{{tag|amenity|post_office}}
 |-
 |shoe_repair||{{tag|shop|shoe_repair}}
 |-
@@ -4263,4 +4238,3 @@
 |}
 
 [[Category:Overture Maps]]
-    

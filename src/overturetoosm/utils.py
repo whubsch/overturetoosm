@@ -6,7 +6,10 @@ from .objects import ConfidenceError, UnmatchedError
 
 
 def process_geojson(
-    geojson: dict, fx: Callable, confidence: float = 0.0, options: Optional[dict] = None
+    geojson: dict,
+    fx: Callable,
+    confidence: Optional[float] = None,
+    options: Optional[dict] = None,
 ) -> dict:
     """Convert an Overture `place` GeoJSON to one that follows OSM's schema.
 
@@ -36,7 +39,10 @@ def process_geojson(
     new_features = []
     for feature in geojson["features"]:
         try:
-            feature["properties"] = fx(feature["properties"], confidence, **options)
+            if confidence:
+                feature["properties"] = fx(feature["properties"], confidence, **options)
+            else:
+                feature["properties"] = fx(feature["properties"], **options)
             new_features.append(feature)
         except (ConfidenceError, UnmatchedError):
             pass

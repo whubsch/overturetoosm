@@ -45,6 +45,10 @@ pip-delete-this-directory.txt
 
 # Temporary files
 *scratch*.py
+scripts/merge_tags.py
+scripts/missing_places.py
+scripts/tags_*.json
+scripts/test_*.geojson
 scripts/test*.py
 scripts/out*.geojson
 .pypirc

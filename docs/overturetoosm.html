@@ -30,6 +30,7 @@
                     <li><a href="overturetoosm/buildings.html">buildings</a></li>
                     <li><a href="overturetoosm/addresses.html">addresses</a></li>
                     <li><a href="overturetoosm/objects.html">objects</a></li>
+                    <li><a href="overturetoosm/segments.html">segments</a></li>
                     <li><a href="overturetoosm/utils.html">utils</a></li>
                     <li><a href="overturetoosm/resources.html">resources</a></li>
             </ul>
@@ -65,8 +66,10 @@
                     <h1 class="modulename">
 overturetoosm    </h1>
 
-                        <div class="docstring"><p><code><a href="">overturetoosm</a></code> is a Python package to convert objects tagged in the 
-Overture schema for use in OSM. Only Overture's <code>places</code>, <code>buildings</code>, 
+                        <div class="docstring"><p>Convert Overture's <code>places</code>, <code>buildings</code>, and <code>addresses</code> features to OSM tags.</p>
+
+<p><code><a href="">overturetoosm</a></code> is a Python package to convert objects tagged in the
+Overture schema for use in OSM. Only Overture's <code>places</code>, <code>buildings</code>,
 and <code>addresses</code> layers are currently supported.</p>
 
 <p>Links:</p>
@@ -76,45 +79,64 @@ and <code>addresses</code> layers are currently supported.</p>
 <li><a href="https://whubsch.github.io/overturetoosm/">Documentation</a></li>
 <li><a href="https://pypi.org/project/overturetoosm/">PyPI</a></li>
 </ul>
+
+<p>The package also allows you to use the module directly from the command line.
+With the <code>overturemaps</code> Python package installed, you can download and convert
+Overture data to OSM in two lines of code.</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>overturemaps<span class="w"> </span>download<span class="w"> </span>--bbox<span class="o">=</span>-71.068,42.353,-71.058,42.363<span class="w"> </span><span class="se">\\</span>
+<span class="w">  </span>-f<span class="w"> </span>geojson<span class="w"> </span>--type<span class="o">=</span>place<span class="w"> </span>-o<span class="w"> </span>boston.geojson
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>overturetoosm<span class="w"> </span>place<span class="w"> </span>-i<span class="w"> </span>boston.geojson<span class="w"> </span>--in-place<span class="w"> </span>--confidence<span class="w"> </span><span class="m">0</span>.9
+</code></pre>
+</div>
 </div>
 
                         <input id="mod-overturetoosm-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 
                         <label class="view-source-button" for="mod-overturetoosm-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sd">&quot;&quot;&quot;`overturetoosm` is a Python package to convert objects tagged in the </span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="sd">Overture schema for use in OSM. Only Overture&#39;s `places`, `buildings`, </span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="sd">and `addresses` layers are currently supported.</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>
-</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="sd">Links:</span>
-</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="sd">* [Project GitHub](https://github.com/whubsch/overturetoosm)</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="sd">* [Documentation](https://whubsch.github.io/overturetoosm/)</span>
-</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="sd">* [PyPI](https://pypi.org/project/overturetoosm/)</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>
-</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a><span class="kn">from</span> <span class="nn">.places</span> <span class="kn">import</span> <span class="n">process_place</span>
-</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="kn">from</span> <span class="nn">.buildings</span> <span class="kn">import</span> <span class="n">process_building</span>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="kn">from</span> <span class="nn">.addresses</span> <span class="kn">import</span> <span class="n">process_address</span>
-</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">process_geojson</span>
-</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">places</span>
-</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">buildings</span>
-</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">addresses</span>
-</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">objects</span>
-</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">utils</span>
-</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">resources</span>
-</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>
-</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    <span class="s2">&quot;process_place&quot;</span><span class="p">,</span>
-</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>    <span class="s2">&quot;process_building&quot;</span><span class="p">,</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>    <span class="s2">&quot;process_address&quot;</span><span class="p">,</span>
-</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>    <span class="s2">&quot;process_geojson&quot;</span><span class="p">,</span>
-</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>    <span class="s2">&quot;places&quot;</span><span class="p">,</span>
-</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a>    <span class="s2">&quot;buildings&quot;</span><span class="p">,</span>
-</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a>    <span class="s2">&quot;addresses&quot;</span><span class="p">,</span>
-</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>    <span class="s2">&quot;objects&quot;</span><span class="p">,</span>
-</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>    <span class="s2">&quot;utils&quot;</span><span class="p">,</span>
-</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a>    <span class="s2">&quot;resources&quot;</span><span class="p">,</span>
-</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="p">]</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Convert Overture&#39;s `places`, `buildings`, and `addresses` features to OSM tags.</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="sd">`overturetoosm` is a Python package to convert objects tagged in the</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="sd">Overture schema for use in OSM. Only Overture&#39;s `places`, `buildings`,</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="sd">and `addresses` layers are currently supported.</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="sd">Links:</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="sd">* [Project GitHub](https://github.com/whubsch/overturetoosm)</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="sd">* [Documentation](https://whubsch.github.io/overturetoosm/)</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="sd">* [PyPI](https://pypi.org/project/overturetoosm/)</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="sd">The package also allows you to use the module directly from the command line.</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="sd">With the `overturemaps` Python package installed, you can download and convert</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="sd">Overture data to OSM in two lines of code.</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="sd">```bash</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="sd">$ python -m overturemaps download --bbox=-71.068,42.353,-71.058,42.363 \\</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a><span class="sd">  -f geojson --type=place -o boston.geojson</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a><span class="sd">$ python -m overturetoosm place -i boston.geojson --in-place --confidence 0.9</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a><span class="sd">```</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">addresses</span><span class="p">,</span> <span class="n">buildings</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">places</span><span class="p">,</span> <span class="n">resources</span><span class="p">,</span> <span class="n">segments</span><span class="p">,</span> <span class="n">utils</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a><span class="kn">from</span> <span class="nn">.addresses</span> <span class="kn">import</span> <span class="n">process_address</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="kn">from</span> <span class="nn">.buildings</span> <span class="kn">import</span> <span class="n">process_building</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="kn">from</span> <span class="nn">.places</span> <span class="kn">import</span> <span class="n">process_place</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a><span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">process_geojson</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>    <span class="s2">&quot;process_place&quot;</span><span class="p">,</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>    <span class="s2">&quot;process_building&quot;</span><span class="p">,</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a>    <span class="s2">&quot;process_address&quot;</span><span class="p">,</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a>    <span class="s2">&quot;process_geojson&quot;</span><span class="p">,</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a>    <span class="s2">&quot;places&quot;</span><span class="p">,</span>
+</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a>    <span class="s2">&quot;buildings&quot;</span><span class="p">,</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>    <span class="s2">&quot;addresses&quot;</span><span class="p">,</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a>    <span class="s2">&quot;objects&quot;</span><span class="p">,</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a>    <span class="s2">&quot;segments&quot;</span><span class="p">,</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a>    <span class="s2">&quot;utils&quot;</span><span class="p">,</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a>    <span class="s2">&quot;resources&quot;</span><span class="p">,</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a><span class="p">]</span>
 </span></pre></div>
 
 
@@ -130,100 +152,49 @@ and <code>addresses</code> layers are currently supported.</p>
 
     </div>
     <a class="headerlink" href="#process_place"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="process_place-10"><a href="#process_place-10"><span class="linenos"> 10</span></a><span class="k">def</span> <span class="nf">process_place</span><span class="p">(</span>
-</span><span id="process_place-11"><a href="#process_place-11"><span class="linenos"> 11</span></a>    <span class="n">props</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
-</span><span id="process_place-12"><a href="#process_place-12"><span class="linenos"> 12</span></a>    <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-</span><span id="process_place-13"><a href="#process_place-13"><span class="linenos"> 13</span></a>    <span class="n">region_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;addr:state&quot;</span><span class="p">,</span>
-</span><span id="process_place-14"><a href="#process_place-14"><span class="linenos"> 14</span></a>    <span class="n">unmatched</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;force&quot;</span><span class="p">,</span> <span class="s2">&quot;ignore&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ignore&quot;</span><span class="p">,</span>
-</span><span id="process_place-15"><a href="#process_place-15"><span class="linenos"> 15</span></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-</span><span id="process_place-16"><a href="#process_place-16"><span class="linenos"> 16</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert Overture&#39;s places properties to OSM tags.</span>
-</span><span id="process_place-17"><a href="#process_place-17"><span class="linenos"> 17</span></a>
-</span><span id="process_place-18"><a href="#process_place-18"><span class="linenos"> 18</span></a><span class="sd">    Example usage:</span>
-</span><span id="process_place-19"><a href="#process_place-19"><span class="linenos"> 19</span></a><span class="sd">    ```python</span>
-</span><span id="process_place-20"><a href="#process_place-20"><span class="linenos"> 20</span></a><span class="sd">    import json</span>
-</span><span id="process_place-21"><a href="#process_place-21"><span class="linenos"> 21</span></a><span class="sd">    from overturetoosm import process_place</span>
-</span><span id="process_place-22"><a href="#process_place-22"><span class="linenos"> 22</span></a>
-</span><span id="process_place-23"><a href="#process_place-23"><span class="linenos"> 23</span></a><span class="sd">    with open(&quot;overture.geojson&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span>
-</span><span id="process_place-24"><a href="#process_place-24"><span class="linenos"> 24</span></a><span class="sd">        contents: dict = json.load(f)</span>
-</span><span id="process_place-25"><a href="#process_place-25"><span class="linenos"> 25</span></a>
-</span><span id="process_place-26"><a href="#process_place-26"><span class="linenos"> 26</span></a><span class="sd">        for feature in contents[&quot;features&quot;]:</span>
-</span><span id="process_place-27"><a href="#process_place-27"><span class="linenos"> 27</span></a><span class="sd">            feature[&quot;properties&quot;] = process_place(feature[&quot;properties&quot;], confidence=0.5)</span>
-</span><span id="process_place-28"><a href="#process_place-28"><span class="linenos"> 28</span></a>
-</span><span id="process_place-29"><a href="#process_place-29"><span class="linenos"> 29</span></a><span class="sd">    with open(&quot;overture_out.geojson&quot;, &quot;w+&quot;, encoding=&quot;utf-8&quot;) as x:</span>
-</span><span id="process_place-30"><a href="#process_place-30"><span class="linenos"> 30</span></a><span class="sd">        json.dump(contents, x, indent=4)</span>
-</span><span id="process_place-31"><a href="#process_place-31"><span class="linenos"> 31</span></a><span class="sd">    ```</span>
-</span><span id="process_place-32"><a href="#process_place-32"><span class="linenos"> 32</span></a><span class="sd">    Args:</span>
-</span><span id="process_place-33"><a href="#process_place-33"><span class="linenos"> 33</span></a><span class="sd">        props (dict): The feature properties from the Overture GeoJSON.</span>
-</span><span id="process_place-34"><a href="#process_place-34"><span class="linenos"> 34</span></a><span class="sd">        region_tag (str, optional): What tag to convert Overture&#39;s `region` tag to.</span>
-</span><span id="process_place-35"><a href="#process_place-35"><span class="linenos"> 35</span></a><span class="sd">            Defaults to `addr:state`.</span>
-</span><span id="process_place-36"><a href="#process_place-36"><span class="linenos"> 36</span></a><span class="sd">        confidence (float, optional): The minimum confidence level. Defaults to 0.0.</span>
-</span><span id="process_place-37"><a href="#process_place-37"><span class="linenos"> 37</span></a><span class="sd">        unmatched (Literal[&quot;error&quot;, &quot;force&quot;, &quot;ignore&quot;], optional): How to handle</span>
-</span><span id="process_place-38"><a href="#process_place-38"><span class="linenos"> 38</span></a><span class="sd">            unmatched Overture categories. The &quot;error&quot; option raises an UnmatchedError</span>
-</span><span id="process_place-39"><a href="#process_place-39"><span class="linenos"> 39</span></a><span class="sd">            exception, &quot;force&quot; puts the category into the `type` key, and &quot;ignore&quot;</span>
-</span><span id="process_place-40"><a href="#process_place-40"><span class="linenos"> 40</span></a><span class="sd">            only returns other properties. Defaults to &quot;ignore&quot;.</span>
-</span><span id="process_place-41"><a href="#process_place-41"><span class="linenos"> 41</span></a>
-</span><span id="process_place-42"><a href="#process_place-42"><span class="linenos"> 42</span></a><span class="sd">    Returns:</span>
-</span><span id="process_place-43"><a href="#process_place-43"><span class="linenos"> 43</span></a><span class="sd">        dict[str, str]: The reshaped and converted properties in OSM&#39;s flat str:str schema.</span>
-</span><span id="process_place-44"><a href="#process_place-44"><span class="linenos"> 44</span></a>
-</span><span id="process_place-45"><a href="#process_place-45"><span class="linenos"> 45</span></a><span class="sd">    Raises:</span>
-</span><span id="process_place-46"><a href="#process_place-46"><span class="linenos"> 46</span></a><span class="sd">        `overturetoosm.objects.UnmatchedError`: Raised if `unmatched` is set to `error` and</span>
-</span><span id="process_place-47"><a href="#process_place-47"><span class="linenos"> 47</span></a><span class="sd">            the Overture category has no OSM definition.</span>
-</span><span id="process_place-48"><a href="#process_place-48"><span class="linenos"> 48</span></a><span class="sd">        `overturetoosm.objects.ConfidenceError`: Raised if the confidence level is set</span>
-</span><span id="process_place-49"><a href="#process_place-49"><span class="linenos"> 49</span></a><span class="sd">            above a feature&#39;s confidence.</span>
-</span><span id="process_place-50"><a href="#process_place-50"><span class="linenos"> 50</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="process_place-51"><a href="#process_place-51"><span class="linenos"> 51</span></a>    <span class="n">new_props</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="process_place-52"><a href="#process_place-52"><span class="linenos"> 52</span></a>    <span class="n">prop_obj</span> <span class="o">=</span> <span class="n">PlaceProps</span><span class="p">(</span><span class="o">**</span><span class="n">props</span><span class="p">)</span>
-</span><span id="process_place-53"><a href="#process_place-53"><span class="linenos"> 53</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">confidence</span> <span class="o">&lt;</span> <span class="n">confidence</span><span class="p">:</span>
-</span><span id="process_place-54"><a href="#process_place-54"><span class="linenos"> 54</span></a>        <span class="k">raise</span> <span class="n">ConfidenceError</span><span class="p">(</span><span class="n">confidence</span><span class="p">,</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>
-</span><span id="process_place-55"><a href="#process_place-55"><span class="linenos"> 55</span></a>
-</span><span id="process_place-56"><a href="#process_place-56"><span class="linenos"> 56</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
-</span><span id="process_place-57"><a href="#process_place-57"><span class="linenos"> 57</span></a>        <span class="n">prim</span> <span class="o">=</span> <span class="n">places_tags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prop_obj</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">main</span><span class="p">)</span>
-</span><span id="process_place-58"><a href="#process_place-58"><span class="linenos"> 58</span></a>        <span class="k">if</span> <span class="n">prim</span><span class="p">:</span>
-</span><span id="process_place-59"><a href="#process_place-59"><span class="linenos"> 59</span></a>            <span class="n">new_props</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">new_props</span><span class="p">,</span> <span class="o">**</span><span class="n">prim</span><span class="p">}</span>
-</span><span id="process_place-60"><a href="#process_place-60"><span class="linenos"> 60</span></a>        <span class="k">elif</span> <span class="n">unmatched</span> <span class="o">==</span> <span class="s2">&quot;force&quot;</span><span class="p">:</span>
-</span><span id="process_place-61"><a href="#process_place-61"><span class="linenos"> 61</span></a>            <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">main</span>
-</span><span id="process_place-62"><a href="#process_place-62"><span class="linenos"> 62</span></a>        <span class="k">elif</span> <span class="n">unmatched</span> <span class="o">==</span> <span class="s2">&quot;error&quot;</span><span class="p">:</span>
-</span><span id="process_place-63"><a href="#process_place-63"><span class="linenos"> 63</span></a>            <span class="k">raise</span> <span class="n">UnmatchedError</span><span class="p">(</span><span class="n">prop_obj</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">main</span><span class="p">)</span>
-</span><span id="process_place-64"><a href="#process_place-64"><span class="linenos"> 64</span></a>
-</span><span id="process_place-65"><a href="#process_place-65"><span class="linenos"> 65</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">primary</span><span class="p">:</span>
-</span><span id="process_place-66"><a href="#process_place-66"><span class="linenos"> 66</span></a>        <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">primary</span>
-</span><span id="process_place-67"><a href="#process_place-67"><span class="linenos"> 67</span></a>
-</span><span id="process_place-68"><a href="#process_place-68"><span class="linenos"> 68</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">phones</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="process_place-69"><a href="#process_place-69"><span class="linenos"> 69</span></a>        <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;phone&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">phones</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="process_place-70"><a href="#process_place-70"><span class="linenos"> 70</span></a>
-</span><span id="process_place-71"><a href="#process_place-71"><span class="linenos"> 71</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">websites</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="process_place-72"><a href="#process_place-72"><span class="linenos"> 72</span></a>        <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;website&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">prop_obj</span><span class="o">.</span><span class="n">websites</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</span><span id="process_place-73"><a href="#process_place-73"><span class="linenos"> 73</span></a>
-</span><span id="process_place-74"><a href="#process_place-74"><span class="linenos"> 74</span></a>    <span class="k">if</span> <span class="n">add</span> <span class="o">:=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">addresses</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-</span><span id="process_place-75"><a href="#process_place-75"><span class="linenos"> 75</span></a>        <span class="k">if</span> <span class="n">add</span><span class="o">.</span><span class="n">freeform</span><span class="p">:</span>
-</span><span id="process_place-76"><a href="#process_place-76"><span class="linenos"> 76</span></a>            <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;addr:street_address&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">add</span><span class="o">.</span><span class="n">freeform</span>
-</span><span id="process_place-77"><a href="#process_place-77"><span class="linenos"> 77</span></a>        <span class="k">if</span> <span class="n">add</span><span class="o">.</span><span class="n">country</span><span class="p">:</span>
-</span><span id="process_place-78"><a href="#process_place-78"><span class="linenos"> 78</span></a>            <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;addr:country&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">add</span><span class="o">.</span><span class="n">country</span>
-</span><span id="process_place-79"><a href="#process_place-79"><span class="linenos"> 79</span></a>        <span class="k">if</span> <span class="n">add</span><span class="o">.</span><span class="n">postcode</span><span class="p">:</span>
-</span><span id="process_place-80"><a href="#process_place-80"><span class="linenos"> 80</span></a>            <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;addr:postcode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">add</span><span class="o">.</span><span class="n">postcode</span>
-</span><span id="process_place-81"><a href="#process_place-81"><span class="linenos"> 81</span></a>        <span class="k">if</span> <span class="n">add</span><span class="o">.</span><span class="n">locality</span><span class="p">:</span>
-</span><span id="process_place-82"><a href="#process_place-82"><span class="linenos"> 82</span></a>            <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;addr:city&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">add</span><span class="o">.</span><span class="n">locality</span>
-</span><span id="process_place-83"><a href="#process_place-83"><span class="linenos"> 83</span></a>        <span class="k">if</span> <span class="n">add</span><span class="o">.</span><span class="n">region</span><span class="p">:</span>
-</span><span id="process_place-84"><a href="#process_place-84"><span class="linenos"> 84</span></a>            <span class="n">new_props</span><span class="p">[</span><span class="n">region_tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">add</span><span class="o">.</span><span class="n">region</span>
-</span><span id="process_place-85"><a href="#process_place-85"><span class="linenos"> 85</span></a>
-</span><span id="process_place-86"><a href="#process_place-86"><span class="linenos"> 86</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">sources</span><span class="p">:</span>
-</span><span id="process_place-87"><a href="#process_place-87"><span class="linenos"> 87</span></a>        <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;source&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="process_place-88"><a href="#process_place-88"><span class="linenos"> 88</span></a>            <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">({</span><span class="n">i</span><span class="o">.</span><span class="n">dataset</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">sources</span><span class="p">})</span> <span class="o">+</span> <span class="s2">&quot; via overturetoosm&quot;</span>
-</span><span id="process_place-89"><a href="#process_place-89"><span class="linenos"> 89</span></a>        <span class="p">)</span>
-</span><span id="process_place-90"><a href="#process_place-90"><span class="linenos"> 90</span></a>
-</span><span id="process_place-91"><a href="#process_place-91"><span class="linenos"> 91</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">socials</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="process_place-92"><a href="#process_place-92"><span class="linenos"> 92</span></a>        <span class="k">for</span> <span class="n">social</span> <span class="ow">in</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">socials</span><span class="p">:</span>
-</span><span id="process_place-93"><a href="#process_place-93"><span class="linenos"> 93</span></a>            <span class="n">social_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">social</span><span class="p">)</span>
-</span><span id="process_place-94"><a href="#process_place-94"><span class="linenos"> 94</span></a>            <span class="k">if</span> <span class="s2">&quot;facebook&quot;</span> <span class="ow">in</span> <span class="n">social_str</span><span class="p">:</span>
-</span><span id="process_place-95"><a href="#process_place-95"><span class="linenos"> 95</span></a>                <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;contact:facebook&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">social_str</span>
-</span><span id="process_place-96"><a href="#process_place-96"><span class="linenos"> 96</span></a>            <span class="k">elif</span> <span class="s2">&quot;twitter&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">social</span><span class="p">):</span>
-</span><span id="process_place-97"><a href="#process_place-97"><span class="linenos"> 97</span></a>                <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;contact:twitter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">social_str</span>
-</span><span id="process_place-98"><a href="#process_place-98"><span class="linenos"> 98</span></a>
-</span><span id="process_place-99"><a href="#process_place-99"><span class="linenos"> 99</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">brand</span><span class="p">:</span>
-</span><span id="process_place-100"><a href="#process_place-100"><span class="linenos">100</span></a>        <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;brand&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">brand</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">primary</span>
-</span><span id="process_place-101"><a href="#process_place-101"><span class="linenos">101</span></a>        <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;brand:wikidata&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">brand</span><span class="o">.</span><span class="n">wikidata</span>
-</span><span id="process_place-102"><a href="#process_place-102"><span class="linenos">102</span></a>
-</span><span id="process_place-103"><a href="#process_place-103"><span class="linenos">103</span></a>    <span class="k">return</span> <span class="n">new_props</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="process_place-9"><a href="#process_place-9"><span class="linenos"> 9</span></a><span class="k">def</span> <span class="nf">process_place</span><span class="p">(</span>
+</span><span id="process_place-10"><a href="#process_place-10"><span class="linenos">10</span></a>    <span class="n">props</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+</span><span id="process_place-11"><a href="#process_place-11"><span class="linenos">11</span></a>    <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+</span><span id="process_place-12"><a href="#process_place-12"><span class="linenos">12</span></a>    <span class="n">region_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;addr:state&quot;</span><span class="p">,</span>
+</span><span id="process_place-13"><a href="#process_place-13"><span class="linenos">13</span></a>    <span class="n">unmatched</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;force&quot;</span><span class="p">,</span> <span class="s2">&quot;ignore&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ignore&quot;</span><span class="p">,</span>
+</span><span id="process_place-14"><a href="#process_place-14"><span class="linenos">14</span></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+</span><span id="process_place-15"><a href="#process_place-15"><span class="linenos">15</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert Overture&#39;s places properties to OSM tags.</span>
+</span><span id="process_place-16"><a href="#process_place-16"><span class="linenos">16</span></a>
+</span><span id="process_place-17"><a href="#process_place-17"><span class="linenos">17</span></a><span class="sd">    Example usage:</span>
+</span><span id="process_place-18"><a href="#process_place-18"><span class="linenos">18</span></a><span class="sd">    ```python</span>
+</span><span id="process_place-19"><a href="#process_place-19"><span class="linenos">19</span></a><span class="sd">    import json</span>
+</span><span id="process_place-20"><a href="#process_place-20"><span class="linenos">20</span></a><span class="sd">    from overturetoosm import process_place</span>
+</span><span id="process_place-21"><a href="#process_place-21"><span class="linenos">21</span></a>
+</span><span id="process_place-22"><a href="#process_place-22"><span class="linenos">22</span></a><span class="sd">    with open(&quot;overture.geojson&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span>
+</span><span id="process_place-23"><a href="#process_place-23"><span class="linenos">23</span></a><span class="sd">        contents: dict = json.load(f)</span>
+</span><span id="process_place-24"><a href="#process_place-24"><span class="linenos">24</span></a>
+</span><span id="process_place-25"><a href="#process_place-25"><span class="linenos">25</span></a><span class="sd">        for feature in contents[&quot;features&quot;]:</span>
+</span><span id="process_place-26"><a href="#process_place-26"><span class="linenos">26</span></a><span class="sd">            feature[&quot;properties&quot;] = process_place(feature[&quot;properties&quot;], confidence=0.5)</span>
+</span><span id="process_place-27"><a href="#process_place-27"><span class="linenos">27</span></a>
+</span><span id="process_place-28"><a href="#process_place-28"><span class="linenos">28</span></a><span class="sd">    with open(&quot;overture_out.geojson&quot;, &quot;w+&quot;, encoding=&quot;utf-8&quot;) as x:</span>
+</span><span id="process_place-29"><a href="#process_place-29"><span class="linenos">29</span></a><span class="sd">        json.dump(contents, x, indent=4)</span>
+</span><span id="process_place-30"><a href="#process_place-30"><span class="linenos">30</span></a><span class="sd">    ```</span>
+</span><span id="process_place-31"><a href="#process_place-31"><span class="linenos">31</span></a><span class="sd">    Args:</span>
+</span><span id="process_place-32"><a href="#process_place-32"><span class="linenos">32</span></a><span class="sd">        props (dict): The feature properties from the Overture GeoJSON.</span>
+</span><span id="process_place-33"><a href="#process_place-33"><span class="linenos">33</span></a><span class="sd">        region_tag (str, optional): What tag to convert Overture&#39;s `region` tag to.</span>
+</span><span id="process_place-34"><a href="#process_place-34"><span class="linenos">34</span></a><span class="sd">            Defaults to `addr:state`.</span>
+</span><span id="process_place-35"><a href="#process_place-35"><span class="linenos">35</span></a><span class="sd">        confidence (float, optional): The minimum confidence level. Defaults to 0.0.</span>
+</span><span id="process_place-36"><a href="#process_place-36"><span class="linenos">36</span></a><span class="sd">        unmatched (Literal[&quot;error&quot;, &quot;force&quot;, &quot;ignore&quot;], optional): How to handle</span>
+</span><span id="process_place-37"><a href="#process_place-37"><span class="linenos">37</span></a><span class="sd">            unmatched Overture categories. The &quot;error&quot; option raises an UnmatchedError</span>
+</span><span id="process_place-38"><a href="#process_place-38"><span class="linenos">38</span></a><span class="sd">            exception, &quot;force&quot; puts the category into the `type` key, and &quot;ignore&quot;</span>
+</span><span id="process_place-39"><a href="#process_place-39"><span class="linenos">39</span></a><span class="sd">            only returns other properties. Defaults to &quot;ignore&quot;.</span>
+</span><span id="process_place-40"><a href="#process_place-40"><span class="linenos">40</span></a>
+</span><span id="process_place-41"><a href="#process_place-41"><span class="linenos">41</span></a><span class="sd">    Returns:</span>
+</span><span id="process_place-42"><a href="#process_place-42"><span class="linenos">42</span></a><span class="sd">        dict[str, str]: The reshaped and converted properties in OSM&#39;s flat str:str</span>
+</span><span id="process_place-43"><a href="#process_place-43"><span class="linenos">43</span></a><span class="sd">            schema.</span>
+</span><span id="process_place-44"><a href="#process_place-44"><span class="linenos">44</span></a>
+</span><span id="process_place-45"><a href="#process_place-45"><span class="linenos">45</span></a><span class="sd">    Raises:</span>
+</span><span id="process_place-46"><a href="#process_place-46"><span class="linenos">46</span></a><span class="sd">        `overturetoosm.objects.UnmatchedError`: Raised if `unmatched` is set to `error`</span>
+</span><span id="process_place-47"><a href="#process_place-47"><span class="linenos">47</span></a><span class="sd">            and the Overture category has no OSM definition.</span>
+</span><span id="process_place-48"><a href="#process_place-48"><span class="linenos">48</span></a><span class="sd">        `overturetoosm.objects.ConfidenceError`: Raised if the confidence level is set</span>
+</span><span id="process_place-49"><a href="#process_place-49"><span class="linenos">49</span></a><span class="sd">            above a feature&#39;s confidence.</span>
+</span><span id="process_place-50"><a href="#process_place-50"><span class="linenos">50</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="process_place-51"><a href="#process_place-51"><span class="linenos">51</span></a>    <span class="k">return</span> <span class="n">PlaceProps</span><span class="p">(</span><span class="o">**</span><span class="n">props</span><span class="p">)</span><span class="o">.</span><span class="n">to_osm</span><span class="p">(</span><span class="n">confidence</span><span class="p">,</span> <span class="n">region_tag</span><span class="p">,</span> <span class="n">unmatched</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -262,14 +233,15 @@ only returns other properties. Defaults to "ignore".</li>
 <h6 id="returns">Returns:</h6>
 
 <blockquote>
-  <p>dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.</p>
+  <p>dict[str, str]: The reshaped and converted properties in OSM's flat str:str
+      schema.</p>
 </blockquote>
 
 <h6 id="raises">Raises:</h6>
 
 <ul>
-<li><strong><code><a href="overturetoosm/objects.html#UnmatchedError">overturetoosm.objects.UnmatchedError</a></code>:</strong>  Raised if <code>unmatched</code> is set to <code>error</code> and
-the Overture category has no OSM definition.</li>
+<li><strong><code><a href="overturetoosm/objects.html#UnmatchedError">overturetoosm.objects.UnmatchedError</a></code>:</strong>  Raised if <code>unmatched</code> is set to <code>error</code>
+and the Overture category has no OSM definition.</li>
 <li><strong><code><a href="overturetoosm/objects.html#ConfidenceError">overturetoosm.objects.ConfidenceError</a></code>:</strong>  Raised if the confidence level is set
 above a feature's confidence.</li>
 </ul>
@@ -288,54 +260,22 @@ above a feature's confidence.</li>
 
     </div>
     <a class="headerlink" href="#process_building"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="process_building-9"><a href="#process_building-9"><span class="linenos"> 9</span></a><span class="k">def</span> <span class="nf">process_building</span><span class="p">(</span>
-</span><span id="process_building-10"><a href="#process_building-10"><span class="linenos">10</span></a>    <span class="n">props</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
-</span><span id="process_building-11"><a href="#process_building-11"><span class="linenos">11</span></a>    <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-</span><span id="process_building-12"><a href="#process_building-12"><span class="linenos">12</span></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-</span><span id="process_building-13"><a href="#process_building-13"><span class="linenos">13</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert Overture&#39;s building properties to OSM tags.</span>
-</span><span id="process_building-14"><a href="#process_building-14"><span class="linenos">14</span></a>
-</span><span id="process_building-15"><a href="#process_building-15"><span class="linenos">15</span></a><span class="sd">    Args:</span>
-</span><span id="process_building-16"><a href="#process_building-16"><span class="linenos">16</span></a><span class="sd">        props (dict): The feature properties from the Overture GeoJSON.</span>
-</span><span id="process_building-17"><a href="#process_building-17"><span class="linenos">17</span></a><span class="sd">        confidence (float, optional): The minimum confidence level. Defaults to 0.0.</span>
-</span><span id="process_building-18"><a href="#process_building-18"><span class="linenos">18</span></a>
-</span><span id="process_building-19"><a href="#process_building-19"><span class="linenos">19</span></a><span class="sd">    Returns:</span>
-</span><span id="process_building-20"><a href="#process_building-20"><span class="linenos">20</span></a><span class="sd">        Dict[str, str]: The reshaped and converted properties in OSM&#39;s flat str:str schema.</span>
-</span><span id="process_building-21"><a href="#process_building-21"><span class="linenos">21</span></a>
-</span><span id="process_building-22"><a href="#process_building-22"><span class="linenos">22</span></a><span class="sd">    Raises:</span>
-</span><span id="process_building-23"><a href="#process_building-23"><span class="linenos">23</span></a><span class="sd">        `overturetoosm.objects.ConfidenceError`: Raised if the confidence level is set</span>
-</span><span id="process_building-24"><a href="#process_building-24"><span class="linenos">24</span></a><span class="sd">            above a feature&#39;s confidence.</span>
-</span><span id="process_building-25"><a href="#process_building-25"><span class="linenos">25</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="process_building-26"><a href="#process_building-26"><span class="linenos">26</span></a>    <span class="n">new_props</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="process_building-27"><a href="#process_building-27"><span class="linenos">27</span></a>    <span class="n">prop_obj</span> <span class="o">=</span> <span class="n">BuildingProps</span><span class="p">(</span><span class="o">**</span><span class="n">props</span><span class="p">)</span>
-</span><span id="process_building-28"><a href="#process_building-28"><span class="linenos">28</span></a>    <span class="n">confidences</span> <span class="o">=</span> <span class="p">[</span><span class="n">source</span><span class="o">.</span><span class="n">confidence</span> <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">sources</span><span class="p">]</span>
-</span><span id="process_building-29"><a href="#process_building-29"><span class="linenos">29</span></a>    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">conf</span> <span class="o">&lt;</span> <span class="n">confidence</span> <span class="k">for</span> <span class="n">conf</span> <span class="ow">in</span> <span class="n">confidences</span><span class="p">):</span>
-</span><span id="process_building-30"><a href="#process_building-30"><span class="linenos">30</span></a>        <span class="k">raise</span> <span class="n">ConfidenceError</span><span class="p">(</span><span class="n">confidence</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">confidences</span><span class="p">))</span>
-</span><span id="process_building-31"><a href="#process_building-31"><span class="linenos">31</span></a>
-</span><span id="process_building-32"><a href="#process_building-32"><span class="linenos">32</span></a>    <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;building&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">class_</span>
-</span><span id="process_building-33"><a href="#process_building-33"><span class="linenos">33</span></a>
-</span><span id="process_building-34"><a href="#process_building-34"><span class="linenos">34</span></a>    <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;source&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">source_statement</span><span class="p">(</span><span class="n">prop_obj</span><span class="o">.</span><span class="n">sources</span><span class="p">)</span>
-</span><span id="process_building-35"><a href="#process_building-35"><span class="linenos">35</span></a>
-</span><span id="process_building-36"><a href="#process_building-36"><span class="linenos">36</span></a>    <span class="n">obj_dict</span> <span class="o">=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">exclude_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-</span><span id="process_building-37"><a href="#process_building-37"><span class="linenos">37</span></a>    <span class="n">new_props</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
-</span><span id="process_building-38"><a href="#process_building-38"><span class="linenos">38</span></a>        <span class="p">{</span>
-</span><span id="process_building-39"><a href="#process_building-39"><span class="linenos">39</span></a>            <span class="n">k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;facade&quot;</span><span class="p">,</span> <span class="s2">&quot;building&quot;</span><span class="p">)</span>
-</span><span id="process_building-40"><a href="#process_building-40"><span class="linenos">40</span></a>            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">)</span>
-</span><span id="process_building-41"><a href="#process_building-41"><span class="linenos">41</span></a>            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;colour&quot;</span><span class="p">):</span> <span class="n">v</span>
-</span><span id="process_building-42"><a href="#process_building-42"><span class="linenos">42</span></a>            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj_dict</span>
-</span><span id="process_building-43"><a href="#process_building-43"><span class="linenos">43</span></a>            <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">&quot;roof&quot;</span><span class="p">,</span> <span class="s2">&quot;facade&quot;</span><span class="p">))</span>
-</span><span id="process_building-44"><a href="#process_building-44"><span class="linenos">44</span></a>        <span class="p">}</span>
-</span><span id="process_building-45"><a href="#process_building-45"><span class="linenos">45</span></a>    <span class="p">)</span>
-</span><span id="process_building-46"><a href="#process_building-46"><span class="linenos">46</span></a>    <span class="n">new_props</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj_dict</span> <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">)})</span>
-</span><span id="process_building-47"><a href="#process_building-47"><span class="linenos">47</span></a>
-</span><span id="process_building-48"><a href="#process_building-48"><span class="linenos">48</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">is_underground</span><span class="p">:</span>
-</span><span id="process_building-49"><a href="#process_building-49"><span class="linenos">49</span></a>        <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;location&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;underground&quot;</span>
-</span><span id="process_building-50"><a href="#process_building-50"><span class="linenos">50</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">num_floors</span><span class="p">:</span>
-</span><span id="process_building-51"><a href="#process_building-51"><span class="linenos">51</span></a>        <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;building:levels&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">num_floors</span>
-</span><span id="process_building-52"><a href="#process_building-52"><span class="linenos">52</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">num_floors_underground</span><span class="p">:</span>
-</span><span id="process_building-53"><a href="#process_building-53"><span class="linenos">53</span></a>        <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;building:levels:underground&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">num_floors_underground</span>
-</span><span id="process_building-54"><a href="#process_building-54"><span class="linenos">54</span></a>    <span class="k">if</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">min_floor</span><span class="p">:</span>
-</span><span id="process_building-55"><a href="#process_building-55"><span class="linenos">55</span></a>        <span class="n">new_props</span><span class="p">[</span><span class="s2">&quot;building:min_level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_obj</span><span class="o">.</span><span class="n">min_floor</span>
-</span><span id="process_building-56"><a href="#process_building-56"><span class="linenos">56</span></a>    <span class="k">return</span> <span class="n">new_props</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="process_building-9"><a href="#process_building-9"><span class="linenos"> 9</span></a><span class="k">def</span> <span class="nf">process_building</span><span class="p">(</span><span class="n">props</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+</span><span id="process_building-10"><a href="#process_building-10"><span class="linenos">10</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert Overture&#39;s building properties to OSM tags.</span>
+</span><span id="process_building-11"><a href="#process_building-11"><span class="linenos">11</span></a>
+</span><span id="process_building-12"><a href="#process_building-12"><span class="linenos">12</span></a><span class="sd">    Args:</span>
+</span><span id="process_building-13"><a href="#process_building-13"><span class="linenos">13</span></a><span class="sd">        props (dict): The feature properties from the Overture GeoJSON.</span>
+</span><span id="process_building-14"><a href="#process_building-14"><span class="linenos">14</span></a><span class="sd">        confidence (float, optional): The minimum confidence level. Defaults to 0.0.</span>
+</span><span id="process_building-15"><a href="#process_building-15"><span class="linenos">15</span></a>
+</span><span id="process_building-16"><a href="#process_building-16"><span class="linenos">16</span></a><span class="sd">    Returns:</span>
+</span><span id="process_building-17"><a href="#process_building-17"><span class="linenos">17</span></a><span class="sd">        Dict[str, str]: The reshaped and converted properties in OSM&#39;s flat</span>
+</span><span id="process_building-18"><a href="#process_building-18"><span class="linenos">18</span></a><span class="sd">            str:str schema.</span>
+</span><span id="process_building-19"><a href="#process_building-19"><span class="linenos">19</span></a>
+</span><span id="process_building-20"><a href="#process_building-20"><span class="linenos">20</span></a><span class="sd">    Raises:</span>
+</span><span id="process_building-21"><a href="#process_building-21"><span class="linenos">21</span></a><span class="sd">        `overturetoosm.objects.ConfidenceError`: Raised if the confidence level is set</span>
+</span><span id="process_building-22"><a href="#process_building-22"><span class="linenos">22</span></a><span class="sd">            above a feature&#39;s confidence.</span>
+</span><span id="process_building-23"><a href="#process_building-23"><span class="linenos">23</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="process_building-24"><a href="#process_building-24"><span class="linenos">24</span></a>    <span class="k">return</span> <span class="n">BuildingProps</span><span class="p">(</span><span class="o">**</span><span class="n">props</span><span class="p">)</span><span class="o">.</span><span class="n">to_osm</span><span class="p">(</span><span class="n">confidence</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -351,7 +291,8 @@ above a feature's confidence.</li>
 <h6 id="returns">Returns:</h6>
 
 <blockquote>
-  <p>Dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.</p>
+  <p>Dict[str, str]: The reshaped and converted properties in OSM's flat
+      str:str schema.</p>
 </blockquote>
 
 <h6 id="raises">Raises:</h6>
@@ -375,33 +316,19 @@ above a feature's confidence.</li>
 
     </div>
     <a class="headerlink" href="#process_address"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="process_address-8"><a href="#process_address-8"><span class="linenos"> 8</span></a><span class="k">def</span> <span class="nf">process_address</span><span class="p">(</span>
-</span><span id="process_address-9"><a href="#process_address-9"><span class="linenos"> 9</span></a>    <span class="n">props</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
-</span><span id="process_address-10"><a href="#process_address-10"><span class="linenos">10</span></a>    <span class="n">style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
-</span><span id="process_address-11"><a href="#process_address-11"><span class="linenos">11</span></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-</span><span id="process_address-12"><a href="#process_address-12"><span class="linenos">12</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert Overture&#39;s address properties to OSM tags.</span>
-</span><span id="process_address-13"><a href="#process_address-13"><span class="linenos">13</span></a>
-</span><span id="process_address-14"><a href="#process_address-14"><span class="linenos">14</span></a><span class="sd">    Args:</span>
-</span><span id="process_address-15"><a href="#process_address-15"><span class="linenos">15</span></a><span class="sd">        props (dict): The feature properties from the Overture GeoJSON.</span>
-</span><span id="process_address-16"><a href="#process_address-16"><span class="linenos">16</span></a><span class="sd">        style (str, optional): How to handle the `address_levels` field. Open</span>
-</span><span id="process_address-17"><a href="#process_address-17"><span class="linenos">17</span></a><span class="sd">            a pull request or issue to add support for other regions. Defaults to &quot;US&quot;.</span>
-</span><span id="process_address-18"><a href="#process_address-18"><span class="linenos">18</span></a>
-</span><span id="process_address-19"><a href="#process_address-19"><span class="linenos">19</span></a><span class="sd">    Returns:</span>
-</span><span id="process_address-20"><a href="#process_address-20"><span class="linenos">20</span></a><span class="sd">        Dict[str, str]: The reshaped and converted properties in OSM&#39;s flat str:str schema.</span>
-</span><span id="process_address-21"><a href="#process_address-21"><span class="linenos">21</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="process_address-22"><a href="#process_address-22"><span class="linenos">22</span></a>    <span class="n">bad_tags</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="s2">&quot;theme&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;address_levels&quot;</span><span class="p">]</span>
-</span><span id="process_address-23"><a href="#process_address-23"><span class="linenos">23</span></a>    <span class="n">prop</span> <span class="o">=</span> <span class="n">AddressProps</span><span class="p">(</span><span class="o">**</span><span class="n">props</span><span class="p">)</span>
-</span><span id="process_address-24"><a href="#process_address-24"><span class="linenos">24</span></a>
-</span><span id="process_address-25"><a href="#process_address-25"><span class="linenos">25</span></a>    <span class="n">obj_dict</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">exclude_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">by_alias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="process_address-26"><a href="#process_address-26"><span class="linenos">26</span></a>
-</span><span id="process_address-27"><a href="#process_address-27"><span class="linenos">27</span></a>    <span class="k">if</span> <span class="n">obj_dict</span><span class="p">[</span><span class="s2">&quot;address_levels&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj_dict</span><span class="p">[</span><span class="s2">&quot;address_levels&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="process_address-28"><a href="#process_address-28"><span class="linenos">28</span></a>        <span class="k">if</span> <span class="n">style</span> <span class="o">==</span> <span class="s2">&quot;US&quot;</span><span class="p">:</span>
-</span><span id="process_address-29"><a href="#process_address-29"><span class="linenos">29</span></a>            <span class="n">obj_dict</span><span class="p">[</span><span class="s2">&quot;addr:state&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">obj_dict</span><span class="p">[</span><span class="s2">&quot;address_levels&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
-</span><span id="process_address-30"><a href="#process_address-30"><span class="linenos">30</span></a>
-</span><span id="process_address-31"><a href="#process_address-31"><span class="linenos">31</span></a>    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">bad_tags</span><span class="p">:</span>
-</span><span id="process_address-32"><a href="#process_address-32"><span class="linenos">32</span></a>        <span class="n">obj_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-</span><span id="process_address-33"><a href="#process_address-33"><span class="linenos">33</span></a>
-</span><span id="process_address-34"><a href="#process_address-34"><span class="linenos">34</span></a>    <span class="k">return</span> <span class="n">obj_dict</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="process_address-9"><a href="#process_address-9"><span class="linenos"> 9</span></a><span class="k">def</span> <span class="nf">process_address</span><span class="p">(</span><span class="n">props</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;US&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+</span><span id="process_address-10"><a href="#process_address-10"><span class="linenos">10</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert Overture&#39;s address properties to OSM tags.</span>
+</span><span id="process_address-11"><a href="#process_address-11"><span class="linenos">11</span></a>
+</span><span id="process_address-12"><a href="#process_address-12"><span class="linenos">12</span></a><span class="sd">    Args:</span>
+</span><span id="process_address-13"><a href="#process_address-13"><span class="linenos">13</span></a><span class="sd">        props (dict): The feature properties from the Overture GeoJSON.</span>
+</span><span id="process_address-14"><a href="#process_address-14"><span class="linenos">14</span></a><span class="sd">        style (str, optional): How to handle the `address_levels` field. Open</span>
+</span><span id="process_address-15"><a href="#process_address-15"><span class="linenos">15</span></a><span class="sd">            a pull request or issue to add support for other regions. Defaults to &quot;US&quot;.</span>
+</span><span id="process_address-16"><a href="#process_address-16"><span class="linenos">16</span></a>
+</span><span id="process_address-17"><a href="#process_address-17"><span class="linenos">17</span></a><span class="sd">    Returns:</span>
+</span><span id="process_address-18"><a href="#process_address-18"><span class="linenos">18</span></a><span class="sd">        Dict[str, str]: The reshaped and converted properties in OSM&#39;s flat</span>
+</span><span id="process_address-19"><a href="#process_address-19"><span class="linenos">19</span></a><span class="sd">            str:str schema.</span>
+</span><span id="process_address-20"><a href="#process_address-20"><span class="linenos">20</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="process_address-21"><a href="#process_address-21"><span class="linenos">21</span></a>    <span class="k">return</span> <span class="n">AddressProps</span><span class="p">(</span><span class="o">**</span><span class="n">props</span><span class="p">)</span><span class="o">.</span><span class="n">to_osm</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -418,7 +345,8 @@ a pull request or issue to add support for other regions. Defaults to "US".</li>
 <h6 id="returns">Returns:</h6>
 
 <blockquote>
-  <p>Dict[str, str]: The reshaped and converted properties in OSM's flat str:str schema.</p>
+  <p>Dict[str, str]: The reshaped and converted properties in OSM's flat
+      str:str schema.</p>
 </blockquote>
 </div>
 
@@ -429,53 +357,56 @@ a pull request or issue to add support for other regions. Defaults to "US".</li>
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">process_geojson</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">geojson</span><span class="p">:</span> <span class="nb">dict</span>,</span><span class="param">	<span class="n">fx</span><span class="p">:</span> <span class="n">Callable</span>,</span><span class="param">	<span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>,</span><span class="param">	<span class="n">options</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
+        <span class="name">process_geojson</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">geojson</span><span class="p">:</span> <span class="nb">dict</span>,</span><span class="param">	<span class="n">fx</span><span class="p">:</span> <span class="n">Callable</span>,</span><span class="param">	<span class="n">confidence</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">options</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
 
                 <label class="view-source-button" for="process_geojson-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#process_geojson"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="process_geojson-13"><a href="#process_geojson-13"><span class="linenos">13</span></a><span class="k">def</span> <span class="nf">process_geojson</span><span class="p">(</span>
-</span><span id="process_geojson-14"><a href="#process_geojson-14"><span class="linenos">14</span></a>    <span class="n">geojson</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
-</span><span id="process_geojson-15"><a href="#process_geojson-15"><span class="linenos">15</span></a>    <span class="n">fx</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
-</span><span id="process_geojson-16"><a href="#process_geojson-16"><span class="linenos">16</span></a>    <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-</span><span id="process_geojson-17"><a href="#process_geojson-17"><span class="linenos">17</span></a>    <span class="n">options</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="process_geojson-18"><a href="#process_geojson-18"><span class="linenos">18</span></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-</span><span id="process_geojson-19"><a href="#process_geojson-19"><span class="linenos">19</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert an Overture `place` GeoJSON to one that follows OSM&#39;s schema.</span>
-</span><span id="process_geojson-20"><a href="#process_geojson-20"><span class="linenos">20</span></a>
-</span><span id="process_geojson-21"><a href="#process_geojson-21"><span class="linenos">21</span></a><span class="sd">    Example usage:</span>
-</span><span id="process_geojson-22"><a href="#process_geojson-22"><span class="linenos">22</span></a><span class="sd">    ```python</span>
-</span><span id="process_geojson-23"><a href="#process_geojson-23"><span class="linenos">23</span></a><span class="sd">    import json</span>
-</span><span id="process_geojson-24"><a href="#process_geojson-24"><span class="linenos">24</span></a><span class="sd">    from overturetoosm import process_geojson</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="process_geojson-9"><a href="#process_geojson-9"><span class="linenos"> 9</span></a><span class="k">def</span> <span class="nf">process_geojson</span><span class="p">(</span>
+</span><span id="process_geojson-10"><a href="#process_geojson-10"><span class="linenos">10</span></a>    <span class="n">geojson</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+</span><span id="process_geojson-11"><a href="#process_geojson-11"><span class="linenos">11</span></a>    <span class="n">fx</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
+</span><span id="process_geojson-12"><a href="#process_geojson-12"><span class="linenos">12</span></a>    <span class="n">confidence</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="process_geojson-13"><a href="#process_geojson-13"><span class="linenos">13</span></a>    <span class="n">options</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="process_geojson-14"><a href="#process_geojson-14"><span class="linenos">14</span></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="process_geojson-15"><a href="#process_geojson-15"><span class="linenos">15</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert an Overture `place` GeoJSON to one that follows OSM&#39;s schema.</span>
+</span><span id="process_geojson-16"><a href="#process_geojson-16"><span class="linenos">16</span></a>
+</span><span id="process_geojson-17"><a href="#process_geojson-17"><span class="linenos">17</span></a><span class="sd">    Example usage:</span>
+</span><span id="process_geojson-18"><a href="#process_geojson-18"><span class="linenos">18</span></a><span class="sd">    ```python</span>
+</span><span id="process_geojson-19"><a href="#process_geojson-19"><span class="linenos">19</span></a><span class="sd">    import json</span>
+</span><span id="process_geojson-20"><a href="#process_geojson-20"><span class="linenos">20</span></a><span class="sd">    from overturetoosm import process_geojson</span>
+</span><span id="process_geojson-21"><a href="#process_geojson-21"><span class="linenos">21</span></a>
+</span><span id="process_geojson-22"><a href="#process_geojson-22"><span class="linenos">22</span></a><span class="sd">    with open(&quot;overture.geojson&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span>
+</span><span id="process_geojson-23"><a href="#process_geojson-23"><span class="linenos">23</span></a><span class="sd">        contents: dict = json.load(f)</span>
+</span><span id="process_geojson-24"><a href="#process_geojson-24"><span class="linenos">24</span></a><span class="sd">        geojson = process_geojson(contents, fx=process_building)</span>
 </span><span id="process_geojson-25"><a href="#process_geojson-25"><span class="linenos">25</span></a>
-</span><span id="process_geojson-26"><a href="#process_geojson-26"><span class="linenos">26</span></a><span class="sd">    with open(&quot;overture.geojson&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span>
-</span><span id="process_geojson-27"><a href="#process_geojson-27"><span class="linenos">27</span></a><span class="sd">        contents: dict = json.load(f)</span>
-</span><span id="process_geojson-28"><a href="#process_geojson-28"><span class="linenos">28</span></a><span class="sd">        geojson = process_geojson(contents, fx=process_building)</span>
-</span><span id="process_geojson-29"><a href="#process_geojson-29"><span class="linenos">29</span></a>
-</span><span id="process_geojson-30"><a href="#process_geojson-30"><span class="linenos">30</span></a><span class="sd">    with open(&quot;overture_out.geojson&quot;, &quot;w+&quot;, encoding=&quot;utf-8&quot;) as x:</span>
-</span><span id="process_geojson-31"><a href="#process_geojson-31"><span class="linenos">31</span></a><span class="sd">        json.dump(geojson, x, indent=4)</span>
-</span><span id="process_geojson-32"><a href="#process_geojson-32"><span class="linenos">32</span></a><span class="sd">    ```</span>
-</span><span id="process_geojson-33"><a href="#process_geojson-33"><span class="linenos">33</span></a><span class="sd">    Args:</span>
-</span><span id="process_geojson-34"><a href="#process_geojson-34"><span class="linenos">34</span></a><span class="sd">        geojson (dict): The dictionary representation of the Overture GeoJSON.</span>
-</span><span id="process_geojson-35"><a href="#process_geojson-35"><span class="linenos">35</span></a><span class="sd">        fx (Callable): The function to apply to each feature.</span>
-</span><span id="process_geojson-36"><a href="#process_geojson-36"><span class="linenos">36</span></a><span class="sd">        confidence (float, optional): The minimum confidence level. Defaults to 0.0.</span>
-</span><span id="process_geojson-37"><a href="#process_geojson-37"><span class="linenos">37</span></a><span class="sd">        options (dict, optional): Function-specific options to pass as arguments to</span>
-</span><span id="process_geojson-38"><a href="#process_geojson-38"><span class="linenos">38</span></a><span class="sd">            the `fx` function.</span>
-</span><span id="process_geojson-39"><a href="#process_geojson-39"><span class="linenos">39</span></a>
-</span><span id="process_geojson-40"><a href="#process_geojson-40"><span class="linenos">40</span></a><span class="sd">    Returns:</span>
-</span><span id="process_geojson-41"><a href="#process_geojson-41"><span class="linenos">41</span></a><span class="sd">        dict: The dictionary representation of the GeoJSON that follows OSM&#39;s schema.</span>
-</span><span id="process_geojson-42"><a href="#process_geojson-42"><span class="linenos">42</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="process_geojson-43"><a href="#process_geojson-43"><span class="linenos">43</span></a>    <span class="n">options</span> <span class="o">=</span> <span class="n">options</span> <span class="ow">or</span> <span class="p">{}</span>
-</span><span id="process_geojson-44"><a href="#process_geojson-44"><span class="linenos">44</span></a>    <span class="n">new_features</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="process_geojson-45"><a href="#process_geojson-45"><span class="linenos">45</span></a>    <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">geojson</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]:</span>
-</span><span id="process_geojson-46"><a href="#process_geojson-46"><span class="linenos">46</span></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="process_geojson-47"><a href="#process_geojson-47"><span class="linenos">47</span></a>            <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fx</span><span class="p">(</span><span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">],</span> <span class="n">confidence</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
-</span><span id="process_geojson-48"><a href="#process_geojson-48"><span class="linenos">48</span></a>            <span class="n">new_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
-</span><span id="process_geojson-49"><a href="#process_geojson-49"><span class="linenos">49</span></a>        <span class="k">except</span> <span class="p">(</span><span class="n">ConfidenceError</span><span class="p">,</span> <span class="n">UnmatchedError</span><span class="p">):</span>
-</span><span id="process_geojson-50"><a href="#process_geojson-50"><span class="linenos">50</span></a>            <span class="k">pass</span>
-</span><span id="process_geojson-51"><a href="#process_geojson-51"><span class="linenos">51</span></a>
-</span><span id="process_geojson-52"><a href="#process_geojson-52"><span class="linenos">52</span></a>    <span class="n">geojson</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_features</span>
-</span><span id="process_geojson-53"><a href="#process_geojson-53"><span class="linenos">53</span></a>    <span class="k">return</span> <span class="n">geojson</span>
+</span><span id="process_geojson-26"><a href="#process_geojson-26"><span class="linenos">26</span></a><span class="sd">    with open(&quot;overture_out.geojson&quot;, &quot;w+&quot;, encoding=&quot;utf-8&quot;) as x:</span>
+</span><span id="process_geojson-27"><a href="#process_geojson-27"><span class="linenos">27</span></a><span class="sd">        json.dump(geojson, x, indent=4)</span>
+</span><span id="process_geojson-28"><a href="#process_geojson-28"><span class="linenos">28</span></a><span class="sd">    ```</span>
+</span><span id="process_geojson-29"><a href="#process_geojson-29"><span class="linenos">29</span></a><span class="sd">    Args:</span>
+</span><span id="process_geojson-30"><a href="#process_geojson-30"><span class="linenos">30</span></a><span class="sd">        geojson (dict): The dictionary representation of the Overture GeoJSON.</span>
+</span><span id="process_geojson-31"><a href="#process_geojson-31"><span class="linenos">31</span></a><span class="sd">        fx (Callable): The function to apply to each feature.</span>
+</span><span id="process_geojson-32"><a href="#process_geojson-32"><span class="linenos">32</span></a><span class="sd">        confidence (float, optional): The minimum confidence level. Defaults to 0.0.</span>
+</span><span id="process_geojson-33"><a href="#process_geojson-33"><span class="linenos">33</span></a><span class="sd">        options (dict, optional): Function-specific options to pass as arguments to</span>
+</span><span id="process_geojson-34"><a href="#process_geojson-34"><span class="linenos">34</span></a><span class="sd">            the `fx` function.</span>
+</span><span id="process_geojson-35"><a href="#process_geojson-35"><span class="linenos">35</span></a>
+</span><span id="process_geojson-36"><a href="#process_geojson-36"><span class="linenos">36</span></a><span class="sd">    Returns:</span>
+</span><span id="process_geojson-37"><a href="#process_geojson-37"><span class="linenos">37</span></a><span class="sd">        dict: The dictionary representation of the GeoJSON that follows OSM&#39;s schema.</span>
+</span><span id="process_geojson-38"><a href="#process_geojson-38"><span class="linenos">38</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="process_geojson-39"><a href="#process_geojson-39"><span class="linenos">39</span></a>    <span class="n">options</span> <span class="o">=</span> <span class="n">options</span> <span class="ow">or</span> <span class="p">{}</span>
+</span><span id="process_geojson-40"><a href="#process_geojson-40"><span class="linenos">40</span></a>    <span class="n">new_features</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="process_geojson-41"><a href="#process_geojson-41"><span class="linenos">41</span></a>    <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">geojson</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]:</span>
+</span><span id="process_geojson-42"><a href="#process_geojson-42"><span class="linenos">42</span></a>        <span class="k">try</span><span class="p">:</span>
+</span><span id="process_geojson-43"><a href="#process_geojson-43"><span class="linenos">43</span></a>            <span class="k">if</span> <span class="n">confidence</span><span class="p">:</span>
+</span><span id="process_geojson-44"><a href="#process_geojson-44"><span class="linenos">44</span></a>                <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fx</span><span class="p">(</span><span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">],</span> <span class="n">confidence</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+</span><span id="process_geojson-45"><a href="#process_geojson-45"><span class="linenos">45</span></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="process_geojson-46"><a href="#process_geojson-46"><span class="linenos">46</span></a>                <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fx</span><span class="p">(</span><span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">],</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+</span><span id="process_geojson-47"><a href="#process_geojson-47"><span class="linenos">47</span></a>            <span class="n">new_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
+</span><span id="process_geojson-48"><a href="#process_geojson-48"><span class="linenos">48</span></a>        <span class="k">except</span> <span class="p">(</span><span class="n">ConfidenceError</span><span class="p">,</span> <span class="n">UnmatchedError</span><span class="p">):</span>
+</span><span id="process_geojson-49"><a href="#process_geojson-49"><span class="linenos">49</span></a>            <span class="k">pass</span>
+</span><span id="process_geojson-50"><a href="#process_geojson-50"><span class="linenos">50</span></a>
+</span><span id="process_geojson-51"><a href="#process_geojson-51"><span class="linenos">51</span></a>    <span class="n">geojson</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_features</span>
+</span><span id="process_geojson-52"><a href="#process_geojson-52"><span class="linenos">52</span></a>    <span class="k">return</span> <span class="n">geojson</span>
 </span></pre></div>
 
 
