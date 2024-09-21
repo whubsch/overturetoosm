@@ -9,6 +9,16 @@ This Python project translates objects from the Overture maps schema to the Open
 
 There is also a Pydantic model for the `transportation` layer's `segment` object via `overturetoosm.segments.SegmentProperties`, but the conversion to OSM tags is not yet supported because of the Overture schema's complexity.
 
+The package also allows you to use the module directly from the command line.
+With the `overturemaps` Python package installed, you can download and convert
+Overture data to OSM in two lines of code.
+
+```bash
+$ python -m overturemaps download --bbox=-71.068,42.353,-71.058,42.363 \\
+  -f geojson --type=place -o boston.geojson
+$ python -m overturetoosm place -i boston.geojson --in-place --confidence 0.9
+```
+
 > [!NOTE]
 > Use of this package does not absolve you from following OSM's [import guidelines](https://wiki.openstreetmap.org/wiki/Import/Guidelines).
 
