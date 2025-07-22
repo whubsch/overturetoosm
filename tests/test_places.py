@@ -1,7 +1,7 @@
 """Test the places.py module."""
 
 from copy import deepcopy
-from typing import Any, Dict
+from typing import Any
 
 import pydantic
 import pytest
@@ -12,7 +12,7 @@ from src.overturetoosm.utils import process_geojson
 
 
 @pytest.fixture(name="clean_dict")
-def clean_fix() -> Dict[str, Any]:
+def clean_fix() -> dict[str, Any]:
     """Fixture with the clean place properties."""
     return {
         "name": "Primary Name",
@@ -33,7 +33,7 @@ def clean_fix() -> Dict[str, Any]:
 
 
 @pytest.fixture(name="geojson_dict")
-def geojson_fix() -> Dict[str, Any]:
+def geojson_fix() -> dict[str, Any]:
     """Fixture with a mock place geojson."""
     return {
         "type": "FeatureCollection",
@@ -90,7 +90,7 @@ def geojson_fix() -> Dict[str, Any]:
 
 
 @pytest.fixture(name="props_dict")
-def props_fix() -> Dict[str, Any]:
+def props_fix() -> dict[str, Any]:
     """Fixture with the raw place properties."""
     return {
         "id": "123",

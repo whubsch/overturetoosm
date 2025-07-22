@@ -1,11 +1,9 @@
 """Convert Overture's `buildings` features to OSM tags."""
 
-from typing import Dict
-
 from .objects import BuildingProps
 
 
-def process_building(props: dict, confidence: float = 0.0) -> Dict[str, str]:
+def process_building(props: dict, confidence: float = 0.0) -> dict[str, str]:
     """Convert Overture's building properties to OSM tags.
 
     Args:
@@ -13,7 +11,7 @@ def process_building(props: dict, confidence: float = 0.0) -> Dict[str, str]:
         confidence (float, optional): The minimum confidence level. Defaults to 0.0.
 
     Returns:
-        Dict[str, str]: The reshaped and converted properties in OSM's flat
+        dict[str, str]: The reshaped and converted properties in OSM's flat
             str:str schema.
 
     Raises:

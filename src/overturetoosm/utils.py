@@ -1,6 +1,6 @@
 """Useful functions for the project."""
 
-from typing import Callable, Optional
+from collections.abc import Callable
 
 from .objects import ConfidenceError, UnmatchedError
 
@@ -8,8 +8,8 @@ from .objects import ConfidenceError, UnmatchedError
 def process_geojson(
     geojson: dict,
     fx: Callable,
-    confidence: Optional[float] = None,
-    options: Optional[dict] = None,
+    confidence: float | None = None,
+    options: dict | None = None,
 ) -> dict:
     """Convert an Overture `place` GeoJSON to one that follows OSM's schema.
 

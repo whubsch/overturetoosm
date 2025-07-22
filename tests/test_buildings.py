@@ -1,6 +1,6 @@
 """Test the buildings.py module."""
 
-from typing import Any, Dict
+from typing import Any
 
 import pytest
 
@@ -9,7 +9,7 @@ from src.overturetoosm.objects import ConfidenceError
 
 
 @pytest.fixture(name="clean_dict")
-def clean_fix() -> Dict[str, Any]:
+def clean_fix() -> dict[str, Any]:
     """Fixture with the clean building properties."""
     return {
         "building": "parking",
@@ -22,7 +22,7 @@ def clean_fix() -> Dict[str, Any]:
 
 
 @pytest.fixture(name="props_dict")
-def props_fix() -> Dict[str, Any]:
+def props_fix() -> dict[str, Any]:
     """Fixture with the raw building properties."""
     return {
         "theme": "buildings",

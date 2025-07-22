@@ -1,16 +1,16 @@
 """Test the segments.py module."""
 
-from typing import Any, Dict
+from typing import Any
 
 import pytest
 from pydantic import ValidationError
 
 from src.overturetoosm.segments import SegmentProperties
-from src.overturetoosm.objects import ConfidenceError
+# from src.overturetoosm.objects import ConfidenceError
 
 
 @pytest.fixture(name="props_dict")
-def props_fix() -> Dict[str, Any]:
+def props_fix() -> dict[str, Any]:
     """Fixture with the clean segment properties."""
     return {
         "id": "0892aa87b057ffff043ffa50b0c799df",
@@ -72,7 +72,7 @@ def test_segment_props_no_id(props_dict: dict, remove_key: str) -> None:
     """Test that all properties are processed correctly."""
     props_dict.pop(remove_key, None)
     with pytest.raises(ValidationError):
-        new_props = SegmentProperties(**props_dict)
+        SegmentProperties(**props_dict)
 
 
 # def test_segment_props_no_class(props_dict: dict) -> None:

@@ -1,6 +1,6 @@
 """Tests for the address module."""
 
-from typing import Any, Dict
+from typing import Any
 
 import pytest
 
@@ -8,7 +8,7 @@ from src.overturetoosm.addresses import process_address
 
 
 @pytest.fixture(name="clean_dict")
-def clean_fix() -> Dict[str, Any]:
+def clean_fix() -> dict[str, Any]:
     """Fixture with the clean address properties."""
     return {
         "addr:country": "US",
@@ -21,7 +21,7 @@ def clean_fix() -> Dict[str, Any]:
 
 
 @pytest.fixture(name="props_dict")
-def props_fix() -> Dict[str, Any]:
+def props_fix() -> dict[str, Any]:
     """Fixture with the raw address properties."""
     return {
         "theme": "addresses",

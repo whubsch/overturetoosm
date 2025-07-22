@@ -70,7 +70,7 @@ def main():
 
     args = parser.parse_args()
 
-    with open(args.input, "r", encoding="utf-8") as f:
+    with open(args.input, encoding="utf-8") as f:
         contents: dict = json.load(f)
         geojson = {}
         if args.fx_type == "place":

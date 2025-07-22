@@ -3,12 +3,11 @@
 # ruff: noqa: D415
 
 from enum import Enum
-from typing import Dict, List, Optional, Union
 
 try:
     from typing import Annotated
 except ImportError:
-    from typing_extensions import Annotated
+    from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field, RootModel, field_validator
 
@@ -21,9 +20,9 @@ class OvertureBaseModel(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     version: int = Field(ge=0)
-    theme: Optional[str] = None
-    type: Optional[str] = None
-    id: Optional[str] = Field(None, pattern=r"^(\S.*)?\S$")
+    theme: str | None = None
+    type: str | None = None
+    id: str | None = Field(None, pattern=r"^(\S.*)?\S$")
 
 
 class Wikidata(RootModel):
@@ -37,9 +36,9 @@ class Sources(BaseModel):
 
     property: str
     dataset: str
-    record_id: Optional[str] = None
-    confidence: Optional[float] = Field(ge=0.0, le=1.0)
-    update_time: Optional[str] = None
+    record_id: str | None = None
+    confidence: float | None = Field(ge=0.0, le=1.0)
+    update_time: str | None = None
 
     @field_validator("confidence")
     @classmethod
@@ -47,7 +46,7 @@ class Sources(BaseModel):
         """@private"""
         return v if v is not None else 0.0
 
-    def get_osm_link(self) -> Union[str, None]:
+    def get_osm_link(self) -> str | None:
         """Return the OSM link for the source."""
         if (
             self.record_id
@@ -77,44 +76,44 @@ class Rules(BaseModel):
     """Overture name rules model."""
 
     variant: RulesVariant
-    language: Optional[str] = None
+    language: str | None = None
     value: str
-    between: Optional[Between] = None
-    side: Optional[str] = None
+    between: Between | None = None
+    side: str | None = None
 
 
 class Names(BaseModel):
     """Overture names model."""
 
     primary: str
-    common: Optional[Dict[str, str]]
-    rules: Optional[List[Rules]]
+    common: dict[str, str] | None
+    rules: list[Rules] | None
 
 
 class PlaceAddress(BaseModel):
     """Overture addresses model."""
 
-    freeform: Optional[str]
-    locality: Optional[str]
-    postcode: Optional[str]
-    region: Optional[str]
-    country: Optional[str] = Field(pattern=r"^[A-Z]{2}$")
+    freeform: str | None
+    locality: str | None
+    postcode: str | None
+    region: str | None
+    country: str | None = Field(pattern=r"^[A-Z]{2}$")
 
 
 class Categories(BaseModel):
     """Overture categories model."""
 
     main: str
-    alternate: Optional[List[str]]
+    alternate: list[str] | None
 
 
 class Brand(BaseModel):
     """Overture brand model."""
 
-    wikidata: Optional[Wikidata] = None
+    wikidata: Wikidata | None = None
     names: Names
 
-    def to_osm(self) -> Dict[str, str]:
+    def to_osm(self) -> dict[str, str]:
         """Convert brand properties to OSM tags."""
         osm = {"brand": self.names.primary}
         if self.wikidata:
@@ -125,9 +124,9 @@ class Brand(BaseModel):
 class Socials(RootModel):
     """Overture socials model."""
 
-    root: List[str]
+    root: list[str]
 
-    def to_osm(self) -> Dict[str, str]:
+    def to_osm(self) -> dict[str, str]:
         """Convert socials properties to OSM tags."""
         new_props = {}
         for social in self.root:
@@ -145,20 +144,20 @@ class PlaceProps(OvertureBaseModel):
     """
 
     update_time: str
-    sources: List[Sources]
+    sources: list[Sources]
     names: Names
-    brand: Optional[Brand] = None
-    categories: Optional[Categories] = None
+    brand: Brand | None = None
+    categories: Categories | None = None
     confidence: float = Field(ge=0.0, le=1.0)
-    websites: Optional[List[str]] = None
-    socials: Optional[Socials] = None
-    emails: Optional[List[str]] = None
-    phones: Optional[List[str]] = None
-    addresses: List[PlaceAddress]
+    websites: list[str] | None = None
+    socials: Socials | None = None
+    emails: list[str] | None = None
+    phones: list[str] | None = None
+    addresses: list[PlaceAddress]
 
     def to_osm(
         self, confidence: float, region_tag: str, unmatched: str
-    ) -> Dict[str, str]:
+    ) -> dict[str, str]:
         """Convert Overture's place properties to OSM tags.
 
         Used internally by the `overturetoosm.process_place` function.
@@ -274,45 +273,39 @@ class BuildingProps(OvertureBaseModel):
     """
 
     has_parts: bool
-    sources: List[Sources]
-    class_: Optional[str] = Field(alias="class", default=None)
-    subtype: Optional[str] = None
-    names: Optional[Names] = None
-    level: Optional[int] = None
-    height: Optional[float] = None
-    is_underground: Optional[bool] = None
-    num_floors: Optional[int] = Field(
-        serialization_alias="building:levels", default=None
-    )
-    num_floors_underground: Optional[int] = Field(
+    sources: list[Sources]
+    class_: str | None = Field(alias="class", default=None)
+    subtype: str | None = None
+    names: Names | None = None
+    level: int | None = None
+    height: float | None = None
+    is_underground: bool | None = None
+    num_floors: int | None = Field(serialization_alias="building:levels", default=None)
+    num_floors_underground: int | None = Field(
         serialization_alias="building:levels:underground", default=None
     )
-    min_height: Optional[float] = None
-    min_floor: Optional[int] = Field(
+    min_height: float | None = None
+    min_floor: int | None = Field(
         serialization_alias="building:min_level", default=None
     )
-    facade_color: Optional[str] = Field(
+    facade_color: str | None = Field(
         serialization_alias="building:colour", default=None
     )
-    facade_material: Optional[str] = Field(
+    facade_material: str | None = Field(
         serialization_alias="building:material", default=None
     )
-    roof_material: Optional[str] = Field(
-        serialization_alias="roof:material", default=None
-    )
-    roof_shape: Optional[str] = Field(serialization_alias="roof:shape", default=None)
-    roof_direction: Optional[str] = Field(
+    roof_material: str | None = Field(serialization_alias="roof:material", default=None)
+    roof_shape: str | None = Field(serialization_alias="roof:shape", default=None)
+    roof_direction: str | None = Field(
         serialization_alias="roof:direction", default=None
     )
-    roof_orientation: Optional[str] = Field(
+    roof_orientation: str | None = Field(
         serialization_alias="roof:orientation", default=None
     )
-    roof_color: Optional[str] = Field(serialization_alias="roof:colour", default=None)
-    roof_height: Optional[float] = Field(
-        serialization_alias="roof:height", default=None
-    )
+    roof_color: str | None = Field(serialization_alias="roof:colour", default=None)
+    roof_height: float | None = Field(serialization_alias="roof:height", default=None)
 
-    def to_osm(self, confidence: float) -> Dict[str, str]:
+    def to_osm(self, confidence: float) -> dict[str, str]:
         """Convert properties to OSM tags.
 
         Used internally by`overturetoosm.process_building` function.
@@ -351,16 +344,16 @@ class AddressProps(OvertureBaseModel):
     Use this model directly if you want to manipulate the `address` properties yourself.
     """
 
-    number: Optional[str] = Field(serialization_alias="addr:housenumber")
-    street: Optional[str] = Field(serialization_alias="addr:street")
-    postcode: Optional[str] = Field(serialization_alias="addr:postcode")
-    country: Optional[str] = Field(serialization_alias="addr:country")
-    address_levels: Optional[
-        Annotated[List[AddressLevel], Field(min_length=1, max_length=5)]
-    ] = Field(default_factory=list)
-    sources: List[Sources]
+    number: str | None = Field(serialization_alias="addr:housenumber")
+    street: str | None = Field(serialization_alias="addr:street")
+    postcode: str | None = Field(serialization_alias="addr:postcode")
+    country: str | None = Field(serialization_alias="addr:country")
+    address_levels: (
+        None | (Annotated[list[AddressLevel], Field(min_length=1, max_length=5)])
+    ) = Field(default_factory=list)
+    sources: list[Sources]
 
-    def to_osm(self, style: str) -> Dict[str, str]:
+    def to_osm(self, style: str) -> dict[str, str]:
         """Convert properties to OSM tags.
 
         Used internally by `overturetoosm.process_address`.
@@ -378,7 +371,7 @@ class AddressProps(OvertureBaseModel):
         return obj_dict
 
 
-def source_statement(source: List[Sources]) -> str:
+def source_statement(source: list[Sources]) -> str:
     """Return a source statement from a list of sources."""
     return (
         ", ".join(sorted({i.dataset.strip(", ") for i in source}))

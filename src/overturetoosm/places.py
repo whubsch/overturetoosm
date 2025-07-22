@@ -1,6 +1,6 @@
 """Convert Overture's `places` features to OSM tags."""
 
-from typing import Dict, Literal
+from typing import Literal
 
 from .objects import PlaceProps
 
@@ -10,7 +10,7 @@ def process_place(
     confidence: float = 0.0,
     region_tag: str = "addr:state",
     unmatched: Literal["error", "force", "ignore"] = "ignore",
-) -> Dict[str, str]:
+) -> dict[str, str]:
     """Convert Overture's places properties to OSM tags.
 
     Example usage:

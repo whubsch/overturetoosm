@@ -56,7 +56,7 @@ def test_segment_sources_not_osm(props_dict: dict) -> None:
 )
 def test_objects(type) -> None:
     """Test that all properties are processed correctly."""
-    with open(f"scripts/test_{type[0]}.geojson", "r", encoding="utf-8") as f:
+    with open(f"scripts/test_{type[0]}.geojson", encoding="utf-8") as f:
         data = json.load(f)
 
         for feature in data["features"]:
