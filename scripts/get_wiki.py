@@ -9,7 +9,8 @@ from bs4 import BeautifulSoup
 def equals_to_dict(pairs: list[str]) -> dict[str, str]:
     """Convert a string in the format "key=value" into a dictionary."""
     return {
-        key.strip(): value.strip() for key, value in (pair.split("=") for pair in pairs)
+        key.strip(): value.strip(" \n")
+        for key, value in (pair.split("=") for pair in pairs)
     }
 
 
@@ -36,15 +37,26 @@ def parse_wiki() -> dict:
     a = soup.find("table")
     if a:
         for row in list(a.find_all("tr")):
-            overture = row.find("td")
+            columns = row.find_all("td")
+            if len(columns) != 2:
+                continue
+
+            overture = columns[0]
             overture_tag = ""
             if overture:
                 overture_tag = overture.text
 
-            osm = row.find_all("tt")
+            osm = columns[1]
             osm_tags = {}
-            if osm:
-                osm_tags = equals_to_dict([i.text for i in osm])
+
+            if osm and osm.text not in ["", "\n"]:
+                try:
+                    osm_tags = equals_to_dict(
+                        [i for i in osm.text.split(" ") if not i.endswith("*")]
+                    )
+                except ValueError:
+                    print(f"Failed to parse '{osm.text}' from '{overture_tag}'")
+                    continue
 
             if overture_tag:
                 table[overture_tag] = osm_tags
