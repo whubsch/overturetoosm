@@ -31,7 +31,7 @@ jobs:
 
     - name: Download Overture data
       run: |
-        python -m overturemaps download \
+        overturemaps download \
           --bbox=-77.028151,38.887626,-77.005835,38.898414 \
           -f geojson \
           --type=place \

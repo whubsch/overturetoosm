@@ -1,6 +1,18 @@
 name: formatter
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - ".github/workflows/format.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - ".github/workflows/format.yml"
 
 jobs:
   ruff:
