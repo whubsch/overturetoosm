@@ -1439,7 +1439,7 @@ places_tags: dict[str, dict[str, str]] = {
     "commercial_real_estate": {"office": "real_estate"},
     "condominium": {"building": "apartments"},
     "property_management": {"office": "property_management"},
-    "real_estate_agent": {"office": "estate_agent"},
+    "real_estate_agent": {"office": "real_estate"},
     "rental_services": {"shop": "rental"},
     "airport": {"aeroway": "aerodrome"},
     "airport_terminal": {"aeroway": "terminal"},

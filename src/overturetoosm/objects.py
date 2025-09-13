@@ -103,7 +103,7 @@ class PlaceAddress(BaseModel):
 class Categories(BaseModel):
     """Overture categories model."""
 
-    main: str
+    primary: str
     alternate: list[str] | None
 
 
@@ -143,7 +143,6 @@ class PlaceProps(OvertureBaseModel):
     Use this model directly if you want to manipulate the `place` properties yourself.
     """
 
-    update_time: str
     sources: list[Sources]
     names: Names
     brand: Brand | None = None
@@ -167,13 +166,13 @@ class PlaceProps(OvertureBaseModel):
             raise ConfidenceError(confidence, self.confidence)
 
         if self.categories:
-            prim = places_tags.get(self.categories.main)
+            prim = places_tags.get(self.categories.primary)
             if prim:
                 new_props = {**new_props, **prim}
             elif unmatched == "force":
-                new_props["type"] = self.categories.main
+                new_props["type"] = self.categories.primary
             elif unmatched == "error":
-                raise UnmatchedError(self.categories.main)
+                raise UnmatchedError(self.categories.primary)
 
         if self.names.primary:
             new_props["name"] = self.names.primary
