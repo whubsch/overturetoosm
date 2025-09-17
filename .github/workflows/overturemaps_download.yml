@@ -2,9 +2,9 @@ name: Integration Test
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -15,52 +15,60 @@ jobs:
         data_type: [place, building, address]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.12'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
 
-    - name: Install overturemaps package
-      run: |
-        python -m pip install --upgrade pip
-        pip install overturemaps
+      - name: Install overturemaps package
+        run: |
+          python -m pip install --upgrade pip
+          pip install overturemaps
 
-    - name: Install local package dependencies
-      run: |
-        pip install -e .
+      - name: Install local package dependencies
+        run: |
+          pip install -e .
 
-    - name: Download Overture data
-      run: |
-        overturemaps download \
-          --bbox=-77.028151,38.887626,-77.005835,38.898414 \
-          -f geojson \
-          --type=${{ matrix.data_type }} \
-          -o dc_${{ matrix.data_type }}.geojson
+      - name: Download Overture data
+        run: |
+          overturemaps download \
+            --bbox=-77.028151,38.887626,-77.005835,38.898414 \
+            -f geojson \
+            --type=${{ matrix.data_type }} \
+            -o dc_${{ matrix.data_type }}.geojson
 
-    - name: Verify download
-      run: |
-        ls -la dc_${{ matrix.data_type }}.geojson
-        head -n 5 dc_${{ matrix.data_type }}.geojson
+      - name: Verify download
+        run: |
+          ls -la dc_${{ matrix.data_type }}.geojson
+          head -n 10 dc_${{ matrix.data_type }}.geojson
 
-    - name: Process with overturetoosm
-      run: |
-        python -m overturetoosm ${{ matrix.data_type }} \
-          -i dc_${{ matrix.data_type }}.geojson \
-          --in-place \
-          --confidence 0.9
+      - name: Process with overturetoosm (with confidence)
+        if: matrix.data_type != 'address'
+        run: |
+          python -m overturetoosm ${{ matrix.data_type }} \
+            -i dc_${{ matrix.data_type }}.geojson \
+            --in-place \
+            --confidence 0.9
 
-    - name: Verify processing
-      run: |
-        echo "Processed file contents (first 20 lines):"
-        head -n 20 dc_${{ matrix.data_type }}.geojson
+      - name: Process with overturetoosm (without confidence)
+        if: matrix.data_type == 'address'
+        run: |
+          python -m overturetoosm ${{ matrix.data_type }} \
+            -i dc_${{ matrix.data_type }}.geojson \
+            --in-place
 
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: processed-${{ matrix.data_type }}-geojson
-        path: dc_${{ matrix.data_type }}.geojson
-        retention-days: 2
+      - name: Verify processing
+        run: |
+          echo "Processed file contents (first 20 lines):"
+          head -n 20 dc_${{ matrix.data_type }}.geojson
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: processed-${{ matrix.data_type }}-geojson
+          path: dc_${{ matrix.data_type }}.geojson
+          retention-days: 2

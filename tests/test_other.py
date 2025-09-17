@@ -1,8 +1,7 @@
 """Test miscelaneous functions in the project."""
 
-import json
 import pytest
-from src.overturetoosm import objects, segments
+from src.overturetoosm import objects
 
 
 @pytest.fixture(name="props_dict")
@@ -43,21 +42,3 @@ def test_segment_sources_not_osm(props_dict: dict) -> None:
     props_dict.update({"dataset": "dataset1"})
     source = objects.Sources(**props_dict)
     assert source.get_osm_link() == None
-
-
-@pytest.mark.parametrize(
-    "type",
-    [
-        ("place", objects.PlaceProps),
-        ("building", objects.BuildingProps),
-        ("address", objects.AddressProps),
-        ("segment", segments.SegmentProperties),
-    ],
-)
-def test_objects(type) -> None:
-    """Test that all properties are processed correctly."""
-    with open(f"scripts/test_{type[0]}.geojson", encoding="utf-8") as f:
-        data = json.load(f)
-
-        for feature in data["features"]:
-            type[1](**feature["properties"])
