@@ -10,6 +10,9 @@ on:
 jobs:
   integration-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        data_type: [place, building, address]
 
     steps:
     - name: Checkout repository
@@ -34,30 +37,30 @@ jobs:
         overturemaps download \
           --bbox=-77.028151,38.887626,-77.005835,38.898414 \
           -f geojson \
-          --type=place \
-          -o dc.geojson
+          --type=${{ matrix.data_type }} \
+          -o dc_${{ matrix.data_type }}.geojson
 
     - name: Verify download
       run: |
-        ls -la dc.geojson
-        head -n 10 dc.geojson
+        ls -la dc_${{ matrix.data_type }}.geojson
+        head -n 5 dc_${{ matrix.data_type }}.geojson
 
     - name: Process with overturetoosm
       run: |
-        python -m overturetoosm place \
-          -i dc.geojson \
+        python -m overturetoosm ${{ matrix.data_type }} \
+          -i dc_${{ matrix.data_type }}.geojson \
           --in-place \
           --confidence 0.9
 
     - name: Verify processing
       run: |
         echo "Processed file contents (first 20 lines):"
-        head -n 20 dc.geojson
+        head -n 20 dc_${{ matrix.data_type }}.geojson
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: processed-geojson
-        path: dc.geojson
+        name: processed-${{ matrix.data_type }}-geojson
+        path: dc_${{ matrix.data_type }}.geojson
         retention-days: 2

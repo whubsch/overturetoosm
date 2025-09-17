@@ -72,6 +72,20 @@ class Between(RootModel):
     root: Annotated[list, Field(float, min_length=2, max_length=2)]
 
 
+class Mode(str, Enum):
+    """Model for political perspectives from which a named feature is viewed."""
+
+    accepted_by = "accepted_by"
+    disputed_by = "disputed_by"
+
+
+class Perspectives(BaseModel):
+    """Model for political perspectives from which a named feature is viewed."""
+
+    mode: Mode
+    countries: list[str] = Field(min_length=1)
+
+
 class Rules(BaseModel):
     """Overture name rules model."""
 
@@ -80,13 +94,14 @@ class Rules(BaseModel):
     value: str
     between: Between | None = None
     side: str | None = None
+    perspectives: Perspectives | None = None
 
 
 class Names(BaseModel):
     """Overture names model."""
 
     primary: str
-    common: dict[str, str] | None
+    common: list[tuple[str, str]] | None
     rules: list[Rules] | None
 
 
@@ -161,50 +176,87 @@ class PlaceProps(OvertureBaseModel):
 
         Used internally by the `overturetoosm.process_place` function.
         """
-        new_props = {}
         if self.confidence < confidence:
             raise ConfidenceError(confidence, self.confidence)
 
-        if self.categories:
-            prim = places_tags.get(self.categories.primary)
-            if prim:
-                new_props = {**new_props, **prim}
-            elif unmatched == "force":
-                new_props["type"] = self.categories.primary
-            elif unmatched == "error":
-                raise UnmatchedError(self.categories.primary)
+        new_props = {}
 
-        if self.names.primary:
-            new_props["name"] = self.names.primary
+        # Categories
+        new_props.update(self._process_categories(unmatched))
 
-        if self.phones is not None:
-            new_props["phone"] = self.phones[0]
+        # Names
+        new_props.update(self._process_names())
 
-        if self.websites is not None and self.websites[0]:
-            new_props["website"] = str(self.websites[0])
+        # Contact information
+        new_props.update(self._process_contact_info())
 
-        if add := self.addresses[0]:
-            if add.freeform:
-                new_props["addr:street_address"] = add.freeform
-            if add.country:
-                new_props["addr:country"] = add.country
-            if add.postcode:
-                new_props["addr:postcode"] = add.postcode
-            if add.locality:
-                new_props["addr:city"] = add.locality
-            if add.region:
-                new_props[region_tag] = add.region
+        # Addresses
+        new_props.update(self._process_address(region_tag))
 
-        if self.sources:
-            new_props["source"] = source_statement(self.sources)
+        # Sources
+        new_props["source"] = source_statement(self.sources)
 
+        # Socials and Brand
         if self.socials:
             new_props.update(self.socials.to_osm())
-
         if self.brand:
             new_props.update(self.brand.to_osm())
 
         return new_props
+
+    def _process_names(self) -> dict[str, str]:
+        """Process and map Overture names to OSM tags."""
+        if not self.names:
+            return {}
+
+        names = {}
+        if self.names.primary:
+            names["name"] = self.names.primary
+
+        return names
+
+    def _process_categories(self, unmatched: str) -> dict[str, str]:
+        """Process and map Overture categories to OSM tags."""
+        if not self.categories:
+            return {}
+
+        prim = places_tags.get(self.categories.primary)
+        if prim:
+            return prim
+        elif unmatched == "force":
+            return {"type": self.categories.primary}
+        elif unmatched == "error":
+            raise UnmatchedError(self.categories.primary)
+        return {}
+
+    def _process_contact_info(self) -> dict[str, str]:
+        """Process contact information."""
+        contact_info = {}
+        if self.phones is not None:
+            contact_info["phone"] = self.phones[0]
+        if self.websites is not None and self.websites[0]:
+            contact_info["website"] = str(self.websites[0])
+        return contact_info
+
+    def _process_address(self, region_tag: str) -> dict[str, str]:
+        """Process address information."""
+        if not self.addresses:
+            return {}
+
+        address = self.addresses[0]
+        address_info = {}
+        if address.freeform:
+            address_info["addr:street_address"] = address.freeform
+        if address.country:
+            address_info["addr:country"] = address.country
+        if address.postcode:
+            address_info["addr:postcode"] = address.postcode
+        if address.locality:
+            address_info["addr:city"] = address.locality
+        if address.region:
+            address_info[region_tag] = address.region
+
+        return address_info
 
 
 class ConfidenceError(Exception):
@@ -343,10 +395,12 @@ class AddressProps(OvertureBaseModel):
     Use this model directly if you want to manipulate the `address` properties yourself.
     """
 
-    number: str | None = Field(serialization_alias="addr:housenumber")
-    street: str | None = Field(serialization_alias="addr:street")
-    postcode: str | None = Field(serialization_alias="addr:postcode")
-    country: str | None = Field(serialization_alias="addr:country")
+    number: str | None = Field(serialization_alias="addr:housenumber", default=None)
+    street: str | None = Field(serialization_alias="addr:street", default=None)
+    unit: str | None = Field(serialization_alias="addr:unit", default=None)
+    postcode: str | None = Field(serialization_alias="addr:postcode", default=None)
+    postal_city: str | None = Field(serialization_alias="addr:city", default=None)
+    country: str | None = Field(serialization_alias="addr:country", default=None)
     address_levels: (
         None | (Annotated[list[AddressLevel], Field(min_length=1, max_length=5)])
     ) = Field(default_factory=list)

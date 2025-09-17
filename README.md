@@ -14,7 +14,8 @@ With the `overturemaps` Python package installed, you can download and convert
 Overture data to OSM in two lines of code.
 
 ```bash
-$ python -m overturemaps download --bbox=-71.068,42.353,-71.058,42.363 \\
+$ python -m pip install overturemaps overturetoosm
+$ overturemaps download --bbox=-71.068,42.353,-71.058,42.363 \\
   -f geojson --type=place -o boston.geojson
 $ python -m overturetoosm place -i boston.geojson --in-place --confidence 0.9
 ```
