@@ -3,8 +3,14 @@ name: Integration Test
 on:
   push:
     branches: [main, develop]
+    paths:
+      - "src/**"
+      - ".github/workflows/overturemaps_download.yml"
   pull_request:
     branches: [main]
+    paths:
+      - "src/**"
+      - ".github/workflows/overturemaps_download.yml"
   workflow_dispatch:
 
 jobs:

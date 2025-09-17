@@ -104,6 +104,13 @@ class Names(BaseModel):
     common: list[tuple[str, str]] | None
     rules: list[Rules] | None
 
+    def to_osm(self) -> dict[str, str]:
+        names = {}
+        if self.primary:
+            names["name"] = self.primary
+
+        return names
+
 
 class PlaceAddress(BaseModel):
     """Overture addresses model."""
@@ -114,12 +121,39 @@ class PlaceAddress(BaseModel):
     region: str | None
     country: str | None = Field(pattern=r"^[A-Z]{2}$")
 
+    def to_osm(self, region_tag: str) -> dict[str, str]:
+        """Convert address to OSM tags."""
+        address_info = {}
+        if self.freeform:
+            address_info["addr:street_address"] = self.freeform
+        if self.country:
+            address_info["addr:country"] = self.country
+        if self.postcode:
+            address_info["addr:postcode"] = self.postcode
+        if self.locality:
+            address_info["addr:city"] = self.locality
+        if self.region:
+            address_info[region_tag] = self.region
+
+        return address_info
+
 
 class Categories(BaseModel):
     """Overture categories model."""
 
     primary: str
     alternate: list[str] | None
+
+    def to_osm(self, unmatched: str) -> dict[str, str]:
+        """Convert categories to OSM tags."""
+        prim = places_tags.get(self.primary)
+        if prim:
+            return prim
+        elif unmatched == "force":
+            return {"type": self.primary}
+        elif unmatched == "error":
+            raise UnmatchedError(self.primary)
+        return {}
 
 
 class Brand(BaseModel):
@@ -182,16 +216,19 @@ class PlaceProps(OvertureBaseModel):
         new_props = {}
 
         # Categories
-        new_props.update(self._process_categories(unmatched))
+        if self.categories:
+            new_props.update(self.categories.to_osm(unmatched))
 
         # Names
-        new_props.update(self._process_names())
+        if self.names:
+            new_props.update(self.names.to_osm())
 
         # Contact information
         new_props.update(self._process_contact_info())
 
         # Addresses
-        new_props.update(self._process_address(region_tag))
+        if self.addresses:
+            new_props.update(self.addresses[0].to_osm(region_tag))
 
         # Sources
         new_props["source"] = source_statement(self.sources)
@@ -204,31 +241,6 @@ class PlaceProps(OvertureBaseModel):
 
         return new_props
 
-    def _process_names(self) -> dict[str, str]:
-        """Process and map Overture names to OSM tags."""
-        if not self.names:
-            return {}
-
-        names = {}
-        if self.names.primary:
-            names["name"] = self.names.primary
-
-        return names
-
-    def _process_categories(self, unmatched: str) -> dict[str, str]:
-        """Process and map Overture categories to OSM tags."""
-        if not self.categories:
-            return {}
-
-        prim = places_tags.get(self.categories.primary)
-        if prim:
-            return prim
-        elif unmatched == "force":
-            return {"type": self.categories.primary}
-        elif unmatched == "error":
-            raise UnmatchedError(self.categories.primary)
-        return {}
-
     def _process_contact_info(self) -> dict[str, str]:
         """Process contact information."""
         contact_info = {}
@@ -237,26 +249,6 @@ class PlaceProps(OvertureBaseModel):
         if self.websites is not None and self.websites[0]:
             contact_info["website"] = str(self.websites[0])
         return contact_info
-
-    def _process_address(self, region_tag: str) -> dict[str, str]:
-        """Process address information."""
-        if not self.addresses:
-            return {}
-
-        address = self.addresses[0]
-        address_info = {}
-        if address.freeform:
-            address_info["addr:street_address"] = address.freeform
-        if address.country:
-            address_info["addr:country"] = address.country
-        if address.postcode:
-            address_info["addr:postcode"] = address.postcode
-        if address.locality:
-            address_info["addr:city"] = address.locality
-        if address.region:
-            address_info[region_tag] = address.region
-
-        return address_info
 
 
 class ConfidenceError(Exception):
