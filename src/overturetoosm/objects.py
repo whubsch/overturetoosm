@@ -105,6 +105,7 @@ class Names(BaseModel):
     rules: list[Rules] | None
 
     def to_osm(self) -> dict[str, str]:
+        """Convert names to OSM tags."""
         names = {}
         if self.primary:
             names["name"] = self.primary
