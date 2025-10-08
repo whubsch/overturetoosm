@@ -192,6 +192,7 @@ class PlaceProps(OvertureBaseModel):
 
     Use this model directly if you want to manipulate the `place` properties yourself.
     """
+    model_config = ConfigDict(extra="ignore")
 
     sources: list[Sources]
     names: Names
@@ -203,6 +204,16 @@ class PlaceProps(OvertureBaseModel):
     emails: list[str] | None = None
     phones: list[str] | None = None
     addresses: list[PlaceAddress]
+
+
+    @field_validator("emails", "phones", "websites", mode="before")
+    @classmethod
+    def clean_nulls(cls, v):
+        """Filtra valores nulos o vacíos en listas de emails, phones o websites."""
+        if isinstance(v, list):
+            return [x for x in v if isinstance(x, str) and x.strip()]
+        return v
+
 
     def to_osm(
         self, confidence: float, region_tag: str, unmatched: str
@@ -242,14 +253,30 @@ class PlaceProps(OvertureBaseModel):
 
         return new_props
 
-    def _process_contact_info(self) -> dict[str, str]:
-        """Process contact information."""
-        contact_info = {}
-        if self.phones is not None:
-            contact_info["phone"] = self.phones[0]
-        if self.websites is not None and self.websites[0]:
-            contact_info["website"] = str(self.websites[0])
-        return contact_info
+
+    def _process_contact_info(self):
+        """Procesa información de contacto y genera tags OSM."""
+        props = {}
+
+        # phone
+        if isinstance(self.phones, list) and any(self.phones):
+            phone = next((p for p in self.phones if p), None)
+            if phone:
+                props["contact:phone"] = phone
+
+        # Email
+        if isinstance(self.emails, list) and any(self.emails):
+            email = next((e for e in self.emails if e), None)
+            if email:
+                props["contact:email"] = email
+
+        # web
+        if isinstance(self.websites, list) and any(self.websites):
+            website = next((w for w in self.websites if w), None)
+            if website:
+                props["contact:website"] = website
+
+        return props
 
 
 class ConfidenceError(Exception):
