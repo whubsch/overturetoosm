@@ -25,6 +25,7 @@ def clean_fix() -> dict[str, Any]:
         "addr:country": "US",
         "phone": "7039329683",
         "website": "http://www.acquirere.com/",
+        "email": "example@example.com",
         "source": "Microsoft via overturetoosm",
         "office": "real_estate",
     }
@@ -72,6 +73,7 @@ def geojson_fix() -> dict[str, Any]:
                     "confidence": 0.77,
                     "websites": ["http://www.acquirere.com/"],
                     "phones": ["7039329683"],
+                    "emails": ["example@example.com"],
                     "addresses": [
                         {
                             "freeform": "6214 Woodland Lake Dr",
@@ -115,6 +117,7 @@ def props_fix() -> dict[str, Any]:
         "confidence": 0.77,
         "websites": ["http://www.acquirere.com/"],
         "phones": ["7039329683"],
+        "emails": ["example@example.com"],
         "addresses": [
             {
                 "freeform": "6214 Woodland Lake Dr",
@@ -148,6 +151,24 @@ def test_place_props_no_category(props_dict: dict, clean_dict: dict) -> None:
     new_props = process_place(props_dict)
     for i in ["office", "lawyer"]:
         clean_dict.pop(i, None)
+    assert new_props == clean_dict
+
+
+@pytest.mark.parametrize("prop", ["phones", "emails", "websites"])
+def test_place_null_values(props_dict: dict, clean_dict: dict, prop: str) -> None:
+    """Test that all properties are processed correctly."""
+    props_dict.pop(prop, None)
+    clean_dict.pop(prop.rstrip("s"), None)
+    new_props = process_place(props_dict)
+    assert new_props == clean_dict
+
+
+@pytest.mark.parametrize("prop", ["phones", "emails", "websites"])
+def test_place_null_list(props_dict: dict, clean_dict: dict, prop: str) -> None:
+    """Test that all properties are processed correctly."""
+    props_dict[prop] = [None]
+    clean_dict.pop(prop.rstrip("s"), None)
+    new_props = process_place(props_dict)
     assert new_props == clean_dict
 
 

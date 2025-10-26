@@ -193,15 +193,17 @@ class PlaceProps(OvertureBaseModel):
     Use this model directly if you want to manipulate the `place` properties yourself.
     """
 
+    model_config = ConfigDict(extra="ignore")
+
     sources: list[Sources]
     names: Names
     brand: Brand | None = None
     categories: Categories | None = None
     confidence: float = Field(ge=0.0, le=1.0)
-    websites: list[str] | None = None
+    websites: list[str | None] | None = None
     socials: Socials | None = None
-    emails: list[str] | None = None
-    phones: list[str] | None = None
+    emails: list[str | None] | None = None
+    phones: list[str | None] | None = None
     addresses: list[PlaceAddress]
 
     def to_osm(
@@ -245,10 +247,12 @@ class PlaceProps(OvertureBaseModel):
     def _process_contact_info(self) -> dict[str, str]:
         """Process contact information."""
         contact_info = {}
-        if self.phones is not None:
+        if not is_none_or_list_of_nones(self.phones):
             contact_info["phone"] = self.phones[0]
-        if self.websites is not None and self.websites[0]:
+        if not is_none_or_list_of_nones(self.websites):
             contact_info["website"] = str(self.websites[0])
+        if not is_none_or_list_of_nones(self.emails):
+            contact_info["email"] = self.emails[0]
         return contact_info
 
 
@@ -423,3 +427,22 @@ def source_statement(source: list[Sources]) -> str:
         ", ".join(sorted({i.dataset.strip(", ") for i in source}))
         + " via overturetoosm"
     )
+
+
+def is_none_or_list_of_nones(value) -> bool:
+    """Check whether a given value is either None or a list containing only None values.
+
+    Args:
+        value: The value to check. Can be of any type.
+
+    Returns:
+        bool: True if the value is None or a list containing only None values,
+              False otherwise.
+    """
+    if value is None:
+        return True
+
+    if isinstance(value, list):
+        return len(value) > 0 and all(item is None for item in value)
+
+    return False
