@@ -24,7 +24,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Convert Overture data to the OSM schema in the GeoJSON format."
     )
-    subs = parser.add_subparsers(dest="fx_type", help="types")
+    subs = parser.add_subparsers(dest="fx_type", help="types", required=True)
     place_parser = subs.add_parser("place", help="Convert place data", parents=[parent])
     place_parser.add_argument(
         "-c",
@@ -89,7 +89,7 @@ def main():
                 contents, process_address, options={"style": args.style}
             )
 
-    if not geojson:
+    if not geojson.get("features"):
         raise ValueError("No features found in the input file.")
 
     if args.in_place:
