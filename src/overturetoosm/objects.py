@@ -126,7 +126,7 @@ class PlaceAddress(BaseModel):
         """Convert address to OSM tags."""
         address_info = {}
         if self.freeform:
-            address_info["addr:street_address"] = self.freeform
+            address_info["addr:full"] = self.freeform
         if self.country:
             address_info["addr:country"] = self.country
         if self.postcode:

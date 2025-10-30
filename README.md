@@ -77,7 +77,7 @@ You will probably for the most part be handling features from a GeoJSON or other
 >>> output = overturetoosm.process_place(overture)
 {
         "name": "Primary Name",
-        "addr:street_address": "123 E Main Blvd",
+        "addr:full": "123 E Main Blvd",
         "addr:city": "City",
         "addr:postcode": "12345",
         "addr:state": "CA",
@@ -91,7 +91,7 @@ Note that the `addr:street_address` tag is not suitable for import into OSM, and
 
 ```python
 >>> import atlus
->>> atlus.get_address(output["addr:street_address"])[0]
+>>> atlus.get_address(output["addr:full"])[0]
 {"addr:housenumber": "123", "addr:street": "East Main Boulevard"}
 ```
 

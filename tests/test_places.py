@@ -18,7 +18,7 @@ def clean_fix() -> dict[str, Any]:
         "name": "Acquire Real Estate",
         "brand": "Brand Name",
         "brand:wikidata": "Q123",
-        "addr:street_address": "6214 Woodland Lake Dr",
+        "addr:full": "6214 Woodland Lake Dr",
         "addr:city": "Alexandria",
         "addr:postcode": "22310",
         "addr:state": "VA",
