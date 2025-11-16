@@ -36,6 +36,7 @@ class Sources(BaseModel):
 
     property: str
     dataset: str
+    license: str | None = None
     record_id: str | None = None
     confidence: float | None = Field(ge=0.0, le=1.0)
     update_time: str | None = None
@@ -206,8 +207,40 @@ class PlaceProps(OvertureBaseModel):
     phones: list[str | None] | None = None
     addresses: list[PlaceAddress]
 
+    def _validate_license(self, required_license: str | None) -> None:
+        """Validate that sources meet license requirements.
+
+        Args:
+            required_license: The required license string (e.g., "CDLA").
+                             If None, no validation is performed.
+
+        Raises:
+            LicenseError: If no sources have the required license and at least
+                         one source has a non-null license.
+        """
+        if required_license is None:
+            return
+
+        found_licenses = [s.license for s in self.sources if s.license is not None]
+
+        # If all licenses are null, pass the validation
+        if not found_licenses:
+            return
+
+        # Check if any source has the required license
+        for source in self.sources:
+            if source.license and required_license in source.license:
+                return
+
+        # If we get here, no source has the required license
+        raise LicenseError(required_license, found_licenses)
+
     def to_osm(
-        self, confidence: float, region_tag: str, unmatched: str
+        self,
+        confidence: float,
+        region_tag: str,
+        unmatched: str,
+        required_license: str | None = None,
     ) -> dict[str, str]:
         """Convert Overture's place properties to OSM tags.
 
@@ -215,6 +248,8 @@ class PlaceProps(OvertureBaseModel):
         """
         if self.confidence < confidence:
             raise ConfidenceError(confidence, self.confidence)
+
+        self._validate_license(required_license)
 
         new_props = {}
 
@@ -314,6 +349,35 @@ class UnmatchedError(Exception):
         return f"{self.message} {{category={self.category}}}"
 
 
+class LicenseError(Exception):
+    """License compatibility error.
+
+    This exception is raised when a feature's source licenses do not meet
+    the required license criteria.
+
+    Attributes:
+        required_license (str): The required license string.
+        found_licenses (list[str]): The licenses found in the sources.
+        message (str): The error message.
+    """
+
+    def __init__(
+        self,
+        required_license: str,
+        found_licenses: list[str],
+        message: str = "Feature does not meet license requirements.",
+    ) -> None:
+        """@private"""
+        self.required_license = required_license
+        self.found_licenses = found_licenses
+        self.message = message
+        super().__init__(message)
+
+    def __str__(self) -> str:
+        """@private"""
+        return f"{self.message} {{required_license={self.required_license}, found_licenses={self.found_licenses}}}"
+
+
 class BuildingProps(OvertureBaseModel):
     """Overture building properties.
 
@@ -353,7 +417,37 @@ class BuildingProps(OvertureBaseModel):
     roof_color: str | None = Field(serialization_alias="roof:colour", default=None)
     roof_height: float | None = Field(serialization_alias="roof:height", default=None)
 
-    def to_osm(self, confidence: float) -> dict[str, str]:
+    def _validate_license(self, required_license: str | None) -> None:
+        """Validate that sources meet license requirements.
+
+        Args:
+            required_license: The required license string (e.g., "CDLA").
+                             If None, no validation is performed.
+
+        Raises:
+            LicenseError: If no sources have the required license and at least
+                         one source has a non-null license.
+        """
+        if required_license is None:
+            return
+
+        found_licenses = [s.license for s in self.sources if s.license is not None]
+
+        # If all licenses are null, pass the validation
+        if not found_licenses:
+            return
+
+        # Check if any source has the required license
+        for source in self.sources:
+            if source.license and required_license in source.license:
+                return
+
+        # If we get here, no source has the required license
+        raise LicenseError(required_license, found_licenses)
+
+    def to_osm(
+        self, confidence: float, required_license: str | None = None
+    ) -> dict[str, str]:
         """Convert properties to OSM tags.
 
         Used internally by`overturetoosm.process_building` function.
@@ -362,6 +456,8 @@ class BuildingProps(OvertureBaseModel):
         confidences = {source.confidence for source in self.sources}
         if any(conf and conf < confidence for conf in confidences):
             raise ConfidenceError(confidence, max({i for i in confidences if i}))
+
+        self._validate_license(required_license)
 
         new_props["building"] = self.class_ if self.class_ else "yes"
 
@@ -403,11 +499,41 @@ class AddressProps(OvertureBaseModel):
     ) = Field(default_factory=list)
     sources: list[Sources]
 
-    def to_osm(self, style: str) -> dict[str, str]:
+    def _validate_license(self, required_license: str | None) -> None:
+        """Validate that sources meet license requirements.
+
+        Args:
+            required_license: The required license string (e.g., "CDLA").
+                             If None, no validation is performed.
+
+        Raises:
+            LicenseError: If no sources have the required license and at least
+                         one source has a non-null license.
+        """
+        if required_license is None:
+            return
+
+        found_licenses = [s.license for s in self.sources if s.license is not None]
+
+        # If all licenses are null, pass the validation
+        if not found_licenses:
+            return
+
+        # Check if any source has the required license
+        for source in self.sources:
+            if source.license and required_license in source.license:
+                return
+
+        # If we get here, no source has the required license
+        raise LicenseError(required_license, found_licenses)
+
+    def to_osm(self, style: str, required_license: str | None = None) -> dict[str, str]:
         """Convert properties to OSM tags.
 
         Used internally by `overturetoosm.process_address`.
         """
+        self._validate_license(required_license)
+
         obj_dict = {
             k: v
             for k, v in self.model_dump(exclude_none=True, by_alias=True).items()

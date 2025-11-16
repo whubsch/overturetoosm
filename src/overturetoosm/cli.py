@@ -12,6 +12,12 @@ def main():
     parent.add_argument(
         "-i", "--input", required=True, help="Path to the input GeoJSON file"
     )
+    parent.add_argument(
+        "-l",
+        "--license",
+        default="CDLA",
+        help="Required license string for filtering sources. Use 'none' to disable license filtering. Default: CDLA",
+    )
     out = parent.add_argument_group("output options")
     output_group = out.add_mutually_exclusive_group(required=True)
     output_group.add_argument("-o", "--output", help="Path to the output GeoJSON file")
@@ -73,20 +79,30 @@ def main():
     with open(args.input, encoding="utf-8") as f:
         contents: dict = json.load(f)
         geojson = {}
+        required_license = None if args.license.lower() == "none" else args.license
         if args.fx_type == "place":
             geojson = process_geojson(
                 contents,
                 process_place,
                 confidence=args.confidence,
-                options={"region_tag": args.region_tag, "unmatched": args.unmatched},
+                options={
+                    "region_tag": args.region_tag,
+                    "unmatched": args.unmatched,
+                    "required_license": required_license,
+                },
             )
         elif args.fx_type == "building":
             geojson = process_geojson(
-                contents, process_building, confidence=args.confidence
+                contents,
+                process_building,
+                confidence=args.confidence,
+                options={"required_license": required_license},
             )
         elif args.fx_type == "address":
             geojson = process_geojson(
-                contents, process_address, options={"style": args.style}
+                contents,
+                process_address,
+                options={"style": args.style, "required_license": required_license},
             )
 
     if not geojson.get("features"):
