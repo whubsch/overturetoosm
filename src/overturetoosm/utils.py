@@ -2,7 +2,7 @@
 
 from collections.abc import Callable
 
-from .objects import ConfidenceError, UnmatchedError
+from .objects import ConfidenceError, LicenseError, UnmatchedError
 
 
 def process_geojson(
@@ -44,7 +44,7 @@ def process_geojson(
             else:
                 feature["properties"] = fx(feature["properties"], **options)
             new_features.append(feature)
-        except (ConfidenceError, UnmatchedError):
+        except (ConfidenceError, UnmatchedError, LicenseError):
             pass
 
     geojson["features"] = new_features

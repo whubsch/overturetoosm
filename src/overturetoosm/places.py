@@ -10,6 +10,7 @@ def process_place(
     confidence: float = 0.0,
     region_tag: str = "addr:state",
     unmatched: Literal["error", "force", "ignore"] = "ignore",
+    required_license: str | None = "CDLA",
 ) -> dict[str, str]:
     """Convert Overture's places properties to OSM tags.
 
@@ -36,6 +37,10 @@ def process_place(
             unmatched Overture categories. The "error" option raises an UnmatchedError
             exception, "force" puts the category into the `type` key, and "ignore"
             only returns other properties. Defaults to "ignore".
+        required_license (str | None, optional): Required license string that must
+            be present in at least one source (e.g., "CDLA"). Features with no
+            matching license will raise a LicenseError. If None, no license
+            validation is performed. Defaults to "CDLA".
 
     Returns:
         dict[str, str]: The reshaped and converted properties in OSM's flat str:str
@@ -46,5 +51,9 @@ def process_place(
             and the Overture category has no OSM definition.
         `overturetoosm.objects.ConfidenceError`: Raised if the confidence level is set
             above a feature's confidence.
+        `overturetoosm.objects.LicenseError`: Raised if `required_license` is set
+            and no sources contain the required license.
     """
-    return PlaceProps(**props).to_osm(confidence, region_tag, unmatched)
+    return PlaceProps(**props).to_osm(
+        confidence, region_tag, unmatched, required_license
+    )
