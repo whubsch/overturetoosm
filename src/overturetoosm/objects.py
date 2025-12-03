@@ -39,7 +39,9 @@ class Sources(BaseModel):
     license: str | None = None
     record_id: str | None = None
     confidence: float | None = Field(ge=0.0, le=1.0)
-    update_time: str | None = None
+    update_time: str | None = Field(
+        pattern=r"^([1-9]\d{3})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d|60)(\.\d{1,3})?(Z|[-+]([01]\d|2[0-3]):[0-5]\d)$"
+    )
 
     @field_validator("confidence")
     @classmethod
@@ -188,6 +190,14 @@ class Socials(RootModel):
         return new_props
 
 
+class OperatingStatus(str, Enum):
+    """Enum for place operating status."""
+
+    open = "open"
+    permanently_closed = "permanently_closed"
+    temporarily_closed = "temporarily_closed"
+
+
 class PlaceProps(OvertureBaseModel):
     """Overture properties model.
 
@@ -200,12 +210,14 @@ class PlaceProps(OvertureBaseModel):
     names: Names
     brand: Brand | None = None
     categories: Categories | None = None
+    basic_category: str | None = Field(pattern=r"^[a-z0-9]+(_[a-z0-9]+)*$")
     confidence: float = Field(ge=0.0, le=1.0)
     websites: list[str | None] | None = None
     socials: Socials | None = None
     emails: list[str | None] | None = None
     phones: list[str | None] | None = None
     addresses: list[PlaceAddress]
+    operating_status: OperatingStatus | None = None
 
     def _validate_license(self, required_license: str | None) -> None:
         """Validate that sources meet license requirements.
