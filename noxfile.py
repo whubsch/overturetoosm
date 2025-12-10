@@ -1,4 +1,5 @@
-"""
+"""Testing file for nox.
+
 # Run all tests
 nox
 
@@ -14,9 +15,10 @@ nox -s "integration(data_type='building')"
 nox -s "integration(data_type='address')"
 """
 
-import nox
-import tempfile
 import os
+import tempfile
+
+import nox
 
 
 @nox.session(python=["3.10", "3.11", "3.12", "3.13", "3.14"])
