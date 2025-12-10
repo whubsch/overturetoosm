@@ -16,7 +16,10 @@ def main():
         "-l",
         "--license",
         default="CDLA",
-        help="Required license string for filtering sources. Use 'none' to disable license filtering. Default: CDLA",
+        help=(
+            "Required license string for filtering sources. "
+            "Use 'none' to disable license filtering. Default: CDLA"
+        ),
     )
     out = parent.add_argument_group("output options")
     output_group = out.add_mutually_exclusive_group(required=True)
