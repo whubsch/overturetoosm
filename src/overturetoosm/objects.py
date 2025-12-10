@@ -40,7 +40,8 @@ class Sources(BaseModel):
     record_id: str | None = None
     confidence: float | None = Field(ge=0.0, le=1.0)
     update_time: str | None = Field(
-        pattern=r"^([1-9]\d{3})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d|60)(\.\d{1,3})?(Z|[-+]([01]\d|2[0-3]):[0-5]\d)?$"
+        pattern=r"^([1-9]\d{3})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])T([01]\d|2[0-3]):([0-5]\d):([0-5]\d|60)(\.\d{1,3})?(Z|[-+]([01]\d|2[0-3]):[0-5]\d)?$",
+        default=None,
     )
 
     @field_validator("confidence")
@@ -210,7 +211,9 @@ class PlaceProps(OvertureBaseModel):
     names: Names
     brand: Brand | None = None
     categories: Categories | None = None
-    basic_category: str | None = Field(pattern=r"^[a-z0-9]+(_[a-z0-9]+)*$")
+    basic_category: str | None = Field(
+        pattern=r"^[a-z0-9]+(_[a-z0-9]+)*$", default=None
+    )
     confidence: float = Field(ge=0.0, le=1.0)
     websites: list[str | None] | None = None
     socials: Socials | None = None

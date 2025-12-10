@@ -27,7 +27,7 @@ def clean_fix() -> dict[str, Any]:
         "website": "http://www.acquirere.com/",
         "email": "example@example.com",
         "source": "Microsoft via overturetoosm",
-        "office": "real_estate",
+        "office": "estate_agent",
     }
 
 

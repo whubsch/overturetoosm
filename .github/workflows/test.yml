@@ -1,4 +1,4 @@
-name: Tests
+name: Unit Tests
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
       - "tests/**"
       - "pyproject.toml"
       - "requirements*.txt"
-      - "tox.ini"
+      - "noxfile.py"
       - ".github/workflows/test.yml"
   pull_request:
     branches: [main]
@@ -17,8 +17,9 @@ on:
       - "tests/**"
       - "pyproject.toml"
       - "requirements*.txt"
-      - "tox.ini"
+      - "noxfile.py"
       - ".github/workflows/test.yml"
+  workflow_dispatch:
 
 jobs:
   test:
@@ -45,8 +46,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Install tox
-        run: python -m pip install --upgrade pip tox
+      - name: Install nox
+        run: python -m pip install --upgrade pip nox
 
-      - name: Run tests with tox
-        run: tox -e py
+      - name: Run unit tests with nox
+        run: nox -s tests
