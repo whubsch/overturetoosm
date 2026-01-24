@@ -21,7 +21,7 @@ import tempfile
 import nox
 
 
-@nox.session(python=["3.10", "3.11", "3.12", "3.13", "3.14"])
+@nox.session(python=["3.10", "3.11", "3.12", "3.13", "3.14"], venv_backend="uv")
 def tests(session):
     """Run tests with pytest across multiple Python versions."""
     session.install("pytest", "pydantic")
@@ -29,7 +29,7 @@ def tests(session):
     session.run("python", "-m", "pytest")
 
 
-@nox.session(python="3.12")
+@nox.session(python="3.12", venv_backend="uv")
 @nox.parametrize("data_type", ["place", "building", "address"])
 def integration(session, data_type):
     """Run integration test mimicking GitHub Actions workflow.
